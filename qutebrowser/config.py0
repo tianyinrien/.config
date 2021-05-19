@@ -1,0 +1,85 @@
+
+# Bindings
+
+# Aliases for commands. The keys of the given dictionary are the
+# aliases, while the values are the commands they map to.
+
+
+# Foreground color of the URL in the statusbar on successful load
+# (https).
+
+# Background color of unselected tabs.
+#c.colors.tabs.even.bg = "silver"
+#c.colors.tabs.odd.bg = "gainsboro"
+
+# Foreground color of unselected tabs.
+#c.colors.tabs.odd.fg = c.colors.tabs.even.fg
+
+# The height of the completion, in px or as percentage of the window.
+c.completion.height = "20%"
+
+# Move on to the next part when there's only one possible completion
+# left.
+c.completion.quick = False
+
+# When to show the autocompletion window.
+# Valid values:
+#   - always: Whenever a completion is available.
+#   - auto: Whenever a completion is requested.
+#   - never: Never.
+c.completion.show = "auto"
+
+# Valid values:
+#   - always: Always show a confirmation.
+#   - multiple-tabs: Show a confirmation if multiple tabs are opened.
+#   - downloads: Show a confirmation if downloads are running
+#   - never: Never show a confirmation.
+c.confirm_quit = ["downloads"]
+
+config.bind(',n', 'spawn -d proxychains4 mpv --force-window=immediate {url}')
+config.bind(',m', 'hint links spawn -d mpv --force-window=immediate {hint-url}')
+config.bind(',d', 'hint links spawn -d st -e youtube-dl --proxy "socks5://127.0.0.1:1080" {hint-url}')
+config.bind(',t', 'set-cmd-text -s :set content.proxy ')
+config.bind(',r', 'set-cmd-text -s :set content.proxy socks://localhost:1080/')
+
+c.aliases = {
+ "mpv": "hint links spawn -d proxychains4 mpv --force-window=immediate {hint-url}",
+ "pmpv": "hint links spawn -d mpv --force-window=immediate {hint-url}"
+         }
+# Value to send in the `Accept-Language` header.
+c.content.headers.accept_language = "en-US,en;q=0.8,fi;q=0.6"
+
+# The proxy to use. In addition to the listed values, you can use a
+# `socks://...` or `http://...` URL.
+# Valid values:
+#   - system: Use the system wide proxy.
+#   - none: Don"t use any proxy
+c.content.proxy = "socks://localhost:1080/"
+
+# Validate SSL handshakes.
+# Valid values:
+#   - true
+#   - false
+#   - ask
+c.content.ssl_strict = True
+
+# gets replaced by the filename of the file to be edited.
+c.editor.command = ["st", "-e", "vim '{}'"]
+#c.url.searchengines = '{"DEFAULT":"https://www.google.com.ar/search?q={}"}'
+c.fonts.default_size = "13pt"
+c.zoom.default = "175%"
+c.url.default_page = "about:blank"
+c.url.start_pages = "https://www.google.com"
+c.tabs.show = "always"
+#c.tabs.favicons.scale = "0.7"
+#c.statusbar.hide = True
+
+# duckduckgo = https://duckduckgo.com/?q={} github = https://github.com/search?q={} google-scholar = https://scholar.google.co.uk/scholar?hl=en&q={}"
+
+
+# Load existing settings made via :set
+#c.content.user_stylesheets = [
+#  'solarized-dark.css',
+#  'custom_solarized.css'
+#]
+
