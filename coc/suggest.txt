@@ -1,0 +1,257 @@
+techni|technique|around|
+deg|degenerated|around|
+spli|splitting|around|
+sec|sec|snippets|S
+sec|section|texlab|f
+sec|sec|snippets|S
+make|maketitle|vimtex|[cmd: default] 
+dege|degenerated|around|
+Rie|Reifenbreg|around|
+til|tilde|vimtex|[cmd: default] 
+deg|degenerated|around|
+lr|lr{|snippets|S
+lr|lr{|snippets|S
+th|thm|snippets|S
+gr|gruvbox|around|
+th|thm|snippets|S
+def|default|around|
+L|LEADER|around|
+thm|thm|snippets|S
+/ne|/Nextcloud|file|
+/nex|/Nextcloud|file|
+/Ne|/Nextcloud|file|
+/Nex|/Nextcloud|file|
+/Nextc|/Nextcloud|file|
+/Nex|/Nextcloud|file|
+/Nex|/Nextcloud|file|
+/Nex|/Nextcloud|file|
+Ne|Nextcloud|file|
+Ne|Nextcloud|file|
+scr|scripts|file|
+Rieman|Riemannian|around|
+coj|coj|snippets|S
+|HuKoXuRo20|vimtex|
+scr|scripts|file|
+lr|lr{|snippets|S
+lr|lr||snippets|S
+|FaRo99|vimtex|
+thm|thm|snippets|S
+|An90|vimtex|
+cite|cite|vimtex|[cmd: default] 
+man|manifold|around|
+Riemannn|Riemannian|around|
+lem|lem|snippets|S
+thm|thm|snippets|S
+fi|fig|snippets|S
+in|in|snippets|S
+in|in|snippets|S
+in|in|snippets|S
+th|thm|snippets|S
+thm|thm|snippets|S
+ie|datetime|snippets|S
+rightarrow|rightarrow|vimtex|[cmd: default] 
+al|arrayrulecolor|vimtex|[cmd: colortbl] 
+lab|label|vimtex|[cmd: default] 
+ss|ss|snippets|S
+uu|uu|snippets|S
+dd|dd|snippets|S
+ss|ss|snippets|S
+ss|ss|snippets|S
+ss|ss|snippets|S
+en|enum|snippets|S
+in|in|snippets|S
+in|in|snippets|S
+ni|ni|snippets|S
+ni|ni|snippets|S
+uu|uu|snippets|S
+in|in|snippets|S
+man|manifold|around|
+in|in|snippets|S
+cth|cthm|snippets|S
+dm|dm|snippets|S
+dm|dm|snippets|S
+in|in|snippets|S
+tmp|tmp|snippets|S
+que|question|around|
+con|conjecture|around|
+conj|conjecture|around|
+Con|Conjecture|around|
+ctheore|ctheorem|around|
+Th|Theorem|around|
+Con|Conjecture|around|
+rem|remark|around|
+docu|document|around|
+itm|itm|snippets|S
+item|item|snippets|S
+dm|dm|snippets|S
+dm|dm|snippets|S
+in|in|snippets|S
+thm|thm|snippets|S
+thm|thm|snippets|S
+thm|thm|snippets|S
+in|in|snippets|S
+in|in|snippets|S
+in|in|snippets|S
+it|it|snippets|S
+thm|thm|snippets|S
+lem|lem|snippets|S
+ro|Ro99 @articleRo99 author Xiaochun Rong doi 10.4310/jdg/1214425069 fjournal Journal of Differential Geometry issn 0022-040X journal J. Differ. Geom. language English msc2010 53C23 53C20 number 2 pages 335--358 publisher International Press of Boston Somerville MA title Collapsed manifolds with pinched positive sectional curvature. volume 51 year 1999 zbl 1041.53028 bdsk-url-1 https://doi.org/10.4310/jdg/1214425069|texlab|E
+Riemann|Riemannian|around|
+thm|thm|snippets|S
+thm|thm|snippets|S
+thm|theorem|around|
+thm|thm|snippets|S
+thm|thm:splitting|around|
+lem|lemma|snippets|S
+t|There|around|
+th|thm|snippets|S
+beg|beg|snippets|S
+lem|lemma|snippets|S
+thm|thrm|snippets|S
+thm|thm|snippets|S
+la|latex-key.vim|file|
+defa|default|around|
+L|LEADER|around|
+L|LEADER|around|
+in|init.vim|file|
+|init.vim|file|
+|FaRo99|vimtex|
+proof|proof|vimtex|[env: amsthm] 
+thm|thm|snippets|S
+LE|LEADER|around|
+LE|LEADER|around|
+mani|manifold|around|
+foll|following|around|
+eb|ebdbb2|around|
+high|highlight|around|
+we|BEERWARE|snippets|S
+ho|holder|around|
+beg|beg|snippets|S
+we|we can find out a good $ M $ be a good setting|yank|S
+go|good|yank|S
+|An90|vimtex|
+lem|lem|snippets|S
+Lead|LEADER|around|
+hom|homeomorphic|around|
+real|realized|around|
+Rei|Reifenberg|around|
+Theor|Theorem|around|
+Rei|Reifenbreg|around|
+thm|thm|snippets|S
+manif|manifold|around|
+Rie|Riemannian|around|
+thm|thm|snippets|S
+Riem|Riemannian|around|
+thm|thm|snippets|S
+thm|thm|snippets|S
+fin|find out a good setting and then there is a good setting $ \alpha \beta $ $ \alpha \mathcal{M} $ then we can find out we can find out a in the first thing that come from the following and then we c|yank|S
+itm|itm|snippets|S
+itm|itm|snippets|S
+itm|itm|snippets|S
+itm|itm|snippets|S
+it|it|snippets|S
+lem|lem|snippets|S
+thm|thm|snippets|S
+thm|thm|snippets|S
+|CoNa12 @articleCoNa12 author Tobias Holck Colding Aaron Naber date-added 2021-10-23 22:02:18 +0800 date-modified 2021-10-23 22:02:35 +0800 doi 10.4007/annals.2012.176.2.10 fjournal Annals of Mathematics. Second Series issn 0003-486X journal Ann. Math. language English msc2010 53C20 53C25 number 2 pages 1173--1229 publisher Princeton University Mathematics Department Princeton NJ title Sharp H\"older continuity of tangent cones for spaces with a lower Ricci curvature bound and applications volume 176 year 2012 zbl 1260.53067 bdsk-url-1 https://doi.org/10.4007/annals.2012.176.2.10|texlab|E
+|ChCo96|vimtex|
+hu|HuRoWa20|vimtex|
+F|FaRo99 @articleFaRo99 author Fuquan. Fang Xiaochun. Rong date-modified 2021-11-21 19:57:21 +0800 doi 10.1007/s000390050098 fjournal Geometric and Functional Analysis. GAFA issn 1016-443X journal Geom. Funct. Anal. language English msc2010 53C20 57R50 number 4 pages 641--674 publisher Springer (Birkh\"auser) Basel title Positive pinching volume and second Betti number volume 9 year 1999 zbl 0941.53025 bdsk-url-1 https://doi.org/10.1007/s000390050098|texlab|E
+thm|thm:vol-cone|vimtex|
+R|Ro19ng|vimtex|
+R|Ro99 @articleRo99 author Xiaochun Rong doi 10.4310/jdg/1214425069 fjournal Journal of Differential Geometry issn 0022-040X journal J. Differ. Geom. language English msc2010 53C23 53C20 number 2 pages 335--358 publisher International Press of Boston Somerville MA title Collapsed manifolds with pinched positive sectional curvature. volume 51 year 1999 zbl 1041.53028 bdsk-url-1 https://doi.org/10.4310/jdg/1214425069|texlab|E
+cite|cite|snippets|S
+xrig|xrightarrow|vimtex|[cmd: amsmath] 
+sequ|sequence|around|
+le|lem|snippets|S
+le|lem|snippets|S
+fi|fig|snippets
+enum|enum|snippets
+thm|thm|snippets
+tt|tt|snippets
+sec|sec|snippets
+mani|manifold|around
+Riem|Riemannian|around
+le|let|around
+ref|href|snippets
+H|HuKoXuRo20|vimtex
+cite|cite|snippets
+ci|cite|snippets
+eq|eq|snippets
+e|eq|snippets
+inn|inn|snippets
+in|in|snippets
+lem|lem|snippets
+th|thm|snippets
+DD|DD|snippets
+lem|lemma|snippets
+Rieman|Riemannian|around
+thr|thrm|snippets
+|HuRoWa20 @articleHuRoWa20 author Shaosai Huang Xiaochun Rong Bing Wang date-added 2021-10-23 20:28:39 +0800 date-modified 2021-10-23 20:32:21 +0800 doi 10.3842/SIGMA.2020.123 fjournal SIGMA. Symmetry Integrability and Geometry: Methods and Applications issn 1815-0659 journal SIGMA Symmetry Integrability Geom. Methods Appl. language English msc2010 53C55 53C23 53E20 pages paper 123 25 publisher National Academy of Sciences of Ukraine - NAS Ukraine (Natsional'na Akademiya Nauk Ukra\"\iny - NAN Ukra\"\iny) Institute of Mathematics (Instytut Matematyky) Kiev title Collapsing geometry with Ricci curvature bounded below and Ricci flow smoothing volume 16 year 2020 zbl 1456.53058 bdsk-url-1 https://doi.org/10.3842/SIGMA.2020.123|texlab
+lemma|lemma|snippets
+|RoYa20 @articleRoYa20 author Xiaochun Rong Xuchao Yao date-added 2021-10-23 20:34:55 +0800 date-modified 2021-10-23 20:37:31 +0800 doi 10.4208/cmr.2020-0030 fjournal Communications in Mathematical Research issn 1674-5647 journal Commun. Math. Res. language English msc2010 53C21 53C23 number 4 pages 489--505 publisher Editorial Committee of Jilin University Changchun title Bounding topology via geometry \(A\)-simple fundamental groups volume 36 year 2020 bdsk-url-1 https://doi.org/10.4208/cmr.2020-0030|texlab
+enu|enum|snippets
+frac|frac|snippets
+eta|eta|around
+e|eta|vimtex
+geo|geometry|around
+man|manifolds|around
+la|label|texlab
+|4.jpg|file
+|lem:url Lemma ()|texlab
+item|item|snippets
+lemm|lemma|snippets
+|FaRo99 @articleFaRo99 author Fuquan. Fang Xiaochun. Rong date-modified 2021-11-21 19:57:21 +0800 doi 10.1007/s000390050098 fjournal Geometric and Functional Analysis. GAFA issn 1016-443X journal Geom. Funct. Anal. language English msc2010 53C20 57R50 number 4 pages 641--674 publisher Springer (Birkh\"auser) Basel title Positive pinching volume and second Betti number volume 9 year 1999 zbl 0941.53025 bdsk-url-1 https://doi.org/10.1007/s000390050098|texlab
+tikzcd|tikzcd|snippets
+pr|prf|snippets
+thrm|thrm|snippets
+cor|corl|snippets
+man|manifold|around
+xri|xrightarrow|texlab
+L|LEADER|around
+ea|easymotion|around
+easy|easymotion|around
+easymo|easymotion|around
+easym|easymotion|around
+clip|clipboard|around
+prf|prf|snippets
+inf|infty|texlab
+inf|inf|texlab
+xrigh|xrightarrow|texlab
+oper|operator|texlab
+ope|operatorname|around
+xrig|xrightarrow|texlab
+LE|LEADER|around
+|An90 @articleAn90 author Michael T. Anderson doi 10.1007/BF02568774 fjournal Manuscripta Mathematica issn 0025-2611 journal Manuscr. Math. language English msc2010 53C20 58J50 number 4 pages 405--415 publisher Springer Berlin/Heidelberg title Metrics of positive Ricci curvature with large diameter volume 68 year 1990 zbl 0711.53036 bdsk-url-1 https://doi.org/10.1007/BF02568774|texlab
+beg|beg|snippets
+foll|following|around
+|ChCo96 @articleChCo96 author Jeff Cheeger Tobias H. Colding date-added 2021-10-23 18:57:38 +0800 date-modified 2021-10-23 18:58:05 +0800 issn 0003486X journal Annals of Mathematics number 1 pages 189--237 publisher Annals of Mathematics title Lower Bounds on Ricci Curvature and the Almost Rigidity of Warped Products url http://www.jstor.org/stable/2118589 volume 144 year 1996 bdsk-url-1 http://www.jstor.org/stable/2118589|texlab
+|Ro99 @articleRo99 author Xiaochun Rong doi 10.4310/jdg/1214425069 fjournal Journal of Differential Geometry issn 0022-040X journal J. Differ. Geom. language English msc2010 53C23 53C20 number 2 pages 335--358 publisher International Press of Boston Somerville MA title Collapsed manifolds with pinched positive sectional curvature. volume 51 year 1999 zbl 1041.53028 bdsk-url-1 https://doi.org/10.4310/jdg/1214425069|texlab
+|F-structure Theorem (Cheeger-Gromov)|texlab
+|HuKoXuRo20 @articleHuKoXuRo20 author Hongzhi Huang Lingling Kong Xiaochun Rong Shicheng Xu doi 10.1090/tran/8177 fjournal Transactions of the American Mathematical Society issn 0002-9947 journal Trans. Am. Math. Soc. language English msc2010 53C21 53C23 53C24 number 11 pages 8039--8057 publisher American Mathematical Society (AMS) Providence RI title Collapsed manifolds with Ricci bounded covering geometry volume 373 year 2020 zbl 1462.53035 bdsk-url-1 https://doi.org/10.1090/tran/8177|texlab
+xgr|xrightarrow|texlab
+|sec:Bacic knowledge Section (Bacic knowledge)|texlab
+re|ref|texlab
+section|section|snippets
+followi|following|around
+ss|ss|snippets
+cc|cc|snippets
+|CoNa12 @articleCoNa12 author Tobias Holck Colding Aaron Naber date-added 2021-10-23 22:02:18 +0800 date-modified 2021-10-23 22:02:35 +0800 doi 10.4007/annals.2012.176.2.10 fjournal Annals of Mathematics. Second Series issn 0003-486X journal Ann. Math. language English msc2010 53C20 53C25 number 2 pages 1173--1229 publisher Princeton University Mathematics Department Princeton NJ title Sharp H\"older continuity of tangent cones for spaces with a lower Ricci curvature bound and applications volume 176 year 2012 zbl 1260.53067 bdsk-url-1 https://doi.org/10.4007/annals.2012.176.2.10|texlab
+bi|bibliography|texlab
+tik|tikzcd|snippets
+im|item|snippets
+cite|cite|texlab
+proof|proof|around
+th|thm:margulis-lemma Theorem 0.1 (Generalized Margulis Lemma)|texlab
+th|thrm|snippets
+n|nohlsearch|around
+q|qutebrowser|around
+the|then|around
+tho|theorem|around
+math|mathbb|around
+ma|mathbb|vimtex
+ka|kappa|texlab
+ge|ge|texlab
+se|sec|texlab
+thm|thrm|snippets
+theorem|theorem|around
