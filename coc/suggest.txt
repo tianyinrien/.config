@@ -1,3 +1,9 @@
+my|myserver|file|
+a|accounts|file|
+neo|neomutt|around|
+g|gmail|file|
+|gmail|file|
+|accounts|file|
 aco|account|around|
 m|mutt-colors-neonwolf-256.muttrc|file|
 mu|mutt-colors-neonwolf|file|
