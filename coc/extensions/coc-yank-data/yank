@@ -1223,3 +1223,35 @@ adb0e50262798294f313339852cd634f|file:///home/ren/.oh-my-zsh/.gitignore|1|1|V|co
 	item 
 b082f20f7b2f88c45460be4df13c2fe9|file:///home/ren/Nextcloud/Notes/some-result.tex|200|8|V|latex
 	    \end{enumerate}
+fe90c24ddd76d0e39cc6d76631838fdb|file:///home/ren/scripts/fcitx5.sh|6|3|V|sh
+	leep 10
+dffcaf8b0164f7cec4ca9313245eb637|file:///home/ren/scripts/fcitx5.sh|3|1|V|sh
+	#owncloud &
+9409e5b757e5b055492b446a748b6fa5|file:///home/ren/scripts/fcitx5.sh|2|1|V|sh
+	#sleep 3
+c87b69f57370d11cb0f12a1065d4166e|file:///home/ren/src/dwm/config.h|95|1|V|cpp
+	static const char *dpdf[] = { "/home/ren/scripts/dmenu-pdf.sh", NULL };
+1785cf1f55ea11bb397a776ea0713be6|file:///home/ren/src/dwm/config.h|115|1|V|cpp
+	        { MODKEY,                       XK_a,      spawn,          {.v = downvol} },
+a15e8f2af6d5a59b3d08fa84fdc05136|file:///home/ren/scripts/dmenu-open.sh|1|1|v|sh
+	#!/bin/bash
+	
+	sel=$(find ~/ -maxdepth 20 -type f | dmenu -i -p Open: -l 23 )
+	
+	if [ -n "$sel" ]
+	then
+	   pr=$(stest -flx /usr/bin/ /usr/local/bin | dmenu -l 19 -p Run: )
+	fi
+	
+	if [ -n "$pr" ] 
+	then
+	    $pr $sel
+	fi
+	
+	
+a133d9c070ab293f531730648c7d6eac|file:///home/ren/src/dwm/config.h|136|23|v|cpp
+	           XK_h,      incrgaps,       {.i = +1 } },
+eef6abfef0015bec1052e079fb45f606|file:///home/ren/src/dwm/config.h|116|44|V|cpp
+	        { MODKEY|ShiftMask,             XK_d,      spawn,          {.v = drun} },
+630f48113f861104c23fd0557dc54b7c|file:///home/ren/src/dwm/config.h|96|44|V|cpp
+	static const char *drun[] = { "/home/ren/scripts/dmenu-run.sh", NULL };

@@ -1,3 +1,6 @@
+Sh|ShiftMask|around|
+Con|ControlMask|around|
+fci|fcitx5.sh|file|
 techni|technique|around|
 deg|degenerated|around|
 spli|splitting|around|
