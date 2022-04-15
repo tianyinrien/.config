@@ -1,0 +1,17 @@
+## ================  IMAP ====================
+set imap_user = 'tianyin.rien@gmail.com'
+set imap_pass = 'rty7181992'
+set folder = 'imaps://imap.gmail.com'
+set spoolfile = '+INBOX'
+## ================  SMTP  ===================
+set smtp_url = 'smtp://tianyin.rien@smtp.gmail.com'
+set smtp_pass = 'rty7181992'  #$imap_pass
+set realname = "Ren"
+set from = "tianyin.rien@gmail.com"
+set postponed = '+[Gmail]/Drafts'
+set record = '+[Gmail]/Sent Mail'
+set trash = '+[Gmail]/Trash'
+set copy = no
+mailboxes $spoolfile $postponed $record $trash
+
+
