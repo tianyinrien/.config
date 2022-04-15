@@ -1,0 +1,341 @@
+Delivered-To: tianyin.rien@gmail.com
+Received: by 2002:a05:6a11:4a89:b0:26e:6bbc:7bbb with SMTP id ob9csp1211730pxb;
+        Wed, 30 Mar 2022 18:14:59 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJz4UXzzTez7/MhsYnH0jl1v/AtgXNzPK3ntqMKTqdEL8JL8jRTU9lTRHhhY6oYvRkfwERY2
+X-Received: by 2002:a05:6214:c29:b0:441:76a5:221f with SMTP id a9-20020a0562140c2900b0044176a5221fmr2079649qvd.56.1648689299601;
+        Wed, 30 Mar 2022 18:14:59 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1648689299; cv=none;
+        d=google.com; s=arc-20160816;
+        b=t4vq+TTQUo6tJvWvAKFh5JAswr/yGGZqwY9eAw8wMO4QwziPWXkjm3kAwmP8bg/r5m
+         SNsNm7HkIUzwetQm8fQUqbYSw+v1ORS1HHpqHbDqo24+Ojpcc+UPqL5yDwdu91PlMwBA
+         nca++qhPeypo1OxemJeyAF+fQ1+K/EXwPdt0+mfH+++ddusIExG02ThGwkA/KNWlpOAi
+         66oJ7iuzv3lZ9k6UJobtxjcFIEKkqG9xv03wkbERqIgVupEhpVsdzD4rDR0KJ1+Mucz+
+         TJcQO90Ri4fQlHIJ+oTeRF+zACU+7IMXvWopcqaUpVjR1+YjTW9mA6MbBbaBaN+cEgH1
+         y9dw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:to:mime-version:subject:message-id:from
+         :date:dkim-signature:dkim-signature;
+        bh=dPxxqKhF0Zn39a6nrSYgIjDIazpsn4vVh704a/V4yzo=;
+        b=ebH9wnACup5wnvbZc/1P0JpKvWOu/ED2WJ/XjeeYwlIGSv/6c+y+s8jXSB8+h1iH6a
+         tfj9FBJAk6kdVan0RPLhC6b9Nkse/aMkFnWNSQ7duXX2ADNMLUTGIVFrgemdPKVBD5J4
+         +/QbdY8JxtP+OY7yk9p0pm4/zbMGjrBkCHS4punY9qYpRVr/oYdvNYZojGJU4xGL06KM
+         ZtnU8Gl8mEzxS9sUqo5LQLSaqe/Hrbpva5bwB7VG4DsCFHet+RpJqhieq906l9DRB4qN
+         ISPbk2q2mG45TfJoUYTle7dzxdtyFjp3AT0Gg0l5AvKSLQB3mp3isvtK+VY7dYUtWmFp
+         qcdA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.strava.com header.s=s1 header.b=Imm5GwZl;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=JKSYvIaO;
+       spf=pass (google.com: domain of bounces+33699-246b-tianyin.rien=gmail.com@em5638.email.strava.com designates 50.31.36.135 as permitted sender) smtp.mailfrom="bounces+33699-246b-tianyin.rien=gmail.com@em5638.email.strava.com"
+Return-Path: <bounces+33699-246b-tianyin.rien=gmail.com@em5638.email.strava.com>
+Received: from pnkfnqvt.outbound-mail.sendgrid.net ([50.31.36.135])
+        by mx.google.com with ESMTPS id ay39-20020a05620a17a700b0067e4be239f7si12197065qkb.572.2022.03.30.18.14.59
+        for <tianyin.rien@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 30 Mar 2022 18:14:59 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+33699-246b-tianyin.rien=gmail.com@em5638.email.strava.com designates 50.31.36.135 as permitted sender) client-ip=50.31.36.135;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.strava.com header.s=s1 header.b=Imm5GwZl;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=JKSYvIaO;
+       spf=pass (google.com: domain of bounces+33699-246b-tianyin.rien=gmail.com@em5638.email.strava.com designates 50.31.36.135 as permitted sender) smtp.mailfrom="bounces+33699-246b-tianyin.rien=gmail.com@em5638.email.strava.com"
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=email.strava.com;
+	h=from:subject:mime-version:x-feedback-id:to:content-type:
+	content-transfer-encoding;
+	s=s1; bh=dPxxqKhF0Zn39a6nrSYgIjDIazpsn4vVh704a/V4yzo=;
+	b=Imm5GwZlN9ob7x8lF2t8OZkqZLZ7UTs8MFJNBEcWlJKAT8eHwKRGXwUQtZHha5dG6QWT
+	XLmwWWzz8kYgNEe1bdJsUJHWvVK64QcLcG6fGuN40eIp9KdqaVZ7/gyYoUJcMOhybSCjPw
+	bZtVPOYUD1EgCV03xOdZsmgGVH/FNJZ+Fo2/M+CqOt3rM3OZJ1eMahVl71cNKBXUCZxmY1
+	WdeQoeh8r/J9TovqKgag0MUfRIA3JOghfBxlkYhdHtdaNG246GDLsYJvFhmaSZ8QUTDNwq
+	FjdecOm34VdDv3PVUrSS1lggY+NmbpQl4MCZfWEC9nKD55mqpjaNGIML/sU+xE1w==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=from:subject:mime-version:x-feedback-id:to:content-type:
+	content-transfer-encoding;
+	s=smtpapi; bh=dPxxqKhF0Zn39a6nrSYgIjDIazpsn4vVh704a/V4yzo=;
+	b=JKSYvIaOrcnx/x2OB0e6xMCIodJ2gytxyh1uENUPotB+pwgIzNf6ZSd1qTC38Q8Q2ubU
+	SoPRDr5HczS6y1Mw9btGWwQu6A6xhvt3WEs0yuNtnHUy6vEwb82ozyTLE9nDXOcPIKLvUY
+	ZofNRzgmSgYoxxPNLj6CoE5Lw6YvgGo+U=
+Received: by filterdrecv-6f9c4d4c59-csnkv with SMTP id filterdrecv-6f9c4d4c59-csnkv-1-62450092-3E
+        2022-03-31 01:14:58.680198638 +0000 UTC m=+18154470.493883539
+Received: from strava.com (unknown)
+	by geopod-ismtpd-2-0 (SG) with ESMTP
+	id _LeBD1CoRA-P10SAoaPdsw
+	for <tianyin.rien@gmail.com>;
+	Thu, 31 Mar 2022 01:14:58.664 +0000 (UTC)
+Date: Thu, 31 Mar 2022 01:14:58 +0000 (UTC)
+From: Strava <no-reply@strava.com>
+Message-ID: <624500929ad23_1aad85e78162962b@3e6676dc49c1.mail>
+Subject: Rebecca is now following you on Strava.
+Mime-Version: 1.0
+X-Feedback-ID: 33699:SG
+X-SG-EID: 
+ =?us-ascii?Q?GTrFcIGIcVLhxCERDkS8mrx4A0jRT07X9jvrTMiGYcZdgyLJwD51pi9RceCa1z?=
+ =?us-ascii?Q?j1DAwuUJ58kLDmgnCQ2vgeHhKD+p7bOM69c2kEe?=
+ =?us-ascii?Q?7hfTGzrW4FZaIjivOYUbmda51=2FTmLmUDvKfr82c?=
+ =?us-ascii?Q?NaG6VihaTGz8naIxpJKasS6+wdu=2FRXn6jdgVfzr?=
+ =?us-ascii?Q?5RJydQZl+asnzdC6ZHGaTvw9bU=2FyR72UCmwNUG5?=
+ =?us-ascii?Q?KyvwXgRxJvd31SAUDsrV=2FJJHONP1mn5klDcoXx?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb2cyNDDVHS40t+KAVY4uow7d3IXAxb3FMHxPHc7Zwg?=
+ =?us-ascii?Q?qnbXdFX=2F9gOEuCqKZg8ioZSsUO9hULeRP+1Ao06?=
+ =?us-ascii?Q?tW6zTZjPE3Hkxsv7sCQ8VYuSUuzYzg8xNLdJRFn?=
+ =?us-ascii?Q?UL=2Fl3izaDvc863A=2FYYPDNlsK0fKLGis=3D?=
+To: tianyin.rien@gmail.com
+X-Entity-ID: s7fbiolSbeUqfpPEdFiSCQ==
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_624500929aa2a_1aad85e78162957a";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_624500929aa2a_1aad85e78162957a
+Content-Type: text/plain; charset=iso-8859-1
+Content-Transfer-Encoding: 8bit
+
+Rebecca Dowling now follows you.
+
+Strava
+
+*****************************************************************
+Rebecca Dowling 
+( https://strava.app.link/3p?%243p=e_sg&%24android_url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.strava%26hl%3Den&%24desktop_url=http%3A%2F%2Fwww.strava.com%2Fathletes%2F100271356%2Fbadge&%24ios_url=https%3A%2F%2Fitunes.apple.com%2Fus%2Fapp%2Fstrava-running-and-cycling-gps%2Fid426826309%3Fmt%3D8&%24original_url=strava%3A%2F%2Fathletes%2F100271356&channel=email&tags=follower-notification+view+athlete )
+
+*****************************************************************
+
+Saint Paul, Minnesota
+
+Rebecca Dowling now follows you.
+
+VIEW PROFILE 
+( https://strava.app.link/3p?%243p=e_sg&%24android_url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.strava%26hl%3Den&%24desktop_url=http%3A%2F%2Fwww.strava.com%2Fathletes%2F100271356%2Fbadge&%24ios_url=https%3A%2F%2Fitunes.apple.com%2Fus%2Fapp%2Fstrava-running-and-cycling-gps%2Fid426826309%3Fmt%3D8&%24original_url=strava%3A%2F%2Fathletes%2F100271356&channel=email&tags=follower-notification+view+athlete )
+
+
+Learn More 
+( http://engine.adzerk.net/s/redirect/935764/174684/163/1648689298?key=53784276&keywords=en-US,other,free )
+
+
+Follow Strava
+-------------
+
+Facebook ( https://www.facebook.com/strava )
+Twitter ( https://www.twitter.com/strava )
+Snapchat ( https://www.snapchat.com/add/stravasnaps )
+Instagram ( https://www.instagram.com/strava )
+Strava 
+( https://strava.app.link/3p?%243p=e_sg&%24android_url=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.strava%26hl%3Den&%24desktop_url=www.strava.com%2Fclubs%2Fstrava&%24ios_url=https%3A%2F%2Fitunes.apple.com%2Fus%2Fapp%2Fstrava-running-and-cycling-gps%2Fid426826309%3Fmt%3D8&%24original_url=strava%3A%2F%2Fclubs%2Fstrava&channel=email&tags=email+view+club )
+
+
+© 2022 Strava, Inc., All rights reserved.
+
+208 Utah Street, San Francisco, CA 94103
+
+You received this message because you are a member of Strava 
+( http://strava.com/ ).
+
+Unsubscribe from future emails when someone follows or requests
+to follow me 
+( http://www.strava.com/email-unsubscribe?digest=f8bc9ff6fb2a48a382238853ca55fd3acdc9c8a3&unsubscribe_email=tianyin.rien%40gmail.com&unsubscribe_email_type=email_send_follower_notices )
+----==_mimepart_624500929aa2a_1aad85e78162957a
+Content-Type: text/html; charset=iso-8859-1
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Strava</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="width=device-width" name="viewport">
+
+
+
+<style>@font-face {
+font-family: 'MaisonNeue'; src: url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-Book-745011ce3952aaa2bc4d1714ec74b9b2e996cce5c280c226a65849474593f53e.woff2) format("woff2"),url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-Book-5c7b2e2a1fb4b41c86091ad03e996af0003b4b85e0bdb7880eb6ec62f339b79c.woff) format("woff"); font-weight: 400; font-style: normal;
+}
+@font-face {
+font-family: 'MaisonNeue'; src: url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-BookItalic-3ad4943707acbe1552785c39901d16a15e2b051b9184f703c3dc947b013b1c6f.woff2) format("woff2"),url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-BookItalic-586649b51cd107d5cc72ed834aa1b64f60ef9c9c078631065677a7911ecf5286.woff) format("woff"); font-weight: 400; font-style: italic;
+}
+@font-face {
+font-family: 'MaisonNeue'; src: url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-Bold-22ca7df52ebdf173c771ee8fe9d74ba0388cca3146b5047e703b1228ff92830e.woff2) format("woff2"),url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-Bold-a11f41cf54ef46fad7f53f8fdcba0c74dc25752b75a44f437e248f6853df3ea4.woff) format("woff"); font-weight: 700; font-style: normal;
+}
+@font-face {
+font-family: 'MaisonNeue'; src: url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-BoldItalic-fc390f34f8d4a1d561e216afcffc49ae7594df79159b6193406df69e66a7994a.woff2) format("woff2"),url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-BoldItalic-672a0b49486a92fce1720f831c720889ce6de5ba119cd871e818c821df1a94c9.woff) format("woff"); font-weight: 700; font-style: italic;
+}
+@font-face {
+font-family: 'MaisonNeue'; src: url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-Light-a08f20b7dc2a1fdac642d921c0502bd5ceb045cf2839ee54fa726aac57ddef13.woff2) format("woff2"),url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-Light-2f893cb761ef836f515c3f7d054d5c7558356a2519f2990b7b7a780ebb2d2aa3.woff) format("woff"); font-weight: 100; font-style: normal;
+}
+@font-face {
+font-family: 'MaisonNeue'; src: url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-LightItalic-b2b26cc6da491d140576405873a96db1e930a5d1d2f50ebefa177268ec78876d.woff2) format("woff2"),url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-LightItalic-c3c5dece2a0bb8b615a53fdbffd69f67c04c9e1d521502b5f7e28ce7610d702b.woff) format("woff"); font-weight: 100; font-style: italic;
+}
+@font-face {
+font-family: 'MaisonNeueExtendedDemi'; src: url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueExtended-Demi-5c14cd72d975fd967749d055aca07e39f7a437c0ef9c77f30a64d47ad9e7678e.woff2) format("woff2"),url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueExtended-Demi-192f758e6619c322c24500870688b43e106d1ac50c35502205c54e95d57cca07.woff) format("woff");
+}
+@font-face {
+font-family: 'MaisonNeue'; src: url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-Book-745011ce3952aaa2bc4d1714ec74b9b2e996cce5c280c226a65849474593f53e.woff2) format("woff2"),url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-Book-5c7b2e2a1fb4b41c86091ad03e996af0003b4b85e0bdb7880eb6ec62f339b79c.woff) format("woff"); font-weight: 400; font-style: normal;
+}
+@font-face {
+font-family: 'MaisonNeue'; src: url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-BookItalic-3ad4943707acbe1552785c39901d16a15e2b051b9184f703c3dc947b013b1c6f.woff2) format("woff2"),url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-BookItalic-586649b51cd107d5cc72ed834aa1b64f60ef9c9c078631065677a7911ecf5286.woff) format("woff"); font-weight: 400; font-style: italic;
+}
+@font-face {
+font-family: 'MaisonNeue'; src: url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-Bold-22ca7df52ebdf173c771ee8fe9d74ba0388cca3146b5047e703b1228ff92830e.woff2) format("woff2"),url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-Bold-a11f41cf54ef46fad7f53f8fdcba0c74dc25752b75a44f437e248f6853df3ea4.woff) format("woff"); font-weight: 700; font-style: normal;
+}
+@font-face {
+font-family: 'MaisonNeue'; src: url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-BoldItalic-fc390f34f8d4a1d561e216afcffc49ae7594df79159b6193406df69e66a7994a.woff2) format("woff2"),url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-BoldItalic-672a0b49486a92fce1720f831c720889ce6de5ba119cd871e818c821df1a94c9.woff) format("woff"); font-weight: 700; font-style: italic;
+}
+@font-face {
+font-family: 'MaisonNeue'; src: url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-Light-a08f20b7dc2a1fdac642d921c0502bd5ceb045cf2839ee54fa726aac57ddef13.woff2) format("woff2"),url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-Light-2f893cb761ef836f515c3f7d054d5c7558356a2519f2990b7b7a780ebb2d2aa3.woff) format("woff"); font-weight: 100; font-style: normal;
+}
+@font-face {
+font-family: 'MaisonNeue'; src: url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-LightItalic-b2b26cc6da491d140576405873a96db1e930a5d1d2f50ebefa177268ec78876d.woff2) format("woff2"),url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-LightItalic-c3c5dece2a0bb8b615a53fdbffd69f67c04c9e1d521502b5f7e28ce7610d702b.woff) format("woff"); font-weight: 100; font-style: italic;
+}
+@font-face {
+font-family: 'MaisonNeueExtendedDemi'; src: url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueExtended-Demi-5c14cd72d975fd967749d055aca07e39f7a437c0ef9c77f30a64d47ad9e7678e.woff2) format("woff2"),url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueExtended-Demi-192f758e6619c322c24500870688b43e106d1ac50c35502205c54e95d57cca07.woff) format("woff");
+}
+@font-face {
+font-family: 'MaisonNeue'; src: url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-Book-745011ce3952aaa2bc4d1714ec74b9b2e996cce5c280c226a65849474593f53e.woff2) format("woff2"),url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-Book-5c7b2e2a1fb4b41c86091ad03e996af0003b4b85e0bdb7880eb6ec62f339b79c.woff) format("woff"); font-weight: 400; font-style: normal;
+}
+@font-face {
+font-family: 'MaisonNeue'; src: url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-BookItalic-3ad4943707acbe1552785c39901d16a15e2b051b9184f703c3dc947b013b1c6f.woff2) format("woff2"),url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-BookItalic-586649b51cd107d5cc72ed834aa1b64f60ef9c9c078631065677a7911ecf5286.woff) format("woff"); font-weight: 400; font-style: italic;
+}
+@font-face {
+font-family: 'MaisonNeue'; src: url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-Bold-22ca7df52ebdf173c771ee8fe9d74ba0388cca3146b5047e703b1228ff92830e.woff2) format("woff2"),url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-Bold-a11f41cf54ef46fad7f53f8fdcba0c74dc25752b75a44f437e248f6853df3ea4.woff) format("woff"); font-weight: 700; font-style: normal;
+}
+@font-face {
+font-family: 'MaisonNeue'; src: url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-BoldItalic-fc390f34f8d4a1d561e216afcffc49ae7594df79159b6193406df69e66a7994a.woff2) format("woff2"),url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-BoldItalic-672a0b49486a92fce1720f831c720889ce6de5ba119cd871e818c821df1a94c9.woff) format("woff"); font-weight: 700; font-style: italic;
+}
+@font-face {
+font-family: 'MaisonNeue'; src: url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-Light-a08f20b7dc2a1fdac642d921c0502bd5ceb045cf2839ee54fa726aac57ddef13.woff2) format("woff2"),url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-Light-2f893cb761ef836f515c3f7d054d5c7558356a2519f2990b7b7a780ebb2d2aa3.woff) format("woff"); font-weight: 100; font-style: normal;
+}
+@font-face {
+font-family: 'MaisonNeue'; src: url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-LightItalic-b2b26cc6da491d140576405873a96db1e930a5d1d2f50ebefa177268ec78876d.woff2) format("woff2"),url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-LightItalic-c3c5dece2a0bb8b615a53fdbffd69f67c04c9e1d521502b5f7e28ce7610d702b.woff) format("woff"); font-weight: 100; font-style: italic;
+}
+@font-face {
+font-family: 'MaisonNeueExtendedDemi'; src: url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueExtended-Demi-5c14cd72d975fd967749d055aca07e39f7a437c0ef9c77f30a64d47ad9e7678e.woff2) format("woff2"),url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueExtended-Demi-192f758e6619c322c24500870688b43e106d1ac50c35502205c54e95d57cca07.woff) format("woff");
+}
+.vh:active {
+position: static; clip: auto; width: auto; height: auto; margin: 0; overflow: visible;
+}
+.vh:focus {
+position: static; clip: auto; width: auto; height: auto; margin: 0; overflow: visible;
+}
+.sr-only:active {
+position: static; clip: auto; width: auto; height: auto; margin: 0; overflow: visible;
+}
+.sr-only:focus {
+position: static; clip: auto; width: auto; height: auto; margin: 0; overflow: visible;
+}
+.clear:after {
+clear: both; content: ' '; display: table;
+}
+.clear:after {
+clear: both; content: ' '; display: table;
+}
+.clearfix:after {
+clear: both; content: ' '; display: table;
+}
+.clearfix:after {
+clear: both; content: ' '; display: table;
+}
+@font-face {
+font-family: 'MaisonNeue'; src: url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-Bold-22ca7df52ebdf173c771ee8fe9d74ba0388cca3146b5047e703b1228ff92830e.woff2) format("woff2"),url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-Bold-a11f41cf54ef46fad7f53f8fdcba0c74dc25752b75a44f437e248f6853df3ea4.woff) format("woff"); font-weight: 700; font-style: normal;
+}
+@font-face {
+font-family: 'MaisonNeue'; src: url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-Book-745011ce3952aaa2bc4d1714ec74b9b2e996cce5c280c226a65849474593f53e.woff2) format("woff2"),url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-Book-5c7b2e2a1fb4b41c86091ad03e996af0003b4b85e0bdb7880eb6ec62f339b79c.woff) format("woff"); font-weight: 400; font-style: normal;
+}
+@font-face {
+font-family: 'MaisonNeue'; src: url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-BookItalic-3ad4943707acbe1552785c39901d16a15e2b051b9184f703c3dc947b013b1c6f.woff2) format("woff2"),url(//d3nn82uaxijpm6.cloudfront.net/assets/maison-neue-v2/MaisonNeueWEB-BookItalic-586649b51cd107d5cc72ed834aa1b64f60ef9c9c078631065677a7911ecf5286.woff) format("woff"); font-weight: 400; font-style: italic;
+}
+body {
+background-color: #f7f7fa; padding: 0; margin: 0;
+}
+img {
+max-width: 100%;
+}
+@media screen and (max-width: 480px) and (max-device-width: 480px) {
+  td>div>div>table td {
+    display: block !important; width: 100% !important; padding: 0 !important; text-align: left !important;
+  }
+  td>div>div>table td img {
+    margin: 0 auto 20px !important; float: none !important; max-width: 124px;
+  }
+  table td>div>span {
+    display: block !important;
+  }
+}
+</style>
+</head>
+<body style="margin: 0; padding: 0;" bgcolor="#f7f7fa">
+<div id="s-email-container" style='font-family: "MaisonNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; background-color: #f7f7fa; padding: 20px;' align="center">
+
+<style data-premailer="ignore" type="text/css">
+
+
+</style>
+<!--[if mso]><center><table><tr><td width='600' align='center'><![endif]-->
+<div class="pre-header-text" style="display: none; max-height: 0; max-width: 0; width: 0; height: 0; overflow: hidden; font-size: 1px; color: #F5F5F5; mso-hide: all;">
+<!--[if mso]><font color='#ffffff' size='1'><![endif]-->
+Rebecca Dowling now follows you.
+
+<!--[if mso]></font><![endif]-->
+</div>
+<table cellpadding="0" cellspacing="0" id="s-email-layout" style="max-width: 600px; margin: 0 auto;">
+<tr>
+<td id="s-email-header" style="padding: 30px 20px 20px;" align="center" bgcolor="#fff">
+<img alt="Strava" width="98" height="21" class="branding" src="http://d3nn82uaxijpm6.cloudfront.net/assets/brands/strava/logo-strava@2x-2bb432660c588988b8de5e557b48286c4d8532b5f087085c506ec85d03e81ae8.png" style="display: inline-block; height: 24px; width: 112px; max-width: 100%;">
+</td>
+</tr>
+<tr>
+<td class="section" id="s-email-content" style='font-family: "MaisonNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; margin-bottom: 15px;' align="left" bgcolor="#fff">
+<div class="section-content text-center" style="padding-left: 20px; padding-right: 20px;" align="center">
+<div class="avatar avatar-athlete" style="display: inline-block; position: relative; padding-bottom: 24px;">
+<img src="https://dgalywyr863hv.cloudfront.net/pictures/athletes/100271356/23774104/1/large.jpg" style="width: 100%; height: 100%; display: block; border-radius: 50%; background-color: #f7f7fa; max-width: 100%;">
+</div>
+<h1 class="h2 text-bold" style='font-family: "MaisonNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; font-style: normal; margin-top: 0; margin-bottom: 0; font-size: 24px; font-weight: 700; line-height: 1.2em;'>
+<a universal="true" href="https://email.strava.com/uni/ls/click?upn=gKhfWw3FnFW360GzFB-2F17MUAjfsiUTUr8mKI5yksRRZbfcDVgvd-2BDkHIvryR-2Bcki0SPxw-2FtGJGO3xCceBy1CpEWLdUl4tGZba-2B63EqTwutCfUBDJL-2BhV0UjFeFLxszlg1noZ-2FSWG4luPJXHCw71dNOg5dIwr2W2npK-2BsF5nFxUb2KSeI2eDtxcDZfMqEEoXb0m9o6sTU1L4o0jDoRrgaG8x13akTLQtdDBjjkSggelLHpAWcw9V-2F08alG5GNZsdi2G48f3hQgvBkGPgvEWOl0YESn2vRFXYiT2uptLNxdz3KXLTYcKdlKhC8bsLHI-2FuBg4zFmjuJFIAqiOzc9M3arIit8j2lL9MvFzRpUwhjA1lpo55j4yflZyWH0BGeTmU5w8RjSltjurKLFWb7U-2BedKGVKFBwJeinIHmFp19ZjRNz0u4IVQdeRUICk8cTgwELd1QO3YLphQkRYox9MGl7CsyqxLvDbUwZdOkzVZLT3OG1SkMQm1czV-2FlsPjBnPy-2BWAFTaDqYHGh92HqV3Qc5AuFAvrrfCEFMZcaPkz-2BV-2F8bbZCE6jF2CrYpsBblZligGM2QIzb_Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkB6pmJTx5Nak2-2FqoD38UU38Yrz2geogK0qqYUbz1RTfmOfhRmO51sAiJGVBuZg375DFjf6N1CA4E9JaHmuPxAUQDj-2BPwsBi559Kn2x2aRw6rY0v-2B-2Fz0En0o7luPqYRYrpOv7kvS0eUochq2FbFtX8XUggmStF7NKE-2B59Kkv2YbxFPd9CzGYrfRwIZMKKCVyA8a4MmsOxQqqJVq-2FP30f7FLjFZH-2FvmAuOJCWPnB0mGeDs-2BE2oXesD-2F-2B7DiU1YtszG-2BZcsX89rf2RTb3ph1Ng4a6pwElmVGG21X5T0HOp2tIe-2Bb0s8EIG5biitJfUhZpSo0zqhhYBR8UVwzW0oijo4SjG" style="color: #fc5200; text-decoration: none;">Rebecca Dowling</a>
+</h1>
+<p class="marginless pb-lg" style="margin-top: 0; margin-bottom: 0; padding-bottom: 30px; color: #383838; font-size: 16px; line-height: 1.45em;">
+Saint Paul, Minnesota
+</p>
+<p class="marginless" style="margin-top: 0; margin-bottom: 0; color: #383838; font-size: 16px; line-height: 1.45em;">
+Rebecca Dowling now follows you.
+</p>
+<div class="padded" style="padding: 24px 0;">
+<a class="button btn-primary" href="https://email.strava.com/uni/ls/click?upn=gKhfWw3FnFW360GzFB-2F17MUAjfsiUTUr8mKI5yksRRZbfcDVgvd-2BDkHIvryR-2Bcki0SPxw-2FtGJGO3xCceBy1CpEWLdUl4tGZba-2B63EqTwutCfUBDJL-2BhV0UjFeFLxszlg1noZ-2FSWG4luPJXHCw71dNOg5dIwr2W2npK-2BsF5nFxUb2KSeI2eDtxcDZfMqEEoXb0m9o6sTU1L4o0jDoRrgaG8x13akTLQtdDBjjkSggelLHpAWcw9V-2F08alG5GNZsdi2G48f3hQgvBkGPgvEWOl0YESn2vRFXYiT2uptLNxdz3KXLTYcKdlKhC8bsLHI-2FuBg4zFmjuJFIAqiOzc9M3arIit8j2lL9MvFzRpUwhjA1lpo55j4yflZyWH0BGeTmU5w8RjSltjurKLFWb7U-2BedKGVKFBwJeinIHmFp19ZjRNz0u4IVQdeRUICk8cTgwELd1QO3YLphQkRYox9MGl7CsyqxLvDbUwZdOkzVZLT3OG1SkMQm1czV-2FlsPjBnPy-2BWAFTaDqYHGh92HqV3Qc5AuFAvrrfCEFMZcaPkz-2BV-2F8bbZCE6jF2CrYpsBblZligGM2hZ9X_Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkB6pmJTx5Nak2-2FqoD38UU38Yrz2geogK0qqYUbz1RTfmOfhRmO51sAiJGVBuZg375DFjf6N1CA4E9JaHmuPxAUQDj-2BPwsBi559Kn2x2aRw6rY0v-2B-2Fz0En0o7luPqYRYrpOaeNrjJAF6XcOk2ML6OuXMlIrG5qLw-2FkLsD0QB0gQMdtjR9lBXwkXAF8dylS6SQFxB-2FK-2FvMNreaiHcRGr7gNnjeDKgmIBkxXoNwnO-2FDAAZO4GXrlEkZIAbwVqwa0sPUV1Z-2BUiFj7dPm9oEXCGVffN7uhWqhUXzhlZu3DjhoE8vYKgCwGq8tP-2Fil3KiCM2FHLz4qnI03uSOyo6vbcafFxKN" universal="true" style="color: #fff; text-decoration: none; font-family: Helvetica, Arial, sans-serif; font-size: 16px; display: inline-block; text-align: center; width: 160px; border-radius: 40px; margin-bottom: 15px; background-color: #fc5200; padding: 20px 40px; border: 2px solid #fc5200;">
+VIEW PROFILE
+</a>
+</div>
+<a href="https://email.strava.com/ls/click?upn=9k9RkUr96JVEFwfMxMechBGlnQw7iHt-2B-2By3kD3AqCN0Nyh-2Fc8Ihpcq0P30K0HipdBWNIyaLNUJzf6SUQM4PeZqdBmgXcEQefV9bNevBgnGL1NGf3VD89MD0-2FDTzOv6DkhII0BQO2jIg08r5Up3RXsA-3D-3Dm68A_Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkB6pmJTx5Nak2-2FqoD38UU38Yrz2geogK0qqYUbz1RTfmOfhRmO51sAiJGVBuZg375DFjf6N1CA4E9JaHmuPxAUQDj-2BPwsBi559Kn2x2aRw6rY0v-2B-2Fz0En0o7luPqYRYrpNXRsRqkUSQqKoXVErX-2FtrazffM3-2FFDaU0fXb2hgD7hkWyr6n1VU9yBOT5GEwPIZn-2FglcVrQA7zwYmouLQfhjhHfWVK-2FH7PUB0937V3V6uF4JZjSds2fTAHWeWo9hKcivZUzjWj9aqz7oe44KeGLYG3t0lJ3R1ZShUTXhhPdWRWV3sz6FM8OGD-2BopC6djAKUd1W81JDysDDke3xGzRzBnyy" style="color: #fc5200; text-decoration: none;"><img alt="Learn More" src="http://engine.adzerk.net/s/935764/174684/163/1648689298?key=53784276&amp;keywords=en-US,other,free" style="max-width: 100%;">
+</a>
+</div>
+
+</td>
+</tr>
+<tr>
+<td class="text-small" id="s-email-footer" style='display: block; font-family: "MaisonNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; max-width: 600px; margin: 15px auto 0;' align="center">
+<div class="section" style='background-color: #fff; font-family: "MaisonNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; margin-bottom: 15px; padding: 32px 20px;'>
+<h3 class="topless" style='margin-top: 0; font-family: "MaisonNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; font-style: normal; margin-bottom: 0; font-size: 24px; font-weight: 400; line-height: 1.45em; color: #A4A4A4;'>Follow Strava</h3>
+<center class="padded" style="padding: 24px 0;">
+<table class="social-bar" style="border-collapse: collapse;">
+<tr>
+<td style="padding: 0 10px;" align="center"><a href="https://email.strava.com/ls/click?upn=8982JBbG4AwEPWlnzG3nOKKZ5xlDuSBBZS96fyDkLHF706MXmmDEEjNvLU0wl1Bzs7hG_Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkB6pmJTx5Nak2-2FqoD38UU38Yrz2geogK0qqYUbz1RTfmOfhRmO51sAiJGVBuZg375DFjf6N1CA4E9JaHmuPxAUQDj-2BPwsBi559Kn2x2aRw6rY0v-2B-2Fz0En0o7luPqYRYrpNNI4PDB6Eo9mvESfbpFmojmdQzBrRxihoKha9ria20h62TRJ-2Fb1Z1wvtq6Nr53RO-2FvD4aiI9PYOXKhKOZabeo-2F9j8tdXNbjAjd3-2BKRnN45kQ4C-2Bg1Cg8IGwAZdp-2BWCh-2FWmxf36zNuENAwya24KJHdkPG0P07BfwwitmXdfAJmyK0IbYNZFOeQvSNny7OQkiYm4k6f1fPB1Ok5sLYGiSJfE" style="color: #333; text-decoration: underline; width: 50px; padding: 0;"><img alt="Facebook" width="45" src="http://d3nn82uaxijpm6.cloudfront.net/assets/application/mailer/social/facebook-269f8778f75fc5c5bebebc2641d2e0074dfba9363f01750cab1bff68203bab8e.png" style="max-width: 100%; border: none;"></a></td>
+<td style="padding: 0 10px;" align="center"><a href="https://email.strava.com/ls/click?upn=8982JBbG4AwEPWlnzG3nOE1zd0a7M38Kuk2jwI8949ILbfHnhwJBk3w-2F-2FPg6XT-2Bu-THm_Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkB6pmJTx5Nak2-2FqoD38UU38Yrz2geogK0qqYUbz1RTfmOfhRmO51sAiJGVBuZg375DFjf6N1CA4E9JaHmuPxAUQDj-2BPwsBi559Kn2x2aRw6rY0v-2B-2Fz0En0o7luPqYRYrpPUCMNDoO1CsdMwNnuJp41d6yuWStHLANt18BSZEPOzzn4nk-2FqfFAAa93eUvLtxRvqPMcDVfzyAL251d1dpPatisOA9cPCgO1MeccFR80dlICsjA5zJRvCcR-2BY8cmCy7ZysoGSO-2FdhGJ8UkwKKc1X1qRlFEoBmlwqCIrNqdyvjWo7l-2Bk7JkDAafs-2FE7cAxDpAiuTFQp4mQfQuEnGL02-2Fnxi" style="color: #333; text-decoration: underline; width: 50px; padding: 0;"><img alt="Twitter" width="45" src="http://d3nn82uaxijpm6.cloudfront.net/assets/application/mailer/social/twitter-d16d1b02bb82a40c51cdd198f48b5d885bc7cb26f2ccc399176c0bae75c2dbce.png" style="max-width: 100%; border: none;"></a></td>
+<td style="padding: 0 10px;" align="center"><a href="https://email.strava.com/ls/click?upn=8982JBbG4AwEPWlnzG3nOMEWeCdgxG5EzEmIjZ31h3LhLQCHYNpZXIuIzh6zNwaJgMRl_Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkB6pmJTx5Nak2-2FqoD38UU38Yrz2geogK0qqYUbz1RTfmOfhRmO51sAiJGVBuZg375DFjf6N1CA4E9JaHmuPxAUQDj-2BPwsBi559Kn2x2aRw6rY0v-2B-2Fz0En0o7luPqYRYrpM2Xu50ovnqCe02ZNitm7kom0NL7BIkC7f327kkZQHDqLbCGnGNV-2BtkpsVyljMvHAIEERSN8iQMis81xKnh14TxLmKeJudEEvdQOgHwRvFWJoGyZXic4YbBWGHo7NbaLNJKeYDkwqyRGNP-2FNzTvm1kpekohheoSdkwmwrNNPeZVtxV-2BBEZHQy0rar6Z-2BTW0b6TCzmIlnKBLa91bkgNyw-2BRc" style="color: #333; text-decoration: underline; width: 50px; padding: 0;"><img alt="Snapchat" width="45" src="http://d3nn82uaxijpm6.cloudfront.net/assets/application/mailer/social/snapchat-d041c63da55dc4af6c231adb216739ad47a1ee92e6eddc4a373bd63269dac29f.png" style="max-width: 100%; border: none;"></a></td>
+<td style="padding: 0 10px;" align="center"><a href="https://email.strava.com/ls/click?upn=8982JBbG4AwEPWlnzG3nOPiY-2BdkvaLg2N-2BCKM-2FcDWOsj73OCp6VAsOgVOizNYt4H5yXj_Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkB6pmJTx5Nak2-2FqoD38UU38Yrz2geogK0qqYUbz1RTfmOfhRmO51sAiJGVBuZg375DFjf6N1CA4E9JaHmuPxAUQDj-2BPwsBi559Kn2x2aRw6rY0v-2B-2Fz0En0o7luPqYRYrpMJijK-2FI4mwuUYcJDI8Nq89c87NAWPz211iSAK53uWWOzjeoaNHO9wiyY52v8WeqBCTkPx-2FztfqfftS1rQP6-2FfS6yCJEHjbcWPc83tNPW-2B2ALWVYLWknN6O2Y9eTt0Fs5CZWbBySpv9wjTW-2FV-2BL87yWJ0uW7JdTCcHGl2ymAx0GC4H4dYMPbGTCjWTpF2Ow0nCXG5ubsAK1AEdIDQJzgdd9" style="color: #333; text-decoration: underline; width: 50px; padding: 0;"><img alt="Instagram" width="45" src="http://d3nn82uaxijpm6.cloudfront.net/assets/application/mailer/social/instagram-4d5e350afe9588f9ce2787f170ff72ce2aa71cb7b01d4c4e9bc0522d0746f9c7.png" style="max-width: 100%; border: none;"></a></td>
+<td style="padding: 0 10px;" align="center"><a universal="true" href="https://email.strava.com/uni/ls/click?upn=gKhfWw3FnFW360GzFB-2F17MUAjfsiUTUr8mKI5yksRRZbfcDVgvd-2BDkHIvryR-2Bcki0SPxw-2FtGJGO3xCceBy1CpEWLdUl4tGZba-2B63EqTwutCfUBDJL-2BhV0UjFeFLxszlg1noZ-2FSWG4luPJXHCw71dNOg5dIwr2W2npK-2BsF5nFxUb2KSeI2eDtxcDZfMqEEoXbWQHhoA55VOIPYsxytjkUdq-2F2tVR52850tp6zzEZ-2FlZtpC072Djq4XPwlt-2FT7HAIq8IKUgFbfJVPzV7XUYCgk0tcG61Hrwv1nbsYtaFrnY29rkryTivcNdRyZjdLdFlIvr-2BhJImjXpuAjGaVnRz2ESrtsWn5kTUhqbQL4vm7zkTEX1aADMBug7PHSQaRCq7Ot0T2rehvehMSx12DSmxKI9d-2FcoLDzGDuLbY8AxP7nOE11fTdM2n3-2F2LsYpnXlPDolbYLqZYZfACp7Gwk18B1O94Xu42HUp2Q231gwG5riZqVXX-2BcFZwvI30B5mSH61HUzC4X2_Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkB6pmJTx5Nak2-2FqoD38UU38Yrz2geogK0qqYUbz1RTfmOfhRmO51sAiJGVBuZg375DFjf6N1CA4E9JaHmuPxAUQDj-2BPwsBi559Kn2x2aRw6rY0v-2B-2Fz0En0o7luPqYRYrpMhoMtcwvkCtq6Kpr6IUncjWIxCueuHYhS3rofkOCbq8bL5J4D431gzQiIsmOwpJFT3GWa0JSamoQZeVoKr5WSYQjqPj-2Bse75-2B4cCK-2Bsk8m0nbs7bamKnXsaiNYj896FELlNxhRVitHvHCpQ47VLiG25CC4oHk9LKhXvRT1Dcy1KVs7P66FZ09IbuH7EOY7IP2OY-2FEEn6bvviBfJZGZTY2w" style="color: #333; text-decoration: underline; width: 50px; padding: 0;"><img alt="Strava" width="45" src="http://d3nn82uaxijpm6.cloudfront.net/assets/application/mailer/social/strava-6d5c828e9b0e8460600f2982367aee2c22a5d46c38797997d4b8d1497771cbc9.png" style="max-width: 100%; border: none;"></a></td>
+</tr>
+</table>
+</center>
+<p class="address" style="color: #A4A4A4; font-size: 12px; line-height: 16px; margin: 12px 0 10px;">
+© 2022 Strava, Inc., All rights reserved.
+<br>
+208 Utah Street, San Francisco, CA 94103
+</p>
+<p style="color: #A4A4A4; font-size: 12px; line-height: 16px; margin: 12px 0 0;">You received this message because you are a member of <a href="https://email.strava.com/ls/click?upn=KT1cCxTCKXmwH4Ld4W8XSRe9LZmzqHdSm47DtigLq6g-3DfQV4_Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkB6pmJTx5Nak2-2FqoD38UU38Yrz2geogK0qqYUbz1RTfmOfhRmO51sAiJGVBuZg375DFjf6N1CA4E9JaHmuPxAUQDj-2BPwsBi559Kn2x2aRw6rY0v-2B-2Fz0En0o7luPqYRYrpNzDv87Ue7HK-2B5dLiwuHrIs0YmcnKt2e5V1U95zZGLKhxhUgwD1Wp07OeEWXkD6lwXTV0mN4Ve2iBcWQfdtsapNnWKwxo1R15i7xjLvSQ9ZmeMHKvXJoZrnoZZLsCkUolndIVl3Bs5NpadTP9Qj8IRAo6u6LL-2FAKWuK5fXs4Gh-2FMRpXlsXycZx3Tp-2BM2oB37wL8tWu8dldx9jWAp1SPjgeE" style="color: #333; text-decoration: underline;">Strava</a>.</p>
+<p style="color: #A4A4A4; font-size: 12px; line-height: 16px; margin: 12px 0 0;"><a href="https://email.strava.com/ls/click?upn=accE1-2BCJDozb9kbD6xczETrIi6u1kbboOxRh3CdwIRAJEBJpfuiGRIg7ELbFEvhRtA-2F1WaXBYDs1-2FHPuPu1iKsodjpYdgvWY5UAmt-2F5dK-2BaOISHfTYJE74mHHvMGs0BozZuxNZS94wumKLnpQ3nXGDtlEi1U2fQk512pud0TlGQ8T3bl14Om2IwmqVkt1JQALY-2FOh1F6E9kU4ABxQ24Fe3280e6oRD5o0OLPnJXnIg-2BUKkfredVb2xwUfjU7AjI-2BVFbX_Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkB6pmJTx5Nak2-2FqoD38UU38Yrz2geogK0qqYUbz1RTfmOfhRmO51sAiJGVBuZg375DFjf6N1CA4E9JaHmuPxAUQDj-2BPwsBi559Kn2x2aRw6rY0v-2B-2Fz0En0o7luPqYRYrpMiFcM-2BoFGba-2F6-2B6hhGPQVEFu-2BVKpJS7sx0bdg5RpFeB46gtFAOR0NvxuI66hRZya5hBNYWAW0VO2IF2u4oq13TGnZ4UrUT7GSoMhILgRFYOMcg54z4dEeF56L6ysI9ejh14QTHTv5RV3j0PKcTSkxacfQqaNiXLzwZFLroFenhgz1PTcDQkiX-2Fe-2BieCtsIpSog-2Bnhqa-2FsmZs0ir1rz4MS3" style="color: #333; text-decoration: underline;">Unsubscribe from future emails when someone follows or requests to follow me</a></p>
+</div>
+</td>
+</tr>
+</table>
+<!--[if mso]></td></tr></table></center><![endif]-->
+</div>
+<img src="https://email.strava.com/wf/open?upn=F9AznDCkA0pQ28qFJU-2FGLLcMnq-2B0Hr-2FNBxu8xo5xvcCIr-2Bngyb80Q25m3KPrVv8WYOJK-2BFN9r7XAVsjrdjNMPeyRQdwqstdJEOPuHx3LTDPMA615VZPW5BbiArjjsfnILzVU-2BGyW5ZjZt8mOIwkmFoI4jjsCONxf0fY7JPKUflwIMGsBC1Ez9uMoNWyyA-2B3nO2QnPqjlY4wPOBRrqDnRpF7dUnkNEayUVyxaqIFqja5tHqBu3gqHhy6HNfhSd8fU-2BRJYgZMAcXA4Q0jPcRSKy02luc90HUEMhDrHQIxbtr-2FFp7CGLFL0Yi1mcwKzCAEPfW4dnvWmb2UWShZ9uJI8QI2hMM6mCBbQ-2Fugm6Ti1wpF-2Bw0o4ecfLrTUQCjE2DqhD" alt="" width="1" height="1" border="0" style="height:1px !important;width:1px !important;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 !important;padding-left:0 !important;"/></body>
+</html>
+
+----==_mimepart_624500929aa2a_1aad85e78162957a--

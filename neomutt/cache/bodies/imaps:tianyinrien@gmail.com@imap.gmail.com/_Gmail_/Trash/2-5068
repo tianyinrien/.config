@@ -1,0 +1,179 @@
+Delivered-To: tianyin.rien@gmail.com
+Received: by 2002:a05:6a11:4a89:b0:26e:6bbc:7bbb with SMTP id ob9csp2117455pxb;
+        Mon, 4 Apr 2022 07:47:43 -0700 (PDT)
+X-Received: by 2002:a17:90a:380f:b0:1bd:4aa6:651 with SMTP id w15-20020a17090a380f00b001bd4aa60651mr178484pjb.83.1649083663042;
+        Mon, 04 Apr 2022 07:47:43 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1649083663; cv=none;
+        d=google.com; s=arc-20160816;
+        b=jK1ZW6cJnDIR2p2khp0GE1zaEYtTTt4D55Ive+OVdwYBj0354TPqEbZuTwbAusDe+J
+         8yH68xgFzCC1AbK9MksetpUmzAi7xfbawmPN+IQiKGyfY2NoP/lam6h+HCxqve5tAZuQ
+         Ux9b887t+TUCDTTmFep0UOsc0xDYpb3iCyIhz4J6Pz09UwhLVQHaRj3u/Y0yFgQnxdgn
+         SNVgQUQwV3D+HWRsk48NmzXtvbnHtAZz/Y2UzzlEWDdZdIKceKyHumXP6p3RNyEnAbC6
+         /+KRl1k+Qzysjza6Nj5xnkSaRm6t8rX7/T8+1F2Rc4+17cZX/d98fQV0HlPQJHPlkO9W
+         GjiA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=igeOwrgHV+OMaJ97JfAfEWlQt1V0ienYT2tAIKUKIT4=;
+        b=g/scuYxkHxDH53+jY1x9FMKhP30BKDKz33vcv4/SYX40OEU0///nfLx3njxy3rXWzZ
+         ZJEIwqqY38BuuOepGbi0bc1trkK0GjYFIt8ia1BWYSgyDtbVBmWQTxiaNcjkg70aCfvq
+         BOilvjm2tmrxwdJu29sPnybcV9smCIhzqL75vOJr1mkP1k6FISwpKn70NXzoKWcxfz0u
+         JptO8w/vSbnJgBOc09woI1yylMYGbWDgeADrkh6voVho79BKkbHv0KZ4LowwQvRXYfUQ
+         GYOZwIfASI2xW8W/00g1UrxhAaIEmHxlLd7ljyCIWQoR6WV02K+FFLP3pSh/iw1X2ERL
+         WtdQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@epik.com header.s=epik header.b=NS2v7vNu;
+       spf=pass (google.com: domain of jessica@epik.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=jessica@epik.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=epik.com
+Return-Path: <jessica@epik.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id x9-20020a17090a164900b001c6536644c6sor5317898pje.32.2022.04.04.07.47.42
+        for <tianyin.rien@gmail.com>
+        (Google Transport Security);
+        Mon, 04 Apr 2022 07:47:42 -0700 (PDT)
+Received-SPF: pass (google.com: domain of jessica@epik.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@epik.com header.s=epik header.b=NS2v7vNu;
+       spf=pass (google.com: domain of jessica@epik.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=jessica@epik.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=epik.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=epik.com; s=epik;
+        h=mime-version:from:date:message-id:subject:to;
+        bh=igeOwrgHV+OMaJ97JfAfEWlQt1V0ienYT2tAIKUKIT4=;
+        b=NS2v7vNuiG8LCACWNcY+sm8k/oNJfi6tNFva4AYf8a78fksKcdn6H+n0cU75AkbpWg
+         txf5YZNimdTNU4vbps5320fyCzGXFQomJnXe54skFVKC8GzfOL9Aiwn6y99+NGb0yQeN
+         O7YaePLmIt4EZLqRkjXX0J91DpIDo5C4QXYbY=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+        bh=igeOwrgHV+OMaJ97JfAfEWlQt1V0ienYT2tAIKUKIT4=;
+        b=ZADgBNMA97+tu6XyGNauKS9wuReITmpAbX0jUp6REL5IUJgycX6faQ3MZj/SQwM1ln
+         9e9tIT8cwfuhyDtYm5g3KWeGOBI46LWjm5K5zchrPKubwMo0sfQO46Dl+DIonM/xjKC9
+         IRDC3ufY+cneoKvQ+D0X06iaSS6dWYzsW6TapRmAI5E1IiloHxfaD8ZpVRoC8Pxer7EY
+         G/h9xf6aqH3MP7wLuoBwLe8ppK+QlxNckvRQXFedwTKx7sodz609a1LIeOxeQsSxqhLz
+         aAef6HtBH7/3TMOzpxnBCe8X/TxCUbyFtI+bVe3hxlomSHlOav7nu7LH7TCsxNdaddIy
+         88AA==
+X-Gm-Message-State: AOAM531lsWiLGthTLIz5HoPwuaDVxfqbMhov5Pv2L5XiYaQLO19LfTs4
+	mLR2nU5Jj1sIsvFOBHYxeHogcyEnXI3ztHkyGc5uxZHTkmCT6g==
+X-Google-Smtp-Source: ABdhPJx9HjfVHJtTni9AcsrI2FhrSBdeyO7Qnb3+pegG3MuCLgWxto39cVfxX6yFHLHRNY83QLX1rJiLrQXu56QUGoE=
+X-Received: by 2002:a17:90b:17c7:b0:1c7:c616:6eb0 with SMTP id
+ me7-20020a17090b17c700b001c7c6166eb0mr27278033pjb.144.1649083662194; Mon, 04
+ Apr 2022 07:47:42 -0700 (PDT)
+MIME-Version: 1.0
+From: Jessica Robison <jessica@epik.com>
+Date: Mon, 4 Apr 2022 09:47:30 -0500
+Message-ID: <CAGywEcVedcWjO993oRRptxJGx-1sN7hv7-1TXUFoV8T2j+e41A@mail.gmail.com>
+Subject: Welcome to Epik
+To: tianyin.rien@gmail.com
+Content-Type: multipart/alternative; boundary="000000000000e3dae805dbd535df"
+
+--000000000000e3dae805dbd535df
+Content-Type: text/plain; charset="UTF-8"
+
+Hello,
+
+
+My name is Jessica and I am the Director of Client Services here at Epik.
+
+I wanted to take a moment and reach out to welcome you to Epik and ask you
+a couple of questions.
+
+How did you hear about Epik?
+
+What are your goals with your domain name(s)- are you looking to park them,
+develop them, do you need email hosting?
+
+
+I look forward to hearing from you. Have a great day!
+
+-- 
+*Jessica Robison*
+Director
+Client Services
+Epik Holdings Inc.
+*Phone:* +1 (206) 826-2345
+*Website:* https://epik.com <https://epik.com>
+*Email:* jessica@epik.com <jessica@epik.com>
+*- Solutions For Digital Empowerment- The Swiss Bank Of Domains- Legendary
+Customer Support*
+<https://www.facebook.com/epikdotcom/>  <https://twitter.com/EpikDotCom>
+<https://www.linkedin.com/company/epik.com>
+
+*This message contains confidential information and is intended only for
+the individual named. If you are not the named addressee you should not
+disseminate, distribute or copy this email. Please notify the sender
+immediately by email if you have received this email by mistake and delete
+this email from your system.
+
+--000000000000e3dae805dbd535df
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div class=3D"gmail_default" style=3D"font-family:verdana,=
+sans-serif;font-size:small"><p style=3D"margin:0px;font-stretch:normal;font=
+-size:13px;line-height:normal;font-family:&quot;Helvetica Neue&quot;">Hello=
+,</p>
+<p style=3D"margin:0px;font-stretch:normal;font-size:13px;line-height:norma=
+l;font-family:&quot;Helvetica Neue&quot;;min-height:15px"><br></p>
+<p style=3D"margin:0px;font-stretch:normal;font-size:13px;line-height:norma=
+l;font-family:&quot;Helvetica Neue&quot;">My name is Jessica and I am the D=
+irector of Client Services here at Epik.=C2=A0</p>
+<p style=3D"margin:0px;font-stretch:normal;font-size:13px;line-height:norma=
+l;font-family:&quot;Helvetica Neue&quot;">I wanted to take a moment and rea=
+ch out to welcome you to Epik and ask you a couple of questions.=C2=A0</p>
+<p style=3D"margin:0px;font-stretch:normal;font-size:13px;line-height:norma=
+l;font-family:&quot;Helvetica Neue&quot;">How did you hear about Epik?</p>
+<p style=3D"margin:0px;font-stretch:normal;font-size:13px;line-height:norma=
+l;font-family:&quot;Helvetica Neue&quot;">What are your goals with your dom=
+ain name(s)- are you looking to park them, develop them, do you need email =
+hosting?</p>
+<p style=3D"margin:0px;font-stretch:normal;font-size:13px;line-height:norma=
+l;font-family:&quot;Helvetica Neue&quot;;min-height:15px"><br></p>
+<p style=3D"margin:0px;font-stretch:normal;font-size:13px;line-height:norma=
+l;font-family:&quot;Helvetica Neue&quot;">I look forward to hearing from yo=
+u. Have a great day!</p></div><div><br></div>-- <br><div dir=3D"ltr" class=
+=3D"gmail_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><t=
+able width=3D"550" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" style=
+=3D"text-indent:0px;font-family:Tahoma,Verdana,sans-serif"><tbody><tr><td s=
+tyle=3D"font-size:18px;color:rgb(187,47,64);font-family:Tahoma,Verdana,sans=
+-serif;padding-bottom:3px;padding-top:5px"><b>Jessica Robison</b></td></tr>=
+<tr><td style=3D"color:rgb(51,51,51);font-size:14px;font-family:Tahoma,Verd=
+ana,sans-serif;padding-bottom:3px">Director</td></tr><tr><td style=3D"color=
+:rgb(51,51,51);font-size:14px;font-family:Tahoma,Verdana,sans-serif;padding=
+-bottom:3px">Client Services</td></tr><tr><td style=3D"color:rgb(51,51,51);=
+font-size:14px;font-family:Tahoma,Verdana,sans-serif;font-weight:600;paddin=
+g-bottom:3px">Epik Holdings Inc.</td></tr><tr><td style=3D"color:rgb(51,51,=
+51);font-size:14px;font-family:Tahoma,Verdana,sans-serif;padding-bottom:3px=
+"><span style=3D"color:rgb(187,47,64);min-width:12px;display:inline-block;p=
+adding-right:10px"><b>Phone:</b><span>=C2=A0</span><span style=3D"color:rgb=
+(51,51,51)">+1 (206) 826-2345</span></span></td></tr><tr><td style=3D"color=
+:rgb(51,51,51);font-size:14px;font-family:Tahoma,Verdana,sans-serif;padding=
+-bottom:3px"><a href=3D"https://epik.com" style=3D"color:rgb(90,150,240);pa=
+dding-right:10px" target=3D"_blank"><span style=3D"color:rgb(187,47,64);min=
+-width:12px;display:inline-block"><b>Website:</b></span><span>=C2=A0</span>=
+<span>https://epik.com</span></a></td></tr><tr><td style=3D"color:rgb(51,51=
+,51);font-size:14px;font-family:Tahoma,Verdana,sans-serif;padding-bottom:5p=
+x"><a href=3D"mailto:jessica@epik.com" style=3D"color:rgb(90,150,240)" targ=
+et=3D"_blank"><span style=3D"color:rgb(187,47,64);min-width:12px;display:in=
+line-block"><b>Email:</b></span><span>=C2=A0</span><span>jessica@epik.com</=
+span></a><br></td></tr><tr><td style=3D"color:rgb(51,51,51);font-size:14px;=
+font-family:Tahoma,Verdana,sans-serif;padding-bottom:5px;padding-top:5px"><=
+span style=3D"color:rgb(0,0,0);min-width:12px;display:inline-block"><b><li>=
+Solutions For Digital Empowerment</li><li>The Swiss Bank Of Domains</li><li=
+>Legendary Customer Support</li></b></span></td></tr><tr><td style=3D"paddi=
+ng-top:10px;padding-bottom:5px"><a href=3D"https://www.facebook.com/epikdot=
+com/" style=3D"padding:0px 4px 0px 0px" target=3D"_blank"><img src=3D"https=
+://cdn.exclaimer.com/Handbook%20Images/facebook-icon_square_24x24.png"></a>=
+<span>=C2=A0</span><a href=3D"https://twitter.com/EpikDotCom" style=3D"padd=
+ing:0px 4px" target=3D"_blank"><img src=3D"https://cdn.exclaimer.com/Handbo=
+ok%20Images/twitter-icon_square_24x24.png"></a><span>=C2=A0</span><a href=
+=3D"https://www.linkedin.com/company/epik.com" style=3D"padding:0px 4px" ta=
+rget=3D"_blank"><img src=3D"https://cdn.exclaimer.com/Handbook%20Images/lin=
+kedin-icon_square_24x24.png"></a><br><br><font face=3D"tahoma, sans-serif">=
+*This message contains confidential information and is intended only for th=
+e individual named. If you are not the named addressee you should not disse=
+minate, distribute or copy this email. Please notify the sender immediately=
+ by email=C2=A0if you have received this email=C2=A0by mistake and delete t=
+his email=C2=A0from your system.<br></font></td></tr></tbody></table></div>=
+</div></div>
+
+--000000000000e3dae805dbd535df--

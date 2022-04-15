@@ -1,0 +1,104 @@
+Delivered-To: tianyin.rien@gmail.com
+Received: by 2002:a05:6a10:6750:0:0:0:0 with SMTP id w16csp3288043pxu;
+        Sat, 12 Feb 2022 16:31:09 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJwElCPr5TeBNK7wmEy3Cux0jvus+EQRp35AfhuvhUnmKWSMudMF75mQLnv7OQaH5VgE7Hkl
+X-Received: by 2002:a62:b605:: with SMTP id j5mr7994743pff.25.1644712269666;
+        Sat, 12 Feb 2022 16:31:09 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1644712269; cv=none;
+        d=google.com; s=arc-20160816;
+        b=DVg0igXboF7wuQ1pWWp64jEH3tUbyZUr8+hliqmKEBsJ0sXVizwda2nqZHBWdGbdFW
+         tErFn0v3Wx6Uy/NxwbedDaUYmINPn8dZIGDvGP8MsROKS8tCJ8FcchFDe6xefO6WtCdn
+         bWt4s0wIRtCJYP8z0mBflRqICNd5PzSTqyTVIasFWdgU2KPXlv7U3paK0dY18pNwFA8f
+         6dyBWJzCkdvo6KOJGhn5OsF598WejmeKbFt1FJcsbv2nmqKTqw4GFfAXh9KYkbyPpuwB
+         N1sQ3cs765jGlRIFzMXACftID2sVLHbjIeQZEAy5OwOr07dtuejeSM3tk8V0urJntgZU
+         frvQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:date:message-id:content-transfer-encoding:mime-version
+         :subject:to:from:dkim-signature:dkim-signature;
+        bh=WE4QwVWKmG4/j3QhSdgvzFWxCS4yd63MSAX8sjbzQD4=;
+        b=nWdon1ZEiRjlMac8eF2IGoT99JoGZqL62RJ906YLB/WYQGfBV5/eGs27nlbJbOwUQk
+         F7/KJfoxkquyHDVDYNeMCktjwx2O71XCr5ETlj0LKEBFVR7TYMtR1/mcOuZYryQUKkv1
+         /6hzfMUJhG0oHV5FHsgqCmuDTKJkBrvTRdvSmLMjJPJmZtQiZO4fcCrnWn/PkK6udQCi
+         xf/oI/FmYzu9A5sG+wZ6R9axPQOrwRVfvo+njBB1DgxJOwFtsGGSfG90+4spvDVtFbBU
+         cHXhZi/628fkV8R5kOqQ820XtmKJKBNBzIJUodeaPtZYWF7cZhajbIxve8oSffGDRyLc
+         thNw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@accounts.nintendo.com header.s=xxfmhyli3wr726yshgfkfcxc6uchnbxu header.b="H/O6TLGH";
+       dkim=pass header.i=@amazonses.com header.s=7v7vs6w47njt4pimodk5mmttbegzsi6n header.b="cWb8n/3F";
+       spf=pass (google.com: domain of 0101017ef07d962e-b57fa76a-3aa6-42bd-87b7-46c6da6946a3-000000@us-west-2.amazonses.com designates 54.240.57.12 as permitted sender) smtp.mailfrom=0101017ef07d962e-b57fa76a-3aa6-42bd-87b7-46c6da6946a3-000000@us-west-2.amazonses.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=accounts.nintendo.com
+Return-Path: <0101017ef07d962e-b57fa76a-3aa6-42bd-87b7-46c6da6946a3-000000@us-west-2.amazonses.com>
+Received: from a57-12.smtp-out.us-west-2.amazonses.com (a57-12.smtp-out.us-west-2.amazonses.com. [54.240.57.12])
+        by mx.google.com with ESMTPS id kx1si107444pjb.172.2022.02.12.16.31.09
+        for <tianyin.rien@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 12 Feb 2022 16:31:09 -0800 (PST)
+Received-SPF: pass (google.com: domain of 0101017ef07d962e-b57fa76a-3aa6-42bd-87b7-46c6da6946a3-000000@us-west-2.amazonses.com designates 54.240.57.12 as permitted sender) client-ip=54.240.57.12;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@accounts.nintendo.com header.s=xxfmhyli3wr726yshgfkfcxc6uchnbxu header.b="H/O6TLGH";
+       dkim=pass header.i=@amazonses.com header.s=7v7vs6w47njt4pimodk5mmttbegzsi6n header.b="cWb8n/3F";
+       spf=pass (google.com: domain of 0101017ef07d962e-b57fa76a-3aa6-42bd-87b7-46c6da6946a3-000000@us-west-2.amazonses.com designates 54.240.57.12 as permitted sender) smtp.mailfrom=0101017ef07d962e-b57fa76a-3aa6-42bd-87b7-46c6da6946a3-000000@us-west-2.amazonses.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=accounts.nintendo.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=xxfmhyli3wr726yshgfkfcxc6uchnbxu; d=accounts.nintendo.com;
+	t=1644712269;
+	h=From:To:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date;
+	bh=WE4QwVWKmG4/j3QhSdgvzFWxCS4yd63MSAX8sjbzQD4=;
+	b=H/O6TLGHsDMLTVg680XwBx3+YhiZq7WRYqyRJAeiOLXSh6vxuzzBozoQds7uZY6O
+	gFcZbd+Bxfk7QUCS3AkAuVqp5rLS1x1mUusvkYzwaewdohglvL5CI46gwKWDGax/nU9
+	0IK7n90bvuNrDj7Y9fpYdCCsp+SnoD2aWOCY+BY8=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=7v7vs6w47njt4pimodk5mmttbegzsi6n; d=amazonses.com; t=1644712269;
+	h=From:To:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date:Feedback-ID;
+	bh=WE4QwVWKmG4/j3QhSdgvzFWxCS4yd63MSAX8sjbzQD4=;
+	b=cWb8n/3F+vY7Gl9RrltPcZz8epyPNpBAUmJScBSgXwIb+1CKrPlc3A1vvpvpkWSl
+	Q+tLhNq8ABcVRedZvw4WYC7QQjat/TxLGc2TYGFTYmD0mFS9TBC6WqRM3q2639NACDP
+	3XVSzywOm4MrxBlSBInQM9vHDufOtWjOfTPUWVKQ=
+From: no-reply@accounts.nintendo.com
+To: tianyin.rien@gmail.com
+Subject: [Nintendo Account] Account creation
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Message-ID: <0101017ef07d962e-b57fa76a-3aa6-42bd-87b7-46c6da6946a3-000000@us-west-2.amazonses.com>
+Date: Sun, 13 Feb 2022 00:31:09 +0000
+Feedback-ID: 1.us-west-2.9VoxOnUfe+X0ZHT1CPTInDLHXLN92ivp37lKZLtpkW0=:AmazonSES
+X-SES-Outgoing: 2022.02.13-54.240.57.12
+
+This is an automatically generated e-mail from Nintendo.
+
+-------------------------
+Nickname: Ren
+
+The Nintendo Account has been created.
+Keep the following information somewhere safe. You'll need it if you sign i=
+n to your Nintendo Account using a different device or if you forget your p=
+assword.
+
+=E2=96=BCNickname
+Ren
+
+=E2=96=BCE-mail address
+tianyin.rien@gmail.com
+
+=E2=96=BCPassword
+(Password is not shown here.)
+
+=E2=96=BCDate of birth
+7/18/1992
+
+If you do not know why you have received this e-mail, please delete it.
+
+-------------------------
+Sincerely,
+Nintendo Co., Ltd.
+
+You cannot reply to this e-mail address.
+If you have any questions, please see the information below on how to conta=
+ct us.
+
+=E2=96=BDNintendo Account | FAQ
+https://www.nintendo.com.hk/support/nintendo_account/
+
+Inquiry code:
+MKFC-FDC8-H4HH-4DMJ

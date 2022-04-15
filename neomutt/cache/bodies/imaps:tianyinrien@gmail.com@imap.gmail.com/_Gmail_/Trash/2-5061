@@ -1,0 +1,113 @@
+Delivered-To: tianyin.rien@gmail.com
+Received: by 2002:a05:6a10:a15b:b0:27b:8ea6:3264 with SMTP id r27csp147063pxc;
+        Sat, 9 Apr 2022 06:46:27 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJwxQ1wwASu1ZQmhvduM3tftqcEDA+S89H+Y927QVkiUwzq8kfQ/jJUFr98QbY162m1v0E8I
+X-Received: by 2002:a17:90a:a416:b0:1ca:b9f8:bcec with SMTP id y22-20020a17090aa41600b001cab9f8bcecmr27118754pjp.163.1649511987420;
+        Sat, 09 Apr 2022 06:46:27 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1649511987; cv=none;
+        d=google.com; s=arc-20160816;
+        b=DKHFtuwmJENkIW3EjlKa3MUAKPzQuFdAqMYk8sGLaEjZ39rBHgfxExssOvCHcjDgbR
+         R06kQR4110jDmi8TNabPGn7gVkG8LPqfIttRzktEgmAd4R73/eEWndfgFi7PjncMGC+D
+         F3Z+AwNq7yX0XYtJNsl5dmCeENJkK41ZOIfqKeJ/RT6emgCgng7A4t7MFrjW6MY6NiY5
+         F5XmCMRgh7lpQJ2M10jf0T17rPjZ4VUh8+ukgD6Rf9NnWVqKjynUhzkhYFm0eBTyOqdP
+         c8hCs2RoqZlc57rKO42VJ6KF8hM1/dvFeowHtmoU0L8wOW+k/x534cfJAnNeDFne+avd
+         YvWg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=message-id:mime-version:subject:to:from:date:dkim-signature;
+        bh=OWl3jS1cNh7JuvUPAGRfgkjU06lTQIEIcP6jLOV0i5w=;
+        b=BX98gHFQRWybmDiag3kvDoape9WMwPdxRzBsxQoQMZthOrOMGhRqEO1Qv6YxnkOuLG
+         AyGIR9NygPnNZqlDpR6GCWXdZ5EFC4taa+b5FisTV62r8VamjDViRx2e5RSwd6/KrdBE
+         3mgpytNzqwzWMqeZyD+/RJR6rYdUI073omnzlRHZ8e/nQzeyTjxtXml3xhe8KHRjMk17
+         f4J+k3IgSzppt8xTUp6+0WOwjwXlNVHZtE5O7+WmoMiXZJ3uZa+eIHlKETPoKUPcLqAs
+         NMRF3LBC3emnFI6f8yZaLdTDs/Iaea7F2oFfN+U9Lsqly/kp97OTn+xVUz37s4eI62az
+         fyTQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@dynadot.com header.s=default header.b=QZ5ML9uJ;
+       spf=pass (google.com: domain of orders@dynadot.com designates 166.88.19.85 as permitted sender) smtp.mailfrom=orders@dynadot.com
+Return-Path: <orders@dynadot.com>
+Received: from mail-out.dynadot.com (mail-out.dynadot.com. [166.88.19.85])
+        by mx.google.com with ESMTPS id c10-20020a056a00248a00b004fa3a8e004csi4480738pfv.259.2022.04.09.06.46.26
+        for <tianyin.rien@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 09 Apr 2022 06:46:27 -0700 (PDT)
+Received-SPF: pass (google.com: domain of orders@dynadot.com designates 166.88.19.85 as permitted sender) client-ip=166.88.19.85;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@dynadot.com header.s=default header.b=QZ5ML9uJ;
+       spf=pass (google.com: domain of orders@dynadot.com designates 166.88.19.85 as permitted sender) smtp.mailfrom=orders@dynadot.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	t=1649511925; s=default; d=dynadot.com;
+	h=Content-Type:Message-ID:MIME-Version:Subject:To:From:Date;
+	l=4197; bh=OWl3jS1cNh7JuvUPAGRfgkjU06lTQIEIcP6jLOV0i5w=;
+	b=QZ5ML9uJy+P+Ae3RoBuOKWR43OQ35FTEV/XXJDzsiNdLRMWJkqx6dk3lbJrVsWm
+	4VqZ2l8Y+ispWIr/DbtzEmc2ZAE5/yW+a60jUOu+s9QShaIJRfTOA3v2TN8PYqW4Eh
+	W/2qeUTEV7GuiaBIqlk3wTRxFolOuCSvXnael3qMZvPxd8H25n0FWpaTD4TrZesK0I
+	ctk7Q6h+lHGntYkedy3SBSjXtvF/HVz7aIVrRAsF9MOUDwV9j2fzlqM9VRrXcB8ch6
+	zJZM1UVpHf2Sdjz2t0oKkKEPJPKU35ABsP453m2wGxkHXn2HgFl6s9cNz6hUA5/+yH
+	Yo8g/z8zzNp7Q6w==
+Date: Sat, 9 Apr 2022 06:45:25 -0700
+From: Dynadot Orders <orders@dynadot.com>
+To: tianyin.rien@gmail.com
+Subject: Paypal Reminder (order 10508835) (account rengeo)
+MIME-Version: 1.0
+Message-ID: <1649511925694.e7d64e67@www.dynadot.com>
+Content-Type: text/html
+
+<table bgcolor="#EDEDED" width="100%" cellspacing="0" cellpadding="0" style="background-color: #EDEDED;">
+<tbody><tr><td align="center" style="padding: 20px 40px 20px 40px;border-spacing: 0px;">
+<table cellspacing="0" cellpadding="0"><tbody><tr style="border: none; border-spacing: 0;">
+<td style="background: linear-gradient(90deg, #6FC4F5 2%, #005DE9 99%); height: 5px; margin: 0 -60px 30px -60px; font-size: 13px; border-radius: 4px 4px 0 0; border-spacing: 0;"></td></tr>
+<tr><td style="padding: 20px 40px;  background-color: #EAF4FF;"><table cellspacing="0" cellpadding="0" style="width: 100%;">
+<tr><td><a href="https://www.dynadot.com" target="_blank" rel="noopener">
+<img src="https://www.dynadot.com/newsletter/17/dynadot.png" border="0" alt="Dynadot" style="width: 107px;">
+</a></td>
+<td style="text-align: right;font-size: 12px;font-weight: 700; white-space: nowrap;width: 100px;padding-left: 10px;">DATE<br>
+<span style="font-size: 13px;font-weight: 400;">2022/04/02</span></td>
+<td style="text-align: right;font-size: 12px;font-weight: 700; white-space: nowrap;width: 100px;padding-left: 10px;">ORDER NUMBER<br>
+<span style="font-size: 13px;font-weight: 400;">10508835</span></td>
+</tr></table></td></tr>
+<tr style="box-shadow: 0 4px 6px 0 rgb(0 0 0/ 20%);">
+<td style="display: block; background-color: #FFFFFF; font-family: 'Open Sans', sans-serif; text-align: left; font-size: 14px; color: #474747; border-radius: 4px 4px 0 0;padding: 40px; ">
+Dear ren ty,
+<br>
+<br>A friendly reminder that we haven't received your Paypal payment yet. We're unable to start the order until payment is received. Please click the link below to pay:
+<br>
+<br>  http://www.dynadot.com/paypal.html?2K6J9OP7n857Q
+<br>
+<br>If your Paypal statement already shows a successful transaction, please email your transaction ID number to orders@dynadot.com and we'll manually check for your payment. 
+<br>
+<br>Best Regards,
+<br>Dynadot Support Team
+<br>(order 10508835) (account rengeo)
+<br>
+<br>
+<br>ORDER INFORMATION
+<br>  status:       Waiting for Payment
+<br>  date created: 2022/04/02
+<br>  order number: 10508835
+<br>
+<br>  ITEMS
+<br>    rengeometry.org - domain registration
+<br>    1 year ($8.99)$8.99
+<br>    Result: None
+<br>    
+<br>
+<br>  PAYMENT
+<br>    total cost:   $8.99
+<br>    payment type: PayPal
+<br></td></tr>
+<tr style="font-size: 12px; font-weight: 700; text-align: center;">
+<td style="padding-top: 25px;padding-bottom: 5px;"><p style="margin: 0; font-size: 14px;">Stay connected with the Dynadot app</p>
+</td></tr>
+<tr style="font-size: 12px; font-weight: 700; text-align: center;"><td>
+<a href="https://itunes.apple.com/us/app/dynadot/id1209930282?mt=8" target="_blank" style="margin-right: 6px;" rel="noopener">
+<img src="https://www.dynadot.com/newsletter/750/appstore.png" border="0" alt="Apple Store" style="border: none; border-radius: 0px; font-size: 13px; outline: none; text-decoration: none; width: auto; height: auto;" border="0"></a>
+<a href="https://play.google.com/store/apps/details?id=com.dynadot.search" target="_blank" rel="noopener">
+<img src="https://www.dynadot.com/newsletter/751/playstore.png" border="0" alt="Google Play" style="border: none; border-radius: 0px; font-size: 13px; outline: none; text-decoration: none; width: auto; height: auto;" border="0"></a>
+</td></tr>
+<tr style="font-size: 12px; font-weight: 700; text-align: center;">
+<td style="padding-top: 10px;"><a href="https://www.dynadot.com/community/help/" target="_blank" style="text-decoration: none; color: #495056;padding-right: 10px;" rel="noopener">HELP FILES</a>
+|<a href="https://www.dynadot.com/community/blog/" target="_blank" style="text-decoration: none; color: #495056;padding-left: 10px;padding-right: 10px;" rel="noopener">
+BLOG</a>|<a href="https://www.dynadot.com/community/about/contact.html" target="_blank" style="text-decoration: none; color: #495056;padding-left: 10px;" rel="noopener">CONTACT US</a>
+<br><a href="https://www.dynadot.com" target="_blank" rel="noopener">
+<img src="https://www.dynadot.com/newsletter/855/blue-small.png" border="0" alt="Dynadot" style="width: 20px;" border="0"></a>
+</td></tr></tbody></table></td></tr></tbody></table>

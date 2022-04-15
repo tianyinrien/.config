@@ -1,0 +1,214 @@
+Delivered-To: tianyin.rien@gmail.com
+Received: by 2002:a05:6a11:4a89:b0:26e:6bbc:7bbb with SMTP id ob9csp1565612pxb;
+        Sun, 3 Apr 2022 05:11:17 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJzH0eLalol//Q602ekUSoItOBCjCW0XYZdHfI72u7Va8kseZio1h9mklZzjJ086Bh0Mpgxc
+X-Received: by 2002:a05:6808:2223:b0:2d9:ca75:8ee8 with SMTP id bd35-20020a056808222300b002d9ca758ee8mr8551248oib.110.1648987877250;
+        Sun, 03 Apr 2022 05:11:17 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1648987877; cv=none;
+        d=google.com; s=arc-20160816;
+        b=tgHriEFD8GSOO48rZex7vfJakEOOHUR2p2PbKJAx3L7Wvi0Ve4EnKEbqGlKaGlHbRl
+         1yXhpuuctlYkSvU+bsV6YUUc1aG0oMNc52qB9mVTV/ACXgd9w8XhyjJMWm7WN8em2rkk
+         AnsIulJLP/HBmne79IXFivhXkUPocdud/+ttSNLkerC2xwkAusaTes0Ohb7fXb5F+nZE
+         UAiMtMWWsubQmB3nLZYXJOpgLR+Je3mZG6ILCzj4M76ynJXVcZYSlagqPRnEpWrlCHQk
+         8//b0yOTuVGgiWw23eDKy+sEuGrpuRNBZieLAvvb2Ac9T5PmuUitVt1KLqOOI1jG7USd
+         kZtA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:mime-version:to:date:from:subject:message-id
+         :dkim-signature;
+        bh=blVcsTOl3xvLWmPlySBAeZutEghdsVFVmQ2Q0Dm1C+k=;
+        b=EsMzsf7jtXh5+liDkywtj2E2JJa1Su6snViC8DpUJbqOStdT5CeYhpAmJWiErJWxLy
+         17eifWm0Ved50W37Xym0DIsNiUn6qyWqotvUsakU8pJzLtkl/cmeC7Xc85cyuR4mGbgG
+         XqGV68IPzNFKsUA8CvL8iROMzWC4QewRJJU2NFO1G8uK7UJ67xNKOIjVIVL3d0eaKQ1v
+         aNb0Xwxj5NeEUWovX7gBVUEAxHnQMxGj1LXaQkeb2g69pvqMtU2QSOZILVVzN0rDhCzX
+         z5PAfePOCkQGhCMy8CSxMqhKLPEvnAwAB1SW1LtRdv4QksGnUgwabii0P5bc6KRza30X
+         Yr0Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@epik.com header.s=jm header.b=X+MK2olH;
+       spf=pass (google.com: domain of support@epik.com designates 63.143.55.148 as permitted sender) smtp.mailfrom=support@epik.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=epik.com
+Return-Path: <support@epik.com>
+Received: from lsn018-f.jsmtp.net (lsn018-f.jsmtp.net. [63.143.55.148])
+        by mx.google.com with ESMTPS id c65-20020acab344000000b002ef0c34758asi4069832oif.10.2022.04.03.05.11.16
+        for <tianyin.rien@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+        Sun, 03 Apr 2022 05:11:17 -0700 (PDT)
+Received-SPF: pass (google.com: domain of support@epik.com designates 63.143.55.148 as permitted sender) client-ip=63.143.55.148;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@epik.com header.s=jm header.b=X+MK2olH;
+       spf=pass (google.com: domain of support@epik.com designates 63.143.55.148 as permitted sender) smtp.mailfrom=support@epik.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=epik.com
+DKIM-Signature: v=1; a=rsa-sha1; q=dns/txt; c=relaxed/relaxed;
+	d=epik.com; s=jm;
+	h=X-Feedback-ID:Message-ID:Subject:From:Date:To:MIME-Version:
+	List-Unsubscribe:X-UserID:X-VConfig:Content-Type;
+	t=1648987877; bh=0gc2oCX6M2A+M3aI5u665wwK/0M=;
+	b=X+MK2olHC6gKFan2D3SSPBqv/p+/l5Bg+15yprhA999TYjcOF9/QZuLBkKkErktCuoqKwt
+	  Fh7BXGum5flpl17T3ciiEOumlL/haFcT0SG7jZH4kGH7KIiyrKzneBgEy3i4nR18CFBaqD
+	  3ipegI+/N6RNvpnyMGOta9a9soRX27w=
+X-Feedback-ID: T:239275:635889:JangoMail
+Message-ID: <63588913736049292@jsmtp.net>
+Subject: Registration Success
+From: "Epik Registrar" <support@epik.com>
+Date: Sun, 03 Apr 2022 12:11:09 +0000
+To: tianyin.rien@gmail.com
+MIME-Version: 1.0
+List-Unsubscribe: 
+ <https://jng.epik.com/u.z?ade56029ed534dd599086c1692bad561>,<mailto:jlawler@jangomail.com?Subject=Unsubscribe>
+X-UserID: 635889.13736049292T239275
+X-VConfig: T.13736049292
+Content-Type: text/html; charset="utf-8"
+
+<div style="background-color: #F7F7F7; padding-top: 105px; font-family:
+Arial, sans-serif; font-weight: 400; padding-top:25px;">
+    <table style="width: 650px;margin: 0 auto;">
+        <thead>
+            <tr>
+                <th style="display: flex;align-items:
+center;font-weight: 300;padding-bottom: 25px;">
+			<a href="http://www.epik.com/">
+				<img src="http://registrar.epik.com/images/emails/cover4/logo.png"
+alt="Epik - Solutions for Digital Empowerment" style="margin-right:
+20px;">		
+			</a>			
+                    Solutions for Digital Empowerment
+                </th>
+            </tr>
+        </thead>
+
+        <tfoot style="background-color: #F3F3F3;">
+            <tr>
+                <td style="padding: 24px;">
+                    <img
+src="http://registrar.epik.com/images/emails/cover4/logo.png" alt="Epik
+- Solutions for Digital Empowerment" style="height: 24px; opacity:
+0.5;">
+                    <p style="font-style: normal; font-weight: 400;
+font-size: 15px; line-height: 23px; color: #888888;">
+                        Legendary Customer Support: <br>
+                        Tel: 800-410-0728 | 206-826-2345 <br>
+                        Email: support@epik.com
+                    </p>
+                    <hr style="background-color: #DFDFDF; height:
+1px;border: none;">
+                    <p style="font-style: normal; font-weight: 400;
+font-size: 13px; line-height: 23px; color: #888888;">
+						To ensure delivery to your inbox, please add newsletter@epik.com
+to your address book.</p>
+                    <hr style="background-color: #DFDFDF; height:
+1px;border: none;">
+                    <a href="http://www.epik.com/" style="font-family:
+Arial; font-style: normal; font-weight: bold; font-size: 13px;
+line-height: 15px; color: #6D6D6D;text-decoration: none;"> Epik.com</a>
+|
+                    <a href="https://www.epik.com/terms.php"
+style="font-family: Arial; font-style: normal; font-weight: bold;
+font-size: 13px; line-height: 15px; color: #6D6D6D;text-decoration:
+none;"> Terms of Use </a> |
+                    <a href="https://www.epik.com/privacy.php"
+style="font-family: Arial; font-style: normal; font-weight: bold;
+font-size: 13px; line-height: 15px; color: #6D6D6D;text-decoration:
+none;">Privacy Policy</a> |
+                    <a href="https://www.epik.com/about/contact/"
+style="font-family: Arial; font-style: normal; font-weight: bold;
+font-size: 13px; line-height: 15px; color: #6D6D6D;text-decoration:
+none;">Contact Us</a>
+
+                    <p style="font-style: normal; font-weight: 400;
+font-size: 13px; line-height: 23px; /* or 153% */ color: #888888;">
+						Epik Holdings Inc, 1100 Bellevue Way NE, Bellevue, WA 98004, USA
+					</p>
+                </td>
+            </tr>
+        </tfoot>
+
+        <tbody style="background-color: #fff;">
+            <tr>
+                <td style="padding: 69px 60px 0px;">
+					<p style="font-style: normal;font-weight: 400;font-size:
+15px;line-height: 150%;color: #323232; margin: 15px 0;">Dear ren ty,</p>
+<p style="font-style: normal;font-weight: 400;font-size:
+15px;line-height: 150%;color: #323232; margin: 15px 0;">Thank you for
+signing up with us. Your new account has been setup and you can  now
+login to our client area using the details below.</p>
+<p style="font-style: normal;font-weight: 400;font-size:
+15px;line-height: 150%;color: #323232; margin: 15px 0;">Email Address:
+tianyin.rien@gmail.com<br /> Password: R3h!H7rsTEcU</p>
+<p style="font-style: normal;font-weight: 400;font-size:
+15px;line-height: 150%;color: #323232; margin: 15px 0;">To login, visit
+<a
+href='https://registrar.epik.com/auth/login'>https://registrar.epik.com/auth/login</a></p>
+<p style="font-style: normal;font-weight: 400;font-size:
+15px;line-height: 150%;color: #323232; margin: 15px 0;">I also would
+like to take this opportunity to welcome you to&nbsp;<a
+href="http://Epik.com">Epik.com</a>,  one of the world's fastest growing
+providers of domain name management  services. Please do not hesitate to
+contact us if you need assistance  with managing your domain name or
+have any further questions. Technical  support is&nbsp;also available 24
+hours a day via <a href="mailto:support@epik.com">support@epik.com</a>
+or online at&nbsp;<a href="http://Epik.com">Epik.com</a>.</p>
+<h3 style="font-family: Arial; font-style: normal; font-weight: 700;
+font-size: 17px; line-height: 20px; color: #222222;">Free Services
+included with your registration</h3>
+<p style="font-style: normal;font-weight: 400;font-size:
+15px;line-height: 150%;color: #323232; margin: 15px 0;">Domain
+Forwarding, Domain Parking and Domain Privacy are all available from
+your Epik 	account. Unlike many registrars, there is no additional
+charge for these services should you 	choose to take advantage of them.
+As the expiration date approaches for your domain, we will 	also notify
+you about renewal options. To lock in today's registrations prices, you
+can also 	renew for up to 9 years into the future.</p>
+<h3 style="font-family: Arial; font-style: normal; font-weight: 700;
+font-size: 17px; line-height: 20px; color: #222222;">Hosting and
+Development</h3>
+<p style="font-style: normal;font-weight: 400;font-size:
+15px;line-height: 150%;color: #323232; margin: 15px 0;">Now  that you
+have your Epik Account, perhaps you are considering web and email 
+hosting. Epik is now offering full cpanel hosting for as low as $9.99 a 
+month. Within this hosting panel you will have free access to 14 popular
+ web applications like Wordpress and Magento, as well as easy access to 
+setting up your email accounts. We also provide a range of web 
+development services if you need assistance with turning your domain 
+name into a functioning website. Details about hosting options can be 
+found&nbsp;<a
+href="http://epik.com/products/hosting_pricing.php">here</a>.</p>
+<h3 style="font-family: Arial; font-style: normal; font-weight: 700;
+font-size: 17px; line-height: 20px; color: #222222;">Manage all of your
+Domains in your Epik account -- for free</h3>
+<p style="font-style: normal;font-weight: 400;font-size:
+15px;line-height: 150%;color: #323232; margin: 15px 0;">If  you own
+domains across multiple registrars, Epik is pleased to offer a  free
+tool for tracking all of your domains and managing them centrally.&nbsp;
+ To get started, simply login at <a href="http://Epik.com">Epik.com</a>
+and go to Domains --&gt; Add Domains.&nbsp; From there you can add any
+domain, regardless of where it is registered.</p>
+<h3 style="font-family: Arial; font-style: normal; font-weight: 700;
+font-size: 17px; line-height: 20px; color: #222222;">Epik
+Marketplace</h3>
+<p style="font-style: normal;font-weight: 400;font-size:
+15px;line-height: 150%;color: #323232; margin: 15px 0;">With  your paid
+registration comes the option of a free listing in the Epik 
+Marketplace. This is worth keeping in mind should you ever decide to 
+sell your Epik-registered domain. You can view domains in the 
+marketplace by visiting&nbsp;<a
+href="http://marketplace.epik.com">marketplace.epik.com</a>.</p>
+<p style="font-style: normal;font-weight: 400;font-size:
+15px;line-height: 150%;color: #323232; margin: 15px 0;">I hope this
+information is helpful to you. I look forward to hearing back  from you
+with any questions or concerns you may have.</p>
+<p style="font-style: normal;font-weight: 400;font-size:
+15px;line-height: 150%;color: #323232; margin: 15px 0;">Thank you for
+using Epik!</p>
+<div style="margin: 53px 0; clear: both;"><img style="float: left;
+margin-right: 27px;"
+src="http://registrar.epik.com/images/emails/cover4/jessica.png"
+alt="Jessica" />
+<p style="font-style: normal;font-weight: 400;font-size:
+15px;line-height: 150%;color: #323232; margin: 15px 0;">Sincerely,<br />
+Epik.com <br /> Email: support@epik.com <br /> Tel: 206-826-2345</p>
+</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,119 @@
+Delivered-To: tianyin.rien@gmail.com
+Received: by 2002:a05:6a10:9ae8:0:0:0:0 with SMTP id t8csp2142819pxm;
+        Mon, 21 Mar 2022 16:58:03 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJw9T+an4yn8v//yMqWhtbAUMrQ3Lk6jKG6c0FIWBbD6byjC5Uo/+RYE9lEwN8WpM5UQu7MJ
+X-Received: by 2002:a63:fe4a:0:b0:382:b4f:8353 with SMTP id x10-20020a63fe4a000000b003820b4f8353mr17707186pgj.177.1647907083787;
+        Mon, 21 Mar 2022 16:58:03 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1647907083; cv=none;
+        d=google.com; s=arc-20160816;
+        b=cgc7UxANME93CyCEL9fBZk6Rw8S+E2LVcOQ/kWsFGiEAZlXwFlPPF661TnrsqxyUha
+         Eqx0yM3/i0Fm7m91Gia1TzwZDMDRipF3U1MbBOBqs8F62p3iroBA5Ze3xah0FT0md4QI
+         dN22IUXnSw2meDpS/6JNOX/oTbeeSdts5ALszU4qrinD7UFRpUZfwR7RZs2t1clZPrwx
+         JL6qd6G4opIWw8DhA7Zb6/VNdjLP1wogyACKOasC2B/G+iuzkH6XUvNxZBg7CVjCP0b/
+         c+h1XUPhWjZpEMU1cImxb1uwY9lQR2bBqA4550ziNS5YYPMqJwQsocYDFKHvYuZo4UzO
+         xK3g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:categories:content-transfer-encoding:mime-version:subject
+         :message-id:from:date:dkim-signature:dkim-signature;
+        bh=PwK05i5xB/w3iMztPooqwnoEYW3dxQjXg9Pm3cx9QME=;
+        b=JzTl88FHtASKrgZvLivyaDTdnesDzOsyVZbYEfouHi6pM6Cm7mGte6V8OodHRRM+7/
+         3Mm+asPPaSlMNYxMCznrKSNJET+mcSzkAReXGgs/wUmcLhQoodECvjWazK9YQLXj/wfT
+         kbSYoMccHSvino8BhteKWSy2q6IzkIXaU68cpQLfIvrakYnhvk8J64wJnnDuQm4p1ZCd
+         QJx2Kgh6IA6/TauvIqDSMD+w1af2z9VPvOgp/DpiY+yS4oWygCsAYqrs3VNpC8cHMp0y
+         G78jqbwqFMpsQ6d6+Uh4PPwZOghd+WaPw++YHAE4ngUUG+9REn00oja6LrtTUR/Wcwv7
+         W0Bw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@github.com header.s=smtpapi header.b=R3dFNoFb;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=zm6WqKUC;
+       spf=pass (google.com: domain of bounces+848413-cc76-tianyin.rien=gmail.com@sgmail.github.com designates 167.89.101.2 as permitted sender) smtp.mailfrom="bounces+848413-cc76-tianyin.rien=gmail.com@sgmail.github.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=github.com
+Return-Path: <bounces+848413-cc76-tianyin.rien=gmail.com@sgmail.github.com>
+Received: from xtrwsrhn.outbound-mail.sendgrid.net (xtrwsrhn.outbound-mail.sendgrid.net. [167.89.101.2])
+        by mx.google.com with ESMTPS id e11-20020a63ee0b000000b003816043f0casi13582139pgi.703.2022.03.21.16.58.02
+        for <tianyin.rien@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 21 Mar 2022 16:58:03 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+848413-cc76-tianyin.rien=gmail.com@sgmail.github.com designates 167.89.101.2 as permitted sender) client-ip=167.89.101.2;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@github.com header.s=smtpapi header.b=R3dFNoFb;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=zm6WqKUC;
+       spf=pass (google.com: domain of bounces+848413-cc76-tianyin.rien=gmail.com@sgmail.github.com designates 167.89.101.2 as permitted sender) smtp.mailfrom="bounces+848413-cc76-tianyin.rien=gmail.com@sgmail.github.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=github.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=github.com;
+	h=from:subject:mime-version:content-type:content-transfer-encoding:
+	x-feedback-id:to;
+	s=smtpapi; bh=PwK05i5xB/w3iMztPooqwnoEYW3dxQjXg9Pm3cx9QME=;
+	b=R3dFNoFbau9E6FIjSmOhNl062/TaD/JNmkvGW+Qq0nLd9LyYYsdcGGOcsabJpMhN5kNC
+	lelC1dr66Gri1SmUW4y/oxHk5+LHfJPtub3/uMtUvnJByCi4GgTDAQxORfpRY+E3Ys4W88
+	RAnrEDdpjXgV830sVSFE7cqNbDGAqM5WI=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=from:subject:mime-version:content-type:content-transfer-encoding:
+	x-feedback-id:to;
+	s=smtpapi; bh=PwK05i5xB/w3iMztPooqwnoEYW3dxQjXg9Pm3cx9QME=;
+	b=zm6WqKUCKQHevRE6FWAVpt8ymlLz6hUoUTZD72rVB7TeIXl/19v9vedhTpmRI34UNNqR
+	el+8HuAZ4lrhwmLROq2uUF5+mCspy7RHcRdl4tVYmU/WNR1/EKEB1aHHyAXtt7TQwOf5tq
+	b7w+9LS8BKawLXJp2fVBgCuuPmhCHC+ow=
+Received: by filterdrecv-56986879c-klcn2 with SMTP id filterdrecv-56986879c-klcn2-1-62391109-43
+        2022-03-21 23:58:01.86575259 +0000 UTC m=+17372226.292028461
+Received: from smtp.github.com (unknown)
+	by geopod-ismtpd-3-3 (SG)
+	with ESMTP id JpL3Qab0QJGITbndU-0PCw
+	for <tianyin.rien@gmail.com>;
+	Mon, 21 Mar 2022 23:58:01.759 +0000 (UTC)
+Received: from github.com (hubbernetes-node-8ac0c9b.ash1-iad.github.net [10.56.208.74])
+	by smtp.github.com (Postfix) with ESMTPA id 7144F5E0260
+	for <tianyin.rien@gmail.com>; Mon, 21 Mar 2022 16:58:01 -0700 (PDT)
+Date: Mon, 21 Mar 2022 23:58:01 +0000 (UTC)
+From: GitHub <noreply@github.com>
+Message-ID: <623911096f7d0_49c6fc82719@lowworker-649f645f54-mrmv7.mail>
+Subject: [GitHub] Please download your two-factor recovery codes
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+X-Auto-Response-Suppress: All
+categories: account-security,two-factor-enable
+X-Feedback-ID: 848413:SG
+X-SG-EID: 
+ =?us-ascii?Q?lvRoPqAywfdEp7HehvnY9O2Y2c8nKqVHM+o6Ig4zxSprf+iGp4eNl31wISMBZc?=
+ =?us-ascii?Q?D0cn7=2FpMGOjUBrVooL=2FopFttCPBlHYrOrEpOMQR?=
+ =?us-ascii?Q?WaY92XamvZsBELnBAwOJI3mxcZozJ2gG1eGWdeB?=
+ =?us-ascii?Q?o=2FRyG0=2FjxGtxbpDrTPLjaEmn10Fmo0CP21XPKCJ?=
+ =?us-ascii?Q?tyEZntGuA71dR22YcmBGRvsoCh3WfpyNvMQCC9O?=
+ =?us-ascii?Q?blpeDEzkTVFD+NkWtqI7GxN+d9F3E5yiBx=2FsPR?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb=2FgauQKcZmYl4RcdBO2t13WK5NJLLdN8xyp9veHHl8?=
+ =?us-ascii?Q?4X2vARLNNDmMnZN6WaiUd2U1Y1kkQIXKCmTW6O9?=
+ =?us-ascii?Q?d20MGA=3D?=
+To: ren <tianyin.rien@gmail.com>
+X-Entity-ID: /f+S0XqulHHajbNb6hGdxg==
+
+Hey tianyinrien!=0D
+=0D
+You=E2=80=99ve just enabled two-factor authentication.=0D
+=0D
+Please take a moment to download your recovery codes and set a fallback SMS=
+ phone number at:=0D
+=0D
+https://github.com/settings/auth/recovery-codes=0D
+=0D
+Recovery codes are the only way to access your account again. By saving you=
+r=0D
+recovery codes, you=E2=80=99ll be able to regain access if you:=0D
+=0D
+* Lose your phone=0D
+* Delete your authenticator application=0D
+* Change your phone number=0D
+=0D
+GitHub Support will not be able to restore access to your account.=0D
+=0D
+To disable two-factor authentication, visit=0D
+https://github.com/settings/security=0D
+=0D
+More information about two-factor authentication can be found on GitHub Hel=
+p at=0D
+https://docs.github.com/articles/about-two-factor-authentication=0D
+=0D
+If you have any questions, please visit https://support.github.com.=0D
+=0D
+Thanks,=0D
+Your friends at GitHub=0D

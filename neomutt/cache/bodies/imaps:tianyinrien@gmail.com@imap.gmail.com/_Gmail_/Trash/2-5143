@@ -1,0 +1,135 @@
+Delivered-To: tianyin.rien@gmail.com
+Received: by 2002:ab0:71d1:0:0:0:0:0 with SMTP id n17csp1174188uao;
+        Sat, 26 Mar 2022 01:45:47 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJwe9o64jfa3OO52zAY6YFdFqzasWc4/Ifc3oVd/cL1wQEcexgU80YXRNUtO5jb8riXfpAFu
+X-Received: by 2002:a05:6902:34a:b0:633:9def:fe20 with SMTP id e10-20020a056902034a00b006339deffe20mr13703983ybs.468.1648284347757;
+        Sat, 26 Mar 2022 01:45:47 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1648284347; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Kcwcz//496UeJG2Js547Pc641d65vnyqGJ6JcLq1MbdEvqWmpxbmF3KBQmmZVXV6Hl
+         UBGlH+seGnO+2ikcGBJ6H0Ge3ZKQnnmddFLpJXVt/IiaDzt754KBhi0v/Opc1h8UhTtr
+         j1kDZ61UQ6jOpOBuXBERLjaKcbAmLG6fAKyODoCfv9nEQ3TxBg4DXJoZntr7MwW8DAEn
+         cF7DNqX0lXSrFHxyhbp0MSvKZtOUn+/Ar7nFeoW5nmVsMG/tZaC3Lkor4N1XKgpQg+hM
+         OoMxlg/lxfxcd4N7h6Y9/Bo8qSbPK9+QPMSJ/VDtRMpkk1aYabUParudOQF1Z0UpaISS
+         5oYw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:categories:content-transfer-encoding:mime-version:subject
+         :message-id:from:date:dkim-signature:dkim-signature;
+        bh=xev7Q2mMoLSbzXeavHcPj2lC+8G/J+YUEOJiAs9Vrk0=;
+        b=CwuE4SnaNyFHcX1O+2+sE0KuGiH5cVbf6gOl8fnCSd7W+/6MksydqHVt8R0zFKd4is
+         6c0knwy7VfU9nTMvZbJOuXkgT8K4+95cu6ALNEZtGeLl43oSakhcuFRGdlTnb4Pi899M
+         fUsKQi298f5ysIW45c1DJNU+K12Ar+fhZB1sXaRTn1Zyig2IUTTep7GPQaZsROBvR5kK
+         sV+mC9qbwIX/kzKnVA6PApPd2RnPxoVyn5Z1J4RpR7H71vy/4oeHzLvQ2Epxs/CeNWTV
+         sblDqmGDX0Uk4GZ3zieXsFUigxpeakMxPPxSbAoE/odgGengiOSz+ca1wi/AqOaEFK20
+         d2tA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@github.com header.s=smtpapi header.b=GXWeJie5;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=vLheRfBb;
+       spf=pass (google.com: domain of bounces+848413-cc76-tianyin.rien=gmail.com@sgmail.github.com designates 192.254.113.10 as permitted sender) smtp.mailfrom="bounces+848413-cc76-tianyin.rien=gmail.com@sgmail.github.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=github.com
+Return-Path: <bounces+848413-cc76-tianyin.rien=gmail.com@sgmail.github.com>
+Received: from o5.sgmail.github.com (o5.sgmail.github.com. [192.254.113.10])
+        by mx.google.com with ESMTPS id e65-20020a25e744000000b00634262a03d7si5367692ybh.465.2022.03.26.01.45.47
+        for <tianyin.rien@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 26 Mar 2022 01:45:47 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+848413-cc76-tianyin.rien=gmail.com@sgmail.github.com designates 192.254.113.10 as permitted sender) client-ip=192.254.113.10;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@github.com header.s=smtpapi header.b=GXWeJie5;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=vLheRfBb;
+       spf=pass (google.com: domain of bounces+848413-cc76-tianyin.rien=gmail.com@sgmail.github.com designates 192.254.113.10 as permitted sender) smtp.mailfrom="bounces+848413-cc76-tianyin.rien=gmail.com@sgmail.github.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=github.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=github.com;
+	h=from:subject:mime-version:content-type:content-transfer-encoding:
+	x-feedback-id:to;
+	s=smtpapi; bh=xev7Q2mMoLSbzXeavHcPj2lC+8G/J+YUEOJiAs9Vrk0=;
+	b=GXWeJie5NOeoG3wHaNjVBUWJC9J10eMeL5ANxAxKRnPbnuYY72w/Up9B6ATFPUlgeQcU
+	bJmWiHUbBwt+xJgATukUHVNhUbr0lGT+hDzNBoE5Z6c+lLOllj94kc7uCHvpcYfTic2Nae
+	LqnA3NVJAAA4Qtjr0G8rXVyzhrMGUu450=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=from:subject:mime-version:content-type:content-transfer-encoding:
+	x-feedback-id:to;
+	s=smtpapi; bh=xev7Q2mMoLSbzXeavHcPj2lC+8G/J+YUEOJiAs9Vrk0=;
+	b=vLheRfBbMF7gm9DrNUsB/Wu5oahQPRh/OZqlZMIb68F3bhFpfk5W084p/FQmhgIjE/oS
+	riHxIr6lStrxM0LYKo0FZMjoVK6kK4IBLjTRrhZiJuTd3zNKQDHugH1pwmzBmC2+0QVxHZ
+	S6K0P1yJtZmTPehUsxOYzCAE7Eo0ULJRk=
+Received: by filterdrecv-55687c4df-rv6r2 with SMTP id filterdrecv-55687c4df-rv6r2-1-623ED2BA-17
+        2022-03-26 08:45:46.330304143 +0000 UTC m=+16706874.650905604
+Received: from smtp.github.com (unknown)
+	by geopod-ismtpd-4-1 (SG)
+	with ESMTP id PBwgCvUVTUyZRx13Wjgwuw
+	for <tianyin.rien@gmail.com>;
+	Sat, 26 Mar 2022 08:45:46.285 +0000 (UTC)
+Received: from github.com (hubbernetes-node-c2e6cc2.ac4-iad.github.net [10.52.208.61])
+	by smtp.github.com (Postfix) with ESMTPA id 3552F5204C7
+	for <tianyin.rien@gmail.com>; Sat, 26 Mar 2022 01:45:46 -0700 (PDT)
+Date: Sat, 26 Mar 2022 08:45:46 +0000 (UTC)
+From: GitHub <noreply@github.com>
+Message-ID: <623ed2ba33231_8459c6fc1033f8@lowworker-5d766d746-5b22c.mail>
+Subject: [GitHub] Two-factor lockout request
+Mime-Version: 1.0
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Auto-Response-Suppress: All
+categories: account-security
+X-Feedback-ID: 848413:SG
+X-SG-EID: 
+ =?us-ascii?Q?lvRoPqAywfdEp7HehvnY9O2Y2c8nKqVHM+o6Ig4zxSprf+iGp4eNl31wISMBZc?=
+ =?us-ascii?Q?D0ytfR4KiLQ1Zb49Jderh56GYO+ElGbHGkxoufo?=
+ =?us-ascii?Q?jHhktqYWPLX04Lm519pfKR5Jyn4HyUW+v3mdKou?=
+ =?us-ascii?Q?rIFVGdA+NPLKAl954JsiiANvVopsROwyU5Ve7vU?=
+ =?us-ascii?Q?4MUzwjHeTswkM4OZMvbdz2czLL530lAsEsM34EK?=
+ =?us-ascii?Q?sBqOvEjJ3v0BYLZ0cNI6TL8I+uuhGMUqIVVEXB?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb=2FgauQKcZmYl4RcdBO2t13XIqz5YMaNvqSAJToVo8o?=
+ =?us-ascii?Q?gDgvjySeS5gW3GZhNXXucqqA=3D=3D?=
+To: ren <tianyin.rien@gmail.com>
+X-Entity-ID: /f+S0XqulHHajbNb6hGdxg==
+
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Account recovery request</title>
+</head>
+
+<body style="margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; color: #24292e; height: 100% !important; line-height: 1.5; font-size: 14px; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; width: 100% !important; background-color: #fff;">
+
+<table class="body" style="box-sizing: border-box; border-collapse: separate !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background-color: #fff;" width="100%" bgcolor="#fff">
+  <tr>
+		<td style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; vertical-align: top;" valign="top"></td>
+		<td class="container" style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; vertical-align: top; display: block; margin: 0 auto !important; max-width: 580px; padding: 24px; width: 580px;" width="580" valign="top">
+			<div class="content" style="box-sizing: border-box; display: block; margin: 0 auto; max-width: 580px;">
+
+      <h1 class="text-normal" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; line-height: 1.25; margin: 0 0 10px; margin-bottom: 30px; font-size: 20px; font-weight: 400 !important; color: #586069; word-break: normal;">
+        You have requested to recover access to the account <strong class="color-fg-default" style="color: #24292e !important;">@tianyinrien</strong>.
+      </h1>
+
+      <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; font-weight: normal; line-height: 1.5; margin: 0; margin-bottom: 15px;">
+        To start this process, you will need to provide this one-time password (OTP) on GitHub.
+      </p>
+
+      <p style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; font-weight: normal; line-height: 1.5; margin: 0; margin-bottom: 15px;">
+        Please enter this number when requested: <strong class="color-fg-default" style="color: #24292e !important;">055445</strong>.
+      </p>
+
+				<div class="footer" style="box-sizing: border-box; clear: both; width: 100%;">
+					<hr class="footer-hr" style="height: 0; overflow: visible; margin-top: 24px; border: 0; border-top: 1px solid #e1e4e8; color: #959da5; font-size: 12px; line-height: 18px; margin-bottom: 30px;">
+		      <div class="footer-links" style="box-sizing: border-box; color: #959da5; font-size: 12px; line-height: 18px;">
+		        <p class="footer-text" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-weight: normal; margin: 0; margin-bottom: 15px; color: #959da5; font-size: 12px; line-height: 18px;">
+							<a href="https://github.com/login" style="box-sizing: border-box; color: #959da5; font-size: 12px; line-height: 18px; text-decoration: none;">Sign into GitHub</a> &middot;
+							<a href="https://docs.github.com/articles/github-terms-of-service/" style="box-sizing: border-box; color: #959da5; font-size: 12px; line-height: 18px; text-decoration: none;">Terms</a> &middot;
+							<a href="https://docs.github.com/articles/github-privacy-policy/" style="box-sizing: border-box; color: #959da5; font-size: 12px; line-height: 18px; text-decoration: none;">Privacy</a> &middot;
+              <a href="https://support.github.com/contact?tags=dotcom-accounts" style="box-sizing: border-box; color: #959da5; font-size: 12px; line-height: 18px; text-decoration: none;">Contact GitHub Support</a>
+						</p>
+		      </div>
+				</div>
+			</div>
+
+    </td>
+    <td style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 14px; vertical-align: top;" valign="top"></td>
+  </tr>
+</table>
+</body>
+</html>

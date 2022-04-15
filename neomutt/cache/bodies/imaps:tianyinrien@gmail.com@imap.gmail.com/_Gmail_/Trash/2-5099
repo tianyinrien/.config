@@ -1,0 +1,765 @@
+Delivered-To: tianyin.rien@gmail.com
+Received: by 2002:a05:6a10:9ae8:0:0:0:0 with SMTP id t8csp1626420pxm;
+        Thu, 17 Mar 2022 19:35:54 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJwjA3nkqozMBFw2h//UtS2oLbm7YVJWOUIp5Hk9fS4gI9mzT+dUF4mUvw5Fn2r92hpqt8/b
+X-Received: by 2002:a05:622a:10d:b0:2e1:db41:66d with SMTP id u13-20020a05622a010d00b002e1db41066dmr6207683qtw.670.1647570954293;
+        Thu, 17 Mar 2022 19:35:54 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1647570954; cv=none;
+        d=google.com; s=arc-20160816;
+        b=m1EqZjU4MRLNpT6W7CWP7BCjd7h+4Crr17XppVi/pRh0wQuGs9ZaxovWA8MMVsQXT5
+         lSdSxsHo7FydFW6LEvKNPYMgK6AUT0rila60A/5aqYd3/vtuKpVtCPO0p88S3cVpActz
+         26OK9UljNgsz2rVRmScDbn1Lr5M5RIyQgVJ7lpSmZlA/n9ya8IIl4PRdyTcpIH1k/gOx
+         8617fjHTUSA7GLe50b5jw4RPcgP2W9d8EARtZBTREJzOv0MRvc+UuGN2HUjcRHau4MzD
+         2bAxZCiAzhyeoFqj4hJWwtCffTQez4yfMTxBtzEI+2T3fyyNK2JmWIlpBRqBsq8l89j0
+         josw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:list-id:mime-version:list-unsubscribe-post
+         :list-unsubscribe:date:subject:to:from:dkim-signature;
+        bh=Gf6DMMa20j3u5AQ86rAEmmT1238T9pfv2YmH+Mbe42g=;
+        b=DO3hYWh3fp2BTWgnsNgOWm+xIre/lIFmgBm/Ipx1RAs28hzXrFF7PRmbgIb3a9fnU0
+         S+FiJngEcAV6Va7u4jnpg3NGReDTOo0IG72YbjI4FoHjaD1m5ZnVLOVaQWqjO6P+jryM
+         2doIqiFEHc5/wGN/Q7nPOf2yhhfW4zHj0KIdHNv9SLYj17ZaF9+eHek0/Sr9gMDVaYHg
+         2eIe/RaNXNXfLsYtn5vxA7EUaHO20PGRRrYde4G21SjRIobXA0JT6ycuOfqBDNvJsAdI
+         lC6q8zMyYv/W0am7LIA1ugERuZEPgECNwJv1VS0ZBupmvIpsZQjGuYvdXZ+xz1NyoZg6
+         7oIA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@ccg.nintendo.com header.s=200608 header.b=fWUKlCyV;
+       spf=pass (google.com: domain of bounce-672_html-323765388-1924925-7296109-13297@bounce.ccg.nintendo.com designates 136.147.185.56 as permitted sender) smtp.mailfrom=bounce-672_HTML-323765388-1924925-7296109-13297@bounce.ccg.nintendo.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=nintendo.com
+Return-Path: <bounce-672_HTML-323765388-1924925-7296109-13297@bounce.ccg.nintendo.com>
+Received: from mta5.ccg.nintendo.net (mta5.ccg.nintendo.net. [136.147.185.56])
+        by mx.google.com with ESMTPS id p6-20020a05620a22e600b0067d79af728bsi1657682qki.200.2022.03.17.19.35.51
+        for <tianyin.rien@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 17 Mar 2022 19:35:54 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-672_html-323765388-1924925-7296109-13297@bounce.ccg.nintendo.com designates 136.147.185.56 as permitted sender) client-ip=136.147.185.56;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@ccg.nintendo.com header.s=200608 header.b=fWUKlCyV;
+       spf=pass (google.com: domain of bounce-672_html-323765388-1924925-7296109-13297@bounce.ccg.nintendo.com designates 136.147.185.56 as permitted sender) smtp.mailfrom=bounce-672_HTML-323765388-1924925-7296109-13297@bounce.ccg.nintendo.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=nintendo.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=ccg.nintendo.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ List-ID:X-CSA-Complaints:Message-ID:Content-Type;
+ i=nintendo-noreply@ccg.nintendo.com;
+ bh=Gf6DMMa20j3u5AQ86rAEmmT1238T9pfv2YmH+Mbe42g=;
+ b=fWUKlCyVCzuyR3FU5ifqhX1TPo/rn7fxLR5OLhhzR+u1odWiW667zemyPmveVi+5mDgpNknDGdUT
+   7iknHwj4x6zcoK1UZMDU3/byGSwRvkZ6Hg00tGErx6EIL64YJPhwRHKWRu2zEQhSY9UA4FI2s41V
+   TmSHDQvH2GPRTuAIqfw=
+Received: by mta5.ccg.nintendo.net id h6fo0g2fmd42 for <tianyin.rien@gmail.com>; Fri, 18 Mar 2022 02:26:27 +0000 (envelope-from <bounce-672_HTML-323765388-1924925-7296109-13297@bounce.ccg.nintendo.com>)
+From: "Nintendo (Hong Kong) Limited" <nintendo-noreply@ccg.nintendo.com>
+To: <tianyin.rien@gmail.com>
+Subject: =?UTF-8?B?6LaF5aSn5Z6L5pO05YWF5YWn5a6544CKTU9OU1RFUiBIVU5URVIg?=
+ =?UTF-8?B?UklTRTogU1VOQlJFQUvjgIvpoJDlrprmlrwyMDIy5bm0NuaciDMw5pel77yI?=
+ =?UTF-8?B?5Zub77yJ55m85ZSu77yB?=
+Date: Thu, 17 Mar 2022 20:26:27 -0600
+List-Unsubscribe: <https://click.ccg.nintendo.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiI3Mjk2MTA5IiwicyI6IjMyMzc2NTM4OCIsImxpZCI6IjY3MiIsImoiOiIxOTI0OTI1IiwiamIiOiIxMzI5NyIsImQiOiI3MDE4MSJ9.eNv1E7QE0_prsfQqZcewcxBVRaNFbUb0M-t_o9DUPt0>, <mailto:leave-fd4c1277770b5c392848-fe22177276630278761c78-fe8f157977600d7f70-fe8d13727c62057d7c-fef91573776d03@leave.ccg.nintendo.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+List-ID: <7207004.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 7
+x-job: 7296109_1924925
+Message-ID: <fa03d24a-c0b8-4374-80cc-91db8161a35f@atl1s07mta2959.xt.local>
+Feedback-ID: 7296109:1924925:136.147.185.56:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="VrO1Bb7IoFzH=_?:"
+
+This is a multi-part message in MIME format.
+
+--VrO1Bb7IoFzH=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+
+https://click.ccg.nintendo.com/?qs=9a2753f9d072cf3e892106677a18e8474d74604f6a380dfd85b0b0ba17f5cefb09d331c31daeaac3779172faed0cebcb013a6f5f9a73cb35 
+
+6月30日狩獵解禁！現已接受預購。
+ 
+
+https://click.ccg.nintendo.com/?qs=9a2753f9d072cf3e05034b57c768ec0168f3ee5f8d5dd817373b3cd1cbe981b640f6a6a5ba395e7d9891afd52dbf690afc2ef263274df6d6 
+
+狩獵舞台是遙遠的異國之地
+
+
+ 進化得更為輕快的動作、各具個性的魔物和原野，還有充滿挑戰性的Master Rank任務登場。
+
+
+ 曾經從災禍當中拯救村莊的獵人，這次為了拯救因古龍「爵銀龍」而陷入危機的王國，而在新天地向全新的狩獵發起挑戰！
+
+
+ ※遊玩付費新增內容《MONSTER HUNTER RISE: SUNBREAK》需要持有《MONSTER HUNTER RISE》遊戲本篇（另售）。
+
+https://click.ccg.nintendo.com/?qs=9a2753f9d072cf3e05034b57c768ec0168f3ee5f8d5dd817373b3cd1cbe981b640f6a6a5ba395e7d9891afd52dbf690afc2ef263274df6d6 
+詳情請按此查看 
+
+https://click.ccg.nintendo.com/?qs=9a2753f9d072cf3ea4672a72ec6bad65f98d9ac7f43f8962d69bbc1aadf936a02184437e3211e37b2e84643382be68d38e9c60281e8b1141 
+
+《MONSTER HUNTER RISE》下載版現正進行限時優惠
+
+
+ 現正進行可以優惠價格購買《MONSTER HUNTER RISE》下載版的優惠活動，優惠至3月31日（四）為止。為迎接《SUNBREAK》中新的狩獵生活，現在就開始遊玩《MONSTER HUNTER RISE》本篇吧。有關本次優惠的資訊，請到以下網頁查看。
+ 
+
+https://click.ccg.nintendo.com/?qs=9a2753f9d072cf3ea4672a72ec6bad65f98d9ac7f43f8962d69bbc1aadf936a02184437e3211e37b2e84643382be68d38e9c60281e8b1141 
+詳情請按此查看 
+
+
+ ※以上為開發中畫面。
+
+ ※遊戲軟體包含網路通訊等需要加入付費服務「Nintendo Switch Online」的模式及功能。
+
+ ※圖片僅供參考
+ 
+
+
+ ©CAPCOM CO., LTD. 2021, 2022 ALL RIGHTS RESERVED.
+
+https://click.ccg.nintendo.com/?qs=9a2753f9d072cf3e3572c919c588413b5e9d374c9fc23a87621d61165987e4f4c9b4883c5960553d487c611dd3071cf6c44f55e6fafe71eb 
+
+https://click.ccg.nintendo.com/?qs=9a2753f9d072cf3e261675e57e0c4e9674f61f149aa2b08b42e09ffdbfddf1c6348f5b957a90921d148312b551eeb861d04d4859ecc32f32 
+
+https://click.ccg.nintendo.com/?qs=9a2753f9d072cf3e7f27bc998599da6a54d3d7840d26013647c2eb9be6679dfb47b4b4bb0f1c341b40996b9384bf4e32bb863a31215059e3 
+任天堂香港官方網頁    |  
+https://click.ccg.nintendo.com/?qs=9a2753f9d072cf3eb65474cea65513b4c73c86b76621013b1e5981d9fc61df3c1d88e37838dc14935a48a06ad3c1189458adb6559b5ad768 
+Nintendo Store  
+ 
+
+https://click.ccg.nintendo.com/?qs=9a2753f9d072cf3e980c4192686a394e97e59a2d776bbd8f969aa76a9746cd95d29e3d5a9bbbb7554833dfbe34e97f353d393aea51259d0801395df4152f279e 
+如選擇不欲收取任天堂香港發出的電子郵件，請按此 。 
+
+https://click.ccg.nintendo.com/?qs=9a2753f9d072cf3e980c4192686a394e97e59a2d776bbd8f969aa76a9746cd95d29e3d5a9bbbb7554833dfbe34e97f353d393aea51259d0801395df4152f279e 
+If you do not wish to receive further email messages from Nintendo Hong Kong, please click here. 
+
+請不要回覆此電郵。 如有査詢，請聯絡
+mailto:customerservice@nintendo.com.hk 
+customerservice@nintendo.com.hk 
+Please do not reply this email. If you have any inquiries, please contact 
+mailto:customerservice@nintendo.com.hk 
+customerservice@nintendo.com.hk 
+
+任天堂(香港)有限公司
+地址：香港九龍都會道10號都會大廈21樓2101-7, 19室
+電話：(852)2406 5666
+
+Nintendo (Hong Kong) Limited
+Unit 2101-7, 19 21/F., The Metropolis Tower, 10 Metropolis Drive, Kowloon, Hong Kong
+Tel：(852)2406 5666
+
+
+
+--VrO1Bb7IoFzH=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style type="text/css">
+    ReadMsgBody {
+      width: 100%;
+    }
+
+    .ExternalClass {
+      width: 100%;
+    }
+
+    .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+    .ExternalClass td,
+    .ExternalClass div {
+      line-height: 100%;
+    }
+
+    body {
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      margin: 0 !important;
+    }
+
+    p {
+      margin: 1em 0;
+    }
+
+    table td {
+      border-collapse: collapse;
+    }
+
+    img {
+      outline: 0;
+    }
+
+    a img {
+      border: none;
+    }
+
+    @-ms-viewport {
+      width: device-width;
+    }
+  </style>
+  <style type="text/css">
+    @media only screen and (max-width: 480px) {
+      .container {
+        width: 100% !important;
+      }
+
+      .footer {
+        width: auto !important;
+        margin-left: 0;
+      }
+
+      .mobile-hidden {
+        display: none !important;
+      }
+
+      .logo {
+        display: block !important;
+        padding: 0 !important;
+      }
+
+      img {
+        max-width: 100% !important;
+        height: auto !important;
+        max-height: auto !important;
+      }
+
+      .header img {
+        max-width: 100% !important;
+        height: auto !important;
+        max-height: auto !important;
+      }
+
+      .photo img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+      }
+
+      .drop {
+        display: block !important;
+        width: 100% !important;
+        float: left;
+        clear: both;
+      }
+
+      .footerlogo {
+        display: block !important;
+        width: 100% !important;
+        padding-top: 15px;
+        float: left;
+        clear: both;
+      }
+
+      .nav4,
+      .nav5,
+      .nav6 {
+        display: none !important;
+      }
+
+      .tableBlock {
+        width: 100% !important;
+      }
+
+      .responsive-td {
+        width: 100% !important;
+        display: block !important;
+        padding: 0 !important;
+      }
+
+      .fluid,
+      .fluid-centered {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      .fluid-centered {
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      /* MOBILE GLOBAL STYLES - DO NOT CHANGE */
+      body {
+        padding: 0px !important;
+        font-size: 16px !important;
+        line-height: 150% !important;
+      }
+
+      h1 {
+        font-size: 22px !important;
+        line-height: normal !important;
+      }
+
+      h2 {
+        font-size: 20px !important;
+        line-height: normal !important;
+      }
+
+      h3 {
+        font-size: 18px !important;
+        line-height: normal !important;
+      }
+
+      .buttonstyles {
+        font-family: arial, helvetica, sans-serif !important;
+        font-size: 16px !important;
+        color: #FFFFFF !important;
+        padding: 10px !important;
+      }
+
+      /* END OF MOBILE GLOBAL STYLES - DO NOT CHANGE */
+    }
+
+    @media only screen and (max-width: 640px) {
+      .container {
+        width: 100% !important;
+      }
+
+      .mobile-hidden {
+        display: none !important;
+      }
+
+      .logo {
+        display: block !important;
+        padding: 0 !important;
+      }
+
+      .photo img {
+        width: 100% !important;
+        height: auto !important;
+      }
+
+      .nav5,
+      .nav6 {
+        display: none !important;
+      }
+
+      .fluid,
+      .fluid-centered {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      .fluid-centered {
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+    }
+  </style>
+  <!--[if mso]>       <style type="text/css">           /* Begin Outlook Font Fix */           body, table, td {               font-family: Arial, Helvetica, sans-serif ;               font-size:16px;               color:#808080;               line-height:1;           }           /* End Outlook Font Fix */       </style>     <![endif]-->
+</head>
+
+<body bgcolor="#efefef" text="#808080"   style="background-color: #efefef; color: #808080; margin: 0px; padding: 20px; -webkit-text-size-adjust:none; line-height: normal; font-size: 16px; font-family:arial,helvetica,sans-serif;">
+  <div style="font-size:0; line-height:0;">
+    <img src="https://click.ccg.nintendo.com/open.aspx?ffcb10-fe8f157977600d7f70-fe2c17787165067c731373-fe8d13727c62057d7c-ff60127777-fe22177276630278761c78-fef91573776d03&d=70181&bmt=0" width="1" height="1" alt="">
+      
+  </div>
+  <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+    <tr>
+      <td align="center">
+        <table cellspacing="0" cellpadding="0" border="0" width="600" class="container" align="center">
+          <tr>
+            <td>
+              <!-- added the border style here -->
+              <table class="tb_properties border_style" cellspacing="0" cellpadding="0" bgcolor="#ffffff" width="100%">
+                <!-- end of comment -->
+                <tr>
+                  <td align="center" valign="top">
+                    <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <!-- added padding here -->
+                        <td class="content_padding" style="padding:10px;border:0px;">
+                          <!-- end of comment -->
+                          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                              <td align="left" class="header" valign="top">
+                                <table cellpadding="0" cellspacing="0" width="100%" role="presentation"                                   style="border-bottom: 1px solid #AEAEAE; min-width: 100%; " class="slot-styling">
+                                  <tr>
+                                    <td style="padding-bottom: 20px; " class="slot-styling camarker-inner">
+                                      <table cellpadding="0" cellspacing="0" width="100%" role="presentation"                                         style="min-width: 100%; " class="stylingblock-content-wrapper">
+                                        <tr>
+                                          <td class="stylingblock-content-wrapper camarker-inner">
+                                            <table width="100%" cellspacing="0" cellpadding="0" role="presentation">
+                                              <tr>
+                                                <td align="left"><a                                                     href="https://click.ccg.nintendo.com/?qs=9a2753f9d072cf3e892106677a18e8474d74604f6a380dfd85b0b0ba17f5cefb09d331c31daeaac3779172faed0cebcb013a6f5f9a73cb35"                                                     title="Nintendo Switch | 任天堂(香港)有限公司網站"                                                       data-linkto="https://"><img data-assetid="17709"                                                       src="http://image.ccg.nintendo.com/lib/fe8d13727c62057d7c/m/1/f647859e-ad4f-4104-b223-6f84ae4bd2b7.jpg"                                                       alt="" height="100" width="100"                                                       style="display: block; padding: 0px; text-align: left; height: 100px; width: 100px; border: 0px;"></a>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                            <table cellpadding="0" cellspacing="0" width="100%"                                               style="text-align: left; min-width: 100%; "                                               class="stylingblock-content-wrapper">
+                                              <tr>
+                                                <td style="padding-top: 15px; "                                                   class="stylingblock-content-wrapper camarker-inner" align="left">
+                                                  <div style="text-align: left; font-size: 30px; line-height:1.5;">
+                                                    <b>6月30日狩獵解禁！現已接受預購。
+                                                    </b>
+                                                  </div>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="left" class="" valign="top">
+                                <table cellpadding="0" cellspacing="0" width="100%" role="presentation"                                   style="border-bottom: 1px solid #AEAEAE; min-width: 100%; " class="slot-styling">
+                                  <tr>
+                                    <td style="padding-top: 10px; padding-bottom: 10px; "                                       class="slot-styling camarker-inner">
+                                      <table cellpadding="0" cellspacing="0" width="100%" role="presentation"                                         style="min-width: 100%; " class="stylingblock-content-wrapper">
+                                        <tr>
+                                          <td style="padding-top: 10px; padding-right: 10px; padding-left: 10px; "                                             class="stylingblock-content-wrapper camarker-inner">
+                                            <table cellspacing="0" cellpadding="0" style="width: 100%;">
+                                              <tr>
+                                                <td>
+                                                  <table cellspacing="0" cellpadding="0" style="width: 100%;">
+                                                    <tr>
+                                                      <td class="responsive-td" valign="top" style="width: 100%;">
+                                                        <table cellpadding="0" cellspacing="0" width="100%"                                                           role="presentation" style="min-width: 100%; "                                                           class="stylingblock-content-wrapper">
+                                                          <tr>
+                                                            <td style="padding: 10px; "                                                               class="stylingblock-content-wrapper camarker-inner">
+                                                              <table width="100%" cellspacing="0" cellpadding="0" role="presentation">
+                                                                <tr>
+                                                                  <td align="center"><a target="_blank" href="https://click.ccg.nintendo.com/?qs=9a2753f9d072cf3e3275d373ad50470bb489b9a7c5e5222f22a26d8d23e0d5359e09ec319d8e7784690174ef3baf54072bb4cc31d22525172c61f69e44e32444"                                                                             title=""                                                                               data-linkto="https://">
+<img data-assetid="29657"                                                                         src="https://image.ccg.nintendo.com/lib/fe8d13727c62057d7c/m/1/ea8db4fb-0114-4c94-865b-edf0172e385b.jpg"                                                                         alt="" width="100%"                                                                         style="display: block; width: 100%; height: auto; padding: 0px; text-align: center;"></a>
+                                                                  </td>
+                                                                </tr>
+                                                              </table>
+                                                            </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td style="padding-top: 15px; "                                                               class="stylingblock-content-wrapper camarker-inner">
+                                                              <div style="text-align: left; font-size: 20px;">
+                                                                <b>狩獵舞台是遙遠的異國之地</b><br>
+                                                              </div>
+                                                            </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td style="padding-top: 15px; "                                                               class="stylingblock-content-wrapper camarker-inner">
+                                                              <div>
+                                                                進化得更為輕快的動作、各具個性的魔物和原野，還有充滿挑戰性的Master Rank任務登場。<br>
+                                                              </div>
+                                                            </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td style="padding-top: 15px; "                                                               class="stylingblock-content-wrapper camarker-inner">
+                                                              <div>
+                                                                曾經從災禍當中拯救村莊的獵人，這次為了拯救因古龍「爵銀龍」而陷入危機的王國，而在新天地向全新的狩獵發起挑戰！<br><br>
+                                                              </div>
+                                                            </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td style="padding-top: 15px; "                                                               class="stylingblock-content-wrapper camarker-inner">
+                                                              <div>
+                                                                ※遊玩付費新增內容《MONSTER HUNTER RISE: SUNBREAK》需要持有《MONSTER HUNTER RISE》遊戲本篇（另售）。<br><br>
+                                                              </div>
+                                                            </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td>
+                                                              <table cellpadding="0" cellspacing="0" width="100%"                                                               role="presentation" style="min-width: 100%; "                                                               class="stylingblock-content-wrapper">
+                                                                <tr>
+                                                                  <td style="padding-top: 10px; padding-bottom: 10px; "                                                                     class="stylingblock-content-wrapper camarker-inner">
+                                                                    <table width="100%" border="0" cellspacing="0"                                                                       cellpadding="5" role="presentation">
+                                                                      <tr>
+                                                                        <td align="center">
+                                                                          <table border="0" cellspacing="30" cellpadding="0"                                                                             role="presentation">
+                                                                            <tr>
+                                                                              <td class="innertd buttonblock" align="center"                                                                                 bgcolor="#E60012"                                                                                 style=" border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; background-color: #E60012; width: 500px;">
+                                                                                
+<a target="_blank"                                                                                   style=" text-decoration: none; display: block; font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #FFFFFF; text-align: center; background-color: #E60012; border: 1px solid #E60012; padding: 10px; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px;"                                                                                   class="buttonstyles"                                                                                   href="https://click.ccg.nintendo.com/?qs=9a2753f9d072cf3e3275d373ad50470bb489b9a7c5e5222f22a26d8d23e0d5359e09ec319d8e7784690174ef3baf54072bb4cc31d22525172c61f69e44e32444"                                                                                   title=""                                                                              
+       data-linkto="https://">詳情請按此查看</a></td>
+                                                                            </tr>
+                                                                          </table>
+                                                                        </td>
+                                                                      </tr>
+                                                                    </table>
+                                                                  </td>
+                                                                </tr>
+                                                              </table>
+                                                            </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td style="padding: 10px; "                                                               class="stylingblock-content-wrapper camarker-inner">
+                                                              <table width="100%" cellspacing="0" cellpadding="0" role="presentation">
+                                                                <tr>
+                                                                  <td align="center"><a target="_blank" href="https://click.ccg.nintendo.com/?qs=9a2753f9d072cf3ef60ba4115f1725fc851775513e7dc490a5fc3ff4609059120ad543ab14a7d131d5859d70e3c4c2402824af8879c8a52a592d8a3c3ad272d0"                                                                             title=""                                                                               data-linkto="https://">
+<img data-assetid="29657"                                                                         src="https://image.ccg.nintendo.com/lib/fe8d13727c62057d7c/m/1/978c17ab-7f18-4b3f-a9cf-0ba5e020dd7b.jpg"                                                                         alt="" width="100%"                                                                         style="display: block; width: 100%; height: auto; padding: 0px; text-align: center;"></a>
+                                                                  </td>
+                                                                </tr>
+                                                              </table>
+                                                            </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td style="padding-top: 15px; "                                                               class="stylingblock-content-wrapper camarker-inner">
+                                                              <div style="text-align: left; font-size: 20px;">
+                                                                <b>《MONSTER HUNTER RISE》下載版現正進行限時優惠</b><br>
+                                                              </div>
+                                                            </td>
+                                                          </tr>
+                                                          <tr>
+                                                            <td style="padding-top: 15px; "                                                               class="stylingblock-content-wrapper camarker-inner">
+                                                              <div>
+                                                                現正進行可以優惠價格購買《MONSTER HUNTER RISE》下載版的優惠活動，優惠至3月31日（四）為止。為迎接《SUNBREAK》中新的狩獵生活，現在就開始遊玩《MONSTER HUNTER RISE》本篇吧。有關本次優惠的資訊，請到以下網頁查看。
+                                                                <br>
+                                                              </div>
+                                                            </td>
+                                                          </tr>
+                                                        </table>
+                                                        <table cellpadding="0" cellspacing="0" width="100%"                                                           role="presentation" style="min-width: 100%; "                                                           class="stylingblock-content-wrapper">
+                                                          <tr>
+                                                            <td style="padding-top: 10px; padding-bottom: 10px; "                                                               class="stylingblock-content-wrapper camarker-inner">
+                                                              <table width="100%" border="0" cellspacing="0"                                                                 cellpadding="5" role="presentation">
+                                                                <tr>
+                                                                  <td align="center">
+                                                                    <table border="0" cellspacing="30" cellpadding="0"                                                                       role="presentation">
+                                                                      <tr>
+                                                                        <td class="innertd buttonblock" align="center"                                                                           bgcolor="#E60012"                                                                           style=" border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; background-color: #E60012; width: 500px;">
+                                                                          
+<a target="_blank"                                                                             style=" text-decoration: none; display: block; font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #FFFFFF; text-align: center; background-color: #E60012; border: 1px solid #E60012; padding: 10px; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px;"                                                                             class="buttonstyles"                                                                             href="https://click.ccg.nintendo.com/?qs=9a2753f9d072cf3ef60ba4115f1725fc851775513e7dc490a5fc3ff4609059120ad543ab14a7d131d5859d70e3c4c2402824af8879c8a52a592d8a3c3ad272d0"                                                                             title=""                                                                              
+ data-linkto="https://">詳情請按此查看</a></td>
+                                                                      </tr>
+                                                                    </table>
+                                                                  </td>
+                                                                </tr>
+                                                              </table>
+                                                            </td>
+                                                          </tr>
+                                                        </table>
+                                                        <table cellpadding="0" cellspacing="0" width="100%"                                                           role="presentation" style="min-width: 100%; "                                                           class="stylingblock-content-wrapper">
+                                                          <tr>
+                                                            <td style="padding-top: 15px; "                                                               class="stylingblock-content-wrapper camarker-inner">
+                                                              <div>
+                                                                ※以上為開發中畫面。<br>
+                                                                ※遊戲軟體包含網路通訊等需要加入付費服務「Nintendo Switch Online」的模式及功能。<br>
+                                                                ※圖片僅供參考
+                                                              </div>
+                                                            </td>
+                                                          </tr>
+                                                        </table>
+                                                      </td>
+                                                    </tr>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                      
+                                      <table width="100%" border="0" cellspacing="0" cellpadding="40">
+                                        <tr>
+                                          <td style="padding-right: 10px; padding-bottom: 10px; padding-left: 10px; "                                             class="stylingblock-content-wrapper camarker-inner">
+                                            <div style="text-align: left; font-size: 13px;">
+                                              ©CAPCOM CO., LTD. 2021, 2022 ALL RIGHTS RESERVED.<br>
+                                            </div>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="left" class="" valign="top">
+                                <table cellpadding="0" cellspacing="0" width="100%" role="presentation"                                   style="border-bottom: 1px solid #AEAEAE; min-width: 100%; " class="slot-styling">
+                                  <tr>
+                                    <td style="padding-top: 10px; padding-bottom: 10px; "                                       class="slot-styling camarker-inner">
+                                      <table cellpadding="0" cellspacing="0" width="100%" role="presentation"                                         style="text-align: left; min-width: 100%; "                                         class="stylingblock-content-wrapper">
+                                        <tr>
+                                          <td class="stylingblock-content-wrapper camarker-inner" align="left">
+                                            <table cellpadding="0" cellspacing="0" class="socialshare-wrapper"                                               width="100%">
+                                              <tr>
+                                                <td align="center">
+                                                  <table cellpadding="0" cellspacing="0" align="center">
+                                                    <tr>
+                                                      <td align="center">
+                                                        <!--[if mso]><table border="0" cellspacing="0" cellpadding="0"><tr><td style="padding-right:10px;"><![endif]-->
+                                                        <table class="socialshare-innertable"                                                           style="display: inline-block">
+                                                          <tr>
+                                                            <td style="padding:5px 10px"><a                                                                 href="https://click.ccg.nintendo.com/?qs=9a2753f9d072cf3e7364656f10ee7b6b9e4a51f05f4fed2b012a7a39fcfb2ee2b93df85dcef22c4f1fe7d3f35f8cb0b9a9df896b75c0c942"                                                                 ><img                                                                   src="https://image.s4.exct.net/lib/fe911573736c007d7d/m/2/e76b988d-8feb-4d15-b8d9-1ccf4bee17cd.png"                                                                   alt="Facebook" width="24" height="24"                                                                   style="display: block;; width: 24px !important; height: 24px !important"></a>
+                                                            </td>
+                                                          </tr>
+                                                        </table>
+                                                        <!--[if mso]></td><td><![endif]-->
+                                                        <table class="socialshare-innertable"                                                           style="display: inline-block">
+                                                          <tr>
+                                                            <td style="padding:5px 10px"><a                                                                 href="https://click.ccg.nintendo.com/?qs=9a2753f9d072cf3e3cb70028515a315fba64abc77a7b51af4cee8dfadaa9d37efd7cf50071ac56e9a873889beb8db2542924ce01c9b2b349"                                                                 ><img                                                                   src="https://image.s4.exct.net/lib/fe911573736c007d7d/m/2/cda3af82-7aa0-4d2d-983b-66d71f7765a6.png"                                                                   alt="YouTube" width="24" height="24"                                                                   style="display: block;; width: 24px !important; height: 24px !important"></a>
+                                                            </td>
+                                                          </tr>
+                                                        </table>
+                                                        <!--[if mso]></td></tr></table><![endif]-->
+                                                      </td>
+                                                    </tr>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="left" class="" valign="top">
+                                <table cellpadding="0" cellspacing="0" width="100%" role="presentation"                                   style="min-width: 100%; " class="slot-styling">
+                                  <tr>
+                                    <td style="padding-top: 20px;padding-bottom: 10px;" class="slot-styling camarker-inner">
+                                      <table cellpadding="0" cellspacing="0" width="100%" role="presentation"                                         style="text-align: center; min-width: 100%; "                                         class="stylingblock-content-wrapper">
+                                        <tr>
+                                          <td class="stylingblock-content-wrapper camarker-inner" align="center">
+                                            <div style="text-align: center;">
+                                              <a   data-linkto="https://"                                                 href="https://click.ccg.nintendo.com/?qs=9a2753f9d072cf3e329a6519ffebf016eb8f2e37b531437b724d30cdbfc2bb2d3250cb6abe8c4f5dd9c6aa8bbe02664cc02c40cf13dab10a8f90ab489fd1ae6e"                                                 style="color:#808080;text-decoration:none;"                                                 title="任天堂香港官方網頁">任天堂香港官方網頁</a>&nbsp; &nbsp;|&nbsp;&nbsp;<a                                                   data-linkto="https://"                                                 href="https://click.ccg.nintendo.com/?qs=9a2753f9d072cf3ed9905244fbb6d6c8083409ba2e9707406a69d96f2b6ea22cde8eab3366c6182678cdcccb5bdee798b004f2a69e92176a65fb24817219b264"                                                 style="color:#808080;text-decoration:none;"                                                 title="Nintendo Store">Nintendo Store</a>&nbsp;
+                                            </div>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <!-- Footerここから -->
+  <table border="0" align="center" cellpadding="0" cellspacing="0" style="max-width:600px;line-height:100%;">
+    <tr>
+    <td style="font-size:0;" colspan="3"><img src="http://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="1" height="50" style="display:block;"></td>
+    </tr>
+    <!-- Subscribeここから -->
+    <tr>
+    <td width="45" style="width:7.5%;font-size:0;"><img src="https://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="24" height="1" style="display:block;"></td>
+    <td width="510" style="width:85%;"><table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+    <td width="500"><a href="https://click.ccg.nintendo.com/?qs=9a2753f9d072cf3edb69b4d06e9856447d61432955b0a3f5607afd92b73651aa56b26cc8669eb46f2c5e982ae524c22ef533a4537a0d20d5893484e01ede0021" target="_blank" style="display:block;color:#666666;font-size:12px;line-height:150%;text-decoration:none;" >如選擇不欲收取任天堂香港發出的電子郵件，請按此 。</a></td>
+    <td width="10" style="font-size:0;"><img src="https://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="10" height="1" style="display:block;"></td>
+    </tr>
+    <tr>
+    <td width="500"><a href="https://click.ccg.nintendo.com/?qs=9a2753f9d072cf3edb69b4d06e9856447d61432955b0a3f5607afd92b73651aa56b26cc8669eb46f2c5e982ae524c22ef533a4537a0d20d5893484e01ede0021" target="_blank" style="display:block;color:#666666;font-size:12px;line-height:150%;text-decoration:none;" >If you do not wish to receive further email messages from Nintendo Hong Kong, please click here.</a></td>
+    <td width="10" style="font-size:0;"><img src="https://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="10" height="1" style="display:block;"></td>
+    </tr>
+    </table></td>
+    <td width="45" style="width:7.5%;font-size:0;"><img src="https://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="24" height="1" style="display:block;"></td>
+    </tr>
+    <tr>
+    <td width="600" style="font-size:0;" colspan="3"><img src="https://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/line_footer.png" alt="" width="100%" height="31" style="display:block;"></td>
+    </tr>
+    <!-- Subscribeここまで -->
+    <!-- CSここから -->
+    <tr>
+    <td width="45" style="width:7.5%;font-size:0;"><img src="https://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="24" height="1" style="display:block;"></td>
+    <td width="510" style="width:85%;"><table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+    <td width="500"><span style="display:block;color:#666666;font-size:12px;line-height:150%;text-decoration:none;">請不要回覆此電郵。 如有査詢，請聯絡<a href="mailto:customerservice@nintendo.com.hk" target="_top">customerservice@nintendo.com.hk</a></span></td>
+    <td width="10" style="font-size:0;"><img src="https://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="10" height="1" style="display:block;"></td>
+    </tr>
+    <tr>
+      <td width="500"><span style="display:block;color:#666666;font-size:12px;line-height:150%;text-decoration:none;">Please do not reply this email. If you have any inquiries, please contact <a href="mailto:customerservice@nintendo.com.hk" target="_top">customerservice@nintendo.com.hk</a></span></td>
+    <td width="10" style="font-size:0;"><img src="https://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="10" height="1" style="display:block;"></td>
+    </tr>
+    </table></td>
+    <td width="45" style="width:7.5%;font-size:0;"><img src="https://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="24" height="1" style="display:block;"></td>
+    </tr>
+    <tr>
+    <td width="600" style="font-size:0;" colspan="3"><img src="https://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/line_footer.png" alt="" width="100%" height="31" style="display:block;"></td>
+    </tr>
+    <!-- CSここまで -->
+    <!-- Addressここから -->
+    <tr>
+    <td width="45" style="width:7.5%;font-size:0;"><img src="https://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="24" height="1" style="display:block;"></td>
+    <td width="510" style="width:85%;"><table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+    <td width="500"><span style="color:#666666;font-size:12px;line-height:150%;">任天堂(香港)有限公司</span></td>
+    <td width="10" style="font-size:0;"><img src="https://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="10" height="1" style="display:block;"></td>
+    </tr>
+    <tr>
+    <td width="500"><span style="color:#666666;font-size:12px;line-height:150%;">地址：香港九龍都會道10號都會大廈21樓2101-7, 19室</span></td>
+    <td width="10" style="font-size:0;"><img src="https://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="10" height="1" style="display:block;"></td>
+    </tr>
+    <tr>
+    <td width="500"><span style="color:#666666;font-size:12px;line-height:150%;">電話：(852)2406 5666</span></td>
+    <td width="10" style="font-size:0;"><img src="https://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="10" height="1" style="display:block;"></td>
+    </tr>
+    </table></td>
+    <td width="45" style="width:7.5%;font-size:0;"><img src="https://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="24" height="1" style="display:block;"></td>
+    </tr>
+    <tr>
+    <td width="45" style="width:7.5%;font-size:0;"><img src="https://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="24" height="1" style="display:block;"></td>
+    <td width="510" style="width:85%;"><table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+    <td style="font-size:0;" width="510"><img src="https://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="1" height="20" style="display:block;"></td>
+    </tr>
+    <tr>
+    <td width="500"><span style="color:#666666;font-size:12px;line-height:150%;">Nintendo (Hong Kong) Limited</span></td>
+    <td width="10" style="font-size:0;"><img src="https://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="10" height="1" style="display:block;"></td>
+    </tr>
+    <tr>
+    <td width="500"><span style="color:#666666;font-size:12px;line-height:150%;">Unit 2101-7, 19 21/F., The Metropolis Tower, 10 Metropolis Drive, Kowloon, Hong Kong</span></td>
+    <td width="10" style="font-size:0;"><img src="https://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="10" height="1" style="display:block;"></td>
+    </tr>
+    <tr>
+    <td width="500"><span style="color:#666666;font-size:12px;line-height:150%;">Tel：(852)2406 5666</span></td>
+    <td width="10" style="font-size:0;"><img src="https://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="10" height="1" style="display:block;"></td>
+    </tr>
+    </table></td>
+    <td width="45" style="width:7.5%;font-size:0;"><img src="https://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="24" height="1" style="display:block;"></td>
+    </tr>
+    <tr>
+    <td width="600" style="font-size:0;" colspan="3"><img src="https://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/line_footer.png" alt="" width="100%" height="31" style="display:block;"></td>
+    </tr>
+    <!-- Addressここまで -->
+    <tr>
+    <td style="font-size:0;" colspan="3"><img src="http://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="1" height="5" style="display:block;"></td>
+    </tr>
+    <tr>
+    <td width="600" style="width:7.5%;font-size:0;"><img src="http://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="24" height="1" style="display:block;"></td>
+    <td width="510" style="width:85%;"><table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+    <td style="font-size:0;"><img src="http://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="1" height="20" style="display:block;"></td>
+    </tr>
+    <tr>
+    <td style="font-size:0;"><img src="http://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="1" height="20" style="display:block;"></td>
+    </tr>
+    </table></td>
+    <td width="45" style="width:7.5%;font-size:0;"><img src="http://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="24" height="1" style="display:block;"></td>
+    </tr>
+    <tr>
+    <td style="font-size:0;" colspan="3"><img src="http://image.ccg.nintendo.com/lib/fe9b13727664037d74/m/4/spacer_8.gif" alt="" width="1" height="20" style="display:block;"></td>
+    </tr>
+    </table>
+    <!-- Footerここまで-->   
+</body>
+
+</html>
+
+--VrO1Bb7IoFzH=_?:--
+

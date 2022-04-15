@@ -1,0 +1,188 @@
+Delivered-To: tianyin.rien@gmail.com
+Received: by 2002:a05:6a10:9ae8:0:0:0:0 with SMTP id t8csp1132680pxm;
+        Thu, 17 Mar 2022 06:39:20 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJyaEM3LKYafl0dM5UqZUcOrQZUUC2Ht4u8ia+lnR2M61omYvHGCPPrtTLssf+8lv1nYLYv8
+X-Received: by 2002:a05:622a:1a12:b0:2e1:a631:aecc with SMTP id f18-20020a05622a1a1200b002e1a631aeccmr3698363qtb.383.1647524360307;
+        Thu, 17 Mar 2022 06:39:20 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1647524360; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Xoy6UuVdlW2VkmnreFViJhO4T4v3MVgV+Mcj8mSFlcr2W+lGwZNkCBVcpurdZWCNzj
+         hOERDo5Df8T5csHheGWiUQjNpIEeU6XxD1i7aPAYj3X4jhkftLlcOnJDcsnmwDHiwtnR
+         X8aUlTz9m0Yih545ci3OzTRZY1HdIcI0h8tJYZiEo60wJzPE7GKJHRh8ZRU3LczPKii4
+         pvEVYgOC2Ho3timX4P+btfSQakPMuAlVFTBozRBcUBICFAvEM1N/qngVWyttc/mqKc+r
+         3fFJeGXI0T6D4VUTt0Wb+WPHTBDj9X987DVGH4TLU+QWRZn5Ul88Og0AVNKq50xtQ/5x
+         YdCw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:list-unsubscribe:list-unsubscribe-post
+         :content-transfer-encoding:mime-version:to:from:subject:date
+         :message-id:dkim-signature:dkim-signature;
+        bh=m8bAydRJF/Org8UnD++GgCmwjQcyXJGbRupwbIrmQN0=;
+        b=DnSThIRpERJyk7mtiZ4eawe0VfCFL+gkGTd+uH4dxlHqtj8yFYQMikFwI65stbexWf
+         hF9+/PrDgwiNK/kag/QmJojv3/zpkDcVAFTY+iNYXE/5jTLEyU76hHdGENE4Aim6nr0p
+         rQXavKHTFJECwYguIWQo0e2Ir+hb6TO1By9oM0BPVbXOM6R4sef4efy+6qofPJvWlqlj
+         mFq1CwKp+qIzk1Nc2CmBp/JpVsdVkIEGzWsW2+2fxsO5v6NDKt7/+e66qWwsEQXVdUhL
+         voE+A6zOgpHz63jLSPegbbpct/WvEkrgngSWSOIQTlqXSy6QezMTf12CCd7nlYp9lkGm
+         KUIg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@bookmail.org header.s=pqrfq5ooifyczme5wznmczrlu6fgrxfj header.b=aj7wS3Re;
+       dkim=pass header.i=@amazonses.com header.s=6gbrjpgwjskckoa6a5zn6fwqkn67xbtw header.b=B1pJvBpv;
+       spf=pass (google.com: domain of 0100017f981aad95-905a00e8-1999-40a2-a6f7-e9b1fcdbfe6e-000000@amazonses.com designates 54.240.48.89 as permitted sender) smtp.mailfrom=0100017f981aad95-905a00e8-1999-40a2-a6f7-e9b1fcdbfe6e-000000@amazonses.com;
+       dmarc=pass (p=QUARANTINE sp=REJECT dis=NONE) header.from=bookmail.org
+Return-Path: <0100017f981aad95-905a00e8-1999-40a2-a6f7-e9b1fcdbfe6e-000000@amazonses.com>
+Received: from a48-89.smtp-out.amazonses.com (a48-89.smtp-out.amazonses.com. [54.240.48.89])
+        by mx.google.com with ESMTPS id s7-20020a05620a0bc700b00648cb1ccc48si1370167qki.610.2022.03.17.06.39.19
+        for <tianyin.rien@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 17 Mar 2022 06:39:20 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 0100017f981aad95-905a00e8-1999-40a2-a6f7-e9b1fcdbfe6e-000000@amazonses.com designates 54.240.48.89 as permitted sender) client-ip=54.240.48.89;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@bookmail.org header.s=pqrfq5ooifyczme5wznmczrlu6fgrxfj header.b=aj7wS3Re;
+       dkim=pass header.i=@amazonses.com header.s=6gbrjpgwjskckoa6a5zn6fwqkn67xbtw header.b=B1pJvBpv;
+       spf=pass (google.com: domain of 0100017f981aad95-905a00e8-1999-40a2-a6f7-e9b1fcdbfe6e-000000@amazonses.com designates 54.240.48.89 as permitted sender) smtp.mailfrom=0100017f981aad95-905a00e8-1999-40a2-a6f7-e9b1fcdbfe6e-000000@amazonses.com;
+       dmarc=pass (p=QUARANTINE sp=REJECT dis=NONE) header.from=bookmail.org
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=pqrfq5ooifyczme5wznmczrlu6fgrxfj; d=bookmail.org; t=1647524359;
+	h=Message-ID:Date:Subject:From:To:MIME-Version:Content-Type:Content-Transfer-Encoding:List-Unsubscribe-Post:List-Unsubscribe;
+	bh=qgRQxv6dSOZYnUCjWO840r3HCfeB03exBv7WqcYCJdk=;
+	b=aj7wS3ReYaqPBYzeQtyRqkogPPfGcPDewWfhc9GzefFdkWiyzWiFD0jDsd3Puixc
+	r15h7D7FrvWd2E3CihMH5z27V95igsLLb0bGLEjddiRKVaFddlX6UQrgbm3RIV7Lmr8
+	X67J9aTEicAq0vO5JijtCQ6K0qdaEGmMjClN84js=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=6gbrjpgwjskckoa6a5zn6fwqkn67xbtw; d=amazonses.com; t=1647524359;
+	h=Message-ID:Date:Subject:From:To:MIME-Version:Content-Type:Content-Transfer-Encoding:List-Unsubscribe-Post:List-Unsubscribe:Feedback-ID;
+	bh=qgRQxv6dSOZYnUCjWO840r3HCfeB03exBv7WqcYCJdk=;
+	b=B1pJvBpvHwwz8f7F7mOl2655wOgF2d1sF3Zt4TEemnZm9rGd5bJU3JJcZFd4upaa
+	jAAhslh2CPIO5d7aKgTjG/mGdu23JE/ji+vIX+i2e80tVpHfIOxRF6QTeG7I0GT56yL
+	nFm8lde3r8/S2eCtDK6qPCtd4kAyNMSnqV1g+L3o=
+Message-ID: <0100017f981aad95-905a00e8-1999-40a2-a6f7-e9b1fcdbfe6e-000000@email.amazonses.com>
+Date: Thu, 17 Mar 2022 13:39:19 +0000
+Subject: renty! Z-Library fundraising campaign
+From: Z-Library (b-ok.com) <mailer@bookmail.org>
+To: tianyin.rien@gmail.com
+MIME-Version: 1.0
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <https://1lib.domains/?email=tianyin.rien@gmail.com&key=ebf5011a>
+Feedback-ID: 1.us-east-1.Sy98Ro23yVB/I5k5v2uJsnWRMFQPL4lXBuIADlqnhTQ=:AmazonSES
+X-SES-Outgoing: 2022.03.17-54.240.48.89
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DU=
+TF-8">
+    </head>
+    <body>
+        <div style=3D"line-height: 160%; font-size:13pt; font-family: 'Helv=
+etica Neue','Helvetica', 'Proxima Nova', 'Gotham', 'Arial';">
+            <div>
+                <div style=3D"background: #FAFAFA url('https://b-ok.com/img=
+/body-bg.png');max-width: 100%;">
+                    <center>
+                        <div style=3D"padding: 40px 40px 100px 40px;max-wid=
+th: 800px;text-align: center;">
+                            <center>
+                                <table width=3D"600" cellspacing=3D"0" cell=
+padding=3D"0" border=3D"0" style=3D"box-shadow: 0 0 5px rgba(0,0,0,0.35);ba=
+ckground-color: #fff; border-radius: 0px;">
+                                    <tbody style=3D"background: #fff;">
+                                        <tr>
+                                            <td style=3D"padding: 0;border-=
+top: 5px solid #49AFD0;text-align: center;">
+                                                <a target=3D"_blank" style=
+=3D"font-size: 22px;text-decoration: none;" href=3D"https://b-ok.com/">
+                                                    <img border=3D"0" alt=
+=3D"" src=3D"https://b-ok.com/img/logo.zlibrary.png" style=3D"border:0;padd=
+ing:14px 10px 10px 10px; width: 50%;" />
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style=3D"padding:0px 30px 2=
+0px 30px;text-align: left;color: #000">
+                                                <p>
+                                                    Hello, renty!
+       =
+    =20
+<p>You've downloaded <i>18 book(s)</i> and article(s) using our ser=
+vice in the past 6 months.If you can <a href=3D"https://1lib.domains/howtod=
+onate.php?remix_userid=3D12421891&remix_userkey=3Dad7aee2ba930ad3d1dd6256d8=
+ce08d9e">make a donation</a> [<a href=3D"https://b-ok.com/donatex.php?remix=
+_userid=3D12421891&remix_userkey=3Dad7aee2ba930ad3d1dd6256d8ce08d9e">mirror=
+</a>] to support our work at this time we would be extremely grateful.</p>=
+
+
+<p>
+    Z-Library is one of the largest online libraries in the wor=
+ld that contains over 9,945,695 books and 84,837,000 articles.
+    We aim=
+ to make literature accessible to everyone.
+</p>
+
+<b>Only thanks to y=
+our support over the past six months, we've implemented many updates such a=
+s public booklists & favorite booklists, Android app (now available in 28 l=
+anguages), moderation of uploaded books, preferred language settings, categ=
+ory filter & terms on the category page, filename template editor, and much=
+ more.</b>
+
+<p>
+    Your active support gives strength to our Team an=
+d inspires to work.
+    Each donated dollar is not only money for us, but=
+ it is also the confidence that you really need our project!
+</p>
+
+<p=
+>
+    On <i>March, 15th</i>, as in March and September of each year, we l=
+aunched <a href=3D"https://1lib.domains/donatex.php?remix_userid=3D12421891=
+&remix_userkey=3Dad7aee2ba930ad3d1dd6256d8ce08d9e">additional fundraising</=
+a> to project maintenance and development.
+    We will be extremely thank=
+ful for every dollar that will be donated.
+    Furthermore, <b>UNLIMITED =
+downloads</b> (for 1 month) are available for ALL contributors who will don=
+ate during the fundraising period.
+    The fundraising will run until Apr=
+il, 1st
+</p>
+
+<p>
+    Millions of people use Z-Library every month =
+for their purposes =E2=80=94 this shows us that we are on the correct track=
+.
+    But it will be difficult to achieve our goals without your help.
+=
+    Z-Library is a non-profit project that exists at its founders' expense,=
+ and with your support.
+</p>
+
+<p>Please consider making a donation.</=
+p><br/><br/>
+<i>Z-Library Team</i>
+                                                </p>
+
+                                                <div style=3D"font-size:9pt=
+; color:#999; line-height: 140%;">
+                                                    You have received this =
+letter because of your registration at https://b-ok.com/. If you want to be=
+ removed from this mailing list - <a href=3D"https://1lib.domains/unsubscri=
+be.php?email=3Dtianyin.rien@gmail.com&key=3Debf5011a">UNSUBSCRIBE</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </center>
+                        </div>
+
+                    </center>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+

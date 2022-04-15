@@ -1,0 +1,75 @@
+Delivered-To: tianyin.rien@gmail.com
+Received: by 2002:a05:6a10:9ae8:0:0:0:0 with SMTP id t8csp1775298pxm;
+        Mon, 21 Mar 2022 07:23:57 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJyLTRVPjct9Gz2jw5Q08r1y9PAe0BMiiQzk8U+gP5OX4/sRFMeyd7yID9PLr6IOukeHMvwn
+X-Received: by 2002:a05:6214:b6c:b0:440:f3b8:d0a0 with SMTP id ey12-20020a0562140b6c00b00440f3b8d0a0mr13658308qvb.97.1647872636916;
+        Mon, 21 Mar 2022 07:23:56 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1647872636; cv=none;
+        d=google.com; s=arc-20160816;
+        b=G6Bok52tHj2Etu5c6CVFlIJ/DcXhD5SymLJ9uleW2TOUQAcP4yy3P8JY+uNa2p14mR
+         Hm/slizAocgiiZQcqgB6MUj3i70KMdiId11wqVcPZ6JdX6NAgXHU574PkwFhAhSxI0Ue
+         UR2NzVhT82o+1FbtuD5gZChbkq0sTazdLRMTXRg/WWO7G0ApFcDSZQuAg8dEAPHh3Atx
+         +uFfZasUgqEU2Wa0PD450HHXSrA1KRc9quOR5eO9R7Iu1nDv4TpBK+Kl2pa2BeTK97a6
+         Aw5SNYsdf+PE/NVShL1JQUPRd+D+Bqu8LafgB6VFpuXyfRcAQWqoGByZCwhBYIIVk7dB
+         zWJw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:subject:message-id:to:from
+         :date:dkim-signature;
+        bh=ixHY6rS+/Kw92Y5SrpwTnwZ39Ey0DF1NFgkOHjuVdyM=;
+        b=Csw9mNlHj0AI50lDdwbLnlnYuu9W+IH8AU9kPA3uCzRihDh7zsgtZmaNxS6fRFFL8J
+         VOxrD7nuC8oczi3pCFJP87UWj7J5cWIZpy0BcJYoxBO0rTNIDycaj632AShh4faoHmte
+         9BnsiGmTqmHSeZdmVefdHbiztM8v5MXXKAEMPjmdRDfwcmIvxxt/65yC9+hbiS6+9ncU
+         2Fm9bnDtNge8vbvBxlssO4DrOqZIcQxaf+fq1wpYtZhUnNe+dEER+odP0QQyfy0PZcN4
+         Gn8EpfhOYExkS97iG57X22VpgXeTxhVtGcdmGskyKvYWX5LwrRFKlMeNQdtdF6DdPiuG
+         duWQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@github.com header.s=pf2014 header.b=cSUW1UsL;
+       spf=pass (google.com: domain of noreply@github.com designates 192.30.252.200 as permitted sender) smtp.mailfrom=noreply@github.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=github.com
+Return-Path: <noreply@github.com>
+Received: from smtp.github.com (out-17.smtp.github.com. [192.30.252.200])
+        by mx.google.com with ESMTPS id e12-20020a056214162c00b004412e00cb17si548527qvw.7.2022.03.21.07.23.56
+        for <tianyin.rien@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+        Mon, 21 Mar 2022 07:23:56 -0700 (PDT)
+Received-SPF: pass (google.com: domain of noreply@github.com designates 192.30.252.200 as permitted sender) client-ip=192.30.252.200;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@github.com header.s=pf2014 header.b=cSUW1UsL;
+       spf=pass (google.com: domain of noreply@github.com designates 192.30.252.200 as permitted sender) smtp.mailfrom=noreply@github.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=github.com
+Received: from github.com (hubbernetes-node-a889d07.va3-iad.github.net [10.48.124.81])
+	by smtp.github.com (Postfix) with ESMTPA id 677135C0E09
+	for <tianyin.rien@gmail.com>; Mon, 21 Mar 2022 07:23:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=github.com;
+	s=pf2014; t=1647872636;
+	bh=ixHY6rS+/Kw92Y5SrpwTnwZ39Ey0DF1NFgkOHjuVdyM=;
+	h=Date:From:To:Subject:From;
+	b=cSUW1UsLSB5Y/CDWPHuTPIzkEtfVX0s3pS47+oQmcGAhg9ohp/tWpR4T0Hkkskiig
+	 eVqoTuYuPANI570Fg+x/X6YnagAWNiQfi0HwZL/DfEz9+i+quhRVdSE0J9ySldT9o8
+	 TxKbKtxSjAezDSTRfq50SNoRuKm4isGopwFQ2Tkc=
+Date: Mon, 21 Mar 2022 07:23:56 -0700
+From: GitHub <noreply@github.com>
+To: ren <tianyin.rien@gmail.com>
+Message-ID: <62388a7c65975_6fc6fc418a1@lowworker-686965d845-7lp4s.mail>
+Subject: [GitHub] Please verify your device
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Auto-Response-Suppress: All
+
+Hey tianyinrien!
+
+A sign in attempt requires further verification because we did not recognize your device. To complete the sign in, enter the verification code on the unrecognized device.
+
+Device: Safari on Linux
+Verification code: 208864
+
+If you did not attempt to sign in to your account, your password may be compromised. Visit https://github.com/settings/security to create a new, strong password for your GitHub account.
+
+If you'd like to automatically verify devices in the future, consider enabling two-factor authentication on your account. Visit https://docs.github.com/articles/configuring-two-factor-authentication to learn about two-factor authentication.
+
+If you decide to enable two-factor authentication, ensure you retain access to one or more account recovery methods. See https://docs.github.com/articles/configuring-two-factor-authentication-recovery-methods in the GitHub Help.
+
+Thanks,
+The GitHub Team

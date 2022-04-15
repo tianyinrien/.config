@@ -1,0 +1,118 @@
+Delivered-To: tianyin.rien@gmail.com
+Received: by 2002:a05:6a10:6750:0:0:0:0 with SMTP id w16csp3284094pxu;
+        Sat, 12 Feb 2022 16:21:48 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJxcKEgqC1NpMWdQleZcNVznGEds8wNZcqxosNjQjfI70BEfHFjCEW/S6bdgMErhz34UHARM
+X-Received: by 2002:a05:622a:11c1:: with SMTP id n1mr5518475qtk.128.1644711707942;
+        Sat, 12 Feb 2022 16:21:47 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1644711707; cv=none;
+        d=google.com; s=arc-20160816;
+        b=HK4vr8wEAIBfs6crA2GHafEH/Y5mfkU/4yZ9gmxmV9jrt41H6cIn9/DS3zo1gioLH9
+         o6CCAeaIzWNJb+R8UsQ9l3//QypRyUjsaYUswFxnZp2Mh6BFO5vw8ly/CM0FtYRZVw8J
+         r3XTmwv5c4whufunUL2gD8PqGdYnMvOXsmlGQY5TK6/XowJNsojaayZslKemc69JIVNF
+         lzkInwlHuXSpiL6SSKq9kjjYnNs99vt5BeaVpj8r96PCMY5Ga4I5dkUbF2llWpNFjAo6
+         nGAE5JCMZZvlSaGo2yeCUapTQmfI0rEtTYt4rBj+9T2/pwablNeSfFDoYRyFF83rcDby
+         pxxQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:date:message-id:content-transfer-encoding:mime-version
+         :subject:to:from:dkim-signature:dkim-signature;
+        bh=NqBCmGQW+uuVlZa6LNwHirENazog+xOtlpVmrppRpBM=;
+        b=GTIKLcISBAeoDJslVaePVPWS1zJNJgc2DYG1842SA0nKj3V+YtEAzVSI3OKX+q+2AH
+         VGf9fLNq99Fy0SNckF1pLjd381lOnXFqUQ5LTufnBgj6l0HB2CylbfKOwnjs2Q67qoAb
+         LgloIj0Z05kvq5PJ30zPfgA3r711WVpu5zmFQkjgttUoLMs9NuAL7V15WsWbdPSagBFK
+         RMg2zOy9N7tOWiULpTcj2nIjSTxoWeN6IO2hgODAma9mpGETkKp6nfhG2oiEUV/rI2ik
+         2jOr+jNFIRSZWmdllj/8gKsIo8nfxwc8Y/18qdZcqpXjXBEOOssinz8uQqC5qPzMQGfp
+         Ak2A==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@accounts.nintendo.com header.s=amayz3a6rillyoskm6zwhw7jsd2olyoj header.b=iL0GUuFD;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=eGkAE593;
+       spf=pass (google.com: domain of 0100017ef0750265-31345b91-247f-4ab6-a67f-38298830c723-000000@amazonses.com designates 54.240.10.18 as permitted sender) smtp.mailfrom=0100017ef0750265-31345b91-247f-4ab6-a67f-38298830c723-000000@amazonses.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=accounts.nintendo.com
+Return-Path: <0100017ef0750265-31345b91-247f-4ab6-a67f-38298830c723-000000@amazonses.com>
+Received: from a10-18.smtp-out.amazonses.com (a10-18.smtp-out.amazonses.com. [54.240.10.18])
+        by mx.google.com with ESMTPS id n3si6625068qtk.447.2022.02.12.16.21.47
+        for <tianyin.rien@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 12 Feb 2022 16:21:47 -0800 (PST)
+Received-SPF: pass (google.com: domain of 0100017ef0750265-31345b91-247f-4ab6-a67f-38298830c723-000000@amazonses.com designates 54.240.10.18 as permitted sender) client-ip=54.240.10.18;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@accounts.nintendo.com header.s=amayz3a6rillyoskm6zwhw7jsd2olyoj header.b=iL0GUuFD;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=eGkAE593;
+       spf=pass (google.com: domain of 0100017ef0750265-31345b91-247f-4ab6-a67f-38298830c723-000000@amazonses.com designates 54.240.10.18 as permitted sender) smtp.mailfrom=0100017ef0750265-31345b91-247f-4ab6-a67f-38298830c723-000000@amazonses.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=accounts.nintendo.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=amayz3a6rillyoskm6zwhw7jsd2olyoj; d=accounts.nintendo.com;
+	t=1644711707;
+	h=From:To:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date;
+	bh=hJoWomS132/dl740f+WcxpIzGnubRaxEX2aoeACnC18=;
+	b=iL0GUuFDKgDPqECvp8CFz/hvX6mS40dxBPUvx3ccT2SSW6LycNT0CB8/Uxue9bK1
+	xo4hrtYbvKLNUhYQXY83cXaCqTI2oIFH6KkiQVTO/LxCghSJabNslWQnbHjgZsmt0ug
+	z9xClOWkYPW0pBjRZDuf+ZNhxz/18Zbo1fSJt+KM=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1644711707;
+	h=From:To:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date:Feedback-ID;
+	bh=hJoWomS132/dl740f+WcxpIzGnubRaxEX2aoeACnC18=;
+	b=eGkAE593Cw3ybL2ipFmwMDh4RkI+K9PzmansSZUu/RQswmC9zag9v1JDT8ftdnID
+	RPbZKpQ4QmjzoAarG3Al9QzBiwsVDu3mXL2Buaehk43UVN6KrR89OScOCHYW2eojAZF
+	mxQnP9z8Six9EhPZkBUV7GhuglmvYAFXlV7VFcHw=
+From: no-reply@accounts.nintendo.com
+To: tianyin.rien@gmail.com
+Subject: [Nintendo Switch] Nintendo Account Creation
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Message-ID: <0100017ef0750265-31345b91-247f-4ab6-a67f-38298830c723-000000@email.amazonses.com>
+Date: Sun, 13 Feb 2022 00:21:47 +0000
+Feedback-ID: 1.us-east-1.YTPOJdyurkmmbyxK9AJk2pAlUUwjPTowIoryjAKHWzw=:AmazonSES
+X-SES-Outgoing: 2022.02.13-54.240.10.18
+
+This is an automatically generated e-mail from Nintendo.
+
+-------------------------
+Thank you for your interest in setting up a Nintendo Account to use with th=
+e Nintendo Switch system.
+
+Linking a Nintendo Account to the user account on your system provides acce=
+ss to various features on Nintendo Switch, including access to Nintendo eSh=
+op. You can also earn points for the My Nintendo rewards program on eligibl=
+e purchases made on Nintendo Switch.
+
+Please use the URL below to create a Nintendo Account. Once you have create=
+d your Nintendo Account, you can also create Nintendo Accounts for children=
+ (under 13 years of age) by selecting "Family group" in your Nintendo Accou=
+nt settings and then "Create an account for a child."
+
+To link your Nintendo Account to Nintendo Switch, please do the following:
+
+  1. Access System Settings on Nintendo Switch, and select the user account=
+ you would like to link.
+
+  2. Select "Link Nintendo Account."
+
+  3. Select "Sign In and Link."
+
+  4. Follow the on-screen instructions to link your Nintendo Account to you=
+r user account.
+
+If you would like to link your Nintendo Account using the 5-digit confirmat=
+ion code, locate the code for the appropriate account after the Nintendo Ac=
+count is created.
+
+https://accounts.nintendo.com/login/email/landing?challenge_id=3Dacb66367-a=
+99f-4038-bf37-8d65f220b7b6
+
+Please be aware that if you do not complete this process within 24 hours, t=
+he above URL will become invalid.
+
+If you do not know why you have received this e-mail, please delete it.
+
+-------------------------
+Sincerely,
+Nintendo Co., Ltd.
+
+You cannot reply to this e-mail address.
+If you have any questions, please see the information below on how to conta=
+ct us.
+
+=E2=96=BDNintendo Account | FAQ
+https://accounts.nintendo.com/common_help
+

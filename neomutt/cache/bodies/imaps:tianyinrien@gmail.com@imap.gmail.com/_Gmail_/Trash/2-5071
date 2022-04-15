@@ -1,0 +1,160 @@
+Delivered-To: tianyin.rien@gmail.com
+Received: by 2002:a05:6a11:4a89:b0:26e:6bbc:7bbb with SMTP id ob9csp1827223pxb;
+        Sun, 3 Apr 2022 18:55:41 -0700 (PDT)
+X-Received: by 2002:a05:6000:1288:b0:205:9907:9f6f with SMTP id f8-20020a056000128800b0020599079f6fmr15081170wrx.399.1649037341118;
+        Sun, 03 Apr 2022 18:55:41 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1649037341; cv=none;
+        d=google.com; s=arc-20160816;
+        b=guH6S2Yh+1UvPa85Wa0V2KxQQjdHXxyGIpEI/RT6hTcjogGD/xB65IJx6yQtGIY+tb
+         7+WjVEhIMq/Z1Wyga8ynNfstvuYWlMEpPcjnAmnLHROjAT79tOC/GWuM8ZuLMcF7WxW5
+         wknGCE+pVciQ4qb4CQJzcEi6Eglr/s1OMhutkyPBetSVliMhu7eYXqy25EllM7VsYVZl
+         lwJk4b5c3ve3vKmgSye5BCVpEb6mGLyAh+nP6r3mnsZDZ2dW1DBcGQHFEMVDkjMSuo/z
+         /MDiKG7oIH2QiVswL0W/2FqcrkAoQlI/SV+xRgGojItVuaOlCJssSjzganhpglQz007A
+         P8nA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=cc:to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=5ywPs5cjvWHaSbxeNPh83OkH2MeyRkfbB5DoQAbEz98=;
+        b=m57iZZQIOz4dlKq/VHZTPTc1KfEZwSamChIE/KNnv7wEqFIG+79IlhntA8LKIDsThJ
+         8zoIWCl2HEgjVd9bVPbTj2kseOAFKnkuo21iBemKWNs3VckXNWbyQhlUL8jiMr8edttg
+         +aBmbaPEGXISrExLACOec4MOtsE4dL9tq2njbVkg7DHpiUc7d4Rk3zLwbJ/4capMx8tc
+         gB13bcHpgvjeaMlmsoLwVjurqF43euCfxOxiLWftO1bfjRl75vD6UelIPRPAzP8AtcmS
+         5Sb7cLb6WCf6l0CDPatt6nXavmRg2Ws2+P9Vo7OyCLtZ9BlWHkLeTWX5MDLn9fJ//KmA
+         AtjQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@epik.com header.s=epik header.b=hAVwT08f;
+       spf=pass (google.com: domain of nicole@epik.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=nicole@epik.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=epik.com
+Return-Path: <nicole@epik.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id h8-20020a05600c2ca800b00381410c0ddbsor752968wmc.21.2022.04.03.18.55.40
+        for <tianyin.rien@gmail.com>
+        (Google Transport Security);
+        Sun, 03 Apr 2022 18:55:41 -0700 (PDT)
+Received-SPF: pass (google.com: domain of nicole@epik.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@epik.com header.s=epik header.b=hAVwT08f;
+       spf=pass (google.com: domain of nicole@epik.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=nicole@epik.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=epik.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=epik.com; s=epik;
+        h=mime-version:from:date:message-id:subject:to:cc;
+        bh=5ywPs5cjvWHaSbxeNPh83OkH2MeyRkfbB5DoQAbEz98=;
+        b=hAVwT08f7p8Aigz670r6nJyqIXQmRqE9yyBMpl4+Xg4tPUflQhQr5almxt6NpH6Lfi
+         /SinLBhHDpVcDzVm/NBTMrAhMbzs21RSY9iKC5SFfXDaWRXqoiIYRwR8meckSsdw8zz/
+         Q+Myw0e4Rqg9TvdPqs635ADASZBsK1iY6qH/A=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
+        bh=5ywPs5cjvWHaSbxeNPh83OkH2MeyRkfbB5DoQAbEz98=;
+        b=HlE1nQEXnFwVnOfbT6hXbqmapM6lqPelGLgPIFMLCPQH+j0X/EV+K286WkBUyPnmsC
+         8HgMziwKIhPiVNqLI6h7G/wwxabk9fdzH61cnJ8Nrq502nwC3HvHKROr1/S1vlSgm/HW
+         RoBcgbvRLGBSDJ1gKjVyAAZrjK0Xevqz9PN53NDaULkndPlC/pqXXFwS9CZFwQIuymMz
+         a1jureSkitMUosCydwMszZd05rYC/MSu6WJyMnqIyO1UXqlSLUQWdWJNs4o4Jb9dyVnh
+         MxHevbwAd012ZAJqPTkoq3bLE2CvjWercvVGGNHaO30GdvIbA5ONskLN/VLlNOcbqKzq
+         gkxA==
+X-Gm-Message-State: AOAM531N2zTn1uJ5bC8b1oKSsXMQ9yEbHWlBz3PAWA4XHqrBRXiWlpap
+	4hYEjjnv8wHuIzpBO6llY7qQZFXljRlaZKwKNoUxa5h2vmP8eQ1W
+X-Google-Smtp-Source: ABdhPJz+Y64biIifiG9MHmNQLxKX5RL2jIiDcL5ZOMMvpngajG4yUiGP9ZYGLDffT625Gy3mNMgrZ+VkZ0QKIH5QcDY=
+X-Received: by 2002:a05:600c:3ba7:b0:38e:7684:c9fc with SMTP id
+ n39-20020a05600c3ba700b0038e7684c9fcmr91617wms.108.1649037340539; Sun, 03 Apr
+ 2022 18:55:40 -0700 (PDT)
+MIME-Version: 1.0
+From: Ting Ting Li <nicole@epik.com>
+Date: Mon, 4 Apr 2022 09:55:28 +0800
+Message-ID: <CAFWzJhoFbwrJ1BVOv+Os2jhP9S4=DHt-mPnmWLCpnb_-AJv+Fw@mail.gmail.com>
+Subject: =?UTF-8?B?5qyi6L+O5rOo5YaM5L2/55SoRXBpaw==?=
+To: tianyin.rien@gmail.com
+Cc: May Chen <maychen@epik.com>
+Content-Type: multipart/alternative; boundary="000000000000e790dc05dbca6cb9"
+
+--000000000000e790dc05dbca6cb9
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: base64
+
+5oKo5aW977yMDQoNCuasoui/juazqOWGjOaIkeS7rOW5s+WPsO+8jOaIkeaYr05pY29sZe+8jOS5
+i+WQjuaciemcgOimgeS5sOWNlueahOWfn+WQjeaIluS4reaWh+WNj+WKqeasoui/juiBlOezu+OA
+guaIkeaKiuaIkeS7rOS6mua0sui0n+i0o+S6uk1heeS5n+aKhOmAgeWcqOi/memHjO+8iE1heeW+
+ruS/oTptYXktYy05MTgNCu+8ieOAgumaj+aXtuasoui/juiBlOezu++8gSDlpoLmnpzlvq7kv6Hm
+lrnkvr/vvIwg5Y+v5Lul5Yqg5LiA5LiL77yI5oiR55qE5b6u5L+hdHRfY29sZe+8ieOAgg0KDQrn
+pZ3lpb3vvIENCk5pY29sZQ0KW2ltYWdlOiBMb2dvXSA8aHR0cHM6Ly93d3cuZXBpay5jb20vPg0K
+VGluZ3RpbmcgTGkgfCBDb3VudHJ5IE1hbmFnZXIsIENoaW5hDQoqRXBpayBIb2xkaW5ncyBJbmMu
+ICoNCkVtYWlsOiBOaWNvbGVAZXBpay5jb20gfCBXZWJzaXRlOiB3d3cuZXBpay5jb20gPGh0dHA6
+Ly93d3cuZXBpay5jb20vPg0KTW9iaWxlOiArIDg2IDE1ODgtMjQ2LTcxMzUgfCBXZUNoYXQ6IHR0
+X2NvbGUNClNreXBlOiBsaXZlOmYwMjlmN2UzYTlmYzVmNWENCltpbWFnZTogZmFjZWJvb2sgaWNv
+bl0gPGh0dHBzOi8vd3d3LmZhY2Vib29rLmNvbS9lcGlrZG90Y29tPiBbaW1hZ2U6DQp0d2l0dGVy
+IGljb25dIDxodHRwczovL3R3aXR0ZXIuY29tL2VwaWNrZG90Y29tPg0K
+--000000000000e790dc05dbca6cb9
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">=E6=82=A8=E5=A5=BD=EF=BC=8C<div dir=3D"auto"><br></div><di=
+v dir=3D"auto">=E6=AC=A2=E8=BF=8E=E6=B3=A8=E5=86=8C=E6=88=91=E4=BB=AC=E5=B9=
+=B3=E5=8F=B0=EF=BC=8C=E6=88=91=E6=98=AFNicole=EF=BC=8C=E4=B9=8B=E5=90=8E=E6=
+=9C=89=E9=9C=80=E8=A6=81=E4=B9=B0=E5=8D=96=E7=9A=84=E5=9F=9F=E5=90=8D=E6=88=
+=96=E4=B8=AD=E6=96=87=E5=8D=8F=E5=8A=A9=E6=AC=A2=E8=BF=8E=E8=81=94=E7=B3=BB=
+=E3=80=82=E6=88=91=E6=8A=8A=E6=88=91=E4=BB=AC=E4=BA=9A=E6=B4=B2=E8=B4=9F=E8=
+=B4=A3=E4=BA=BAMay=E4=B9=9F=E6=8A=84=E9=80=81=E5=9C=A8=E8=BF=99=E9=87=8C=EF=
+=BC=88May=E5=BE=AE=E4=BF=A1:may-c-918 =EF=BC=89=E3=80=82=E9=9A=8F=E6=97=B6=
+=E6=AC=A2=E8=BF=8E=E8=81=94=E7=B3=BB=EF=BC=81 =E5=A6=82=E6=9E=9C=E5=BE=AE=
+=E4=BF=A1=E6=96=B9=E4=BE=BF=EF=BC=8C =E5=8F=AF=E4=BB=A5=E5=8A=A0=E4=B8=80=
+=E4=B8=8B=EF=BC=88=E6=88=91=E7=9A=84=E5=BE=AE=E4=BF=A1tt_cole=EF=BC=89=E3=
+=80=82=C2=A0</div><div dir=3D"auto"><br></div><div dir=3D"auto">=E7=A5=9D=
+=E5=A5=BD=EF=BC=81</div><div>Nicole</div><div><div dir=3D"ltr" class=3D"gma=
+il_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div><div=
+ dir=3D"ltr"><div><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div d=
+ir=3D"ltr"><h3 style=3D"font-family:&quot;Open Sans Semibold&quot;,sans-ser=
+if;line-height:1.1;color:rgb(55,74,126);margin-top:2px;margin-bottom:12px;f=
+ont-size:18px;text-align:center"></h3><table cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-spacing:0px;border-collapse:collapse;color:rgb(68,68=
+,68);width:525px;font-size:11pt;font-family:Arial,sans-serif"><tbody><tr><t=
+d width=3D"125" valign=3D"top" rowspan=3D"6" style=3D"padding:0px 10px 0px =
+0px;font-size:10pt;font-family:Arial,sans-serif;border-right:1px solid rgb(=
+251,99,3);width:125px;vertical-align:top"><a href=3D"https://www.epik.com/"=
+ style=3D"background-color:transparent;color:rgb(51,122,183)" target=3D"_bl=
+ank"><img border=3D"0" alt=3D"Logo" width=3D"105" src=3D"https://www.epik.c=
+om/images/Epik_Logo.svg" style=3D"border:0px;vertical-align:middle;width:10=
+5px;height:auto"></a></td><td style=3D"padding:0px 0px 0px 10px"><table cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0px;border-collaps=
+e:collapse;background-color:transparent"><tbody><tr><td valign=3D"top" styl=
+e=3D"padding:0px 0px 5px 10px;font-size:10pt;color:rgb(0,121,172);font-fami=
+ly:Arial,sans-serif;width:400px;vertical-align:top"><span style=3D"font-wei=
+ght:700"><span style=3D"font-size:11pt;color:rgb(251,99,3)">Tingting Li</sp=
+an></span>=C2=A0<span style=3D"font-weight:700;font-size:11pt;color:rgb(0,0=
+,0)"><span>|=C2=A0</span>Country Manager, China</span></td></tr><tr><td val=
+ign=3D"top" style=3D"padding:5px 0px 5px 10px;font-size:10pt;font-family:Ar=
+ial,sans-serif;vertical-align:top;line-height:17px"><span><b><span style=3D=
+"font-size:10pt;color:rgb(0,0,0)">Epik Holdings Inc.</span>=C2=A0</b></span=
+><span><br></span><span><span style=3D"color:rgb(251,99,3)"><span>Email:</s=
+pan></span><span style=3D"font-size:10pt;color:rgb(0,0,0)">=C2=A0<a href=3D=
+"mailto:Nicole@epik.com" target=3D"_blank">Nicole@epik.com</a></span></span=
+>=C2=A0<span><span>|=C2=A0</span><span style=3D"color:rgb(251,99,3)"><span>=
+Website:</span></span><a href=3D"http://www.epik.com/" rel=3D"noopener" sty=
+le=3D"background-color:transparent;color:rgb(51,122,183)" target=3D"_blank"=
+><span style=3D"font-size:10pt;color:rgb(0,0,0)">=C2=A0www.epik.com</span><=
+/a></span>=C2=A0<span><br></span><span><span style=3D"color:rgb(251,99,3)">=
+<span>Mobile:</span></span><span style=3D"font-size:10pt;color:rgb(0,0,0)">=
+=C2=A0+ 86 1588-246-7135</span></span>=C2=A0<span><span>|=C2=A0</span><span=
+><span><font color=3D"#fb6303">WeChat:</font><font color=3D"#fb6303">=C2=A0=
+</font>tt_cole<br><font color=3D"#fb6303">Skype:</font></span></span><span =
+style=3D"font-size:10pt;color:rgb(0,0,0)">=C2=A0live:f029f7e3a9fc5f5a=C2=A0=
+</span></span></td></tr><tr><td valign=3D"bottom" style=3D"padding:5px 0px =
+0px 10px;font-size:10pt;font-family:Arial,sans-serif;vertical-align:bottom"=
+><span><a href=3D"https://www.facebook.com/epikdotcom" rel=3D"noopener" sty=
+le=3D"background-color:transparent;color:rgb(51,122,183)" target=3D"_blank"=
+><img border=3D"0" width=3D"23" alt=3D"facebook icon" src=3D"https://codetw=
+ocdn.azureedge.net/images/mail-signatures/generator/bease-fox/fb.png" style=
+=3D"border:0px;vertical-align:middle;height:23px;width:23px"></a>=C2=A0</sp=
+an><span><a href=3D"https://twitter.com/epickdotcom" rel=3D"noopener" style=
+=3D"background-color:transparent;color:rgb(51,122,183)" target=3D"_blank"><=
+img border=3D"0" width=3D"23" alt=3D"twitter icon" src=3D"https://codetwocd=
+n.azureedge.net/images/mail-signatures/generator/bease-fox/tt.png" style=3D=
+"border:0px;vertical-align:middle;height:23px;width:23px"></a>=C2=A0</span>=
+</td></tr></tbody></table></td></tr></tbody></table><table cellpadding=3D"0=
+" cellspacing=3D"0" style=3D"border-spacing:0px;border-collapse:collapse;co=
+lor:rgb(68,68,68);width:525px;font-size:11pt;font-family:Tahoma,sans-serif"=
+><tbody></tbody></table><table cellpadding=3D"0" cellspacing=3D"0" style=3D=
+"border-spacing:0px;border-collapse:collapse;color:rgb(68,68,68);width:525p=
+x;font-size:11pt;font-family:Tahoma,sans-serif"><tbody></tbody></table></di=
+v></div></div></div></div></div></div></div></div></div></div>
+
+--000000000000e790dc05dbca6cb9--

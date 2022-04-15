@@ -1255,3 +1255,160 @@ eef6abfef0015bec1052e079fb45f606|file:///home/ren/src/dwm/config.h|116|44|V|cpp
 	        { MODKEY|ShiftMask,             XK_d,      spawn,          {.v = drun} },
 630f48113f861104c23fd0557dc54b7c|file:///home/ren/src/dwm/config.h|96|44|V|cpp
 	static const char *drun[] = { "/home/ren/scripts/dmenu-run.sh", NULL };
+6b5710bb86b12a47a51418b409e82454|file:///home/ren/.mutt/muttrc|26|1|v|muttrc
+	vset folder = "imaps://imap.gmail.com/"
+	set spoolfile = "+INBOX"
+	set postponed = "+[Gmail]/Drafts"
+	set record = "+[Gmail]/Sent Mail"
+	set trash = "+[Gmail]/Trash"
+	s
+29bfd7ccec20b16ec11c7c08f2a16ccf|file:///home/ren/.mutt/muttrc|6|1|V|muttrc
+	set record="imaps://imap.gmail.com/[Gmail]/Sent Mail"
+afce87a48a6c23a247dcc3c2f1b12ffe|file:///home/ren/.mutt/muttrc|6|1|V|muttrc
+	set postponed="imaps://imap.gmail.com/[Gmail]/Drafts"
+151c3a249c36581079589363c2c94471|file:///home/ren/.mutt/muttrc|7|1|V|muttrc
+	set header_cache = "~/.mutt/cache/headers"
+bb4dd544a168aa980585d9a3cf8d20b2|file:///home/ren/.mutt/muttrc|7|1|V|muttrc
+	set message_cachedir = "~/.mutt/cache/bodies"
+49b8cd2670bed07c140f013034533b05|file:///home/ren/.mutt/muttrc|7|1|V|muttrc
+	set certificate_file = "~/.mutt/certificates"
+080d10ee395f589523335f11fa2ab10e|file:///home/ren/.mutt/muttrc|56|1|V|muttrc
+	#set sidebar_delim   = '  │'
+52b0aa6b662530f7f1c3b2b57852ba23|file:///home/ren/.mutt/muttrc|30|1|V|muttrc
+	#set sidebar_visible = yes
+d6127c88f8e003cf18e933a432f3e49c|file:///home/ren/.mutt/muttrc|58|20|V|muttrc
+	color status green default
+f984ef6d802eea6ceb923f95cfe81d26|file:///home/ren/.mutt/muttrc|4|31|V|muttrc
+	set spoolfile = imaps://imap.gmail.com/INBOX
+2899ae51155344cdebcb8e08167ccf94|file:///home/ren/.mutt/muttrc|1|1|V|muttrc
+	# ================  IMAP ====================
+fcef7bc9aee48254970176af747c9ba6|file:///home/ren/.mutt/muttrc|18|1|v|muttrc
+	set header_cache     = ~/.mutt/cache/headers # store headers
+	set message_cachedir = ~/.mutt/cache/bodies  # store bodies
+	set certificate_file = ~/.mutt/certificates  # store certs (touch file)
+	set mailcap_path     = ~/.mutt/mailcap       # entries for filetypes
+	set tmpdir           = ~/.mutt/temp          # keep temp files
+	set signature        = ~/.mutt/sig           # signature file
+	
+	
+7673876a8881ca29d38c5fd845dbc961|file:///home/ren/.mutt/muttrc|9|1|V|muttrc
+	et header_cache = "~/.cache/mutt"
+b311fb09ddeaa5a325c5a3bc60bba408|file:///home/ren/.mutt/muttrc|105|1|v|muttrc
+	# Account Settings -----------------------------------
+	
+	set timeout=60  #Check for mail every minute
+	set mail_check=5
+	
+	
+fdd82a35b18f9e0f55b23c770992fed2|file:///home/ren/.mutt/muttrc|12|1|V|muttrc
+	set mbox_type=Maildir
+4030ec1f7fa94d4d4b4207f0ba7b8d5a|file:///home/ren/.mutt/muttrc|8|1|v|muttrc
+	set imap_check_subscribed
+	set imap_keepalive = 300
+	unset imap_passive
+	set mail_check = 60
+	
+	
+92d35e4282e06aefc8f2ba59bf00bcb2|file:///home/ren/.mutt/muttrc|5|1|V|muttrc
+	set mailcap_path     = ~/.mutt/mailcap       # entries for filetypes
+20a819e7397c12a60f7f2ea2a245b7c7|file:///home/ren/.mutt/muttrc|5|1|V|muttrc
+	set tmpdir           = ~/.mutt/temp          # keep temp files
+2ca6634fb8a2b1a02576223807bc3c26|file:///home/ren/.mutt/muttrc|5|1|V|muttrc
+	set signature        = ~/.mutt/sig           # signature file
+f1c3e727aa8fbe40ac46c854212f8b60|file:///home/ren/.mutt/muttrc|15|1|V|muttrc
+	#set mbox= +All Mail
+09f7967e84613185fd6d9668c7e60c34|file:///home/ren/.mutt/muttrc|18|1|v|muttrc
+	set record= +Sent
+	set postponed= +Drafts
+	unset record
+	#
+296395f8fb6d5d2d47c1d2bd66bb750a|file:///home/ren/.mutt/muttrc|38|1|V|muttrc
+	set mbox_type = Maildir  # mailbox type
+9c72d1536d0a730b43251b4f8caea1be|file:///home/ren/.mutt/muttrc|79|1|V|muttrc
+	bind index gg       first-entry
+90d1a95bb5c68802bf72dbc54603aee2|file:///home/ren/.mutt/muttrc|79|1|V|muttrc
+	bind index G        last-entry
+6c086102d77eaa900cfc852be15e2b6f|file:///home/ren/.mutt/muttrc|15|1|v|muttrc
+	set postponed = '+[Gmail]/Drafts'
+	set record = '+[Gmail]/Sent Mail'
+	set trash = '+[Gmail]/Trash'
+	unset record
+	#
+82782d792e88d9314fde14ccd1e354ac|file:///home/ren/.mutt/muttrc|31|1|V|muttrc
+	unset record
+52b467dc24930e8d450a207ca462da75|file:///home/ren/.mutt/muttrc|78|24|v|muttrc
+	{0,4}
+8bcb23ae1b35cdfdb017df42ffb61f66|file:///home/ren/.mutt/muttrc|28|19|v|muttrc
+	[Gmail]
+69994717119081f551f74e07be9289b5|file:///home/ren/.mutt/muttrc|19|1|V|muttrc
+	# ================  Composition  ====================
+d85fdac6d6b83dbbb8504138bfeafae7|file:///home/ren/.mutt/muttrc|18|1|v|muttrc
+	set ssl_force_tls = yes # Require encrypted connection
+	set editor = "nvim"      # Set your favourite editor.
+	set edit_headers = yes  # See the headers when editing
+	set charset = UTF-8     # value of $LANG; also fallback for send_charset
+	# Sender, email address, and sign-off line must match
+	unset use_domain        # because joe@localhost is just embarrassing
+	s
+fb781f21340dbb047d304af5f2aef12a|file:///home/ren/.mutt/muttrc|28|1|v|muttrc
+	set ssl_force_tls = yes # Require encrypted connection
+	set editor = "nvim"      # Set your favourite editor.
+	set edit_headers = yes  # See the headers when editing
+	set charset = UTF-8     # value of $LANG; also fallback for send_charset
+	# Sender, email address, and sign-off line must match
+	unset use_domain        # because joe@localhost is just embarrassing
+	
+145980256193528ec4ddb57c4ec1dae1|file:///home/ren/.mutt/muttrc|48|1|V|muttrc
+	# Sender, email address, and sign-off line must match
+dec367916c538ef571dfc2b1bb56ef09|file:///home/ren/.mutt/muttrc|56|1|V|muttrc
+	bind index,pager B sidebar-toggle-visible
+ea45717e11465dfe3a4a85a8730c877e|file:///home/ren/.mutt/muttrc|41|6|V|muttrc
+	set sort = threads
+01862ec4aa73d345f1ad318c5a15973e|file:///home/ren/.mutt/muttrc|41|6|V|muttrc
+	set sort_aux = last-date-received
+c6234ae27f18966611df04f71438c16d|file:///home/ren/.mutt/muttrc|28|1|V|muttrc
+	source ~/.mutt/gruvbox/colors-gruvbox-shuber.muttrc
+03a97c1fb545b5b3832f4fd9e2a2ecc0|file:///home/ren/.mutt/muttrc|20|1|V|muttrc
+	set use_from = yes
+2113d02971dbe9e91fac9e00d2558f57|file:///home/ren/.mutt/muttrc|35|1|V|muttrc
+	#set use_from = yes
+019d816f747e8674a7408a8ad84b4d83|file:///home/ren/.mutt/muttrc|20|1|V|muttrc
+	#set from = "tianyin.rien@gmail.com"
+f54a204425694477083e1b2c25252b17|file:///home/ren/.mutt/muttrc|25|13|V|muttrc
+	#mailboxes $folder
+1e6412429de661c53c30d6d709250805|file:///home/ren/.mutt/muttrc|7|1|V|muttrc
+	set timeout=60  #Check for mail every minute
+6c7127f66116792e0572e5a6e1e535ef|file:///home/ren/.mutt/muttrc|6|18|V|muttrc
+	# Account Settings -----------------------------------
+0bcd74dbcf115f3b045a3ba59ee6d737|file:///home/ren/.mutt/muttrc|6|16|V|muttrc
+	set mail_check=5
+41f3e53d07862982b50dc3a5762c02d2|file:///home/ren/.mutt/muttrc|37|1|V|muttrc
+	#set imap_check_subscribed=yes
+4936ef3a14c8a6ef4e3cdd123f748f0d|file:///home/ren/.mutt/muttrc|94|1|v|muttrc
+	# Index View Options ---------------------------------
+	set date_format = "%m/%d"
+	set index_format = "[%Z]  %D  %-20.20F  %s"
+	set sort = threads                         # like gmail
+	set sort_aux = reverse-last-date-received  # like gmail
+	set uncollapse_jump                        # don't collapse on an unread message
+	set sort_re                                # thread based on regex
+	set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+	
+	
+5c7523c9501f9ad783b070bc150ce7de|file:///home/ren/.mutt/muttrc|79|1|V|muttrc
+	# Ctrl-R to mark all as read
+7974b1af1fa507402834ec73ef7e5e86|file:///home/ren/.mutt/muttrc|79|1|V|muttrc
+	# macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
+e0b3e3998d4e024d80d9b9b5d00b6c3a|file:///home/ren/.mutt/muttrc|46|1|V|muttrc
+	# View HTML formated messages ------------------------
+a844d0507e0f2d9ab1beb819eb7c297c|file:///home/ren/.mutt/muttrc|46|1|V|muttrc
+	auto_view text/html
+5cc3d05f68a1e5b5ae1a58c94d77bf46|file:///home/ren/.mutt/muttrc|92|1|V|muttrc
+	#ignore *                                # ignore all headers
+2688aa388ab92027c2cfffb1dcbd1c24|file:///home/ren/.mutt/muttrc|42|1|v|muttrc
+	#unset use_domain        # because joe@localhost is just embarrassing
+	#set imap_check_subscribed=yes
+	
+	
+55a0b4d46bad08c92ade72ff8741504d|file:///home/ren/.config/neomutt/gruvbox/colors-gruvbox-shuber-extended.muttrc|1|1|V|
+	color sidebar_unread     color108 color234

@@ -1,0 +1,222 @@
+Delivered-To: tianyin.rien@gmail.com
+Received: by 2002:a05:6a10:9ae8:0:0:0:0 with SMTP id t8csp3889976pxm;
+        Tue, 15 Mar 2022 17:16:01 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJynxu6kXAlij/2kOmqwqwhNIx+Mg+f/J/B2DrWIUciUgONHOrbNzCDNvPE3nJBN7d6sS12Z
+X-Received: by 2002:ad4:5b84:0:b0:435:7d08:3514 with SMTP id 4-20020ad45b84000000b004357d083514mr23324178qvp.33.1647389761452;
+        Tue, 15 Mar 2022 17:16:01 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1647389761; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ezI1xnaxeA7/Xr20HlhSGn/qty1+qiU8Gn8c2xZZQDIHlqanra2/vRy8MCpkdNFfrb
+         mBMs1wqxbRomlcKH+XxqMVuSkLCy5DtWNxNdTT7QwZ31hWgMRzEgQFwQ/9kLatkWHIjh
+         h31Vvnb7JF4ftM83/Us/PInHGeEbjWK6u/5IQGZ5ORx592KaCDncs5uqJ5VMl1XBvScu
+         tOQGQg3sqScZs2Ag5XLt3JYjDkzX0R59fPP1GbRlErQBWjz3p/H0lGvvm9etJiY+zv24
+         aknwbcQRdqNnP9HSQeMZgfAG9azx7O4Mp+m5hvWcCyYcSDXpjwAZfRSTHe+dolfkwVEN
+         w4AA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:date:content-transfer-encoding:mime-version:message-id
+         :sender:reply-to:from:subject:to:dkim-signature:dkim-signature;
+        bh=e7WkGGPDov9Rq3i/896KeNAaDuSTogV4ux/s4DQtf5E=;
+        b=AcWDiBrcjpl0LbLINxCHqUc5xE01oOyEMIE7CvyA64opPWl/TmYEeyuCODbKA2lYc0
+         gchxVINkVQZfW7b8WnmD8GFevfSe4N2ue/n/FYbAduagtlh00/udDgb8LWALDu/wtvtf
+         9GrlnHejeYuYRDmwZ/LVQx/gAuCJkJBIDC46B++8TcqZSanGmI0i7TgwYL5jQlDVMT0s
+         Uq5bUZKlqsNTBlWsC3UEuKbtWoBel+TbGnZiGWfgmiyR1NXzGmSLRmFkIKG6uMQLk0h2
+         RrvGk3Ic3xtkHH/inO6bAfwMhuxpQxrsVMratU9NtrtSCU9iGB4HScHhfhsw+JLEBEuQ
+         3Cug==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@linuxquestions.org header.s=6pz25ujorzhnznrsoaiqv64xk62mnxco header.b=L1RIl0H8;
+       dkim=pass header.i=@amazonses.com header.s=6gbrjpgwjskckoa6a5zn6fwqkn67xbtw header.b=EoypxJut;
+       spf=pass (google.com: domain of 0100017f9014dcef-62e3dea3-0165-480a-a117-fb4fc48e4062-000000@amazonses.com designates 54.240.9.28 as permitted sender) smtp.mailfrom=0100017f9014dcef-62e3dea3-0165-480a-a117-fb4fc48e4062-000000@amazonses.com
+Return-Path: <0100017f9014dcef-62e3dea3-0165-480a-a117-fb4fc48e4062-000000@amazonses.com>
+Received: from a9-28.smtp-out.amazonses.com (a9-28.smtp-out.amazonses.com. [54.240.9.28])
+        by mx.google.com with ESMTPS id s22-20020a05620a0bd600b0067b30842b69si99421qki.307.2022.03.15.17.16.00
+        for <tianyin.rien@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 15 Mar 2022 17:16:01 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 0100017f9014dcef-62e3dea3-0165-480a-a117-fb4fc48e4062-000000@amazonses.com designates 54.240.9.28 as permitted sender) client-ip=54.240.9.28;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@linuxquestions.org header.s=6pz25ujorzhnznrsoaiqv64xk62mnxco header.b=L1RIl0H8;
+       dkim=pass header.i=@amazonses.com header.s=6gbrjpgwjskckoa6a5zn6fwqkn67xbtw header.b=EoypxJut;
+       spf=pass (google.com: domain of 0100017f9014dcef-62e3dea3-0165-480a-a117-fb4fc48e4062-000000@amazonses.com designates 54.240.9.28 as permitted sender) smtp.mailfrom=0100017f9014dcef-62e3dea3-0165-480a-a117-fb4fc48e4062-000000@amazonses.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=6pz25ujorzhnznrsoaiqv64xk62mnxco; d=linuxquestions.org;
+	t=1647389760;
+	h=To:Subject:From:Reply-To:Sender:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding:Date;
+	bh=wa21JOAIZVgPTqhpVv9/0mQoaaiqqpN+D5a79s/6z9U=;
+	b=L1RIl0H8PDdwKtHMslNcgVKV60qNcJp7Ow1rhfnFYZuEI17CSlVThfOMnkNCErPN
+	pz/AFG2Z0U/OsuzHOAoP9DLJuxcu9hGUSfHlO43J3uBYh0RzCvpuPACwKEqAUq9DIag
+	RuBmSuDMpENj9/g7RUe064/bqU7nkNxcAXRQufbs=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=6gbrjpgwjskckoa6a5zn6fwqkn67xbtw; d=amazonses.com; t=1647389760;
+	h=To:Subject:From:Reply-To:Sender:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding:Date:Feedback-ID;
+	bh=wa21JOAIZVgPTqhpVv9/0mQoaaiqqpN+D5a79s/6z9U=;
+	b=EoypxJutCHRWNVf7Tya3HrwSX5jHK43DB7oK2UfKtL4Z18ZAyojDpzcRwUH5JSQh
+	s3293kNW9xnr6sD5GZg3tlHNmD5IUVmpJA67TFpdLhSaCGCAwrG7w0oJ64lE18bimsc
+	TKNlHfxB3o/egGoI3z11HsAI9yNrXuuxmF06TOP8=
+To: tianyin.rien@gmail.com
+Subject: LinuxQuestions.org - Community Bulletin
+From:  <forum@linuxquestions.org>
+Reply-To: "forum@linuxquestions.org" <forum@linuxquestions.org>
+Sender: forum@linuxquestions.org
+Message-ID: <0100017f9014dcef-62e3dea3-0165-480a-a117-fb4fc48e4062-000000@email.amazonses.com>
+X-LQ-ComTo: 1201311
+MIME-Version: 1.0
+Content-Type: text/plain; charset="ISO-8859-1"
+Content-Transfer-Encoding: 8bit
+X-Priority: 3
+X-Mailer: LQ Mailer
+Date: Wed, 16 Mar 2022 00:16:00 +0000
+Feedback-ID: 1.us-east-1.cgm3JZ/iGoIU+gFOAZXiQjvI453gMeI7UJ//msEpERs=:AmazonSES
+X-SES-Outgoing: 2022.03.16-54.240.9.28
+
+math-ren,
+
+     Reminder: the polls are closed and the results for the 2021 LinuxQuestions.org Members Choice Awards are in. We once again had some extremely close races and the large number of new categories this year certainly kept things interesting. Congratulations to each and every nominee. Visit https://www.linuxquestions.org/questions/linux-news-59/2021-linuxquestions-org-members-choice-award-winners-4175708100/ for a list of winners, and https://www.linuxquestions.org/questions/2021-linuxquestions-org-members-choice-awards-133/ for the full results of individual polls. We'll remove the forum from the homepage at the end of the month, but it will remain directly accessible forever.
+
+     Follow us on twitter. https://twitter.com/linuxquestions 
+
+     We'd like to know: What do you remember about your first Linux install? https://www.linuxquestions.org/questions/linux-general-1/what-do-you-remember-about-your-first-linux-install-4175661892/
+
+-jeremy
+http://jeremy.linuxquestions.org/
+
+ ***SPONSOR***
+A Newbie's Getting Started Guide to Linux
+
+Learn the basics of the Linux operating systems. Get to know what it is all about, and familiarize yourself with the practical side. Basically, if you're a complete Linux newbie and looking for a quick and easy guide to get you started this is it. 
+
+This guide will tell you all you need to know in 20 illustrated pages, helping you to take your first steps.
+
+Receive your complimentary guide (NOTE: this is a 3rd party offer that is not affiliated with LQ. They may require some personal information before allowing access to the no cost guide): https://linuxquestions.tradepub.com/free-offer/a-newbies-getting-started-guide-to-linux/w_make07
+
+ ***SPONSOR***
+
+
+---------------------------------------------------------------------------
+
+View all new content here: https://www.linuxquestions.org/questions/
+---------------------------------------------------------------------------
+LATEST THREADS
+---------------------------------------------------------------------------
+
+-- Threads posted most recently --
+
+Title: "rsync not setting permissions correctly" (Date Posted 03-15-2022 by Jim Wright)
+ o 0 Replies, 5 Views, Last Post: 01:40 PM, 03-15-2022 by Jim Wright
+ o https://www.linuxquestions.org/questions/linux-software-2/rsync-not-setting-permissions-correctly-4175709469/
+
+Title: "Broadcom BCM 4352 802.11ac" (Date Posted 03-15-2022 by ssslackw)
+ o 0 Replies, 14 Views, Last Post: 01:21 PM, 03-15-2022 by ssslackw
+ o https://www.linuxquestions.org/questions/slackware-14/broadcom-bcm-4352-802-11ac-4175709468/
+
+Title: "Which initial services can be omitted while installation?" (Date Posted 03-15-2022 by rng)
+ o 1 Replies, 30 Views, Last Post: 01:23 PM, 03-15-2022 by ctrlaltca
+ o https://www.linuxquestions.org/questions/slackware-14/which-initial-services-can-be-omitted-while-installation-4175709467/
+
+Title: "need help again! how to run yubioath-desktop?" (Date Posted 03-15-2022 by slacnovitz)
+ o 0 Replies, 50 Views, Last Post: 12:49 PM, 03-15-2022 by slacnovitz
+ o https://www.linuxquestions.org/questions/slackware-14/need-help-again-how-to-run-yubioath-desktop-4175709465/
+
+Title: "Little CD won�t eject" (Date Posted 03-15-2022 by Lum)
+ o 1 Replies, 17 Views, Last Post: 12:21 PM, 03-15-2022 by pan64
+ o https://www.linuxquestions.org/questions/linux-hardware-18/little-cd-won%92t-eject-4175709463/
+
+Title: "Assus Eee PC 701 - Unable to access websites" (Date Posted 03-15-2022 by CJE241)
+ o 5 Replies, 64 Views, Last Post: 01:17 PM, 03-15-2022 by CJE241
+ o https://www.linuxquestions.org/questions/linux-newbie-8/assus-eee-pc-701-unable-to-access-websites-4175709462/
+
+
+-- Threads with no replies yet --
+
+Title: "removable volume not mounted yet" (Date Posted 03-15-2022 by czezz)
+ o 49 Views
+ o https://www.linuxquestions.org/questions/linux-desktop-74/removable-volume-not-mounted-yet-4175709460/
+
+Title: "Undetectable USB mobile broadband modem at both the Network Connections window and nmtui" (Date Posted 03-15-2022 by polendina)
+ o 52 Views
+ o https://www.linuxquestions.org/questions/linux-networking-3/undetectable-usb-mobile-broadband-modem-at-both-the-network-connections-window-and-nmtui-4175709451/
+
+Title: "Debian Bullseye - Screen flickering when waking up after sleep" (Date Posted 03-14-2022 by Gilles6)
+ o 62 Views
+ o https://www.linuxquestions.org/questions/linux-laptop-and-netbook-25/debian-bullseye-screen-flickering-when-waking-up-after-sleep-4175709422/
+
+Title: "Android-x86 ZFS?" (Date Posted 03-14-2022 by dchmelik)
+ o 81 Views
+ o https://www.linuxquestions.org/questions/linux-mobile-81/android-x86-zfs-4175709392/
+
+Title: "Debian VirtualBox VM Video Issue Resolved" (Date Posted 03-13-2022 by frankbell)
+ o 64 Views
+ o https://www.linuxquestions.org/questions/debian-26/debian-virtualbox-vm-video-issue-resolved-4175709383/
+
+Title: "Limited Connectivity with Network Manager and DHCP" (Date Posted 03-13-2022 by linux91)
+ o 98 Views
+ o https://www.linuxquestions.org/questions/linux-networking-3/limited-connectivity-with-network-manager-and-dhcp-4175709378/
+
+
+---------------------------------------------------------------------------
+LATEST POLLS
+---------------------------------------------------------------------------
+
+Question: How many reverts will 5.15.4 contain?
+ o '0 ' (1 Votes)
+ o '1 ' (1 Votes)
+ o '2 ' (0 Votes)
+ o '3 ' (1 Votes)
+ o '4 ' (2 Votes)
+ o '5 ' (0 Votes)
+ o '6-10 ' (2 Votes)
+ o '11-15 ' (2 Votes)
+ o '16-20 ' (2 Votes)
+ o '21-25 ' (1 Votes)
+ o '26-30 ' (2 Votes)
+ o '31-35 ' (1 Votes)
+ o '36-40 ' (0 Votes)
+ o '41-50 ' (1 Votes)
+ o '51 or more' (4 Votes)
+   View Poll Results: https://www.linuxquestions.org/questions/showthread.php?t=4175703776
+
+Question: Which python3 should ship in Slackware 15.0?
+ o 'Python 3.9 ' (33 Votes)
+ o 'Python 3.10' (66 Votes)
+   View Poll Results: https://www.linuxquestions.org/questions/showthread.php?t=4175702008
+
+Question: Sticky thread
+ o 'Using Pipewire instead of Pulseaudio in Slackware 15 ' (10 Votes)
+ o 'LibreOffice in Slackware. ' (5 Votes)
+ o 'Xfce for Slackware Users ' (9 Votes)
+ o 'All Things KDE5/Plasma for Slackware Users. ' (11 Votes)
+ o 'The Latest Kernel Release. ' (10 Votes)
+ o 'VirtualBox for Slackware Users ' (7 Votes)
+ o 'Latest changelog for slackware-current' (16 Votes)
+   View Poll Results: https://www.linuxquestions.org/questions/showthread.php?t=4175700851
+
+Question: POLL - KDE or GNOME
+ o 'KDE ' (27 Votes)
+ o 'GNOME ' (14 Votes)
+ o 'Other' (25 Votes)
+   View Poll Results: https://www.linuxquestions.org/questions/showthread.php?t=4175698640
+
+Question: Manual or Slackpkg Kernel Upgrades?
+ o 'Manually ' (42 Votes)
+ o 'Slackpkg ' (42 Votes)
+ o 'Other (because everyone always request an "other" on polls)' (15 Votes)
+   View Poll Results: https://www.linuxquestions.org/questions/showthread.php?t=4175698115
+
+
+---------------------------------------------------------------------------
+USER INFO:
+These are your current user details
+---------------------------------------------------------------------------
+
+ o Your username is: "math-ren"
+ o You have 0 Posts
+ o You registered on 11-20-2020
+ o You were last active on LinuxQuestions.org at 01:24 AM, 01-09-2021
+ 
+
+---------------------------------------------------------------------------
+To unsubscribe from the community updates, click this link:
+https://www.linuxquestions.org/questions/profile.php?do=editoptions
+and uncheck "Receive Community Bulletin Newsletters". 
+
+ You can also reply to this email with "unsubscribe" to be immediately unsubscribed.
+---------------------------------------------------------------------------

@@ -1,0 +1,221 @@
+Delivered-To: tianyin.rien@gmail.com
+Received: by 2002:a05:6a10:8581:0:0:0:0 with SMTP id j1csp157090pxm;
+        Tue, 4 Jan 2022 17:15:36 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJyQdcc/J00Au1p9f2cIY/gj6Ydn95Tp7CUmQQcGyRDRihY9iwNZv6ilzn03uf4rZ90Kw6cj
+X-Received: by 2002:aed:3044:: with SMTP id 62mr45533157qte.661.1641345336505;
+        Tue, 04 Jan 2022 17:15:36 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1641345336; cv=none;
+        d=google.com; s=arc-20160816;
+        b=qCa3DqX5eatMXUk/2ezyOde9m3xobYflkYLK7G5m4phK+81iYha5Z/tDMV4MbcgT9w
+         SBl4Z6+81f5Itkt11hZ5aSoFLhL+bdS87dv3zXtEPjbmSWli498crrmbYLzry8zY5dk+
+         7cyhkaWcwXKG3T9NsN/mBkNJz3JJ+1NvwVCyXpMaUYs9vCafEWMSrB85sKw7YYdoMaWh
+         7h8bNUagObAi2rr4Rvo8vNie8guH5VIAtUuZEwz7nQ0ifTxJjdbROT1+COc7fDsjKzAG
+         iSJcGTMmKjz54tX80AZuk+6Ii5ruPe5QxaDMhtXYvLqB03K5tWpPbxJjKyS9OcUOzqpB
+         V9zA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:date:content-transfer-encoding:mime-version:message-id
+         :sender:reply-to:from:subject:to:dkim-signature:dkim-signature;
+        bh=QuiF0dgGWAN+eg5GLEnTfHUGY+jeOvIavGwMpcUE96Y=;
+        b=a9NCEQj/+2INhYY/rQ5QDRUDh+tYDeUFtDGBvNx8JUg9V/Qt/hxYClo1U/4Lp86mwD
+         Rwo7bx/+BpeN7MG0pHTZY06Jsk2ajsZtllVzqgC5/n63iNoCZN31Hu4vSscwc6BhOHz9
+         PDeGe78px0Tz/ImxFz6l29tf7ExC/DVwfy2mdCdgr7INN8gNcjxYURMK6qRqFgql+3Pq
+         jR4kM0SrsPF6oreS0H35v0YLORQeDZq6P3kSLayOOqF5X7DLrs5B8PtmRmvF6Tl7LQ2k
+         OAuAm4dZG1yCgIXchYiLFaLF2NffVTlz3Yj9byy1bwyqSDNkPmtAiZc+65ATq3Lp+JkH
+         HaFQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@linuxquestions.org header.s=k5nvk4ziwcdu3e4nogtwpjbfdfwiznwq header.b=Id6TAGWz;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=QwyPPWkf;
+       spf=pass (google.com: domain of 0100017e27ce41f4-b28f74c8-96cf-47e1-b181-aa52caf447e3-000000@amazonses.com designates 54.240.9.244 as permitted sender) smtp.mailfrom=0100017e27ce41f4-b28f74c8-96cf-47e1-b181-aa52caf447e3-000000@amazonses.com
+Return-Path: <0100017e27ce41f4-b28f74c8-96cf-47e1-b181-aa52caf447e3-000000@amazonses.com>
+Received: from a9-244.smtp-out.amazonses.com (a9-244.smtp-out.amazonses.com. [54.240.9.244])
+        by mx.google.com with ESMTPS id t187si15207960qkd.145.2022.01.04.17.15.36
+        for <tianyin.rien@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 04 Jan 2022 17:15:36 -0800 (PST)
+Received-SPF: pass (google.com: domain of 0100017e27ce41f4-b28f74c8-96cf-47e1-b181-aa52caf447e3-000000@amazonses.com designates 54.240.9.244 as permitted sender) client-ip=54.240.9.244;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@linuxquestions.org header.s=k5nvk4ziwcdu3e4nogtwpjbfdfwiznwq header.b=Id6TAGWz;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=QwyPPWkf;
+       spf=pass (google.com: domain of 0100017e27ce41f4-b28f74c8-96cf-47e1-b181-aa52caf447e3-000000@amazonses.com designates 54.240.9.244 as permitted sender) smtp.mailfrom=0100017e27ce41f4-b28f74c8-96cf-47e1-b181-aa52caf447e3-000000@amazonses.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=k5nvk4ziwcdu3e4nogtwpjbfdfwiznwq; d=linuxquestions.org;
+	t=1641345335;
+	h=To:Subject:From:Reply-To:Sender:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding:Date;
+	bh=zBerwhETs2OeyLnez4WrHVQ8zKADlGD9wYqFP/ILt3o=;
+	b=Id6TAGWzanN17NO8xOTNHEXdPXiSi6HBQCQ/WS0mWfW1HJ8x3VriATHwG5H6lMn2
+	lv5tddZlQYo4kmXt/fIeOzr0H6iCKcTTzfV7kasqJFPcc9ZW1peQecg3G2jFbY4ijBf
+	OdilZfyr8tlLS5hDMZOQyjeKglafknrvRzc0ABio=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1641345335;
+	h=To:Subject:From:Reply-To:Sender:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding:Date:Feedback-ID;
+	bh=zBerwhETs2OeyLnez4WrHVQ8zKADlGD9wYqFP/ILt3o=;
+	b=QwyPPWkfWvefWCDU6Rmuzg+zOmNSqFxSkOUdGMYxbCr4w1ZC6qS/4GKbSntnFEJA
+	Nhxd3eHztdPTCLH7NWrGErzcO8JX+skdRjkMq/7PT/RzKZAWJgnta/AJhldQUexIhdk
+	R+p1qGr+bnfF8jLF5EpZ2Uf4GF57i0QRFBuSKGFY=
+To: tianyin.rien@gmail.com
+Subject: LinuxQuestions.org - Community Bulletin
+From:  <forum@linuxquestions.org>
+Reply-To: "forum@linuxquestions.org" <forum@linuxquestions.org>
+Sender: forum@linuxquestions.org
+Message-ID: <0100017e27ce41f4-b28f74c8-96cf-47e1-b181-aa52caf447e3-000000@email.amazonses.com>
+X-LQ-ComTo: 1201311
+MIME-Version: 1.0
+Content-Type: text/plain; charset="ISO-8859-1"
+Content-Transfer-Encoding: 8bit
+X-Priority: 3
+X-Mailer: LQ Mailer
+Date: Wed, 5 Jan 2022 01:15:35 +0000
+Feedback-ID: 1.us-east-1.cgm3JZ/iGoIU+gFOAZXiQjvI453gMeI7UJ//msEpERs=:AmazonSES
+X-SES-Outgoing: 2022.01.05-54.240.9.244
+
+math-ren,
+
+     I'd like to wish everyone a Happy New Year on behalf of the entire LinuxQuestions.org team. I�d also like to take this time to thank each and every LQ member. You are what make the site great; without you, we simply wouldn't exist.
+
+     Voting for the 2021 LinuxQuestions.org Members Choice Awards is now open. The Members Choice Awards allow the Linux community to select their favorite products and projects in a variety of categories. Awards will be given out in over 40 categories this year, including Browser of the Year, Desktop and Server Distribution of the Year, Linux/Open Source Podcast of the Year, Privacy Solution of the Year, and more. The polls will close on February 15th. Visit https://www.linuxquestions.org/questions/2021-linuxquestions-org-members-choice-awards-133/welcome-to-the-2021-linuxquestions-org-members-choice-awards-4175705708/ for more information. Vote now and make sure your voice is heard!
+
+      Would you like to help LinuxQuestions.org and the greater Linux community? The LQ Wiki is a collaboratively built knowledge base for all things Linux and Open Source related. All content is available under an Open Source license. Because the site is a wiki, anyone can help the site grow. That means sharing your knowledge with the Linux community has never been easier. Whether you have a great tip to share, would like to improve the entry for your favorite application or are able to help improve spelling/grammar - your contributions really do make a difference. Head to http://wiki.linuxquestions.org/ and make an edit today.
+
+     Follow us on twitter: https://twitter.com/linuxquestions
+
+-jeremy
+http://jeremy.linuxquestions.org/
+
+ ***SPONSOR***
+A Newbie's Getting Started Guide to Linux
+
+Learn the basics of the Linux operating systems. Get to know what it is all about, and familiarize yourself with the practical side. Basically, if you're a complete Linux newbie and looking for a quick and easy guide to get you started this is it. 
+
+This guide will tell you all you need to know in 20 illustrated pages, helping you to take your first steps.
+
+Receive your complimentary guide (NOTE: this is a 3rd party offer that is not affiliated with LQ. They may require some personal information before allowing access to the no cost guide): https://linuxquestions.tradepub.com/free-offer/a-newbies-getting-started-guide-to-linux/w_make07
+
+ ***SPONSOR***
+
+
+---------------------------------------------------------------------------
+View all new content here: https://www.linuxquestions.org/questions/
+---------------------------------------------------------------------------
+LATEST THREADS
+---------------------------------------------------------------------------
+
+-- Threads posted most recently --
+
+Title: "Special pleading - Extremely rare distro with a CDKEY" (Date Posted 01-04-2022 by Amanda_Santini)
+ o 0 Replies, 0 Views, Last Post: 11:15 AM, 01-04-2022 by Amanda_Santini
+ o https://www.linuxquestions.org/questions/linux-software-2/special-pleading-for-hackers-extremely-rare-distro-with-a-cdkey-4175705823/
+
+Title: "wifi: Interface wlp2s0 doesn't exist." (Date Posted 01-04-2022 by bayou self)
+ o 2 Replies, 51 Views, Last Post: 01:44 PM, 01-04-2022 by bayou self
+ o https://www.linuxquestions.org/questions/linux-from-scratch-13/wifi-interface-wlp2s0-doesn%27t-exist-4175705821/
+
+Title: "Problem converting multiple .jpg files to single pdf file" (Date Posted 01-04-2022 by peter7089)
+ o 5 Replies, 96 Views, Last Post: 12:43 PM, 01-04-2022 by boughtonp
+ o https://www.linuxquestions.org/questions/linux-newbie-8/problem-converting-multiple-jpg-files-to-single-pdf-file-4175705819/
+
+Title: "Does any Linux desktop environment offer drag-n-drop menu editing like Windows?" (Date Posted 01-04-2022 by JASlinux)
+ o 2 Replies, 77 Views, Last Post: 11:41 AM, 01-04-2022 by shruggy
+ o https://www.linuxquestions.org/questions/linux-desktop-74/does-any-linux-desktop-environment-offer-drag-n-drop-menu-editing-like-windows-4175705817/
+
+Title: "Minidlnad: unable to discover" (Date Posted 01-04-2022 by Entmatix)
+ o 1 Replies, 76 Views, Last Post: 02:12 PM, 01-04-2022 by SW64
+ o https://www.linuxquestions.org/questions/slackware-14/minidlnad-unable-to-discover-4175705814/
+
+Title: "Ingress ethernet packet corruption -- out of ideas" (Date Posted 01-04-2022 by serafean)
+ o 1 Replies, 90 Views, Last Post: 08:49 AM, 01-04-2022 by business_kid
+ o https://www.linuxquestions.org/questions/linux-hardware-18/ingress-ethernet-packet-corruption-out-of-ideas-4175705813/
+
+
+-- Threads with no replies yet --
+
+Title: "volumeicon is killed at startup while using pipewire." (Date Posted 01-04-2022 by lqmsh)
+ o 53 Views
+ o https://www.linuxquestions.org/questions/linux-desktop-74/volumeicon-is-killed-at-startup-while-using-pipewire-4175705811/
+
+Title: "Tutorial: Creating a custom bootable Debian Live iso" (Date Posted 01-04-2022 by m_yates)
+ o 58 Views
+ o https://www.linuxquestions.org/questions/debian-26/tutorial-creating-a-custom-bootable-debian-live-iso-4175705804/
+
+Title: "USB Interface, Webcam and Bluetooth not working on Fedora 35 on HP ENVY x360 15-bq103nl" (Date Posted 01-04-2022 by evan-ciao)
+ o 31 Views
+ o https://www.linuxquestions.org/questions/linux-laptop-and-netbook-25/usb-interface-webcam-and-bluetooth-not-working-on-fedora-35-on-hp-envy-x360-15-bq103nl-4175705803/
+
+Title: "Sound devices disappear/reappear" (Date Posted 01-03-2022 by darthmongo)
+ o 29 Views
+ o https://www.linuxquestions.org/questions/linux-hardware-18/sound-devices-disappear-reappear-4175705797/
+
+Title: "manjaro update causes mpv error (EGL error, Ioctl issue) and bash to output chinese character." (Date Posted 01-03-2022 by andrewysk)
+ o 78 Views
+ o https://www.linuxquestions.org/questions/linux-newbie-8/manjaro-update-causes-mpv-error-egl-error-ioctl-issue-and-bash-to-output-chinese-character-4175705790/
+
+Title: "How to disable hot-pluggable CPU on ARM?" (Date Posted 01-03-2022 by zupazt3)
+ o 66 Views
+ o https://www.linuxquestions.org/questions/linux-software-2/how-to-disable-hot-pluggable-cpu-on-arm-4175705762/
+
+---------------------------------------------------------------------------
+LATEST POLLS
+---------------------------------------------------------------------------
+
+Question: How many reverts will 5.15.4 contain?
+ o '0 ' (1 Votes)
+ o '1 ' (1 Votes)
+ o '2 ' (0 Votes)
+ o '3 ' (1 Votes)
+ o '4 ' (2 Votes)
+ o '5 ' (0 Votes)
+ o '6-10 ' (2 Votes)
+ o '11-15 ' (2 Votes)
+ o '16-20 ' (2 Votes)
+ o '21-25 ' (1 Votes)
+ o '26-30 ' (2 Votes)
+ o '31-35 ' (1 Votes)
+ o '36-40 ' (0 Votes)
+ o '41-50 ' (1 Votes)
+ o '51 or more' (4 Votes)
+   View Poll Results: https://www.linuxquestions.org/questions/showthread.php?t=4175703776
+
+Question: Which python3 should ship in Slackware 15.0?
+ o 'Python 3.9 ' (33 Votes)
+ o 'Python 3.10' (66 Votes)
+   View Poll Results: https://www.linuxquestions.org/questions/showthread.php?t=4175702008
+
+Question: Sticky thread
+ o 'Using Pipewire instead of Pulseaudio in Slackware 15 ' (10 Votes)
+ o 'LibreOffice in Slackware. ' (5 Votes)
+ o 'Xfce for Slackware Users ' (9 Votes)
+ o 'All Things KDE5/Plasma for Slackware Users. ' (11 Votes)
+ o 'The Latest Kernel Release. ' (10 Votes)
+ o 'VirtualBox for Slackware Users ' (7 Votes)
+ o 'Latest changelog for slackware-current' (16 Votes)
+   View Poll Results: https://www.linuxquestions.org/questions/showthread.php?t=4175700851
+
+Question: POLL - KDE or GNOME
+ o 'KDE ' (24 Votes)
+ o 'GNOME ' (13 Votes)
+ o 'Other' (22 Votes)
+   View Poll Results: https://www.linuxquestions.org/questions/showthread.php?t=4175698640
+
+Question: Manual or Slackpkg Kernel Upgrades?
+ o 'Manually ' (40 Votes)
+ o 'Slackpkg ' (42 Votes)
+ o 'Other (because everyone always request an "other" on polls)' (15 Votes)
+   View Poll Results: https://www.linuxquestions.org/questions/showthread.php?t=4175698115
+
+
+---------------------------------------------------------------------------
+USER INFO:
+These are your current user details
+---------------------------------------------------------------------------
+
+ o Your username is: "math-ren"
+ o You have 0 Posts
+ o You registered on 11-20-2020
+ o You were last active on LinuxQuestions.org at 02:24 AM, 01-09-2021
+ 
+
+---------------------------------------------------------------------------
+To unsubscribe from the community updates, click this link:
+https://www.linuxquestions.org/questions/profile.php?do=editoptions
+and uncheck "Receive Community Bulletin Newsletters". 
+Currently, community updates are sent bi-weekly. 
+---------------------------------------------------------------------------

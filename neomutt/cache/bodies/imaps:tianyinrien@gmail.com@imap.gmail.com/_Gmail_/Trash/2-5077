@@ -1,0 +1,93 @@
+Delivered-To: tianyin.rien@gmail.com
+Received: by 2002:a05:6a11:4a89:b0:26e:6bbc:7bbb with SMTP id ob9csp1450684pxb;
+        Sat, 2 Apr 2022 22:11:12 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJyz/NJ3wHloON6x/s2pwY1RS7PGmfi+BQLE28LrCs4PrBvC+kqYVuKHaObJEH5zegf1okNL
+X-Received: by 2002:a05:6a02:28a:b0:385:f767:34f4 with SMTP id bk10-20020a056a02028a00b00385f76734f4mr21362564pgb.299.1648962672643;
+        Sat, 02 Apr 2022 22:11:12 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1648962672; cv=none;
+        d=google.com; s=arc-20160816;
+        b=hzOiRM4rXsTXyGAA6Fk/gaY8zqrdps0spolKZ3ZmL0Ty+Lvxze/a+xAx/tcGt0dtaU
+         6/umSflhIqEMiIJb+Xkx46qv5FsaFKsugQ0yl+A9Wh3IUrYpykqyvUD+EH9DjTHyNToz
+         6qxuVD5dbi4u1VvXVIFi8n7aAU19Q6ofvnQA+qmr6tvsOs3fOqByZK48Bhm+vwW45vra
+         vclxTSjlnK2MQ3/YjS5+UYKNz2Sv4cGtLzz4GOcQOnyvV2ORWtq+05o/2Pc03975f4fU
+         dbEJ8Efoio+Rw7N6Eth21W2yhuC+KS5UxQ4CVSTPgo8OvZkE74xexMZfFkJ9/Y9tn2eZ
+         F18g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=message-id:mime-version:subject:to:from:date:dkim-signature;
+        bh=O+kDE+3bEbO+brFgoUKm6vS1lVmGDMAEYzTGS3yNK/s=;
+        b=0B3DR4arWRRxVA1qynuJ1dG09DdQWbCiC4XZNDmBLG4UKiIeJJt0iM2Al3BEXNwaM5
+         xoDtQ0wtMd6JVzTgj9DQN28R4CIyCbXyhJGZNi4DWr5JAwN77bS/OlH6fpGlobDeXZOo
+         bADe0RGjCFuNSaHQhmx966HIXdC1j8cCn5xquyQAtky2W2XS2bHYIgdN0RKivk6CgIss
+         eyQYE+UrA5M0Zx6/3FDmF6usWYMyYWhOtCD+otmI1ujgu4KoZvkXsEKCQiJ6XimysuRU
+         bcxe9U2HF9cRajd60H0gjRE5l108Jykr2QNkczmMudJC5Nm45XsVUfo3AzdDl2bmuBKS
+         CNaw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@dynadot.com header.s=default header.b=kgDnP+53;
+       spf=pass (google.com: domain of accounts@dynadot.com designates 166.88.19.85 as permitted sender) smtp.mailfrom=accounts@dynadot.com
+Return-Path: <accounts@dynadot.com>
+Received: from mail-out.dynadot.com (mail-out.dynadot.com. [166.88.19.85])
+        by mx.google.com with ESMTPS id o20-20020a17090a9f9400b001bd14e01f3bsi9534391pjp.41.2022.04.02.22.11.12
+        for <tianyin.rien@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 02 Apr 2022 22:11:12 -0700 (PDT)
+Received-SPF: pass (google.com: domain of accounts@dynadot.com designates 166.88.19.85 as permitted sender) client-ip=166.88.19.85;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@dynadot.com header.s=default header.b=kgDnP+53;
+       spf=pass (google.com: domain of accounts@dynadot.com designates 166.88.19.85 as permitted sender) smtp.mailfrom=accounts@dynadot.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	t=1648962585; s=default; d=dynadot.com;
+	h=Content-Type:Message-ID:MIME-Version:Subject:To:From:Date;
+	l=3590; bh=O+kDE+3bEbO+brFgoUKm6vS1lVmGDMAEYzTGS3yNK/s=;
+	b=kgDnP+53cTyRqREuOAaxsVmDf140IflfdiEyVrGMNiWjmrDSDFlNoW16Sv9Q5rj
+	D6xmu92EXYBiktjG1GfxQRZTFjd9X5oi56JDT53l9moZHWAaPDuA2BDNoqQZ/9e8rt
+	csXm8Fivn1xAdQBuoeRjHLrDSvaJfi35y0+/cnCvpXR1p8GTF+/dXQWpIK+EDH42qG
+	TyxyHSkRkWW5lT+jLIuEAuCYF7YlurE+vTptm1t0AyvJ1lNUIj01ddoLBAzqlcYUh9
+	SQlVe4+159G1uAnKFyPLmczVwNnyR8cKMrw84dLcAbqtYjkncNiJClyykhgs2zAVVs
+	cRjzqTJ+GvgdJSQ==
+Date: Sat, 2 Apr 2022 22:09:45 -0700
+From: Dynadot Accounts <accounts@dynadot.com>
+To: tianyin.rien@gmail.com
+Subject: Account Email Address Verify
+MIME-Version: 1.0
+Message-ID: <1648962585199.96ed4ce8@www.dynadot.com>
+Content-Type: text/html
+
+<table bgcolor="#EDEDED" width="100%" cellspacing="0" cellpadding="0" style="background-color: #EDEDED;">
+<tbody><tr><td align="center" style="padding: 20px 40px 20px 40px;border-spacing: 0px;">
+<table cellspacing="0" cellpadding="0"><tbody><tr><td style="padding-bottom: 20px;">
+<center><a href="https://www.dynadot.com" target="_blank" rel="noopener">
+<img src="https://www.dynadot.com/newsletter/17/dynadot.png" border="0" alt="Dynadot" style="width: 107px;"></a></center>
+</td></tr>
+<tr style="border: none; border-spacing: 0;">
+<td style="background: linear-gradient(90deg, #6FC4F5 2%, #005DE9 99%); height: 5px; margin: 0 -60px 30px -60px; font-size: 13px; border-radius: 4px 4px 0 0; border-spacing: 0;"></td></tr>
+<tr style="box-shadow: 0 4px 6px 0 rgb(0 0 0/ 20%);">
+<td style="display: block; background-color: #FFFFFF; font-family: 'Open Sans', sans-serif; text-align: left; font-size: 14px; color: #474747; border-radius: 4px 4px 0 0;padding: 40px; ">
+Hi ren ty!<br/><br/>
+
+Click on the link below to verify your email address to complete your account creation with Dynadot.<br/><br/>
+
+<a href="https://dynadot.com/account/signin.html?6Qx9L60H8lm6A8A8B37N8L7U9L7b7A8Q846Z8WA847Y"><span class="" style="padding: 5px 12px;color:#fff;background: #3C92E7;border-radius: 3px;">Verify Email Address</span></a><br/><br/>
+
+or verify by using this link: <a href="https://dynadot.com/account/signin.html?6Qx9L60H8lm6A8A8B37N8L7U9L7b7A8Q846Z8WA847Y">https://dynadot.com/account/signin.html?6Qx9L60H8lm6A8A8B37N8L7U9L7b7A8Q846Z8WA847Y</a><br/><br/>
+
+Feel free to contact us at accounts@dynadot.com if you require further assistance.<br/><br/>
+
+Best regards,<br/>
+Dynadot Support Team
+</td></tr>
+<tr style="font-size: 12px; font-weight: 700; text-align: center;">
+<td style="padding-top: 25px;padding-bottom: 5px;"><p style="margin: 0; font-size: 14px;">Stay connected with the Dynadot app</p>
+</td></tr>
+<tr style="font-size: 12px; font-weight: 700; text-align: center;"><td>
+<a href="https://itunes.apple.com/us/app/dynadot/id1209930282?mt=8" target="_blank" style="margin-right: 6px;" rel="noopener">
+<img src="https://www.dynadot.com/newsletter/750/appstore.png" border="0" alt="Apple Store" style="border: none; border-radius: 0px; font-size: 13px; outline: none; text-decoration: none; width: auto; height: auto;" border="0"></a>
+<a href="https://play.google.com/store/apps/details?id=com.dynadot.search" target="_blank" rel="noopener">
+<img src="https://www.dynadot.com/newsletter/751/playstore.png" border="0" alt="Google Play" style="border: none; border-radius: 0px; font-size: 13px; outline: none; text-decoration: none; width: auto; height: auto;" border="0"></a>
+</td></tr>
+<tr style="font-size: 12px; font-weight: 700; text-align: center;">
+<td style="padding-top: 10px;"><a href="https://www.dynadot.com/community/help/" target="_blank" style="text-decoration: none; color: #495056;padding-right: 10px;" rel="noopener">HELP FILES</a>
+|<a href="https://www.dynadot.com/community/blog/" target="_blank" style="text-decoration: none; color: #495056;padding-left: 10px;padding-right: 10px;" rel="noopener">
+BLOG</a>|<a href="https://www.dynadot.com/community/about/contact.html" target="_blank" style="text-decoration: none; color: #495056;padding-left: 10px;" rel="noopener">CONTACT US</a>
+<br><a href="https://www.dynadot.com" target="_blank" rel="noopener">
+<img src="https://www.dynadot.com/newsletter/855/blue-small.png" border="0" alt="Dynadot" style="width: 20px;" border="0"></a>
+</td></tr></tbody></table></td></tr></tbody></table>

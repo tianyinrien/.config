@@ -1,0 +1,2067 @@
+Delivered-To: tianyin.rien@gmail.com
+Received: by 2002:a05:6a10:868d:0:0:0:0 with SMTP id e13csp1668315pxn;
+        Fri, 17 Dec 2021 14:50:16 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJzE0rKaWag1s/D1h0snBQTefu1OmCtKT0q61w0vE+OG2GZyBW1sqjYkNC/irHvQZ4EmXQSZ
+X-Received: by 2002:ac8:5841:: with SMTP id h1mr1008842qth.517.1639781416058;
+        Fri, 17 Dec 2021 14:50:16 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1639781416; cv=none;
+        d=google.com; s=arc-20160816;
+        b=vor3iMIJOXnoB+Ktk+UGi/6EUKixv4qSZaK52cTAhl51sjCiIeYNuICISDFKYwbEnB
+         1HO+IluXTTYH/uO8SNOkHXizIqYhso7ZTWCRUsSdfviKqP4S1rctxKCgpfMvxzmZxTJM
+         G4HyZX1mPVUawT5GvM2HWl7kBpRSbW+Sl0cyDQ+TW8CCue9iRDZrqRv45ZITBc9Dlvfv
+         XAWCq9rFD5ZIuxwJlln03H2hURN/sRLTdzxGlZm57K4po4c3HhbFzK/79yfexFOoVuKd
+         CrngUHsOVHxpc6scpbxRC0ubXRdrWPbQo8nCOlHJ7hHw531AMnEsI2VO1YmVgafxRPng
+         yC2Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:precedence:mime-version:subject:message-id:to:reply-to
+         :from:date:list-unsubscribe:dkim-signature:dkim-signature;
+        bh=EDol+GWQYDdVQILHoso+aCRwd7ebUs5RFgmpEA/W8ZQ=;
+        b=f0J24ahjFWVejFEQYAWM4VKDxe3AwRAFzI5pIJmc0Ucm81zv7g8uqUuB+DSnCKjGiQ
+         ssMJmT8pKnR3W/w/11CyGc0AX1M2tHOM8l/YJbb7gyjNBnXYvPsAi8B101N2eNEu8k4S
+         l8xTNQ5LJCQX1oJJ0KJoBInw16wUy3Z8UFH71unBJop0V5Hkjr/fn2mVEGzLgzfdvFTs
+         GXe0uKlf8nLaxbPOKbgh9Cduca8bzQ/RRb8DKJpCJLiB1/KFwvyz1ynCN12Rp8HxeWzb
+         AEf0MxPlqyHzsoCer18tJ3ZxO3zGnxkZsZpKao+DS0Gz0x0ZeP8K5pLzJ/Mt4cMu468N
+         ov/w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@bf08x.hubspotemail.net header.s=hs2 header.b=hfmEA5zc;
+       dkim=pass header.i=@semanticscholar.org header.s=hs2 header.b="niSXnqY/";
+       spf=pass (google.com: domain of 1axb38iaag7n0qsyhyx60h6fz44bwh5x40fcfc-tianyin+2erien=gmail.com@bf08x.hubspotemail.net designates 54.174.52.110 as permitted sender) smtp.mailfrom="1axb38iaag7n0qsyhyx60h6fz44bwh5x40fcfc-tianyin+2Erien=gmail.com@bf08x.hubspotemail.net";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=semanticscholar.org
+Return-Path: <1axb38iaag7n0qsyhyx60h6fz44bwh5x40fcfc-tianyin+2Erien=gmail.com@bf08x.hubspotemail.net>
+Received: from pgg14g.bf08x.hubspotemail.net (pgg14g.bf08x.hubspotemail.net. [54.174.52.110])
+        by mx.google.com with ESMTPS id w12si4418158qtc.524.2021.12.17.14.50.15
+        for <tianyin.rien@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 17 Dec 2021 14:50:16 -0800 (PST)
+Received-SPF: pass (google.com: domain of 1axb38iaag7n0qsyhyx60h6fz44bwh5x40fcfc-tianyin+2erien=gmail.com@bf08x.hubspotemail.net designates 54.174.52.110 as permitted sender) client-ip=54.174.52.110;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@bf08x.hubspotemail.net header.s=hs2 header.b=hfmEA5zc;
+       dkim=pass header.i=@semanticscholar.org header.s=hs2 header.b="niSXnqY/";
+       spf=pass (google.com: domain of 1axb38iaag7n0qsyhyx60h6fz44bwh5x40fcfc-tianyin+2erien=gmail.com@bf08x.hubspotemail.net designates 54.174.52.110 as permitted sender) smtp.mailfrom="1axb38iaag7n0qsyhyx60h6fz44bwh5x40fcfc-tianyin+2Erien=gmail.com@bf08x.hubspotemail.net";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=semanticscholar.org
+Received: by 172.16.214.116 with SMTP id ax2nko4a19iuwajbo4woesgaqijyciuvl4t6a;
+        Fri, 17 Dec 2021 22:50:15 GMT
+DKIM-Signature: v=1; s=hs2; d=bf08x.hubspotemail.net; 
+        i=@bf08x.hubspotemail.net; 
+        h=sender:from:reply-to:to:subject:mime-version:content-type:list-unsubscribe:form-sub:feedback-id; 
+        a=rsa-sha256; c=relaxed/relaxed; 
+        bh=EDol+GWQYDdVQILHoso+aCRwd7ebUs5RFgmpEA/W8ZQ=; 
+        b=hfmEA5zcxIkJ/04W9VuXBNkwiAlVmcGnXmP2uNl8G7Pz1KT5a5op6KPYvGxQLd
+         9NYRbt+9QS4x2YYA48C7rHkeR+41sRNAMFGRgwYFGFr/OgVB4gQDZsAwVpHRnaa
+         REKKlrmSnVBtMsDGuillwn5yrlRWc1rRgQEtgm7Dth0hufN6zcPKMZ8sC7/O7TN
+         J/yfzu9ps3+Vdiuq8c8EbIxTiOitb8mmzGDB4LchcwGDvC77uwywWKQGF2B8Kyh
+         U435Fy8q0TIFRDxA9YmStRKlTLAZULsnQoX7OPlk1VOd3imXVQhcFiR8rP0i8gv
+         fm5QUgsG1ZsmB88v551TYMDervkQ==; q=dns/txt; t=1639781415;
+DKIM-Signature: v=1; s=hs2; d=semanticscholar.org; 
+        i=@semanticscholar.org; 
+        h=sender:from:reply-to:to:subject:mime-version:content-type:list-unsubscribe:form-sub:feedback-id; 
+        a=rsa-sha256; c=relaxed/relaxed; 
+        bh=EDol+GWQYDdVQILHoso+aCRwd7ebUs5RFgmpEA/W8ZQ=; 
+        b=niSXnqY/WKgOBoHliCHMNQD/uAqnQZfEnElMz4G6tqrZwD96BrFI3A+v9S7ZYk
+         dUf3xX+iZhAyZwyKuGQCArFjZBrFuWzhCHn096zGP0KpOwBC4EIpc1JulrOTvVY
+         tlZyHVKJXl1JBlCQ65hYmQHk6gIMS0VUgD445eHUPMF4TZ5lQh0bR9uPkkjeJwE
+         GKviJlT9XHOJtOWFEoFR/w185NxL/KWnHzKX0C46mYDrCQql7R0tfxeDt9kZEGG
+         V+7l7OmaQjBpiFo2fUnlvzZ8BekF9xgg8X5ZtgRidHhCz7rlXDBzKU6qAuEUdfR
+         ka+xoipR+NWbXJ9irjqkMopczP9w==; q=dns/txt; t=1639781415;
+Return-Path: <1axb38iaag7n0qsyhyx60h6fz44bwh5x40fcfc-tianyin+2Erien=gmail.com@bf08x.hubspotemail.net>
+X-HS-Cid: 1axfw7muf2n8xobibsppdoc882qivase0o2k50
+List-Unsubscribe: <mailto:1axdepq1osn8ekv332m3a31u7umbxfk9x34rk4-tianyin+2Erien=gmail.com@bf08x.hubspotemail.net?subject=unsubscribe>
+Date: Fri, 17 Dec 2021 14:50:15 -0800
+From: Semantic Scholar <info@semanticscholar.org>
+Reply-To: info@semanticscholar.org
+To: tianyin.rien@gmail.com
+Message-ID: <1639779678817.aee925ff-f5af-4080-87c1-cbb3759b4043@bf08x.hubspotemail.net>
+Subject: Newsletter: 2021 Year in Review
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_9450853_681133229.1639781414791"
+Precedence: bulk
+X-Report-Abuse-To: abuse@hubspot.com (see
+ https://www.hubspot.com/abuse-complaints)
+Feedback-ID: aedsy7w:aidjf1u4:aidf:HubSpot
+
+------=_Part_9450853_681133229.1639781414791
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+New AI-powered research tools, product tips, and research updates from the =
+Semantic Scholar team at AI2.
+
+View in browser (https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VW=
+JX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqF15mVyrV3Zsc37CgQ8pW3fZNpm6jBT-1Vm=
+nt265-ykx9W2NvGMp5n4KSzW6jxjQ57-KhL4W5BGGxj2jxnFZW3mnm6F8d7PtkN8Rf979G5cNlN=
+19QD6JGxHFtW178H083DZDPlW2hxgzL7D399LW3hH-fz6nTwmBW3RdWyw12FBzCW2dFf3H90k1v=
+hW4rn4zk1mF61zW58xg0G8865trW588vvy4g4T3nW9k647M6WJz37W7wC-GB5ZfR-KW20nlMm5N=
+qFp2N7B0-mfwXTR-W8y_CQc8BlBLFN37JN-pk3Q7BW7tNBzw2JcvSCW4dFFY649zXhpW3cjbWy1=
+DyN0HW52R62L6m8Ns4W7j6YLP6n9YsvV4qxHF5-qfMXW2JmXMG8YsNj-W6XmTfy5dSD62W1wQtZ=
+f2qnK6PW8WvjXW3crKdrW7PjCz-8cFZ1zW6ynpPD3bWmsJW6B_jTv35vqGGW557Lcm8qZWVf3kV=
+R1 )
+
+Semantic Scholar Logo and Wordmark (https://cJy4q04.na1.hubspotlinks.com/Bt=
+c/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFD3pl2SV1-WJV7C=
+gJmHVh8kC-68wlH5W9kt8197l22dVW3_TDpl4K6wCpW7myzVL11zgY7W235fXt46Hnl_W80WQHW=
+4DwrK_W907tnD2d2DMQW5kYKLs15VD-xW7mjFFx7rLdhkW7XxxqH3KWnPPW4QbWWS2wVdn_W78L=
+BG772GJ0cW70_Mjf52t8hpW6j4cDS4hw3S3W6jl9sw83NxlqW5f_X_L2c3K3sW7WWn2B1NhswsW=
+51mPYX6_HrSRW8RMCsR34ZT1zW1Hzrsx35XRPZW5Ktx6_3btGPfW4shV3F5tWx2QW8lRVny2Wfj=
+tyW9lhkh44sPGmB3b-31 )
+
+newsletter_dec2021-01 (https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4=
+q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFD3pl2SV1-WJV7CgHXrW5N0c315h=
+c0WMVjByVX1QqKN0W288sG_1lGTB8W1MbB0p4-9nM2W3SrW1Z4y0ZV7W3kgh5g54QF-0W121SQM=
+3nCWNJW7cMLNT4Nps33W474PRg582zVlVPBS3n6-Z9yZW7q9k8_51j8YCW6dNJ2T7HLDnwW39Fb=
+982v42KBW5-l5rb8NkJ_bW4Xn0rp739pNjW8f1plY3-PzRqN7HLRVTxZ0psW32sgHx3N2Q3TW1L=
+mFlw7GxcZ4W6t3Pfz2mbwTLW7LP-x64_l8PGW5BdJtf1zzG05W27yf3H2z7WzDW6Z7cwp81WWN0=
+3m8n1 )
+
+December 2021 | Year in Review
+
+A Milestone for Semantic Scholar
+
+As we turned six this year, we also hit a record=E2=80=94200 million papers=
+ in our archives.
+
+=E2=80=9CSemantic Scholar is a poster child for AI2=E2=80=99s mission: AI f=
+or the Common Good,=E2=80=9D says Oren Etzioni, CEO of the Allen Institute =
+for AI. =E2=80=9CWhen we launched it, we had no idea that it would serve up=
+wards of 8 million users per month just a few years later.=E2=80=9D
+
+Continue Reading at PNW.AI
+(https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrx=
+r6z4MgRW2sbCLr4CbzKgN3ypqGc3pl3rV1-WJV7CgRJ7N9h4SF_84Z0BW1nvyMg93SrwxW31nnr=
+g1PhpcDW3xpR135RMMrbN6Zh74yD4jCpW4qfv9K5C7pTfW5458-X8CBdLTVBVQ202lVNk0W1BVC=
+NB24_L0QW3YrSlY2t331ZMT7znGbl5SjVm1SBz2ktN9nW6FdgtQ4gHvpNW6ZHWN98HFS8RW5fc6=
+_g7cHt-YW4Tz9Tr5mHB_NW6WVVz28D4dxbN5V1rCWtVPwzW594C965S5TJMVCGMx28mwnLpW3kZ=
+JR21ykTRTW8-LpZJ2TXf7MW7YHQf88LnzH3W8nKLst7w-6TCW4dWGKV1ZnDRhW5q23zj8vMqWJW=
+8WFCC695nWKtW3jvwDD4BVJGZ3fVq1 )
+
+Product Updates
+
+Highlighting new tools and services we've introduced this year to help you =
+discover and understand new research.
+
+-
+
+Research Dashboard: View AI-generated paper recommendations, see new papers=
+ from your alerts, and track your impact=E2=80=94all in one location. Now a=
+vailable for all users, sign in or register (https://cJy4q04.na1.hubspotlin=
+ks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFD3pl2=
+SV1-WJV7CgY4jW7VDWQ53kYRpMW851TDT2qrbpcVn6g653_sjn0W18FhwD8-CjjqW8k5z__6LLd=
+VmW5RWlnc3Zbb77W7Y8jsM4dmnnYW4cTR2f2XsG8HW7myYzF5F9YKBW98-d9m8BJDWPVxpvtb2_=
+wJL-W7GS0Tt4RXMsfW90tQkS2TwFNtW7-2_l01PMRXYN53SQlL6X_hbW415yPt5821q3W5NcGBW=
+7hL8rCW2hHP7G2B1tZJW8hLPf_90H1dXW60jK6J6PMQC1W1N6n4N7VB1G6W6nwnMk8gzl2SW1g8=
+rGv4KDqPlW1ljjFd6Lj29t3fPr1 ) for a free account to get started.
+
+-
+
+Semantic Reader: Based on the ScholarPhi (https://cJy4q04.na1.hubspotlinks.=
+com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFk3pl2yV1=
+-WJV7CgCM8W1pbKXL6FlygCW7qwzB15T859kN2VmskCRZms9W5t2YnM4NYr0kW8v_bc645Z7lFW=
+2349T22ZhHfhW2LhkwQ2tT214W8Ckcjn7lFTtqW4lmnfp2XXSJLVPMN7r44jZMwW1xR_5m5S7YG=
+cW7_qpWG9fHngtMf93tqVPc46W1JJF-J4lCBDhW36XmkF3hnMLBW6895jk96KvjZN5632KZYSrg=
+HM4R6MR14j-yVj_MzH7p7T_0W7dpq6956WGfJW2x0mft92hPc1MY-w7tXb9Dj3pFy1 ) resear=
+ch, Semantic Reader (https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q0=
+4/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFX3pl37V1-WJV7CgP2gN20qNY4DHgt=
+WW2Cpc4D3W4Zy3Vy5fm-3j0SCxW55R-TB1dl3jgW3XwXHk72JHHgW361rfl5chHt6N593QHMdFS=
+vQN7syX2nTkP-YW4s7tkk3TH2HTW4Z6ww05Ht1DwW3MLN-W8FrYdxW3yQgfG2G1SssN6P6wJk1s=
+yXZW2KSfWn6Nsl-4W8lBcjS3Gvky-W6r-Npn7_87Y4N7v27bHp01prN1rq8F4d3cfPVv7LwJ6yf=
+PChN3lYpjxDH5ybW2cDsx05mTbjMW2ZqgKb1q3zwqW5LfQZs8f7lShW8NTgCg7v_QhxN6bSsZN8=
+JJwmW4K26k88s83WJ38Kh1 ) launched in Beta! This AI-powered augmented readin=
+g application provides more context for scholars, and we are excited to con=
+tinue to develop this app in the new year.
+
+-
+
+TLDR Expansion: TLDRs (https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4=
+q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFD3pl2SV1-WJV7CgWyMW74T4wL18=
+jgnFW8xYKT435WY4WW4dxryk5rh0GvN4xtDGFnztJjW27pG3S67LnxHN22Bp1dWJ43wW68yqS18=
+r0YK7W73DLqp1n9t7_W9l5zjS8VGSHqW3j_9m51YNxrFW6G7D6W5-RRZ1W4Lt6mq8nRDk6V3fWZ=
+v1yj1-WW2bb6sL7lnKBXW3QmzgP1LpnhgW1Hx0R573r98CVqW0sf5dYCR6W3nRKLl8rXgpNVWVY=
+r-1bdqWFW2npNzS4CYyFcW6_3zb77kMmv-W3GNMsZ5q5RGNW2SC7_m7XSzWlW4_4k0G2FVL9v3p=
+-K1 ) provide auto-generated extreme summaries of scientific papers on sear=
+ch results and author pages. We expanded the coverage to nearly 60 million =
+papers in biology, medicine, and computer science.
+
+-
+
+API: In response to feedback from the global research community, we made ma=
+jor improvements to our API this year including a new search endpoint (http=
+s://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4M=
+gRW2sbCLr4CbzKgN3ypqGw3pl3LV1-WJV7CgHnnW2dXp8z1qMSFSMhf0wG32kTkW8FsvZ11yMMp=
+-W6R03yr8GY08_N59F0m2HkRCrW1NjtGZ80b069W8J7K5c7LYk4KW91Xbxv2-cfCrW2QmnMc40K=
+VhTW438W4P7ll-MRVwnB_76VT6s2W3Mm92Y8L7vvJW80GrW23X4lShW6ThcV87tgPxPW4B-wmz4=
+tcPcdW4FqTHC4pjTQfW8DwNNg43CjsNW83ZKJf6j6RQcW6rCwf49hk0GxW9hCX287bPdfKVsG70=
+t3m0CzTW7hK8003cvynnW8QJ3p07gFDm4W3K_s_95s27nJW2fPy_B8X1YbQW3SpZzV555wP-W8W=
+-4vg7tXskwV1hHnr4z8cPcW8lh7bT61PZJvW5PYtCh5Tlrxv36fy1 ) , conference peer r=
+eview service (https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VWJX=
+7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqGw3pl3LV1-WJV7CgXYtVWfH6P8Gfc7vW2293=
+jv4wxq8QW8Fx8rc5RysM7W8p2PVm4RLbvzW1KH_X54jqGtMW3Y1T5Z7KrpFkW6wS00X8NcZwZW1=
+70N0y99Q_cgW5-0BfH5M3j2CN5tK5rkwFCdNN6N8-KzCyM7PW7Gh5-Q7FRj5VW2Bg6vf7QCfGqN=
+3TrKWL5GFCmV99BN87vmlKnVPMB7Z4fs_N9W59DT-z83bV8-W3pL-Lf7kCXFQW5GJv_61zNHHcW=
+8rRS3R5LFHQvW4nl-zx3ZfqpRW3nVZtm2sRXtvW5-wC0s6yg7kXW3863nX5Fz0DzW1l18MQ8jD0=
+4bW7JC1LJ2szJ8yW5XDL2W9c1zXvW7r6PN42pcq8vW68cb2Q6jFrl6N8vXRSbs5G8338Hy1 ) ,=
+ and more fields including TLDRs. (https://cJy4q04.na1.hubspotlinks.com/Btc=
+/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqGc3pl3rV1-WJV7Cg=
+NBBN6pdP1mDw5msW89yZ7F2TJlVDN1ltJ5J2G11tW1RVpcP1BNZPpW8tkQPX16FYrCW2y_tks9l=
+frf4W979q6h7Jw_m6W36YgwP4mGGwQW51g1q72X-qkDW1P3zvp5d0tqGVZdGKK4hDsPxW6JyKYT=
+77ZYpwW4nKCzM5Rfj-VN1Y1-1d6S81GW6pmGc86qZYQzW25lWVs7nrCQyW4n_l647KlC5vN4mxx=
+BPLGxT8W72g0P313pH1JW7J9rzP95_9cJW1-c_hK4NYn7XW3YBd1m6BzvjGN4bFqWTHGth5W95v=
+BRb4zsnxVVnj0T84WFVRsW4yGJPQ49p-3nVxwY-32tBK6ZW2yMMDf1xCHJn352w1 )
+
+DSC_8726__1_ (https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VWJX7=
+h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFX3pl37V1-WJV7CgHNyVrGPZS9kbrPFW27pCl=
+-8gCp--W27lBWC8vz5nTW98glL_85lCdDW1nHJk_382gdFW2HTMtK4n9YTRW3HG98Z7bQpStN7p=
+QYcPwjNcgW5Xh3zC1GMV2FW5n4zJP7rqdpMW5ZxH2c49W1Q8W10Nzvq36glxhW92Plm18SD3fqW=
+5zTfS_8Rfj3DW2pdVYt8ZjzQvW8rpZ0X4y7zdTW8CCVWL85-M-4W8rpqJN2WwvgBW7RY8Yj5XY0=
+M4V1dB176SDHcCW67gxWx5Bs98QW8fTXfR7H6f_9W6R07B28VLxdzW2zXTgx3-HCZgW58kyDC5K=
+KpKtW248fld5MTFhK3lMR1 )
+
+New Leadership Takes the Helm
+
+Daniel Weld (https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VWJX7h=
+9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFX3pl37V1-WJV7CgHNyVrGPZS9kbrPFW27pCl-=
+8gCp--W27lBWC8vz5nTW98glL_85lCdDW1nHJk_382gdFW2HTMtK4n9YTRW3HG98Z7bQpStN7pQ=
+YcPwjNcgW5Xh3zC1GMV2FW5n4zJP7rqdpMW5ZxH2c49W1Q8W10Nzvq36glxhW92Plm18SD3fqW5=
+zTfS_8Rfj3DW2pdVYt8ZjzQvW8rpZ0X4y7zdTW8CCVWL85-M-4W8rpqJN2WwvgBW7RY8Yj5XY0M=
+4V1dB176SDHcCW67gxWx5Bs98QW8fTXfR7H6f_9W6R07B28VLxdzW2zXTgx3-HCZgW58kyDC5KK=
+pKtW248fld5MTFhK3lMR1 ) has been promoted to General Manager and Chief Scie=
+ntist of Semantic Scholar. Dan is a noted AI researcher who is a Fellow of =
+the Association for the Advancement of Artificial Intelligence (AAAI), the =
+Association for Computing Machinery (ACM), and the American Association for=
+ Advancement of Science (AAAS). Read more at the AI2 blog (https://cJy4q04.=
+na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4Cb=
+zKgN3ypqGc3pl3rV1-WJV7CgZVLW9c-Zl26WxTrgW4BlyNm7s8tWlW6QlfSD7kC8dkMKbZshNHc=
+X3W5yD88Y71B2YtW5yqQ9s2dbLkQW8c9zck4MPMhRW3mqf9M7hbhrlW4Thhl12Mg4-rV-hfYn88=
+YfV6W6kb-ds3StsC8W2HFz2r6BJ-r2W8ZS5cT1cjVqJW84ggWh96_CjcW6K4Ppc7W4lh0W4-1_G=
+J8gWq7pW9k3yG415qrXZN6yhFZ0Xpd-NW6Ny7zG3S_0v_W5GDd9N2RQKPXW5N2MCg4nlNdZW8_w=
+tGz2wpv6QW5Cyq_C95SMXGW93SMBG8ZpTx3W4TQqxd3FBHHJW39glBM5LS-FtW5fyS4C85JxcGN=
+3B2rrK9WzRQ380b1 ) .
+
+option2_use__1_ (https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VW=
+JX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqGc3pl3rV1-WJV7CgCtxN1n6sD8YmDwHW56=
+Ykfv5q6yPHW5MsBdJ2zmpsgMj18VrYNK9FVs_zC32b4V4XW3lbjWB6877JYW4cRRNC6m2KSHW2-=
+PCFr5M0x6LW76_FlY8qz95yW4Tkjvv8b_4TnN3HQ7btVCP2VW3f-SvJ3JpS0wW3XCfkJ4b5W0nV=
+2r_2s6LpslsN3bbq6j4BNLwW26Fp0G83H4YtW5vcNPP19NBC1W3gJ_pr5K4H7vW6fKK8C664rR1=
+W3N7Fz21-0VjpW5XdgTW804VKgW4m05bT5BnCZ2W60bpL64MDHrBN6b9lw61-WMNW6mtF7V1cYd=
+wTW4rlq5p5KdC-vW8SDF5D4BgFyTW2QRM0n5nGRWQ3c051 )
+
+Featured AI2er: Bailey Kuehl
+
+Bailey Kuehl (https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VWJX7=
+h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFX3pl37V1-WJV7CgRgvW5slymc42byMTW2_Md=
+HL18dJpxW6jf4YT6S6M17W7Dv2c-5bd4wGW7nZWKG18YwzMW2yFw8l4WVcl7W1-gxWw2T13xXW2=
+8-vF38VtYZ9W3bzt4T1FL3XCW6cwjg419yZD7W1Z6st72tBDk4W3Z2kBf6FDZgFW91cj0h1pNmc=
+JW60GK8x8rYPCQW1twXfS1v-lxvW4jqyKS8wMyxFW3G8ZLs17rSVnW1HBwdw4GY21FN6L0HV7hX=
+N4PW5WwyJX8l26SbV9ZkBq8BnbdnW4n2p1B7Zncs3W3nYDS58bYCZXW6P319d24cJgJW6TQQX74=
+VXZN-W7n_VhJ5CFkZ0372b1 ) is a Data Science Analyst on the Semantic Scholar=
+ team at AI2. Along with offering expert annotations and data insights, she=
+ also helps ensure a smooth flow from the initial research idea to data col=
+lection and analysis. Learn more about Bailey and her work at the AI2 blog =
+(https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrx=
+r6z4MgRW2sbCLr4CbzKgN3ypqGc3pl3rV1-WJV7CgCtxN1n6sD8YmDwHW56Ykfv5q6yPHW5MsBd=
+J2zmpsgMj18VrYNK9FVs_zC32b4V4XW3lbjWB6877JYW4cRRNC6m2KSHW2-PCFr5M0x6LW76_Fl=
+Y8qz95yW4Tkjvv8b_4TnN3HQ7btVCP2VW3f-SvJ3JpS0wW3XCfkJ4b5W0nV2r_2s6LpslsN3bbq=
+6j4BNLwW26Fp0G83H4YtW5vcNPP19NBC1W3gJ_pr5K4H7vW6fKK8C664rR1W3N7Fz21-0VjpW5X=
+dgTW804VKgW4m05bT5BnCZ2W60bpL64MDHrBN6b9lw61-WMNW6mtF7V1cYdwTW4rlq5p5KdC-vW=
+8SDF5D4BgFyTW2QRM0n5nGRWQ3c051 ) .
+
+Research Updates
+
+Our Research team studies information overload and develops AI tools to ove=
+rcome it to help scholars everywhere. Check out some of the exciting work o=
+ur Research group introduced this year.
+
+-
+
+Doug Downey (https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VWJX7h=
+9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFX3pl37V1-WJV7CgXChN7PhNxnSjYHBW64l6qV=
+6-n2wpW7zvd2K27Tm-ZW1wl2Vl3NxljdN7vXpKk655_2W2GbGrK7XVqkXW7m35MQ2_Xf7NW4TTn=
+k_4qd5KWW50XMn56VhSk_W29FYLb8jcWG-W4PpQsH6sXFNRW6nWRjB7dBCk2W6-zchB4zm8m4N3=
+CMLPCXlBrWW2czcls35KH1RN1YVTyJmd7BNW1XNlFS2Qz3tkW7t5ynN5d8GB_VY4_gm55C54xW4=
+LQTGg7vlfwVW2r1vP92YZQ02W8QTMfV7K49BkN3wkF9Rd4-pTW2fYCn92GwgQbW1RWrHd6SsXZN=
+W7B66P_6z8lC23hwR1 ) was recently appointed to lead Semantic Scholar's Rese=
+arch group. Read this interview (https://cJy4q04.na1.hubspotlinks.com/Btc/L=
+X+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqGc3pl3rV1-WJV7CgC4=
+LW92rcKK7RCt9DW89hCz45sk4WmW66bwTP7y8bFVW209_dJ3zsxrcW7ZSnqK7dk0MxW3KdYkx77=
+_ZbwW8S6wc83S0hlCW4BpKQ51wnnQfN9hh167hGXfBW2S2B2-1xbT3tW6v68YB7-pDyqN177TLX=
+-FGnsW4pCbdC7wk0GzW2-s77z84Y0jFW59zKdq2klDj9W2hzcSK4_jX8WW9h-kHj60hDhbW3vZF=
+r36ZQ1mVW4mJnS27kCDk6W50TB9w1Zdr-mW7JlP9b7lgnSDM8s3jdZjz74W7TRJnl6fVHVDN1xx=
+8hl3t6cQW65nBRX6-rvXhW1W3pBh23kvn8W2JSP1J6yYhLnW6lJZ-Y3Jp4tK3kLW1 ) to hear=
+ about the groundbreaking work from our Research team, and what's in store =
+for 2022.
+
+-
+
+SciA11y (https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B=
+2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFk3pl2yV1-WJV7CgBrYW6LR1p-77XF_BW5fBpFj74h=
+WGfW3VVTDl6_QTPbVXB_zk4QcqCYW9fWX417Hqk0MVrGSMg8YhntjW68kNLl8TVjTzW4HHbYq46=
+vTbvW1BXmHC1nZr4DW6tf_3G231ZV2W1jdY706xtd3PW88ykR27Tn0TXW8QZDZd4pp1FZV85Qcn=
+4_7hcBW8ZQQmB5SRlKBW4PCvtl1DKpBYW97bNZ28F74mQW7WRw4l1sQcYSW6GdGBW7NYdZmW4Pv=
+Y7t6gS23dW9frvSG3KSRBMW4xw70M19lSWC316p1 ) aims to improve accessibility of=
+ scientific documents. Hear from Lucy Lu Wang (https://cJy4q04.na1.hubspotl=
+inks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFX3p=
+l37V1-WJV7CgSgYW6F96X88SlSKJW6yGDB17sJrVwW5v5Kt_6ZTbKvW7fpzJj9fPdvsW196YGZ5=
+qs7P8W2_Pzwf6fm9sLW3NxrZ639KHBpW7mC8vD380MGcW5rBcPt2CQV5cW55gWV01y6Y1sW9bbQ=
+sB9krf5TW1yDb1B1wc4K0N5BRJwqj0WN0N6JHK7WZF60rW482Jv-2P3PMZN4nSN9QRRjZlW1Pzj=
+MB8LGjHmW7Pp2Jm4GqD6BV7pxm955JY1tW5rD97c1SnkYMW2bLD8V4FKCxhW4dbD1t3WJ7xfW8C=
+HzX72ljlmCW2wPVWm6ycq-QW268Kxr2r3ZvhW3_TBGz2ZDY-633d-1 ) , who describes th=
+e current state of scientific PDF accessibility (https://cJy4q04.na1.hubspo=
+tlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqDr=
+5mVxSV3Zsc37CgDQVN4S6QpHCPkNJN3h5jM5cp57vW4mf2YN4ygH5yW6RzHKr5nbvshW7l7v8F7=
+-VX7ZW14cTZn1cJWKbW4109C25S_jkfW8ms24B6D7zvZW7Cq1w_3Rg7VwW220Rqj232Pw-W4mP9=
+xN51Lb7LW2NhWfR1n4GMtW8xz1Dl2GbPZsW7KN7F13SCr03W1ycmMh6lWDCKW1ZHxjb60wVrpW4=
+BpJjT63m7fwN26MR--18n0gW70qy-g68tmVtW361Kf68CzGjzW645bs71Zwh0DW8D79Dw2HQpnm=
+VvQ6Gp7cSK50N4qg4sY8BvTyW7hq5KC8jS4mDW9jP89d6J7JxDN5H0v_gwzZY8W6Kr-GR8CkZRD=
+W1hF_qm5kDg4LW3LsN6t3B-ZsJW3Vg1k33ZfFYhW2QsB1m6PvcyH33cc1 ) (or rather, ina=
+ccessibility), and introduces a new system (https://cJy4q04.na1.hubspotlink=
+s.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqDr5mVxS=
+V3Zsc37CgLRtN3lfFN1qJkh0W81rVdr5V4nkNW1V-4bw1c4ySzW7ncFLP4HpSypW64q0-z710Gg=
+DW7CVrmH6d14DJW3dMthy2P6LL1W48PXV976SGlWW4JfGBt18DC8BW91t8bm5zL1RpW7Vmz8y6d=
+J-d-W5Qq2B84StjccW8Xq_M48M6cdqW1fhYm76B6jchW8L77R-8Mv2BSW2yjHCB1Fcp6-W5VBvY=
+K71Jy-zW3nbkSN6ZK5R3W6fwCRY3yvB6yW4QQhpS8LwPVmW6Mm05W8WXVVCW6-Zqkd7txS3GW67=
+Qmd87Jv1KXW7rKM3Z2fdvS5N5CNQ51DK-cjW1rvfp96c0mjTW4_1qjj9llCJ4W38LHWy7xVZbvW=
+6bCwd527QQPVW6bTFf67JRwbVW2P8Y-G4jx1lKW5g4TLq8DHMZj3bcB1 ) that attempts to=
+ address some of the challenges identified. Spoiler: the vast majority of s=
+cientific PDFs we analyzed were not accessible.
+
+-
+
+The SciA11y team also released a prototype of papertohtml.org (https://cJy4=
+q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCL=
+r4CbzKgN3ypqFk3pl2yV1-WJV7CgVCDW5QkHg37lgpmgN8SG5gHh6t6qW7mnkMf2X-T2xW7KWjY=
+53jLdHWW3Hhgws1JDrnjW4l_kXv9d3mtbW6llw3f68Z1fwW3K_Yys5sL3ngW1Czfs61glm0pVxf=
+TPg5WdvbfW1BxL9t94c0cBW3m05vl2bhYLxW4RLVs95c7dwsW7Sjpkq1G_hpyW7k2ZlM7xN_dlW=
+2XyFbb5jDJYJW68vs853jFh-TN54Q_DmM-gjrN7lmJ1VNj0DtW4b_x952wSmw6W73zvnp8S7shv=
+W24Vm_H4ZlQdz33rh1 ) , which converts PDFs to HTML for an improved reading =
+experience. Check out the Paper Gallery (https://cJy4q04.na1.hubspotlinks.c=
+om/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFD3pl2SV1-=
+WJV7CgQttW6Z0H6V13J0rRW9l2SKy84R3PKW6SYjd-1G8vxcW79VLR34nJXfTW2ZJSx27dVH3tW=
+81-zx527StZhVJkS9B71Tnf3W3_pS1J7SS9-3W6pSpQb3fy6_PW4qQtqP3x-vM7W4Tw3SN5MXzb=
+2W4YfGhZ24NSy1W1HMTSk3J8N-NV1DWsv6SxbWVW1cHqgH5WCWvkW6F0XyW1jN0bgW1_ds643M1=
+0RNW94BKTY4VwtydV58jy96KVcRRW76740S3DTQgdN8VQzNWf6FVlN4kJ9Mnz1xXrW2ZPQ5S1jJ=
+FfmVgKq2B5_g-N93h2N1 ) to see it in action.
+
+-
+
+S2AND (https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2j=
+W4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqDr5mVxSV3Zsc37CgYw3V2V6PM8DlyDKW9dX_CM7DFd8P=
+VXDJFv80t5HMW7pmyB_4R6fKdW2xvH9F4Ydw2xW2mdg4B2X8544MVqBfKrfxKqVpLYpR6GV2W-N=
+2sjjq0hHPTnN6yJ_wSQXQbsW3bJ3P647vj2jW2VBHkl6_FcnNN1w7zbXkYHxGW1PnKYW3LkGp-W=
+4rPJrF27f8yvW6hq8Xv7_XGSrW7Wwr8M1X0GvVV2ns0Z93_1TrW12-VXs9cCQPQW2FZxJj7PV9s=
+cW63QMt08kcSTLW6GyHkr8zYH01N65s4r2Zkbb4W5F5f__2sYkwzVF2W-383M8K8W7CbhtH18gg=
+NRW4Hjz0F3kQPN6W2cccxv6Hhx0FW1ZFpCB8Fd4HcW3yhC9y8BSRGLW3v2Q_J3DwFDmW8wJBHg3=
+hpHMx391Z1 ) (Semantic Scholar Author Name Disambiguation) was introduced t=
+his year to improve author pages on the site. Sergey Feldman and Daniel Kin=
+g wrote about S2AND  (https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q=
+04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqDr5mVxSV3Zsc37CgYw3V2V6PM8Dly=
+DKW9dX_CM7DFd8PVXDJFv80t5HMW7pmyB_4R6fKdW2xvH9F4Ydw2xW2mdg4B2X8544MVqBfKrfx=
+KqVpLYpR6GV2W-N2sjjq0hHPTnN6yJ_wSQXQbsW3bJ3P647vj2jW2VBHkl6_FcnNN1w7zbXkYHx=
+GW1PnKYW3LkGp-W4rPJrF27f8yvW6hq8Xv7_XGSrW7Wwr8M1X0GvVV2ns0Z93_1TrW12-VXs9cC=
+QPQW2FZxJj7PV9scW63QMt08kcSTLW6GyHkr8zYH01N65s4r2Zkbb4W5F5f__2sYkwzVF2W-383=
+M8K8W7CbhtH18ggNRW4Hjz0F3kQPN6W2cccxv6Hhx0FW1ZFpCB8Fd4HcW3yhC9y8BSRGLW3v2Q_=
+J3DwFDmW8wJBHg3hpHMx391Z1 ) for the AI2 blog, and the code and models (http=
+s://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4M=
+gRW2sbCLr4CbzKgN3ypqFD3pl2SV1-WJV7CgCzmVWy7ph3CDp5kW2Tr23X81xlxmW3LpScN430R=
+QMW3RtXG916tjfvVJthCB7-WvGBW1FWLw51ZM4RfW7TYMpV8v5rtVVry4xy69XNjVW2qq7Ng4wW=
+zwyW1kmqYf7C0jkQW1-PNt9872M6RW2q2sCS3fy5_nW12CV_X8T4dXpW7FMVD13yLWn5VnJH712=
+CXVfmW7Qfh488GBQ4CVBGVVq33ZFl7W2NxPbX5kJ4lRW62HVh_728_JcW6FnLzz6b5zbJW8vlNk=
+47hp8WXW23J9Q75cpZx2W6wfsDW1H2K_tW8C6Tht2DSwQ538ck1 ) are available on Gith=
+ub.
+
+Join our team!
+
+Semantic Scholar (https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/V=
+WJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFD3pl2SV1-WJV7CgJmHVh8kC-68wlH5W9=
+kt8197l22dVW3_TDpl4K6wCpW7myzVL11zgY7W235fXt46Hnl_W80WQHW4DwrK_W907tnD2d2DM=
+QW5kYKLs15VD-xW7mjFFx7rLdhkW7XxxqH3KWnPPW4QbWWS2wVdn_W78LBG772GJ0cW70_Mjf52=
+t8hpW6j4cDS4hw3S3W6jl9sw83NxlqW5f_X_L2c3K3sW7WWn2B1NhswsW51mPYX6_HrSRW8RMCs=
+R34ZT1zW1Hzrsx35XRPZW5Ktx6_3btGPfW4shV3F5tWx2QW8lRVny2WfjtyW9lhkh44sPGmB3b-=
+31 ) is a free, AI-powered search engine for scientific literature based at=
+ the Allen Institute for AI (AI2). AI2 is a non-profit research institute f=
+ounded in 2014 with the mission of conducting high-impact AI research and e=
+ngineering in service of the common good.
+
+We are hiring engineers, researchers, interns, and more. View open jobs (ht=
+tps://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z=
+4MgRW2sbCLr4CbzKgN3ypqGc3pl3rV1-WJV7CgZYhV6PkHX6zHs17W7MjNJD4pKxDVW3bWHRq5k=
+4fmhW5fqW0C8BF4vXW6pyjcj7d1rqXW2CwVjk2nLgWhW3rH4M24WH4vXW3XFrDV96TgpRW3C16C=
+t2Kgzz0W3p9zfq2lLc_7W5jkcv67n1V5CW7hQqD86VXswYW7PrDrx8fm9pvW60RLzV8Q_MFdW1r=
+gQmt60kLCvW6cBSWT6JCS2xW3c767T6w1xVDVTg8304Dm4jTW9bLhCt3-zr10V3_RlK3gt20jW1=
+1xMww68_HJQW3NJbwl1xkVdcW5zzdsM49ScGrN2B8dN_V3xK8W3Z3yqg1Vlz6hVqWQCg7-W5hZW=
+6L8jDt8nk6h6W5ss_8W4t_cbp2tp1 ) with the Semantic Scholar team at AI2.
+
+Proudly built by
+
+AI2_Logo_Vertical_Lockup_Gradients (https://cJy4q04.na1.hubspotlinks.com/Bt=
+c/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFk3pl2yV1-WJV7C=
+gZ1_W5pgL0s6F_FvXW3y2cQD3w3wdRW1WWlcH2lmksTW6F3R0b1JVrNpN8Vhb9p4NRvFW8TLyGj=
+5fbyhvW55m4kV3fyx1WW5Pv8Dg60f5DkVB39Kt8p4htCW6j9D7b4y26MnF8T-0dT5Pj7W9csrHQ=
+61SLbRW36lZZ353FMhPW6JPQTg3dqQS8W3fPrqW8VgYnGW5HBKSZ4lQvrsW94ljPk7zL_1wVhnR=
+lH3yzTyrW42LFMP1p_SbsW2MFJZv3jHwvNW1kF9vT3YVBtTN2jv2Nyqhhww3pM81 )
+
+Semantic Scholar, 2157 N Northlake Way Suite 110, Seattle, Washington 98103
+
+Unsubscribe (https://hs-5910970.s.hubspotemail.net/hs/manage-preferences/un=
+subscribe-all?languagePreference=3Den&amp%3Bd=3DVnfmCq8kHBzYVRjtnJ41-F3nW1J=
+FMwZ41xWR_W3zbV8Y3Fbt5qW7N-12G1fkvKFVkhLWt6jPy6PW8c0zYx4JyYk7W9lD7MW6mkxfQW=
+8ZhylH1KVcpzW7jDJDW8xtWj-Vk1FrY7Q1D6xW2_JGT56SHNf-0&amp%3Bv=3D3&_hsenc=3Dp2=
+ANqtz-_WFIjGiVuGktGwbvDIJnP-wP2rxI9qf4Q27wMRfsTAERvYsTaFGw6oqszqG1tE2QvgQLy=
+Hm7ZtEYKHJ3SU91ovZpJddA&_hsmi=3D196784094 )
+
+Manage preferences (https://hs-5910970.s.hubspotemail.net/hs/manage-prefere=
+nces/unsubscribe?languagePreference=3Den&amp%3Bd=3DVnfmCq8kHBzYVRjtnJ41-F3n=
+W1JFMwZ41xWR_W3zbV8Y3Fbt5qW7N-12G1fkvKFVkhLWt6jPy6PW8c0zYx4JyYk7W9lD7MW6mkx=
+fQW8ZhylH1KVcpzW7jDJDW8xtWj-Vk1FrY7Q1D6xW2_JGT56SHNf-0&amp%3Bv=3D3&_hsenc=
+=3Dp2ANqtz-_WFIjGiVuGktGwbvDIJnP-wP2rxI9qf4Q27wMRfsTAERvYsTaFGw6oqszqG1tE2Q=
+vgQLyHm7ZtEYKHJ3SU91ovZpJddA&_hsmi=3D196784094 )
+------=_Part_9450853_681133229.1639781414791
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www=
+.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"http://www.w3=
+.org/1999/xhtml" xmlns:o=3D"urn:schemas-microsoft-com:office:office" xmlns:=
+v=3D"urn:schemas-microsoft-com:vml" lang=3D"en"><head><link rel=3D"styleshe=
+et" type=3D"text/css" hs-webfonts=3D"true" href=3D"https://fonts.googleapis=
+.com/css?family=3DLato|Lato:i,b,bi">
+    <title>Newsletter: 2021 Year in Review</title>
+    <meta property=3D"og:title" content=3D"Newsletter: 2021 Year in Review"=
+>
+    <meta name=3D"twitter:title" content=3D"Newsletter: 2021 Year in Review=
+">
+   =20
+   =20
+   =20
+<meta name=3D"x-apple-disable-message-reformatting">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0">
+    <!--[if gte mso 9]>
+  <xml>
+      <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+  </xml>
+ =20
+  <style>
+    ul > li {
+      text-indent: -1em;
+    }
+  </style>
+<![endif]-->
+<!--[if mso]>
+<style type=3D"text/css">
+ body, td {font-family: Arial, Helvetica, sans-serif;}
+</style>
+<![endif]-->
+   =20
+     =20
+   =20
+  <meta name=3D"generator" content=3D"HubSpot"><meta property=3D"og:url" co=
+ntent=3D"http://5910970.hs-sites.com/newsletter-2021-year-in-review"><meta =
+name=3D"robots" content=3D"noindex,follow"><!--[if !((mso)|(IE))]><!-- --><=
+style type=3D"text/css">.moz-text-html .hse-column-container{max-width:600p=
+x !important;width:600px !important}
+.moz-text-html .hse-column{display:table-cell;vertical-align:top}.moz-text-=
+html .hse-section .hse-size-4{max-width:200px !important;width:200px !impor=
+tant}
+.moz-text-html .hse-section .hse-size-5{max-width:250px !important;width:25=
+0px !important}
+.moz-text-html .hse-section .hse-size-7{max-width:350px !important;width:35=
+0px !important}
+.moz-text-html .hse-section .hse-size-8{max-width:400px !important;width:40=
+0px !important}
+.moz-text-html .hse-section .hse-size-12{max-width:600px !important;width:6=
+00px !important}
+[owa] .hse-column-container{max-width:600px !important;width:600px !importa=
+nt}[owa] .hse-column{display:table-cell;vertical-align:top}
+[owa] .hse-section .hse-size-4{max-width:200px !important;width:200px !impo=
+rtant}
+[owa] .hse-section .hse-size-5{max-width:250px !important;width:250px !impo=
+rtant}
+[owa] .hse-section .hse-size-7{max-width:350px !important;width:350px !impo=
+rtant}
+[owa] .hse-section .hse-size-8{max-width:400px !important;width:400px !impo=
+rtant}
+[owa] .hse-section .hse-size-12{max-width:600px !important;width:600px !imp=
+ortant}
+@media only screen and (min-width:640px){.hse-column-container{max-width:60=
+0px !important;width:600px !important}
+.hse-column{display:table-cell;vertical-align:top}.hse-section .hse-size-4{=
+max-width:200px !important;width:200px !important}
+.hse-section .hse-size-5{max-width:250px !important;width:250px !important}=
+.hse-section .hse-size-7{max-width:350px !important;width:350px !important}
+.hse-section .hse-size-8{max-width:400px !important;width:400px !important}=
+.hse-section .hse-size-12{max-width:600px !important;width:600px !important=
+}
+}@media only screen and (max-width:639px){img.stretch-on-mobile,.hs_rss_ema=
+il_entries_table img,.hs-stretch-cta .hs-cta-img{height:auto !important;wid=
+th:100% !important}
+.display_block_on_small_screens{display:block}.hs_padded{padding-left:20px =
+!important;padding-right:20px !important}
+ul,blockquote{margin:0;padding:1em 40px}}</style><!--<![endif]--><style typ=
+e=3D"text/css">body[data-outlook-cycle] img.stretch-on-mobile,body[data-out=
+look-cycle] .hs_rss_email_entries_table img{height:auto !important;width:10=
+0% !important}
+body[data-outlook-cycle] .hs_padded{padding-left:20px !important;padding-ri=
+ght:20px !important}
+a[x-apple-data-detectors]{color:inherit !important;text-decoration:none !im=
+portant;font-size:inherit !important;font-family:inherit !important;font-we=
+ight:inherit !important;line-height:inherit !important}
+#outlook a{padding:0}.yshortcuts a{border-bottom:none !important}a{text-dec=
+oration:underline}
+.ExternalClass{width:100%}.ExternalClass,.ExternalClass p,.ExternalClass td=
+,.ExternalClass div,.ExternalClass span,.ExternalClass font{line-height:100=
+%}
+p{margin:0}body{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-we=
+bkit-font-smoothing:antialiased;moz-osx-font-smoothing:grayscale}
+@media only screen and (max-width:639px){img.stretch-on-mobile,.hs_rss_emai=
+l_entries_table img,.hs-stretch-cta .hs-cta-img{height:auto !important;widt=
+h:100% !important}
+}@media only screen and (max-width:639px){img.stretch-on-mobile,.hs_rss_ema=
+il_entries_table img,.hs-stretch-cta .hs-cta-img{height:auto !important;wid=
+th:100% !important}
+}</style></head>
+  <body bgcolor=3D"#f5f6f7" style=3D"margin:0 !important; padding:0 !import=
+ant; font-family:Helvetica, Arial, sans-serif; font-size:15px; color:#26465=
+3; word-break:break-word">
+   =20
+<div id=3D"preview_text" style=3D"display:none!important;font-size:1px;colo=
+r:#f5f6f7;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:h=
+idden;">New AI-powered research tools, product tips, and research updates f=
+rom the Semantic Scholar team at AI2.</div>
+   =20
+<!--[if gte mso 9]>
+<v:background xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"t">
+ =20
+    <v:fill type=3D"tile" color=3D"#f5f6f7"/>
+ =20
+</v:background>
+<![endif]-->
+    <div class=3D"hse-body-background" style=3D"background-color:#f5f6f7" b=
+gcolor=3D"#f5f6f7">
+      <table role=3D"presentation" class=3D"hse-body-wrapper-table" cellpad=
+ding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; border-c=
+ollapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; margin:0; pad=
+ding:0; width:100% !important; min-width:320px !important; height:100% !imp=
+ortant" width=3D"100%" height=3D"100%">
+        <tbody><tr>
+          <td class=3D"hse-body-wrapper-td" valign=3D"top" style=3D"border-=
+collapse:collapse; mso-line-height-rule:exactly; font-family:Helvetica, Ari=
+al, sans-serif; font-size:15px; color:#264653; word-break:break-word; paddi=
+ng-top:20px">
+            <div id=3D"hs_cos_wrapper_main" class=3D"hs_cos_wrapper hs_cos_=
+wrapper_widget hs_cos_wrapper_type_dnd_area" style=3D"color: inherit; font-=
+size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget" d=
+ata-hs-cos-type=3D"dnd_area">  <div id=3D"section_1582592457366" class=3D"h=
+se-section hse-section-first" style=3D"padding-left:10px; padding-right:10p=
+x">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container hse-border hse-border-top" style=
+=3D"min-width:280px; max-width:600px; width:100%; Margin-left:auto; Margin-=
+right:auto; border-collapse:collapse; border-spacing:0; border-left:1px sol=
+id #cccccc; border-right:1px solid #cccccc; box-sizing:border-box; border-t=
+op:1px solid #cccccc; background-color:#ffffff" bgcolor=3D"#ffffff">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;border-left:1px solid #cccccc;bo=
+rder-right:1px solid #cccccc;border-top:1px solid #cccccc" cellpadding=3D"0=
+" cellspacing=3D"0" role=3D"presentation" class=3D"hse-border hse-border-to=
+p" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:598px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"598" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:598px">
+<![endif]-->
+<div id=3D"column_1582592457366_0" class=3D"hse-column hse-size-12">
+  <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" =
+style=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-famil=
+y:Helvetica, Arial, sans-serif; font-size:15px; color:#264653; word-break:b=
+reak-word; padding:10px 20px"><div id=3D"hs_cos_wrapper_module_163977479935=
+129" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_modu=
+le" style=3D"color: inherit; font-size: inherit; line-height: inherit;" dat=
+a-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"module">
+<div style=3D"overflow:hidden">
+<table role=3D"presentation" class=3D"hse-pre-header hse-secondary" width=
+=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !im=
+portant; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0=
+pt; text-align:right; font-family:Arial, sans-serif; font-size:12px; line-h=
+eight:135%; color:#23496d; margin-bottom:0; padding:0" align=3D"right">
+    <tbody>
+        <tr>
+            <td align=3D"right" valign=3D"top" style=3D"border-collapse:col=
+lapse; mso-line-height-rule:exactly; color:#264653; word-break:break-word; =
+text-align:right; font-family:Lato,Tahoma,sans-serif; font-size:12px; paddi=
+ng:10px 0; margin-bottom:0; line-height:135%">
+                <a href=3D"https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/=
+cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqF15nKvJV3Zsc37CgTP8W8FHR=
+nS8Z20PFW1gLrNH1HvZ-GW62gy-J2svfyWW9c9TLp4w2YSzW8H55WT7vYGgkW84mQ0250Xk-kW4=
+Bwc-Q4yThh6N8bkb52VknvGN1FWQlz3rtkwW2BgBhf1FNgk1W5_7v-N6GmlhwW80LM7z9j1q4zV=
+2jd3Z5bN6xHW33Dnzf7LbKK9W47R2JR4l1LpHW7BWKJG1Yy1jfW1qbrdx544k3JW5zcqnz240hm=
+FW7zzHbR1Jly-vW326f0_6pJ-H9W2sWXP92qZJN_Msfz7B4r1wBW82jx4d3wwVvSN3ndxF02DYj=
+RW1xf5dN3zxpFvW3kbt_x4Q3fnCMKNZMRlGhYDW8hp_n28jKKpHW6dGgkh5mgwrFW4Hb0CV4htH=
+37W3ntMZK92tYkkW2c9R0L8XnTTlN41RDt-tSbhpMwgB8tQzpG_W8Ct_Q389xD26MmNnl7H8rZ0=
+38Sp1" style=3D"mso-line-height-rule:exactly; color:#1857b6; font-weight:no=
+rmal; text-decoration:underline; font-style:normal" data-hs-link-id=3D"0" t=
+arget=3D"_blank">View in browser</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div></div></td></tr></tbody></table>
+<div id=3D"hs_cos_wrapper_module_15825926627893" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+=09
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; bord=
+er-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt">
+    <tbody>
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"border-collapse:co=
+llapse; mso-line-height-rule:exactly; font-family:Helvetica, Arial, sans-se=
+rif; color:#264653; word-break:break-word; text-align:center; padding:10px;=
+ font-size:0px">
+               =20
+                    <a href=3D"https://cJy4q04.na1.hubspotlinks.com/Btc/LX+=
+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFD3q905V1-WJV7CgWLPW=
+5d6bKn1nJwT6W8gT0jk3yWbqCW6-3hlP3QcZmSN5fbsQ7SnMr0VzPq8l98nmZMN7qpfjyJYkbHW=
+25HtKk57mPvVVj6r_37WnBk4W1J_Wlm82QfjnW6t03Hg5y62FVVmByrQ2Qz9w7W9cZWmZ1Cz_hP=
+W1kxCB38r0VBNW3YsNF72ZBrRRW8JCHS98TcXrdN66K1rrCQscPW4ncqYK2tMKh1W8fwtpq4gzL=
+Q6F80ZlcyWnYgW2CcwzJ6LqRMCW294dTM3MSG2SW4vv7ZD5WkJD3W1VWfsw7WJSd_W3b33dv2wq=
+9G2329k1" target=3D"_blank" style=3D"color:#00a4bd; mso-line-height-rule:ex=
+actly" data-hs-link-id=3D"0">
+               =20
+                <img alt=3D"Semantic Scholar Logo and Wordmark" src=3D"http=
+s://hs-5910970.f.hubspotemail.net/hub/5910970/hubfs/s2-logo_Logo%20+%20Word=
+mark-03.png?width=3D500&amp;upscale=3Dtrue&amp;name=3Ds2-logo_Logo%20+%20Wo=
+rdmark-03.png" style=3D"outline:none; text-decoration:none; -ms-interpolati=
+on-mode:bicubic; border:none; max-width:100%; font-size:16px" width=3D"250"=
+ align=3D"middle" srcset=3D"https://hs-5910970.f.hubspotemail.net/hub/59109=
+70/hubfs/s2-logo_Logo%20+%20Wordmark-03.png?upscale=3Dtrue&amp;width=3D500&=
+amp;upscale=3Dtrue&amp;name=3Ds2-logo_Logo%20+%20Wordmark-03.png 250w, http=
+s://hs-5910970.f.hubspotemail.net/hub/5910970/hubfs/s2-logo_Logo%20+%20Word=
+mark-03.png?upscale=3Dtrue&amp;width=3D1000&amp;upscale=3Dtrue&amp;name=3Ds=
+2-logo_Logo%20+%20Wordmark-03.png 500w" sizes=3D"(max-width: 250px) 100vw, =
+250px">
+               =20
+                    </a>
+               =20
+            </td>
+        </tr>
+    </tbody>
+</table></div>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"section_1588604413763" class=3D"hse-section" style=3D"padding-=
+left:10px; padding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container hse-border" style=3D"min-width:280=
+px; max-width:600px; width:100%; Margin-left:auto; Margin-right:auto; borde=
+r-collapse:collapse; border-spacing:0; border-left:1px solid #cccccc; borde=
+r-right:1px solid #cccccc; box-sizing:border-box; background-color:#ffffff"=
+ bgcolor=3D"#ffffff">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;border-left:1px solid #cccccc;bo=
+rder-right:1px solid #cccccc" cellpadding=3D"0" cellspacing=3D"0" role=3D"p=
+resentation" class=3D"hse-border" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:598px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"598" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:598px">
+<![endif]-->
+<div id=3D"column_1588604413763_0" class=3D"hse-column hse-size-12">
+  <div id=3D"hs_cos_wrapper_module_16397649299462" class=3D"hs_cos_wrapper =
+hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; =
+font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widg=
+et" data-hs-cos-type=3D"module">
+=09
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; bord=
+er-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt">
+    <tbody>
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"border-collapse:co=
+llapse; mso-line-height-rule:exactly; font-family:Helvetica, Arial, sans-se=
+rif; color:#264653; word-break:break-word; text-align:center; padding:10px =
+20px; font-size:0px">
+               =20
+                    <a href=3D"https://cJy4q04.na1.hubspotlinks.com/Btc/LX+=
+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFD3q905V1-WJV7CgZMyV=
+rPSVM2RHSHGW8gFQzp3ljj3jW30KkHY4khBjwW7hyj0F6QJhj4W51TfS42QGmdzW1r4Np_8DYqR=
+VW4hKH3v5CMdMpW5mQVMz7zCKzQW5KFvpy1q3DDmW4Vm-9t3kVKDxW8VgsKn50f8FjW46frMd4z=
+Qhc7W655ptN429dnsW7yHjZ82b6St3W1X-7cg333yr8W3l9yy03fGyTCW5RQ4hw2y2jN-W3XJ__=
+v3MLM2pW5qY-M0718QlyW9l5DQd5tfrssW7MYNz138dtl_W3YzHzg2CJSSJW7Lk78S7wQRkSW7L=
+cLZc2xD_Bs38bV1" target=3D"_blank" style=3D"color:#00a4bd; mso-line-height-=
+rule:exactly" data-hs-link-id=3D"1">
+               =20
+                <img alt=3D"newsletter_dec2021-01" src=3D"https://hs-591097=
+0.f.hubspotemail.net/hub/5910970/hubfs/newsletter_dec2021-01.png?width=3D11=
+16&amp;upscale=3Dtrue&amp;name=3Dnewsletter_dec2021-01.png" style=3D"outlin=
+e:none; text-decoration:none; -ms-interpolation-mode:bicubic; border:none; =
+max-width:100%; font-size:16px" width=3D"558" align=3D"middle" srcset=3D"ht=
+tps://hs-5910970.f.hubspotemail.net/hub/5910970/hubfs/newsletter_dec2021-01=
+.png?upscale=3Dtrue&amp;width=3D1116&amp;upscale=3Dtrue&amp;name=3Dnewslett=
+er_dec2021-01.png 558w, https://hs-5910970.f.hubspotemail.net/hub/5910970/h=
+ubfs/newsletter_dec2021-01.png?upscale=3Dtrue&amp;width=3D2232&amp;upscale=
+=3Dtrue&amp;name=3Dnewsletter_dec2021-01.png 1116w" sizes=3D"(max-width: 55=
+8px) 100vw, 558px">
+               =20
+                    </a>
+               =20
+            </td>
+        </tr>
+    </tbody>
+</table></div>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Helvetica, Arial, sans-serif; font-size:15px; color:#264653; word-break:bre=
+ak-word; padding:10px 20px"><div id=3D"hs_cos_wrapper_module_15962140846031=
+" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module"=
+ style=3D"color: inherit; font-size: inherit; line-height: inherit;" data-h=
+s-cos-general-type=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_cos=
+_wrapper_module_15962140846031_" class=3D"hs_cos_wrapper hs_cos_wrapper_wid=
+get hs_cos_wrapper_type_rich_text" style=3D"color: inherit; font-size: inhe=
+rit; line-height: inherit;" data-hs-cos-general-type=3D"widget" data-hs-cos=
+-type=3D"rich_text"><p style=3D"mso-line-height-rule:exactly; font-size:14p=
+x; line-height:164%"><span style=3D"color: #999999; font-family: Lato, Taho=
+ma, sans-serif;"><strong>December 2021 | Year in Review&nbsp;</strong></spa=
+n></p>
+<h1 style=3D"margin:0; mso-line-height-rule:exactly; line-height:175%; font=
+-size:28px"><span style=3D"font-family: Lato, Tahoma, sans-serif;">A Milest=
+one for Semantic Scholar</span>&nbsp;</h1>
+<p style=3D"mso-line-height-rule:exactly; font-size:15px; line-height:214%"=
+><span style=3D"font-family: Lato, Tahoma, sans-serif;">As we turned six th=
+is year, we also hit a record=E2=80=94200 million papers in our archives.<b=
+r>=E2=80=9CSemantic Scholar is a poster child for AI2=E2=80=99s mission: AI=
+ for the Common Good,=E2=80=9D says Oren Etzioni, CEO of the Allen Institut=
+e for AI. =E2=80=9CWhen we launched it, we had no idea that it would serve =
+upwards of 8 million users per month just a few years later.=E2=80=9D<br></=
+span></p></div></div></td></tr></tbody></table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Helvetica, Arial, sans-serif; font-size:15px; color:#264653; word-break:bre=
+ak-word; padding:10px 20px"><div id=3D"hs_cos_wrapper_module_16391617179101=
+" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module"=
+ style=3D"color: inherit; font-size: inherit; line-height: inherit;" data-h=
+s-cos-general-type=3D"widget" data-hs-cos-type=3D"module">
+ =20
+  <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+role=3D"presentation" style=3D"border-spacing:0 !important; mso-table-lspac=
+e:0pt; mso-table-rspace:0pt; border-collapse:separate!important">
+    <tbody><tr>
+        <!--[if mso]>
+      <td align=3D"center" valign=3D"middle" bgcolor=3D"#5492ef" role=3D"pr=
+esentation"  valign=3D"middle" style=3D"border-radius:8px;cursor:auto;backg=
+round-color:#5492ef;padding:12px 18px;">
+    <![endif]-->
+    <!--[if !mso]><!-- -->
+      <td align=3D"center" valign=3D"middle" bgcolor=3D"#5492ef" role=3D"pr=
+esentation" style=3D"border-collapse:collapse; mso-line-height-rule:exactly=
+; font-family:Helvetica, Arial, sans-serif; font-size:15px; color:#264653; =
+word-break:break-word; border-radius:8px; cursor:auto; background-color:#54=
+92ef">
+   <!--<![endif]-->
+        <a href=3D"https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/=
+VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqGc3q90JV1-WJV7CgZ-vW3Vcm567qkQWf=
+W3lWgPC8g_kB2VX3hmj3Hc4chW8xYDLL5mXc89W4zMbsS4kf7NyW98H97S7ftxr8W16KPCh9jp1=
+svW5NZl9M4TR-7NN7Xnypg1JWdzN491tWxpp4BVVdr2bq5q8DXfW4MjDRN6dhHnCW41YtQ95FMQ=
+MBN4dYn1N3WjXCW5DTF2s88WFdPV24sNz8LTKh7W6-FP3W998LtyW4zNG347x2tCCV2dQf46CnW=
+ZzW6kQwxQ4DXSZKW1j2M0s53l0r8W85hGs354NQbdW2rYHCc87YwhnW4NC6zq427mrlW8nTtjv6=
+f-KhcW20XTjc4m5Jk5W6_nNFH4t3TpTN5TP9mCz2k-r3kfj1" target=3D"_blank" style=
+=3D"color:#00a4bd; mso-line-height-rule:exactly; font-size:16px; font-famil=
+y:Helvetica,Arial,sans-serif; Margin:0; text-transform:none; text-decoratio=
+n:none; padding:12px 18px; display:block" data-hs-link-id=3D"0">
+          <strong style=3D"color:#ffffff;font-weight:bold;text-decoration:n=
+one;font-style:normal;">Continue Reading at PNW.AI</strong>
+        </a>
+      </td>
+    </tr>
+  </tbody></table>
+</div></td></tr></tbody></table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Helvetica, Arial, sans-serif; font-size:15px; color:#264653; word-break:bre=
+ak-word; padding:10px 20px"><div id=3D"hs_cos_wrapper_module_15962140914012=
+" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module"=
+ style=3D"color: inherit; font-size: inherit; line-height: inherit;" data-h=
+s-cos-general-type=3D"widget" data-hs-cos-type=3D"module">
+<!--[if gte mso 9]>
+<v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" stroke=3D"f=
+alse" style=3D"width:558px; height:2pt;" fillcolor=3D"none">
+<v:fill type=3D"tile"/>
+<v:textbox inset=3D"0,0,0,0">
+<div>
+<![endif]-->
+<table role=3D"presentation" width=3D"100%" align=3D"center" border=3D"0" s=
+tyle=3D"position:relative; top:-1px; min-width:20px; width:100%; max-width:=
+100%; border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt; border-=
+collapse:collapse; font-size:1px">
+  <tbody><tr>
+   =20
+   =20
+    =09<td width=3D"auto" style=3D"border-collapse:collapse; mso-line-heigh=
+t-rule:exactly; font-family:Helvetica, Arial, sans-serif; font-size:15px; c=
+olor:#264653; word-break:break-word; line-height:0">&nbsp;</td>
+   =20
+   =20
+    <td width=3D"50%" valign=3D"middle" style=3D"border-collapse:collapse; =
+mso-line-height-rule:exactly; font-family:Helvetica, Arial, sans-serif; fon=
+t-size:15px; color:#264653; word-break:break-word; line-height:0; border:tr=
+ansparent; border-bottom:1px solid #CCCCCC; mso-border-bottom-alt:1px solid=
+ #CCCCCC; border-bottom-width:1px">&nbsp;</td>
+   =20
+   =20
+    =09<td width=3D"auto" style=3D"border-collapse:collapse; mso-line-heigh=
+t-rule:exactly; font-family:Helvetica, Arial, sans-serif; font-size:15px; c=
+olor:#264653; word-break:break-word; line-height:0">&nbsp;</td>
+   =20
+  </tr>
+</tbody></table>
+<!--[if gte mso 9]></div></v:textbox></v:rect><![endif]--></div></td></tr><=
+/tbody></table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Helvetica, Arial, sans-serif; font-size:15px; color:#264653; word-break:bre=
+ak-word; padding:10px 20px"><div id=3D"hs_cos_wrapper_module_16397653640179=
+" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module"=
+ style=3D"color: inherit; font-size: inherit; line-height: inherit;" data-h=
+s-cos-general-type=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_cos=
+_wrapper_module_16397653640179_" class=3D"hs_cos_wrapper hs_cos_wrapper_wid=
+get hs_cos_wrapper_type_rich_text" style=3D"color: inherit; font-size: inhe=
+rit; line-height: inherit;" data-hs-cos-general-type=3D"widget" data-hs-cos=
+-type=3D"rich_text"><h2 style=3D"margin:0; mso-line-height-rule:exactly; li=
+ne-height:175%; font-size:22px"><span style=3D"font-family: Lato, Tahoma, s=
+ans-serif;">Product Updates</span></h2>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%; font-weight:nor=
+mal"><span style=3D"font-family: Lato, Tahoma, sans-serif;">Highlighting ne=
+w tools and services we've introduced this year to help you discover and un=
+derstand new research.</span></p>
+<ul style=3D"mso-line-height-rule:exactly; line-height:175%">
+<li style=3D"mso-line-height-rule:exactly">
+<p style=3D"mso-line-height-rule:exactly; line-height:175%"><span style=3D"=
+font-family: Lato, Tahoma, sans-serif;"><span style=3D"font-weight: bold;">=
+Research Dashboard:</span> View AI-generated paper recommendations, see new=
+ papers from your alerts, and track your impact=E2=80=94all in one location=
+. Now available for all users, <a href=3D"https://cJy4q04.na1.hubspotlinks.=
+com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFD3q905V1=
+-WJV7CgKrFMKNqqwY_mV6W3b_1zq6hSjlVTY1HB20CCDFW5-D2vc4mKH2-W6YK1H15PXZkpW6S5=
+-gd6JpZZyW2kfkpt6GC8gfW52JnWh7VKH86W4pMBVs19dW0lW8lxbZc6tL9hXW6G479X981QGYW=
+8vcnyB2j_Lr5W4PxnxJ86v7gtW3c8pNk43xZmpW37PLxQ8jB_z6N7m1swkps9CrN2Hdb0l9SZbs=
+N2VymF_l98FBW5MVxM-84JBf8W1ShB6D1Spj4mW7jW2gT6_F4zPW60WyH61y5J9gN3XGs66D2Lp=
+lW4c5s_G38PbZn3gzC1" rel=3D"noopener" style=3D"mso-line-height-rule:exactly=
+; color:#1857b6" data-hs-link-id=3D"0" target=3D"_blank">sign in or registe=
+r</a> for a free account to get started.<br></span></p>
+</li>
+<li style=3D"mso-line-height-rule:exactly">
+<p style=3D"mso-line-height-rule:exactly; line-height:175%"><span style=3D"=
+font-family: Lato, Tahoma, sans-serif;"><span style=3D"font-weight: bold;">=
+Semantic Reader</span>:&nbsp;Based on the <a href=3D"https://cJy4q04.na1.hu=
+bspotlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3y=
+pqFk3q8_QV1-WJV7CgTLhW8pPvBw9k1ch6W5k-z_r81M7SkW7FXZ9D1gjzNsW8l-kfn3Xm_lnW5=
+X2nDR1XwXBcW5wkm5l2p64fkW8P0hp25mwXxMW51ZZDN7DycyPW4n1Pmn4tcd5jW4gp7gb6P5J9=
+JN5dSq9QjgyXMW6zVDKB8g3GD4W2ZQxpT8fG2j5W4zYYRQ53x3kdW6PMhxQ86RKvmW3gFYxt122=
+6l9W2-Bn-X2mnxQDW5mpfBj3tPd1QW7XQrwk7RQ-YvW3S4gCm8n5Y9gW5t--Bf8g2byGW43BnkV=
+4fw7HS2cL1" rel=3D"noopener" style=3D"mso-line-height-rule:exactly; color:#=
+1857b6" data-hs-link-id=3D"0" target=3D"_blank">ScholarPhi</a> research, <a=
+ href=3D"https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B=
+2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFX3q90pV1-WJV7CgG4nW64ytsH4ZBV7fW65BS9z2z5=
+rbVW1z7j-G9lSwxtW8FV7rF4fV8-NVK173r5K2J8nN9lw9yD7gFNGW9hch6C2PjBbPW5ZgVWz3V=
+m6sMW2w4LQ_7VvryLW5sj4rk2RgHlTW4MHR0C1T4vc9W5M6XbL35TY7_M42srjDR0gnW5KGBbS1=
+7z5N_W55Nqkd2vQYNhW3-CGnV3RC6cmW5R95x55tKZbCW7V1cck2nnnd2W5VfdM78LFqRHW6R_D=
+Bd4NvmZKW3jLp3t17VSnMW4S60Xd1m466nW4jH0FH15HwfrW8g4jNQ3FR67hW9lx-GC87nsFSW3=
+wB8yH6mQf6K3jjX1" rel=3D"noopener" style=3D"mso-line-height-rule:exactly; c=
+olor:#1857b6" data-hs-link-id=3D"0" target=3D"_blank">Semantic Reader</a> l=
+aunched in Beta! This AI-powered augmented reading application provides mor=
+e context for scholars, and we are excited to continue to develop this app =
+in the new year.&nbsp;</span></p>
+</li>
+<li style=3D"mso-line-height-rule:exactly">
+<p style=3D"mso-line-height-rule:exactly; line-height:175%"><span style=3D"=
+font-family: Lato, Tahoma, sans-serif;"><span style=3D"font-weight: bold;">=
+TLDR Expansion:</span> <a href=3D"https://cJy4q04.na1.hubspotlinks.com/Btc/=
+LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFD3q905V1-WJV7CgZ=
+N8W7YZbR-4sWjrVW7k2-MQ3yvKgfW7ny09r73cNJjW6L_qzF8gspJnW3BCBQc3QxCs0W6xS7wT6=
+7CcdlN7k8hhmlNT_PW3-pjqG61N48lN3ZJt7NRshQ8W2Yb9Qw3NB1nvW81Q3m71B6JdgN6V-R5p=
+RXMwTW6ZPtFd8y2NL0W2bsXMw6Pj61KW4p_kxr7m0--GW88d4LT29HF4RW24KRFh6Z7gPsW1-BV=
+7l2tkQJsW5bHhJt4pwyfMW5yKqvY6mxdd7W6Wb0DC8r1_FcW43G7GY8jCd65W45Lkcm36_xpkV1=
+1g497dbYcY34vS1" rel=3D"noopener" style=3D"mso-line-height-rule:exactly; co=
+lor:#1857b6" data-hs-link-id=3D"0" target=3D"_blank">TLDRs</a> provide auto=
+-generated extreme summaries of scientific papers on search results and aut=
+hor pages. We expanded the coverage to nearly 60 million papers in biology,=
+ medicine, and computer science.&nbsp;</span></p>
+</li>
+<li style=3D"mso-line-height-rule:exactly">
+<p style=3D"mso-line-height-rule:exactly; line-height:175%"><span style=3D"=
+font-family: Lato, Tahoma, sans-serif;"><span style=3D"font-weight: bold;">=
+API</span>: In response to feedback from the global research community, we =
+made major improvements to our API this year including a new <a href=3D"htt=
+ps://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4=
+MgRW2sbCLr4CbzKgN3ypqGw3q90_V1-WJV7CgBMVW5_5tHM6c55ckW7WSzcf1Vff_JW2wqbMY3L=
+29VXW5R_FTl2-7CxmW66R4Z282S0ckW97nY7x63tq-2W7gmcW93cf__mW5F807W3BZQSpW7GLzc=
+L4zQB69W4HyTFB5hw0CFW5k9m3p57WRhFW96H65m7_8WpVW38HQ8N2LgJ-zW6hl9Fn7gbJbJW26=
+ftWR57DVYVW8SJqJP1ncGxYW8Nq8l05bPZq0W2vzZln4N5fxgW4Q2TV662tjL1N2xLVhnsLb2wW=
+2N3HY82C4q1wW4rCy1F8Cww6QW2j1yW-3jSJ6CW20Pq_S1gwNQRW7wq48D74jdtQN5jYRfyjl7b=
+BW1gXD9M41-BNwW8RxZnR1fvT0ZW5llscp5xjTx1VvzVJn3gFymB38Sk1" rel=3D"noopener"=
+ style=3D"mso-line-height-rule:exactly; color:#1857b6" data-hs-link-id=3D"0=
+" target=3D"_blank">search endpoint</a>, <a href=3D"https://cJy4q04.na1.hub=
+spotlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3yp=
+qGw3q90_V1-WJV7Cg-_tW6zzRYC22XzKbW8XPk8S1mNb2NW4CbvKj2j6Z8sN6flXhdd69lXW5pH=
+BfP1P9g_0W38GqbP72wB04W3SLLP019fjBGN2d2kclLK4yRW1HS-St2ylRw-W99Ltwc7JncBLW3=
+GxWr425Mc2rW4DLTcV2gMP2NW7H4_z_3fZjzCW8zFmtZ1WgQP0W8tSb1R1Gb5LtW3f8jrb6t7m5=
+yW3NN3LL8zYJpyF6FHhX7wnkkW8Cy_sp88sQ-tW3-gLyC6G8HQjW97T0Jj6ZYPFCW19_hvc7kvD=
+82W6W9HPv8cx_1PW59VD_J2pFj48W2P_2pG5XGQLJW7CkLdb8-sBnWW6SR6jx13RC-sW5VXWQr6=
+TLFy9W4FvgZr2PSwwfW6pVHzN53Wm6H35mZ1" rel=3D"noopener" style=3D"mso-line-he=
+ight-rule:exactly; color:#1857b6" data-hs-link-id=3D"0" target=3D"_blank">c=
+onference peer review service</a>, and <a href=3D"https://cJy4q04.na1.hubsp=
+otlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqG=
+c3q90JV1-WJV7CgMCCW8WVqYV83csjBW38wN9b6jRLqmW29kxNG7ZtkvLW1XZZb-6MRgl0W5THw=
+_Z2NWgsgW12xdDT4YnDXjW8LRx4T7Yw3GFW4c2WL_3bvjKlW7lFhpg18BGkZW3XK9V28XCTG3W6=
+Yh2DN2KgFXkV41dkF3kJXb4W5tYk2q7rT0wSW7yzrmv59p24vVZkRWh31Th4xW5fDVlG5lc8gCT=
+ksrD7sklb4Mwl53hgGlqLW4KF0Pt7tchDpW26zytz73bcSQVQJHWR6wWwrRW3MHgVG6GPkbrW4Y=
+_MbB3LV2t4N7XmgbyHy1xVW3lSQSl9c-S5cW25lR4n5-Q_0ZN5tX7jmWcKX9W1gMn-k4xKGHj3p=
+rD1" rel=3D"noopener" style=3D"mso-line-height-rule:exactly; color:#1857b6"=
+ data-hs-link-id=3D"0" target=3D"_blank">more fields including TLDRs.</a></=
+span></p>
+</li>
+</ul></div></div></td></tr></tbody></table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Helvetica, Arial, sans-serif; font-size:15px; color:#264653; word-break:bre=
+ak-word; padding:10px 20px"><div id=3D"hs_cos_wrapper_module_16397725211642=
+" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module"=
+ style=3D"color: inherit; font-size: inherit; line-height: inherit;" data-h=
+s-cos-general-type=3D"widget" data-hs-cos-type=3D"module">
+<!--[if gte mso 9]>
+<v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" stroke=3D"f=
+alse" style=3D"width:558px; height:2pt;" fillcolor=3D"none">
+<v:fill type=3D"tile"/>
+<v:textbox inset=3D"0,0,0,0">
+<div>
+<![endif]-->
+<table role=3D"presentation" width=3D"100%" align=3D"center" border=3D"0" s=
+tyle=3D"position:relative; top:-1px; min-width:20px; width:100%; max-width:=
+100%; border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt; border-=
+collapse:collapse; font-size:1px">
+  <tbody><tr>
+   =20
+   =20
+    =09<td width=3D"auto" style=3D"border-collapse:collapse; mso-line-heigh=
+t-rule:exactly; font-family:Helvetica, Arial, sans-serif; font-size:15px; c=
+olor:#264653; word-break:break-word; line-height:0">&nbsp;</td>
+   =20
+   =20
+    <td width=3D"50%" valign=3D"middle" style=3D"border-collapse:collapse; =
+mso-line-height-rule:exactly; font-family:Helvetica, Arial, sans-serif; fon=
+t-size:15px; color:#264653; word-break:break-word; line-height:0; border:tr=
+ansparent; border-bottom:1px solid #CCCCCC; mso-border-bottom-alt:1px solid=
+ #CCCCCC; border-bottom-width:1px">&nbsp;</td>
+   =20
+   =20
+    =09<td width=3D"auto" style=3D"border-collapse:collapse; mso-line-heigh=
+t-rule:exactly; font-family:Helvetica, Arial, sans-serif; font-size:15px; c=
+olor:#264653; word-break:break-word; line-height:0">&nbsp;</td>
+   =20
+  </tr>
+</tbody></table>
+<!--[if gte mso 9]></div></v:textbox></v:rect><![endif]--></div></td></tr><=
+/tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"section_1639767142007" class=3D"hse-section" style=3D"padding-=
+left:10px; padding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container hse-border" style=3D"min-width:280=
+px; max-width:600px; width:100%; Margin-left:auto; Margin-right:auto; borde=
+r-collapse:collapse; border-spacing:0; border-left:1px solid #cccccc; borde=
+r-right:1px solid #cccccc; box-sizing:border-box; background-color:#ffffff"=
+ bgcolor=3D"#ffffff">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;border-left:1px solid #cccccc;bo=
+rder-right:1px solid #cccccc" cellpadding=3D"0" cellspacing=3D"0" role=3D"p=
+resentation" class=3D"hse-border" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:199px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"199" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:199px">
+<![endif]-->
+<div id=3D"column_1639767142007_0" class=3D"hse-column hse-size-4">
+  <div id=3D"hs_cos_wrapper_module_16394161461581" class=3D"hs_cos_wrapper =
+hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; =
+font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widg=
+et" data-hs-cos-type=3D"module">
+=09
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; bord=
+er-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt">
+    <tbody>
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"border-collapse:co=
+llapse; mso-line-height-rule:exactly; font-family:Helvetica, Arial, sans-se=
+rif; color:#264653; word-break:break-word; text-align:center; padding:20px;=
+ font-size:0px">
+               =20
+                    <a href=3D"https://cJy4q04.na1.hubspotlinks.com/Btc/LX+=
+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFX3q90pV1-WJV7CgPs-W=
+2KqJHw5RYqc0W7jJj8H9ds-s-W5_shBm7JgK22W3MMX4w4xn_C9W8_tvsQ6qx-ksW88gN9J168j=
+rZN5WcVM6kSgCZW8dKk085RJRyCN44DxyxNsRWpW4gFfSd48wkc_W5m0pWH3h0Q4WW1L-nDL3rL=
+dX3W1KddZ69d4k-gW1sKrC94Y731BW7fg3hv7P3pZBW6Y0Hl41L9f6_W7TzQGj6TSQb2N697nXH=
+wHTl9W1CHTtk47sC0gV7P0zl31Y905W7NtV6J5TTZ1rW57wzJD469tX2N68bCMrgDPbzW731HZP=
+5_MvPCN8GTvbkgBTpvN5xmhJs4WtRq3kd-1" target=3D"_blank" style=3D"color:#00a4=
+bd; mso-line-height-rule:exactly" data-hs-link-id=3D"0">
+               =20
+                <img alt=3D"DSC_8726__1_" src=3D"https://hs-5910970.f.hubsp=
+otemail.net/hub/5910970/hubfs/DSC_8726__1_.jpg?width=3D318&amp;upscale=3Dtr=
+ue&amp;name=3DDSC_8726__1_.jpg" style=3D"outline:none; text-decoration:none=
+; -ms-interpolation-mode:bicubic; border:none; max-width:100%; font-size:16=
+px" width=3D"159" align=3D"middle" srcset=3D"https://hs-5910970.f.hubspotem=
+ail.net/hub/5910970/hubfs/DSC_8726__1_.jpg?upscale=3Dtrue&amp;width=3D318&a=
+mp;upscale=3Dtrue&amp;name=3DDSC_8726__1_.jpg 159w, https://hs-5910970.f.hu=
+bspotemail.net/hub/5910970/hubfs/DSC_8726__1_.jpg?upscale=3Dtrue&amp;width=
+=3D636&amp;upscale=3Dtrue&amp;name=3DDSC_8726__1_.jpg 318w" sizes=3D"(max-w=
+idth: 159px) 100vw, 159px">
+               =20
+                    </a>
+               =20
+            </td>
+        </tr>
+    </tbody>
+</table></div>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+<!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:398px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"398" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:398px">
+<![endif]-->
+<div id=3D"column_1639767142007_1" class=3D"hse-column hse-size-8">
+  <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" =
+style=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-famil=
+y:Helvetica, Arial, sans-serif; font-size:15px; color:#264653; word-break:b=
+reak-word; padding:10px 20px"><div id=3D"hs_cos_wrapper_primary_rich_text_f=
+ield" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_mod=
+ule" style=3D"color: inherit; font-size: inherit; line-height: inherit;" da=
+ta-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs=
+_cos_wrapper_primary_rich_text_field_" class=3D"hs_cos_wrapper hs_cos_wrapp=
+er_widget hs_cos_wrapper_type_rich_text" style=3D"color: inherit; font-size=
+: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget" data-=
+hs-cos-type=3D"rich_text"><h2 style=3D"margin:0; mso-line-height-rule:exact=
+ly; line-height:175%; font-size:22px"><span style=3D"font-family: Lato, Tah=
+oma, sans-serif;">New Leadership Takes the Helm</span></h2>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%"><span style=3D"=
+background-color: #ffffff; font-family: Lato, Tahoma, sans-serif;"><a href=
+=3D"https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4J=
+Crxr6z4MgRW2sbCLr4CbzKgN3ypqFX3q90pV1-WJV7CgWt3N7tkbfplr7NmW8Kdhqg7QcQpHW16=
+wbMQ4Mz_snN1dcg9Y6XQljW37rgjq7nzwT6VJwMNc3hsYxsW5wgK8Z8NL8Q1W6kWvLF5VcSwMW5=
+vmS4K1Tx-PvW7bSjwk4P-6jsW6bT5x86PMf6XW1w_6XZ2DmRDwW99CdL6381kyYW7Sb3LZ7dgWR=
+1W1wXMHs6KxDdRW2FqKwF3wNxmVVcdtF63X1v30W574nbC1f-TV0W3qQl6C8C7vbgW4gjHHL89x=
+r4yW19kHk25FxsGxN6hJhxdJFzJMW6-dV_t681FYdW9jL-WM2GgQFGW8wWCyv7K0DLfW1hHYt_3=
+ZT9V839F01" rel=3D"noopener" style=3D"mso-line-height-rule:exactly; color:#=
+1857b6" data-hs-link-id=3D"1" target=3D"_blank">Daniel Weld</a> has been pr=
+omoted to General Manager and Chief Scientist of Semantic Scholar. Dan is a=
+ noted AI researcher who is a Fellow of the Association for the Advancement=
+ of Artificial Intelligence (AAAI), the Association for Computing Machinery=
+ (ACM), and the American Association for Advancement of Science (AAAS). Rea=
+d more at the <a href=3D"https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJ=
+y4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqGc3q90JV1-WJV7CgHgDW64qJBg=
+94CDccW6zlhXz505hm3VZw00L2KN-l6V235gz3d5NPTW31hL6T6b_KTjVPj-mM6S9mRNW56kcH-=
+7zNp0HVd8nWP5072-jW7vx6bJ8JJHBXW31K4Sz9chjlWV-sJq52ymyFbTxbyS1GsYtgW88qFky3=
+vYZWgW7KVnQw5Wl0GKW8nz4Dq7ZK24DW4Gx1z97WKbFhN5H0HLBSGnFCW4FfT4F2rJSDFW35vVz=
+-6J4w07W4T68Yt8yML0GW80jpty82hn18W5ZnYxy9j4YcgW5tD0hf1vzpxkW2tdjWv36w5BWW2p=
+8t6R8D5N-9W4Gczvw3NNVTgW12NZjX1PcDrBV9cQ_d8Vc6GJ3f2p1" rel=3D"noopener" sty=
+le=3D"mso-line-height-rule:exactly; color:#1857b6" data-hs-link-id=3D"0" ta=
+rget=3D"_blank">AI2 blog</a>.</span></p></div></div></td></tr></tbody></tab=
+le>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"section_1588604426189" class=3D"hse-section" style=3D"padding-=
+left:10px; padding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container hse-border" style=3D"min-width:280=
+px; max-width:600px; width:100%; Margin-left:auto; Margin-right:auto; borde=
+r-collapse:collapse; border-spacing:0; border-left:1px solid #cccccc; borde=
+r-right:1px solid #cccccc; box-sizing:border-box; background-color:#ffffff"=
+ bgcolor=3D"#ffffff">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;border-left:1px solid #cccccc;bo=
+rder-right:1px solid #cccccc" cellpadding=3D"0" cellspacing=3D"0" role=3D"p=
+resentation" class=3D"hse-border" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:598px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"598" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:598px">
+<![endif]-->
+<div id=3D"column_1588604426189_0" class=3D"hse-column hse-size-12">
+  <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" =
+style=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-famil=
+y:Helvetica, Arial, sans-serif; font-size:15px; color:#264653; word-break:b=
+reak-word; padding:10px 20px"><div id=3D"hs_cos_wrapper_module_163977250769=
+41" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_modul=
+e" style=3D"color: inherit; font-size: inherit; line-height: inherit;" data=
+-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"module">
+<!--[if gte mso 9]>
+<v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" stroke=3D"f=
+alse" style=3D"width:558px; height:2pt;" fillcolor=3D"none">
+<v:fill type=3D"tile"/>
+<v:textbox inset=3D"0,0,0,0">
+<div>
+<![endif]-->
+<table role=3D"presentation" width=3D"100%" align=3D"center" border=3D"0" s=
+tyle=3D"position:relative; top:-1px; min-width:20px; width:100%; max-width:=
+100%; border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt; border-=
+collapse:collapse; font-size:1px">
+  <tbody><tr>
+   =20
+   =20
+    =09<td width=3D"auto" style=3D"border-collapse:collapse; mso-line-heigh=
+t-rule:exactly; font-family:Helvetica, Arial, sans-serif; font-size:15px; c=
+olor:#264653; word-break:break-word; line-height:0">&nbsp;</td>
+   =20
+   =20
+    <td width=3D"50%" valign=3D"middle" style=3D"border-collapse:collapse; =
+mso-line-height-rule:exactly; font-family:Helvetica, Arial, sans-serif; fon=
+t-size:15px; color:#264653; word-break:break-word; line-height:0; border:tr=
+ansparent; border-bottom:1px solid #CCCCCC; mso-border-bottom-alt:1px solid=
+ #CCCCCC; border-bottom-width:1px">&nbsp;</td>
+   =20
+   =20
+    =09<td width=3D"auto" style=3D"border-collapse:collapse; mso-line-heigh=
+t-rule:exactly; font-family:Helvetica, Arial, sans-serif; font-size:15px; c=
+olor:#264653; word-break:break-word; line-height:0">&nbsp;</td>
+   =20
+  </tr>
+</tbody></table>
+<!--[if gte mso 9]></div></v:textbox></v:rect><![endif]--></div></td></tr><=
+/tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"section_1639767378937" class=3D"hse-section" style=3D"padding-=
+left:10px; padding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container hse-border" style=3D"min-width:280=
+px; max-width:600px; width:100%; Margin-left:auto; Margin-right:auto; borde=
+r-collapse:collapse; border-spacing:0; border-left:1px solid #cccccc; borde=
+r-right:1px solid #cccccc; box-sizing:border-box; background-color:#ffffff"=
+ bgcolor=3D"#ffffff">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;border-left:1px solid #cccccc;bo=
+rder-right:1px solid #cccccc" cellpadding=3D"0" cellspacing=3D"0" role=3D"p=
+resentation" class=3D"hse-border" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:199px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"199" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:199px">
+<![endif]-->
+<div id=3D"column_1639767378937_0" class=3D"hse-column hse-size-4">
+  <div id=3D"hs_cos_wrapper_module_16397652044625" class=3D"hs_cos_wrapper =
+hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; =
+font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widg=
+et" data-hs-cos-type=3D"module">
+=09
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; bord=
+er-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt">
+    <tbody>
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"border-collapse:co=
+llapse; mso-line-height-rule:exactly; font-family:Helvetica, Arial, sans-se=
+rif; color:#264653; word-break:break-word; text-align:center; padding:20px =
+10px; font-size:0px">
+               =20
+                    <a href=3D"https://cJy4q04.na1.hubspotlinks.com/Btc/LX+=
+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqGc3q90JV1-WJV7CgYNrW=
+1nbYQv1Cr1_fW5qS9Bx5fhtBsW4fGVxv8_RvLCW5RsX6D7kl6WrW6bVsrZ25VZf4W8S4Pxl58cL=
+5BW55_SzF6c1yPQW7xl_z22tV3H1W2k4HC62Y5Wl2W86CQ852-KbShW6jfV1f8JZrX-VbGkST7V=
+nzk2W96MjfQ4bn-GKW91-hGR9jyTj-V8htgn4ThjfVW213hp96RHsBVW17v03f4GTxXwM36dcKN=
+ymbdW2LmqgG3d6PQSN1KWWhsk-HmKW4cypTp4W7yttW8sLBS47jQqWFW4ykYwN4TMMGmW73ZqJj=
+2srlFtW8qBpvv1NgwSFW1tC4Rc5r77fyN9cHd6PgjlbfW123B561JJ99v366B1" target=3D"_=
+blank" style=3D"color:#00a4bd; mso-line-height-rule:exactly" data-hs-link-i=
+d=3D"0">
+               =20
+                <img alt=3D"option2_use__1_" src=3D"https://hs-5910970.f.hu=
+bspotemail.net/hub/5910970/hubfs/option2_use__1_.jpg?width=3D318&amp;upscal=
+e=3Dtrue&amp;name=3Doption2_use__1_.jpg" style=3D"outline:none; text-decora=
+tion:none; -ms-interpolation-mode:bicubic; border:none; max-width:100%; fon=
+t-size:16px" width=3D"159" align=3D"middle" srcset=3D"https://hs-5910970.f.=
+hubspotemail.net/hub/5910970/hubfs/option2_use__1_.jpg?upscale=3Dtrue&amp;w=
+idth=3D318&amp;upscale=3Dtrue&amp;name=3Doption2_use__1_.jpg 159w, https://=
+hs-5910970.f.hubspotemail.net/hub/5910970/hubfs/option2_use__1_.jpg?upscale=
+=3Dtrue&amp;width=3D636&amp;upscale=3Dtrue&amp;name=3Doption2_use__1_.jpg 3=
+18w" sizes=3D"(max-width: 159px) 100vw, 159px">
+               =20
+                    </a>
+               =20
+            </td>
+        </tr>
+    </tbody>
+</table></div>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+<!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:398px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"398" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:398px">
+<![endif]-->
+<div id=3D"column_1639767378937_1" class=3D"hse-column hse-size-8">
+  <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" =
+style=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-famil=
+y:Helvetica, Arial, sans-serif; font-size:15px; color:#264653; word-break:b=
+reak-word; padding:10px 20px"><div id=3D"hs_cos_wrapper_module_163976511502=
+63" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_modul=
+e" style=3D"color: inherit; font-size: inherit; line-height: inherit;" data=
+-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_c=
+os_wrapper_module_16397651150263_" class=3D"hs_cos_wrapper hs_cos_wrapper_w=
+idget hs_cos_wrapper_type_rich_text" style=3D"color: inherit; font-size: in=
+herit; line-height: inherit;" data-hs-cos-general-type=3D"widget" data-hs-c=
+os-type=3D"rich_text"><h2 style=3D"margin:0; mso-line-height-rule:exactly; =
+line-height:175%; font-size:22px"><span style=3D"font-family: Lato, Tahoma,=
+ sans-serif;">Featured AI2er: Bailey Kuehl </span></h2>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%; font-weight:nor=
+mal"><span style=3D"font-family: Lato, Tahoma, sans-serif;"><a href=3D"http=
+s://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4M=
+gRW2sbCLr4CbzKgN3ypqGc3q90JV1-WJV7CgK6GW2flRjh2Hw28QVz8-8h5Cn8GFW38WWsc6DJ6=
+PjN30jslPg1WhvW81Q6Mh16zpY0W6f5ldN6x-6V3W3D4n7p7SVT9yW1jKW7t6m1j7CW2lwxdy2V=
+psqlVkR44w7kHL-cW5qTGV540M574W7XrnDb49rWQSW9b1CLL7wYtYLW1x0xrR2y1rTHW8TXkP5=
+6yF6L1W5sZH1b8B-z43W76PMT61tpgbwW8htqpw3pr5w1W2Wv0Kw9c1LY5W6nfdd_2T_JlNW3TM=
+GVv1Y7Gc4W8DtQTr7tKfQsVYQsCM4ByVlvVpVLKk24vWccW2DMJPN8rMrsxVXw42-24PPrYN7qT=
+JYMXmTzfW73wdWq2LLGzz3nCK1" rel=3D"noopener" style=3D"mso-line-height-rule:=
+exactly; color:#1857b6" data-hs-link-id=3D"0" target=3D"_blank">Bailey Kueh=
+l</a> <span style=3D"font-size: 15px;">is a Data Science Analyst on the Sem=
+antic Scholar team at AI2. Along with offering expert annotations and data =
+insights, she also helps ensure a smooth flow from the initial research ide=
+a to data collection and analysis. Learn more about Bailey and her work at =
+the <a href=3D"https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VWJX=
+7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqGc3q90JV1-WJV7CgV0NV1hc2H4K51nZN31zF=
+24ZGXvwW91V3953mBHsyW7R_z4-1VffyHVzXrsp4wmcwqW1c1yLf6tCz-CW6nQm8J5RrT8MW7ld=
+7Gq6qTM59W6wq7w32CMJFJW2MqYkQ43BNhyW1Jh4wV6Zx1NkN2Zqs8TgWRPJW3tW0PK852Z2GN1=
+fYtRnqBBn2W18jW7L5d4B0dVgpyGS7z-dwRN7nc7D82NYm6W1KH_512rr6vtW7X8_vV7Pm3XCW5=
+V6Kdj32wq5PW35wchC4P3kjGW1hlLgy4kP3ZvW5nvtMD1W1zDMMFf7t9GxhdRW1R1W6s71Z1TpV=
+53kX83nmQx-W7k15qM4ZjzCjVHHfNY63WhzP342C1" rel=3D"noopener" style=3D"mso-li=
+ne-height-rule:exactly; color:#1857b6" data-hs-link-id=3D"1" target=3D"_bla=
+nk">AI2 blog</a>.</span></span></p></div></div></td></tr></tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"section_1588606784220" class=3D"hse-section" style=3D"padding-=
+left:10px; padding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container hse-border" style=3D"min-width:280=
+px; max-width:600px; width:100%; Margin-left:auto; Margin-right:auto; borde=
+r-collapse:collapse; border-spacing:0; border-left:1px solid #cccccc; borde=
+r-right:1px solid #cccccc; box-sizing:border-box; background-color:#ffffff"=
+ bgcolor=3D"#ffffff">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;border-left:1px solid #cccccc;bo=
+rder-right:1px solid #cccccc" cellpadding=3D"0" cellspacing=3D"0" role=3D"p=
+resentation" class=3D"hse-border" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:598px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"598" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:598px">
+<![endif]-->
+<div id=3D"column_1588606784220_0" class=3D"hse-column hse-size-12">
+  <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" =
+style=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-famil=
+y:Helvetica, Arial, sans-serif; font-size:15px; color:#264653; word-break:b=
+reak-word; padding:10px 20px"><div id=3D"hs_cos_wrapper_module_158860583665=
+016" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_modu=
+le" style=3D"color: inherit; font-size: inherit; line-height: inherit;" dat=
+a-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"module">
+<!--[if gte mso 9]>
+<v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" stroke=3D"f=
+alse" style=3D"width:558px; height:2pt;" fillcolor=3D"none">
+<v:fill type=3D"tile"/>
+<v:textbox inset=3D"0,0,0,0">
+<div>
+<![endif]-->
+<table role=3D"presentation" width=3D"100%" align=3D"center" border=3D"0" s=
+tyle=3D"position:relative; top:-1px; min-width:20px; width:100%; max-width:=
+100%; border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt; border-=
+collapse:collapse; font-size:1px">
+  <tbody><tr>
+   =20
+   =20
+    =09<td width=3D"auto" style=3D"border-collapse:collapse; mso-line-heigh=
+t-rule:exactly; font-family:Helvetica, Arial, sans-serif; font-size:15px; c=
+olor:#264653; word-break:break-word; line-height:0">&nbsp;</td>
+   =20
+   =20
+    <td width=3D"50%" valign=3D"middle" style=3D"border-collapse:collapse; =
+mso-line-height-rule:exactly; font-family:Helvetica, Arial, sans-serif; fon=
+t-size:15px; color:#264653; word-break:break-word; line-height:0; border:tr=
+ansparent; border-bottom:1px solid #CCCCCC; mso-border-bottom-alt:1px solid=
+ #CCCCCC; border-bottom-width:1px">&nbsp;</td>
+   =20
+   =20
+    =09<td width=3D"auto" style=3D"border-collapse:collapse; mso-line-heigh=
+t-rule:exactly; font-family:Helvetica, Arial, sans-serif; font-size:15px; c=
+olor:#264653; word-break:break-word; line-height:0">&nbsp;</td>
+   =20
+  </tr>
+</tbody></table>
+<!--[if gte mso 9]></div></v:textbox></v:rect><![endif]--></div></td></tr><=
+/tbody></table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Helvetica, Arial, sans-serif; font-size:15px; color:#264653; word-break:bre=
+ak-word; padding:10px 20px"><div id=3D"hs_cos_wrapper_module_16397675136541=
+1" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module=
+" style=3D"color: inherit; font-size: inherit; line-height: inherit;" data-=
+hs-cos-general-type=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_co=
+s_wrapper_module_163976751365411_" class=3D"hs_cos_wrapper hs_cos_wrapper_w=
+idget hs_cos_wrapper_type_rich_text" style=3D"color: inherit; font-size: in=
+herit; line-height: inherit;" data-hs-cos-general-type=3D"widget" data-hs-c=
+os-type=3D"rich_text"><h2 style=3D"margin:0; mso-line-height-rule:exactly; =
+line-height:175%; font-size:22px"><span style=3D"font-family: Lato, Tahoma,=
+ sans-serif;">Research Updates</span></h2>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%"><span style=3D"=
+font-family: Lato, Tahoma, sans-serif;">Our Research team studies informati=
+on overload and develops AI tools to overcome it to help scholars everywher=
+e. Check out some of the exciting work our Research group introduced this y=
+ear.</span></p>
+<ul style=3D"mso-line-height-rule:exactly; line-height:175%">
+<li style=3D"mso-line-height-rule:exactly">
+<p style=3D"mso-line-height-rule:exactly; line-height:175%"><span style=3D"=
+font-family: Lato, Tahoma, sans-serif;"><a href=3D"https://cJy4q04.na1.hubs=
+potlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypq=
+FX3q90pV1-WJV7CgXPXW6ZH5D5839jyZW7Rd1PQ3Zn79sW1hMGhc6j4DdzW8wP_Yz1P_s7jW1-f=
+HqK6N6SD1W79N0Lf2BlCBpVkZrjP2XVgX9W5HmCD57JCbgYN8llYQSjyzm7W7XK_3-5bpwTWW77=
+QCXr3PqNkbW73DNf81bWswRW1Jf4Yt3FFQxfW64l3b92FZ_CyW8vpYRP14fC7vW7lBbX85Y7GjP=
+W5h2zFw52kVkgW2B2RWQ7HyTcJW5btmW48qz-YLW9kQxP0254hNlW2lRr_D6lGMpzW2TH8Jx3nj=
+h3RW5m4mlQ6R7myDW5qBY682-9bWTW5G_CGZ38tB00W1gScyL179KNT32gj1" style=3D"mso-=
+line-height-rule:exactly; color:#1857b6; font-weight:bold" rel=3D"noopener"=
+ data-hs-link-id=3D"0" target=3D"_blank">Doug Downey</a> was recently appoi=
+nted to lead Semantic Scholar's Research group. <a href=3D"https://cJy4q04.=
+na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4Cb=
+zKgN3ypqGc3q90JV1-WJV7CgF3XW1cDKR17dy82TVp-pH37MPKyRN9fJ28LMKRq6W645fbH8gLg=
+5kW2rHmtr1JY2T0VPHLGC7XJwrwW7tNXTn62HVgqVD4BHb6N_KsvW2cR_r42Mt8KWVkpcD66z-k=
+MTN82cT34gQpLkW1vtY9D8xGQC1N8wy1Sy6r1YnW4lwFQl66LfHWW8pKZWJ8QkDfcW16DhP_7zg=
+vrbW8w6_-z3ssVhZW21xNhJ6Tl6NsW1vWSpK5jbLYlW65vtJf2jlr7yW273yLg1pbYCqW6q8Q1X=
+5BtRrbW8dKrtV4Sh3sVW7-bKcg3ss84SN54Sv_4Nq8HRW7kxdTT8vHtx_N7QrJmgMRqbzW4nvHf=
+z3vbn0L3n8M1" rel=3D"noopener" style=3D"mso-line-height-rule:exactly; color=
+:#1857b6" data-hs-link-id=3D"0" target=3D"_blank">Read this interview</a> t=
+o hear about the groundbreaking work from our Research team, and what's in =
+store for 2022.</span></p>
+</li>
+<li style=3D"mso-line-height-rule:exactly">
+<p style=3D"mso-line-height-rule:exactly; line-height:175%"><span style=3D"=
+font-family: Lato, Tahoma, sans-serif;"><a href=3D"https://cJy4q04.na1.hubs=
+potlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypq=
+Fk3q8_QV1-WJV7CgS93W6vVnsR7FczqhW8h4xk95HcYXvW1pH9jC7Fw1dmW6zj88m83RyzsW92b=
+TL86-l-bzW6d2lhq5X9DCjW2bzhlm49n6d1W9k4_zB5wlKJPW25hmcH1RBbc0W6l3tpt3L25x1V=
+tTSmJ91NwhDW1Q9MST2r1lmLW3m0wFQ1M-3NmVJ4Y2B3W8SmDW53tZcZ7_CJ-vVk092q3-Rh9SW=
+1jyTTC7QZ2XdV6xWTR2WynjrW49XsNl96XJ8zW8czmqT68vSV_W7zLRcv7XqN7HW8bWQcW7kMGW=
+N38r_1" style=3D"mso-line-height-rule:exactly; color:#1857b6; font-weight:b=
+old" rel=3D"noopener" data-hs-link-id=3D"0" target=3D"_blank">SciA11y</a> a=
+ims to improve accessibility of scientific documents. Hear from <a href=3D"=
+https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr=
+6z4MgRW2sbCLr4CbzKgN3ypqFX3q90pV1-WJV7CgYN3VT1yMQ5Q3WDzW8gCHmk37PgVZW6DtwR2=
+52hJljW48G8Lt4h-KNyW2qN3-Z14ywzxV5rKSb80Kx8MW7sGy4756FwCVW7Wb6Ch2tXlhtW8pWj=
+Dq4hWJDBW6CC8M83lJjqPW6bP4ss5lvW_FW3jFQ7x1hsfjVW6SmDQr7zTqxDW8tg0kX4yWNTcW1=
+d2wC66SQ0CvW2xStnr3qdq12W6MHtn15VYy2ZW8tWKJv6FgP7vW2H3SCv36zSy_W53Kdxj2kvJf=
+CW2YgZ7C47pCfpN72hZMkh8wwkW15wdt48ZzXmjW7TxJZ53-1mFsW2jlpTG1L__-PW8P4cPR2yf=
+TyD3mRZ1" rel=3D"noopener" style=3D"mso-line-height-rule:exactly; color:#18=
+57b6" data-hs-link-id=3D"0" target=3D"_blank">Lucy Lu Wang</a>, who <a href=
+=3D"https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4J=
+Crxr6z4MgRW2sbCLr4CbzKgN3ypqDr5nKv5V3Zsc37CgHnSW1_dDzT6fkxCNW8wZ6BT55m2ZMW7=
+vL3121LNFqtW3Y-DKD4kLpxvW4DsGFx9bqqwcW22m_W05_cbkmVCp6Hp31Tk-XW1gnlhT6C3283=
+W7LV1Bt7z6VCfW3C4Zy04R_Q2jN84NPGPd5FWmW8xT1Cz5dBct7W76Rqbl8Q7-7BW1b6mHM70l6=
+b2W3kKlc85JW_FxW4LllGN7hdp8QW3dF-MZ3f2xDMW3njNqk8lLCMlW40KkS16Y3gBTW5jWTfd9=
+jSvn2W91lsFZ5XRD09W64c0-D8GHykVW2js9VS3b1JxMW26yTHg5nr16RN8Z22rPpW9gjW7jjPC=
+x46TsllW6yv0B33NzvmkW7Sypsx5LVSgLN24vtrb8z-4DW5qXkpl84crY0W90tsVk7lVYk8W2Sx=
+p4K1k7xq333zH1" rel=3D"noopener" style=3D"mso-line-height-rule:exactly; col=
+or:#1857b6" data-hs-link-id=3D"0" target=3D"_blank">describes the current s=
+tate of scientific PDF accessibility</a> (or rather, inaccessibility), and =
+<a href=3D"https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m=
+1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqDr5nKv5V3Zsc37CgKB5Vp9hTt8p9tGDW70cld424=
+dkgcW3YH2cH7PdfRrW3dW0rj64cx7ZW60xcT-96twwrW2Ntjtq78G_WKVVQfzF2jDR9fW3HrGSN=
+4m1G7-W5x5wRk3dKcKYVMQN7k6f1HjvW4lzwYf3bMZgKW47T1_74bN_46W857H1n7rfs3NW3jVn=
+425NWXg5W7_7m-x3LMXk8W3kgzVV259fxqW5rkTLj8h9mSWW3LLt_W7KQmH9W99ZCJg5WQ6NfW4=
+0qHpX1d7Yc8W6V3ZlD1k3dQ8W98N3vT81DVFZVhhV5g5NRSjDW4rDRc43L9ghSN6zmTbfQ758BV=
+yfbTz8vlm1hN3xTnFM5sg1gW8Y5nS02hGxpbW29Nxh167rKdBW7VdYZ34p4nmSW22f8q32GHhzV=
+W8dWQNq886g1m3d881" rel=3D"noopener" style=3D"mso-line-height-rule:exactly;=
+ color:#1857b6" data-hs-link-id=3D"0" target=3D"_blank">introduces a new sy=
+stem</a> that attempts to address some of the challenges identified.&nbsp;<=
+em>Spoiler</em>: the vast majority of scientific PDFs we analyzed were not =
+accessible.</span></p>
+</li>
+<li style=3D"mso-line-height-rule:exactly">
+<p style=3D"mso-line-height-rule:exactly; line-height:175%"><span style=3D"=
+font-family: Lato, Tahoma, sans-serif;">The SciA11y team also released a pr=
+ototype of <a href=3D"https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q=
+04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFk3q8_QV1-WJV7CgSHtW7l7Zr38jW=
+cGcW4xkgJw17SQy3W2v9ZwK6L3qPhV_h10C12xpN4W6QsbbP1bHrFzVdH8X_5mQsRvW3JXxR583=
+H33vW81RSNy611tjzW7flspS8tztDvW4bFqct5xXnvTW1B1Kd74p4WJgW3LGfz92_dR0QW76y0W=
+m6smxZHW3dF9Tg7rq9PTW4VJnsw2_bR1QN8tSPfMW8Zk_VjcsXY7R40WNW97kvnL4mw2qRW3rfh=
+3x2GSg0YW2fhZYL4mNxjNW1xT2NJ1GBk29W7lfk362RzThR396B1" style=3D"mso-line-hei=
+ght-rule:exactly; color:#1857b6; font-weight:bold" rel=3D"noopener" data-hs=
+-link-id=3D"0" target=3D"_blank">papertohtml.org</a>, which converts PDFs t=
+o HTML for an improved reading experience. Check out the <a href=3D"https:/=
+/cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW=
+2sbCLr4CbzKgN3ypqFD3q905V1-WJV7CgM5XW5sVmr17xFlBMW4qgPm-6Mbv1nW4JRPWF84_VM8=
+W77X7XB99pxlGW3RCnKM43G4mBW2mFkm24rtv3kW4BV-_F4TzWHtW5YK_wk8r9NvMW1YJh4z5mm=
+TMXW8KbdWc2cmzGrW35r7ZL40T53ZN1vD2f-sH9pkN6PCP3CpdRzjW4f7tqw6vMk-_W3cMBTr2H=
+BMPfW21ZrN31J_M3YW1k20PW2JtT3zW3-jjV41ndgskN1k0fBkjMGvnW4WxlN74Rv5crW6yVk_j=
+4n6BZ1N4tddbZpWBxsW7VP38z80xtVKN6kwGMv3m09g320R1" rel=3D"noopener" style=3D=
+"mso-line-height-rule:exactly; color:#1857b6" data-hs-link-id=3D"0" target=
+=3D"_blank">Paper Gallery</a> to see it in action.</span></p>
+</li>
+<li style=3D"mso-line-height-rule:exactly">
+<p style=3D"mso-line-height-rule:exactly; line-height:175%"><span style=3D"=
+font-family: Lato, Tahoma, sans-serif;"><a href=3D"https://cJy4q04.na1.hubs=
+potlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypq=
+Dr5nKv5V3Zsc37CgCVmW3X7_t52Cr_4BW3q9l967L9z7zW7KZPn05xpCNlW1yywXj1rSm4kVmMY=
+rJ5qKspKW8QlpRD3ff9X4W7nj5tl4Qb8k9W1DFF0j70MjHKW7Zr4MX7H_vz9W8lrVGl2bfKxTVH=
+f1yg4-HKLDW6tKFMj6ny4GWW4n66tZ4TTKYyVvYb5f2c2X6KW5G_QGJ1_Qc_GVCbn6g6cnzq4W5=
+VZ9Y48P1m3YN7wPTkHdsj87W3-pCfx8YQT5tW7rspm-8trSj-W8w8D6H2vvJxJW3FnR0F454DMr=
+W7WhD4z31VLXkW3sMFfw8kvj6bW5DbVjW13fN8sN7B_2mDgHbxHW2cqYc_2TFMyQW7G5ZNJ7_Yp=
+2mW2YvZq-35ghWTW31YDPJ9csGMqW85XqVk85BMcGW8rHqSq6Xn6vB3grj1" style=3D"mso-l=
+ine-height-rule:exactly; color:#1857b6; font-weight:bold" rel=3D"noopener" =
+data-hs-link-id=3D"0" target=3D"_blank">S2AND</a> <span style=3D"font-weigh=
+t: normal;">(Semantic Scholar Author Name Disambiguation) </span>was introd=
+uced this year to improve author pages on the site. Sergey Feldman and Dani=
+el King <a href=3D"https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/cJy4q04/=
+VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqDr5nKv5V3Zsc37CgHd1VyJHjv3XGh1mW=
+6qwZ-B6x11QkW8HMc3k52mwSLN8vHmcpv1hZ4W2fWDGf1rcnhNW2tgYPD5G-3MgW7gljyD6QPW3=
+sW8gJC-b5LH1pNW3V7FGT7jGTcwM4LHmqjm57DN49h8c2xQ0jvMDV9MVKMHBgW3zqcqF6XGGkbW=
+7QNcqg16JJDxW31Sfky17nF2PMy_rT9fF05pN2rN7JyM5CYWW2ZtDk_4jB43LW43ytyw7Mg1D8W=
+3TKVR68Kf7gmW8-SqBK6vg-4HW7N9WdJ2H-_gMN303tqXzVtTkW4gV_Pp5bp-_CN8tT9_TJG9ZY=
+W5s_bX24l5tp7W1k1T537tkRCGW3ML1yM22KYNgW7qbZx679tYHSW1DtjlV7ZwwtXVQ51zv3TVn=
+0NW5mWsmD52R4Y731Yk1" rel=3D"noopener" style=3D"mso-line-height-rule:exactl=
+y; color:#1857b6" data-hs-link-id=3D"1" target=3D"_blank">wrote about S2AND=
+ </a>for the AI2 blog, and the&nbsp;<a href=3D"https://cJy4q04.na1.hubspotl=
+inks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFD3q=
+905V1-WJV7CgQkqW8JQzhV5ywzcsW711JfV6frHYcW1SHLg01GWp8bW3CkLNR6cC_KTW6J58gX7=
+rhcbDW2T5GJZ7rM3tzW3tn6Wj4Yf--pW10KHkW8js58hMj0r-5X2xz1W1rj6Tk4gqwJdW8RrrPL=
+2jWdY_F2pK33nPcf1W8BwXlW1mtgKCW8YjjC_5Qtj1_N3lj4FgcxrS5W338p831ZNXzHW5MJzXD=
+2HxC3rW5yBYjw31Pl1cW4DJSmq3v9W4wVRdR0q87BGC1N1rP96MMrb-0W4V3k5k4CCpMTW2r13X=
+32XXKtZW1DD52H4rlKf83p0k1" rel=3D"noopener" style=3D"mso-line-height-rule:e=
+xactly; color:#1857b6" data-hs-link-id=3D"0" target=3D"_blank">code and mod=
+els</a> are available on Github.&nbsp;</span></p>
+</li>
+</ul></div></div></td></tr></tbody></table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Helvetica, Arial, sans-serif; font-size:15px; color:#264653; word-break:bre=
+ak-word; padding:10px 20px"><div id=3D"hs_cos_wrapper_module_16397707668031=
+2" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module=
+" style=3D"color: inherit; font-size: inherit; line-height: inherit;" data-=
+hs-cos-general-type=3D"widget" data-hs-cos-type=3D"module">
+<!--[if gte mso 9]>
+<v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" stroke=3D"f=
+alse" style=3D"width:558px; height:2pt;" fillcolor=3D"none">
+<v:fill type=3D"tile"/>
+<v:textbox inset=3D"0,0,0,0">
+<div>
+<![endif]-->
+<table role=3D"presentation" width=3D"100%" align=3D"center" border=3D"0" s=
+tyle=3D"position:relative; top:-1px; min-width:20px; width:100%; max-width:=
+100%; border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt; border-=
+collapse:collapse; font-size:1px">
+  <tbody><tr>
+   =20
+   =20
+    =09<td width=3D"auto" style=3D"border-collapse:collapse; mso-line-heigh=
+t-rule:exactly; font-family:Helvetica, Arial, sans-serif; font-size:15px; c=
+olor:#264653; word-break:break-word; line-height:0">&nbsp;</td>
+   =20
+   =20
+    <td width=3D"50%" valign=3D"middle" style=3D"border-collapse:collapse; =
+mso-line-height-rule:exactly; font-family:Helvetica, Arial, sans-serif; fon=
+t-size:15px; color:#264653; word-break:break-word; line-height:0; border:tr=
+ansparent; border-bottom:1px solid #CCCCCC; mso-border-bottom-alt:1px solid=
+ #CCCCCC; border-bottom-width:1px">&nbsp;</td>
+   =20
+   =20
+    =09<td width=3D"auto" style=3D"border-collapse:collapse; mso-line-heigh=
+t-rule:exactly; font-family:Helvetica, Arial, sans-serif; font-size:15px; c=
+olor:#264653; word-break:break-word; line-height:0">&nbsp;</td>
+   =20
+  </tr>
+</tbody></table>
+<!--[if gte mso 9]></div></v:textbox></v:rect><![endif]--></div></td></tr><=
+/tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"builtin_section-1" class=3D"hse-section" style=3D"padding-left=
+:10px; padding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container hse-border" style=3D"min-width:280=
+px; max-width:600px; width:100%; Margin-left:auto; Margin-right:auto; borde=
+r-collapse:collapse; border-spacing:0; border-left:1px solid #cccccc; borde=
+r-right:1px solid #cccccc; box-sizing:border-box; background-color:#FFFFFF"=
+ bgcolor=3D"#FFFFFF">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;border-left:1px solid #cccccc;bo=
+rder-right:1px solid #cccccc" cellpadding=3D"0" cellspacing=3D"0" role=3D"p=
+resentation" class=3D"hse-border" width=3D"600" bgcolor=3D"#FFFFFF">
+      <tr style=3D"background-color:#FFFFFF;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:598px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"598" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:598px">
+<![endif]-->
+<div id=3D"builtin_column_1-0" class=3D"hse-column hse-size-12">
+  <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" =
+style=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-famil=
+y:Helvetica, Arial, sans-serif; font-size:15px; color:#264653; word-break:b=
+reak-word; padding:10px 20px"><div id=3D"hs_cos_wrapper_module_156884279705=
+42" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_modul=
+e" style=3D"color: inherit; font-size: inherit; line-height: inherit;" data=
+-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_c=
+os_wrapper_module_15688427970542_" class=3D"hs_cos_wrapper hs_cos_wrapper_w=
+idget hs_cos_wrapper_type_rich_text" style=3D"color: inherit; font-size: in=
+herit; line-height: inherit;" data-hs-cos-general-type=3D"widget" data-hs-c=
+os-type=3D"rich_text"><h2 style=3D"margin:0; mso-line-height-rule:exactly; =
+line-height:175%; font-size:22px; font-weight:bold"><span style=3D"font-fam=
+ily: Lato, Tahoma, sans-serif;">Join our team!</span></h2>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%"><span style=3D"=
+font-family: Lato, Tahoma, sans-serif;"><a href=3D"https://cJy4q04.na1.hubs=
+potlinks.com/Btc/LX+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypq=
+FD3q905V1-WJV7CgWLPW5d6bKn1nJwT6W8gT0jk3yWbqCW6-3hlP3QcZmSN5fbsQ7SnMr0VzPq8=
+l98nmZMN7qpfjyJYkbHW25HtKk57mPvVVj6r_37WnBk4W1J_Wlm82QfjnW6t03Hg5y62FVVmByr=
+Q2Qz9w7W9cZWmZ1Cz_hPW1kxCB38r0VBNW3YsNF72ZBrRRW8JCHS98TcXrdN66K1rrCQscPW4nc=
+qYK2tMKh1W8fwtpq4gzLQ6F80ZlcyWnYgW2CcwzJ6LqRMCW294dTM3MSG2SW4vv7ZD5WkJD3W1V=
+Wfsw7WJSd_W3b33dv2wq9G2329k1" rel=3D" noopener" style=3D"mso-line-height-ru=
+le:exactly; color:#1857b6" data-hs-link-id=3D"0" target=3D"_blank">Semantic=
+ Scholar</a> is a free, AI-powered search engine for scientific literature =
+based at the Allen Institute for AI (AI2). AI2 is a non-profit research ins=
+titute founded in 2014 with the mission of conducting high-impact AI resear=
+ch and engineering in service of the common good.<br><br></span></p>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%"><span style=3D"=
+font-family: Lato, Tahoma, sans-serif;">We are hiring engineers, researcher=
+s, interns, and more. <a href=3D"https://cJy4q04.na1.hubspotlinks.com/Btc/L=
+X+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqGc3q90JV1-WJV7CgFM=
+YW946mXS5dmbtwW4r2gm54g20WlW5RlD143HjbyHW2PThNZ7THr4fN1_Q9zCgv3chW1Qh8bw4d6=
+hBHW21T-8n6Q3LdvW8dFLsP6MjktDN360xwwZVr2RW6LgQ9l5bHH9NW5HKXJS1P8js8W6BKMQ03=
+_QMmpW92W55-7x2ZChW968Fm_8lZdKyW8xKrzC37kctKW3qh06x48n5GgV4lv-w8VvTFsW7C8qk=
+n4vyNt1W6dsclK5K4khkW6CPy7d3_SncjVMN3KK6qGBw2W8gVrRJ2tZJzLW7cwnTR5DSg9yW9cV=
+Gr28X7gwkW2P9GcC141h1WVrg0yg1R_s59W6wb45D65h-zQN3QxBD138my_3fYC1" style=3D"=
+mso-line-height-rule:exactly; color:#1857b6; font-weight:bold" rel=3D"noope=
+ner" data-hs-link-id=3D"0" target=3D"_blank">View open jobs</a><span style=
+=3D"font-weight: bold;"> with the Semantic Scholar team at AI2.</span></spa=
+n></p></div></div></td></tr></tbody></table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Helvetica, Arial, sans-serif; font-size:15px; color:#264653; word-break:bre=
+ak-word; padding:7px 20px 10px"><div id=3D"hs_cos_wrapper_module_1639767214=
+58333" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_mo=
+dule" style=3D"color: inherit; font-size: inherit; line-height: inherit;" d=
+ata-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"module">
+<!--[if gte mso 9]>
+<v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" stroke=3D"f=
+alse" style=3D"width:558px; height:2pt;" fillcolor=3D"none">
+<v:fill type=3D"tile"/>
+<v:textbox inset=3D"0,0,0,0">
+<div>
+<![endif]-->
+<table role=3D"presentation" width=3D"100%" align=3D"center" border=3D"0" s=
+tyle=3D"position:relative; top:-1px; min-width:20px; width:100%; max-width:=
+100%; border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt; border-=
+collapse:collapse; font-size:1px">
+  <tbody><tr>
+   =20
+   =20
+   =20
+    <td width=3D"100%" valign=3D"middle" style=3D"border-collapse:collapse;=
+ mso-line-height-rule:exactly; font-family:Helvetica, Arial, sans-serif; fo=
+nt-size:15px; color:#264653; word-break:break-word; line-height:0; border:t=
+ransparent; border-bottom:1px solid #CCCCCC; mso-border-bottom-alt:1px soli=
+d #CCCCCC; border-bottom-width:1px">&nbsp;</td>
+   =20
+   =20
+  </tr>
+</tbody></table>
+<!--[if gte mso 9]></div></v:textbox></v:rect><![endif]--></div></td></tr><=
+/tbody></table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-ta=
+ble-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" st=
+yle=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-family:=
+Helvetica, Arial, sans-serif; font-size:15px; color:#264653; word-break:bre=
+ak-word; padding:10px 20px"><div id=3D"hs_cos_wrapper_module_16397672145833=
+2" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module=
+" style=3D"color: inherit; font-size: inherit; line-height: inherit;" data-=
+hs-cos-general-type=3D"widget" data-hs-cos-type=3D"module">
+<table role=3D"presentation" align=3D"center" style=3D"border-spacing:0 !im=
+portant; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0=
+pt; width:auto; text-align:center" class=3D"hs_cos_wrapper_type_social_modu=
+le" width=3D"auto">
+  <tbody>
+    <tr align=3D"center">
+     =20
+      <td style=3D"border-collapse:collapse; mso-line-height-rule:exactly; =
+font-family:Helvetica, Arial, sans-serif; font-size:15px; color:#264653; wo=
+rd-break:break-word">
+        <table role=3D"presentation" align=3D"center" style=3D"border-spaci=
+ng:0 !important; border-collapse:collapse; mso-table-lspace:0pt; mso-table-=
+rspace:0pt; width:auto; text-align:center" class=3D"hs_cos_wrapper_type_soc=
+ial_module_single" width=3D"auto">
+          <tbody>
+            <tr align=3D"center">
+             =20
+              <td class=3D"display_block_on_small_screens" style=3D"border-=
+collapse:collapse; mso-line-height-rule:exactly; font-family:Helvetica, Ari=
+al, sans-serif; font-size:15px; color:#264653; word-break:break-word; paddi=
+ng:8px 14px; line-height:1; vertical-align:middle" valign=3D"middle">
+                <a href=3D"https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/=
+cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFD3q905V1-WJV7CgYtJW4_CF=
+yn6Jy0-2W1rsbN03yRrDQW1pCJvN5DVXCwW43NNrD92VdZ6VkPVBT6vl94pW6hV1Gl8KzR-2VFy=
+rQ12Yhw6tN4s7X9-l7TzvW8Cn-3l28_RpcW13pSyj6kn_NDW4jw4Ww1L5CCBW23_xb91RdKs_W7=
+c9Fjx42zF6GW18gqGk6Ly4N3N8pRQ423L1c4W8x-Jgg30B2zFW1fdsxY7lMVNZW72XL9z4dzB3r=
+W6ZbQNQ1DgRskW68xbk22yvPvxW61K3Tv1FFdczW2Z_xwq3z0m75W7fyLBj2qPF6CW8ltJ525WJ=
+j622lC1" style=3D"color:#00a4bd; mso-line-height-rule:exactly; text-decorat=
+ion:none !important" data-hs-link-id=3D"0" target=3D"_blank">
+                 =20
+                  <img src=3D"https://hs-5910970.f.hubspotemail.net/hub/591=
+0970/hubfs/2021%20Twitter%20logo%20-%20blue%20copy.png?height=3D40&amp;upsc=
+ale=3Dtrue&amp;name=3D2021%20Twitter%20logo%20-%20blue%20copy.png" height=
+=3D"20" style=3D"outline:none; text-decoration:none; -ms-interpolation-mode=
+:bicubic; border:none; width:auto!important; height:20px!important; vertica=
+l-align:middle" valign=3D"middle" width=3D"auto">
+                 =20
+                </a>
+              </td>
+             =20
+             =20
+          </tr>
+        </tbody>
+      </table>
+  =09=09</td>
+     =20
+      <td style=3D"border-collapse:collapse; mso-line-height-rule:exactly; =
+font-family:Helvetica, Arial, sans-serif; font-size:15px; color:#264653; wo=
+rd-break:break-word">
+        <table role=3D"presentation" align=3D"center" style=3D"border-spaci=
+ng:0 !important; border-collapse:collapse; mso-table-lspace:0pt; mso-table-=
+rspace:0pt; width:auto; text-align:center" class=3D"hs_cos_wrapper_type_soc=
+ial_module_single" width=3D"auto">
+          <tbody>
+            <tr align=3D"center">
+             =20
+              <td class=3D"display_block_on_small_screens" style=3D"border-=
+collapse:collapse; mso-line-height-rule:exactly; font-family:Helvetica, Ari=
+al, sans-serif; font-size:15px; color:#264653; word-break:break-word; paddi=
+ng:8px 14px; line-height:1; vertical-align:middle" valign=3D"middle">
+                <a href=3D"https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/=
+cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFX3q90pV1-WJV7CgFL3W8jJD=
+zD93h9Z2N2GXkHslZXpMN5wnyV_SBg7NW8Q3LDW3cyX5_W3q2ZJ55QRyGYN6GFs9R-x1jZW1gjN=
+hT51fQ1mW8HQXn04M07xMVj5wwX2qQ9x9N1BMT1lcMRsHW13QbL73SW8ZtW8gfLxy3sMXjkW4YY=
+TGW65KY6PV556TT7NPm3rW27SgXJ8rvZ3rW2gNNYK3BtBlQN7vkCSf2RK4VV93nRb68GHvYW3QM=
+VXP4lMBhqW8QdsWC11NQK9W8j4Vv68Vb09dW65dBwY171cLVVNjJGp6tWnZjN5bvpNZPmvsXW8-=
+mG_69cxx1BW2Gq88f2VKvgk39jp1" style=3D"color:#00a4bd; mso-line-height-rule:=
+exactly; text-decoration:none !important" data-hs-link-id=3D"0" target=3D"_=
+blank">
+                 =20
+                  <img src=3D"https://hs-5910970.f.hubspotemail.net/hub/591=
+0970/hubfs/youtube_social_icon_white.png?height=3D40&amp;upscale=3Dtrue&amp=
+;name=3Dyoutube_social_icon_white.png" height=3D"20" style=3D"outline:none;=
+ text-decoration:none; -ms-interpolation-mode:bicubic; border:none; width:a=
+uto!important; height:20px!important; vertical-align:middle" valign=3D"midd=
+le" width=3D"auto">
+                 =20
+                </a>
+              </td>
+             =20
+             =20
+          </tr>
+        </tbody>
+      </table>
+  =09=09</td>
+     =20
+      <td style=3D"border-collapse:collapse; mso-line-height-rule:exactly; =
+font-family:Helvetica, Arial, sans-serif; font-size:15px; color:#264653; wo=
+rd-break:break-word">
+        <table role=3D"presentation" align=3D"center" style=3D"border-spaci=
+ng:0 !important; border-collapse:collapse; mso-table-lspace:0pt; mso-table-=
+rspace:0pt; width:auto; text-align:center" class=3D"hs_cos_wrapper_type_soc=
+ial_module_single" width=3D"auto">
+          <tbody>
+            <tr align=3D"center">
+             =20
+              <td class=3D"display_block_on_small_screens" style=3D"border-=
+collapse:collapse; mso-line-height-rule:exactly; font-family:Helvetica, Ari=
+al, sans-serif; font-size:15px; color:#264653; word-break:break-word; paddi=
+ng:8px 14px; line-height:1; vertical-align:middle" valign=3D"middle">
+                <a href=3D"https://cJy4q04.na1.hubspotlinks.com/Btc/LX+113/=
+cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFX3q90pV1-WJV7CgBQGW4BG1=
+6Y2Q-jRRW4FxhW28j-FZMW1j-lHZ3zb1BMW2S2mT73Dhz6GW4BlDpJ4V5FRsN6pWh5r5sTYnW8S=
+khZM1TgbLHW7LzFgZ5KLLTPW89NpCc2ZS5X9W6VV3w_1Fq1VkW6pZRMN2SQMdmW82pklh1YtQ0K=
+W1V59T35hkw-mW3WNlFC9gLlS7W86Jn3y82SfjbW1Y7k083k39PqW6RTPr_2JPP9sW8lnP4d6D-=
+7j_W3M3PRJ2lWpD3W1qc3cw2w_Bc8W6Tbp8n8VG5RhW2lkqsQ44v6mRW4Cs_vv6g53KdF6Vt4M7=
+VzmXW8yzGJ14PHNJRW92lvsH37J5Q_3d411" style=3D"color:#00a4bd; mso-line-heigh=
+t-rule:exactly; text-decoration:none !important" data-hs-link-id=3D"0" targ=
+et=3D"_blank">
+                 =20
+                  <img src=3D"https://hs-5910970.f.hubspotemail.net/hub/591=
+0970/hubfs/medium-logo.png?height=3D40&amp;upscale=3Dtrue&amp;name=3Dmedium=
+-logo.png" height=3D"20" style=3D"outline:none; text-decoration:none; -ms-i=
+nterpolation-mode:bicubic; border:none; width:auto!important; height:20px!i=
+mportant; vertical-align:middle" valign=3D"middle" width=3D"auto">
+                 =20
+                </a>
+              </td>
+             =20
+             =20
+          </tr>
+        </tbody>
+      </table>
+  =09=09</td>
+     =20
+    </tr>
+  </tbody>
+</table></div></td></tr></tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"section_163977196433332" class=3D"hse-section hse-section-last=
+" style=3D"padding-left:10px; padding-right:10px; padding-bottom:20px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container hse-border-bottom hse-border" styl=
+e=3D"min-width:280px; max-width:600px; width:100%; Margin-left:auto; Margin=
+-right:auto; border-collapse:collapse; border-spacing:0; border-left:1px so=
+lid #cccccc; border-right:1px solid #cccccc; box-sizing:border-box; border-=
+bottom:1px solid #cccccc; background-color:#ffffff; padding-bottom:10px" bg=
+color=3D"#ffffff">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;border-bottom:1px solid #cccccc;=
+border-left:1px solid #cccccc;border-right:1px solid #cccccc" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" class=3D"hse-border-bottom h=
+se-border" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:249px;padding-bottom:10px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"249" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:249px">
+<![endif]-->
+<div id=3D"column-0-0" class=3D"hse-column hse-size-5">
+  <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" =
+style=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-famil=
+y:Helvetica, Arial, sans-serif; font-size:15px; color:#264653; word-break:b=
+reak-word; padding:10px 20px 0px"><div id=3D"hs_cos_wrapper_module_16397719=
+6433329" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_=
+module" style=3D"color: inherit; font-size: inherit; line-height: inherit;"=
+ data-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"module"><div id=3D=
+"hs_cos_wrapper_module_163977196433329_" class=3D"hs_cos_wrapper hs_cos_wra=
+pper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inherit; font-si=
+ze: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget" dat=
+a-hs-cos-type=3D"rich_text"><h2 style=3D"margin:0; mso-line-height-rule:exa=
+ctly; font-size:15px; line-height:175%; text-align:center; font-weight:bold=
+" align=3D"center"><span style=3D"color: #1857b6; font-family: Lato, Tahoma=
+, sans-serif;">Proudly built by</span></h2></div></div></td></tr></tbody></=
+table>
+<div id=3D"hs_cos_wrapper_module_163977196433330" class=3D"hs_cos_wrapper h=
+s_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; f=
+ont-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widge=
+t" data-hs-cos-type=3D"module">
+=09
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; bord=
+er-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt">
+    <tbody>
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"border-collapse:co=
+llapse; mso-line-height-rule:exactly; font-family:Helvetica, Arial, sans-se=
+rif; color:#264653; word-break:break-word; text-align:center; padding:10px =
+20px; font-size:0px">
+               =20
+                    <a href=3D"https://cJy4q04.na1.hubspotlinks.com/Btc/LX+=
+113/cJy4q04/VWJX7h9m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgN3ypqFk3q8_QV1-WJV7CgHsCW=
+8BgDdJ4D0b8_W5cNmth4Zx4vMW14yWyj4gSd5cW5M3M3m8jJmJnW36FC7-1RlprcW1vCJPM783Y=
+xsW2PV9Rx37z3ZxW58l8wK4R-hwVW3YmFDm2Zx-HyW39LNVh5yS5T2W8B7BKP6vpxQwW5KZKNH4=
+167_fW8h2y7954_9_6W6HBN3V5GGbJNW1RZgWn971m8qVvCjf68VT4xsW44KPvR5_SL9CW56zh3=
+j5CvhXpW6pLDjp3h121lW5s_DkL4K3ZZwW6vL8B-69lZjwW4wHL1s1PZGfP36zf1" target=3D=
+"_blank" style=3D"color:#00a4bd; mso-line-height-rule:exactly" data-hs-link=
+-id=3D"0">
+               =20
+                <img alt=3D"AI2_Logo_Vertical_Lockup_Gradients" src=3D"http=
+s://hs-5910970.f.hubspotemail.net/hub/5910970/hubfs/AI2_Logo_Vertical_Locku=
+p_Gradients.png?width=3D200&amp;upscale=3Dtrue&amp;name=3DAI2_Logo_Vertical=
+_Lockup_Gradients.png" style=3D"outline:none; text-decoration:none; -ms-int=
+erpolation-mode:bicubic; border:none; max-width:100%; font-size:16px" width=
+=3D"100" align=3D"middle" srcset=3D"https://hs-5910970.f.hubspotemail.net/h=
+ub/5910970/hubfs/AI2_Logo_Vertical_Lockup_Gradients.png?upscale=3Dtrue&amp;=
+width=3D200&amp;upscale=3Dtrue&amp;name=3DAI2_Logo_Vertical_Lockup_Gradient=
+s.png 100w, https://hs-5910970.f.hubspotemail.net/hub/5910970/hubfs/AI2_Log=
+o_Vertical_Lockup_Gradients.png?upscale=3Dtrue&amp;width=3D400&amp;upscale=
+=3Dtrue&amp;name=3DAI2_Logo_Vertical_Lockup_Gradients.png 200w" sizes=3D"(m=
+ax-width: 100px) 100vw, 100px">
+               =20
+                    </a>
+               =20
+            </td>
+        </tr>
+    </tbody>
+</table></div>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+<!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:348px;padding-bottom:10px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"348" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:348px">
+<![endif]-->
+<div id=3D"column-0-1" class=3D"hse-column hse-size-7">
+  <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" =
+style=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-famil=
+y:Helvetica, Arial, sans-serif; font-size:15px; color:#264653; word-break:b=
+reak-word; padding:5px 20px 10px"><div id=3D"hs_cos_wrapper_module_16397719=
+6433331" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_=
+module" style=3D"color: inherit; font-size: inherit; line-height: inherit;"=
+ data-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"module">
+ =20
+ =20
+ =20
+ =20
+ =20
+ =20
+ =20
+<table role=3D"presentation" class=3D"hse-footer hse-secondary" width=3D"10=
+0%" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !importan=
+t; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; fo=
+nt-family:Arial, sans-serif; font-size:12px; line-height:135%; color:#23496=
+d; margin-bottom:0; padding:0">
+    <tbody>
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"border-collapse:co=
+llapse; mso-line-height-rule:exactly; font-family:Helvetica, Arial, sans-se=
+rif; font-size:15px; color:#264653; word-break:break-word; text-align:cente=
+r; margin-bottom:0; line-height:135%; padding:10px 20px">
+                <p style=3D"mso-line-height-rule:exactly; font-family:Lato,=
+Tahoma,sans-serif; font-size:12px; font-weight:normal; text-decoration:none=
+; font-style:normal; color:#23496d; direction:lrt" dir=3D"lrt">
+                  Semantic Scholar, 2157 N Northlake Way Suite 110, Seattle=
+, Washington 98103
+                </p>
+                <p style=3D"mso-line-height-rule:exactly">
+                 =20
+                  <a data-unsubscribe=3D"true"  href=3D"https://hs-5910970.=
+s.hubspotemail.net/hs/manage-preferences/unsubscribe-all?languagePreference=
+=3Den&amp;d=3DVnfmCq8kHBzYVRjtnJ41-F3nW1JFMwZ41xWR_W3zbV8Y3Fbt5qW7N-12G1fkv=
+KFVkhLWt6jPy6PW8c0zYx4JyYk7W9lD7MW6mkxfQW8ZhylH1KVcpzW7jDJDW8xtWj-Vk1FrY7Q1=
+D6xW2_JGT56SHNf-0&amp;v=3D3&amp;utm_campaign=3Dquarterly_newsletter&amp;utm=
+_source=3Dhs_email&amp;utm_medium=3Demail&amp;utm_content=3D196784094&amp;_=
+hsenc=3Dp2ANqtz-_bElP2Mhae9B01dyYM6XfM3pARrNEYftKVpaOS-qJe7e3Dh5BPbzrg22l79=
+7ldaNbF4qq831DWzhLmV7oB5wZEwCrMJQ&amp;_hsmi=3D196784094" style=3D"mso-line-=
+height-rule:exactly; font-family:Helvetica,Arial,sans-serif; font-size:12px=
+; color:#3574E3; font-weight:normal; text-decoration:underline; font-style:=
+normal" data-hs-link-id=3D"0" target=3D"_blank">Unsubscribe</a>
+                 =20
+                  <a data-unsubscribe=3D"true"  href=3D"https://hs-5910970.=
+s.hubspotemail.net/hs/manage-preferences/unsubscribe?languagePreference=3De=
+n&amp;d=3DVnfmCq8kHBzYVRjtnJ41-F3nW1JFMwZ41xWR_W3zbV8Y3Fbt5qW7N-12G1fkvKFVk=
+hLWt6jPy6PW8c0zYx4JyYk7W9lD7MW6mkxfQW8ZhylH1KVcpzW7jDJDW8xtWj-Vk1FrY7Q1D6xW=
+2_JGT56SHNf-0&amp;v=3D3&amp;utm_campaign=3Dquarterly_newsletter&amp;utm_sou=
+rce=3Dhs_email&amp;utm_medium=3Demail&amp;utm_content=3D196784094&amp;_hsen=
+c=3Dp2ANqtz-_bElP2Mhae9B01dyYM6XfM3pARrNEYftKVpaOS-qJe7e3Dh5BPbzrg22l797lda=
+NbF4qq831DWzhLmV7oB5wZEwCrMJQ&amp;_hsmi=3D196784094" style=3D"mso-line-heig=
+ht-rule:exactly; font-family:Helvetica,Arial,sans-serif; font-size:12px; co=
+lor:#3574E3; font-weight:normal; text-decoration:underline; font-style:norm=
+al" data-hs-link-id=3D"0" target=3D"_blank">Manage preferences</a>
+                 =20
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table></div></td></tr></tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+</div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+ =20
+<img src=3D"https://cJy4q04.na1.hubspotlinks.com/Bto/LX+113/cJy4q04/VWJX7h9=
+m1B2jW4JCrxr6z4MgRW2sbCLr4CbzKgW3ypqps8fYD752fP1" alt=3D"" width=3D"1" heig=
+ht=3D"1" border=3D"0" style=3D"display:none!important;min-height:1px!import=
+ant;width:1px!important;border-width:0!important;margin-top:0!important;mar=
+gin-bottom:0!important;margin-right:0!important;margin-left:0!important;pad=
+ding-top:0!important;padding-bottom:0!important;padding-right:0!important;p=
+adding-left:0!important"></body></html>
+------=_Part_9450853_681133229.1639781414791--
+

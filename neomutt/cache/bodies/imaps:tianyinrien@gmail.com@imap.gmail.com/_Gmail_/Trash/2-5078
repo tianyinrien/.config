@@ -1,0 +1,1724 @@
+Delivered-To: tianyin.rien@gmail.com
+Received: by 2002:a05:6a11:4a89:b0:26e:6bbc:7bbb with SMTP id ob9csp1448099pxb;
+        Sat, 2 Apr 2022 22:02:14 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJzwuO8D8XaFec84VoItGYl3D4pYsDqLOr9g+tFL1U9pzOPNY6sV+ZG/qE07Ns6JeIYRPNsd
+X-Received: by 2002:a25:d183:0:b0:63a:f7c:50fb with SMTP id i125-20020a25d183000000b0063a0f7c50fbmr14744493ybg.102.1648962134321;
+        Sat, 02 Apr 2022 22:02:14 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1648962134; cv=none;
+        d=google.com; s=arc-20160816;
+        b=xcoUuiyTtzhnrq/XAo53aJG27d8lCSpIyxDfNjbCrcVdZakqaHOj/E46sOP1RnT0nl
+         vAdSuKlEe0YMIEPiGHkDjDMY+uI4gJU5w/SJT/c4ApAYuqzlcNa0O06ncE0BPeVXBNPv
+         wgr+nOwjZkTj1I1mV8GI+2ZJS5/ZPk828piXkIawyprJ80KUMZjILnAt0XXh1+Xr7Qq7
+         FDpkpgO9pImxLSzodigzUxmWUbNPWAEXKZkmDnOLBlnR4sUdAzkjoSB9H+bGtBwGLRRC
+         fxLRVn2w2AB6A4FhnQUeRHhaaOXCc0HxT2+JaIZsH8l/DjVodUauE2bEeRPA9Qd5Grea
+         akDg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=sxOjpw07yM/iVdoFzbe/1bFSnBqxKhRdYThYcQN1yOQ=;
+        b=l5LaBmUA+/EMDid6NnqZTbtToV25UVP+q5zsZTzEQ/yaB3+tWllhBVbqMt2Z15NB9V
+         88UqyQXWFt+YZKLfipdVAU1htGDAjDEy4sfAwfM25RrQom4F7hJZuSY1leT9smGWBIqB
+         Z3roZDWkGCAqT5KWMx4YWRv8gMatdTF5sGEw95OCHfO7BeUN9PFM0y/7YthBFXT+Bz84
+         MSe6RvFqmUPVWQYwTa7WaNGhiNy4SUwtnTXvofFoN8DRQzEQWSLsiw0PfHExFUrCbP57
+         Luwpi87WRlP3ORH6kavk3jZ5RrjfG8U6jOZeidGO5XtBHJcITnXDhY+cR1+5JvSzzbvi
+         fGfA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@namecheap.com header.s=s1 header.b=Y0qi2J3t;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Pd+fUJ3i;
+       spf=pass (google.com: domain of bounces+1848481-695e-tianyin.rien=gmail.com@mailserviceemailout1.namecheap.com designates 167.89.64.94 as permitted sender) smtp.mailfrom="bounces+1848481-695e-tianyin.rien=gmail.com@mailserviceemailout1.namecheap.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=namecheap.com
+Return-Path: <bounces+1848481-695e-tianyin.rien=gmail.com@mailserviceemailout1.namecheap.com>
+Received: from xtrwqhrz.outbound-mail.sendgrid.net (xtrwqhrz.outbound-mail.sendgrid.net. [167.89.64.94])
+        by mx.google.com with ESMTPS id v8-20020a258488000000b00633b8618284si6020151ybk.103.2022.04.02.22.02.14
+        for <tianyin.rien@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 02 Apr 2022 22:02:14 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+1848481-695e-tianyin.rien=gmail.com@mailserviceemailout1.namecheap.com designates 167.89.64.94 as permitted sender) client-ip=167.89.64.94;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@namecheap.com header.s=s1 header.b=Y0qi2J3t;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=Pd+fUJ3i;
+       spf=pass (google.com: domain of bounces+1848481-695e-tianyin.rien=gmail.com@mailserviceemailout1.namecheap.com designates 167.89.64.94 as permitted sender) smtp.mailfrom="bounces+1848481-695e-tianyin.rien=gmail.com@mailserviceemailout1.namecheap.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=namecheap.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=namecheap.com;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	x-feedback-id:to;
+	s=s1; bh=sxOjpw07yM/iVdoFzbe/1bFSnBqxKhRdYThYcQN1yOQ=;
+	b=Y0qi2J3tHU7TIeg4lVX4Gdp2PVdBuV6MIiZovsWm0hC268olVh7Rs8zS3WbXGjDxtEKX
+	2LH2sVFPrkzaIkUz8Wu3jBTENDCiSfTW7sKikNmZEDz7GvG9WfPb+exX1RGa4I407dxjPq
+	3nOMq2iGy7YWP6kH5PbqCTWsGlE4PYPTWvtBSwVmeuvmnIMeHT3Pg8prfTFvKK3w49KYi7
+	pg4X0asf/mEjAc0NN8Am7SqXmNREHIeiO//HWPIx5SRdVqMEkTg6VyXtmtOvzs/uh5wIqg
+	MfEq5xKNkHxAqsLx+iSojbG5PqA1c/2U6WNNLl2UIyr9Gpw00EfPSqOc7CfMBZ0g==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	x-feedback-id:to;
+	s=smtpapi; bh=sxOjpw07yM/iVdoFzbe/1bFSnBqxKhRdYThYcQN1yOQ=;
+	b=Pd+fUJ3iQmoKs6J+HKp6EBdzlF+EUQzJiuPTnDfNkys0SKA6CdS89rL13knE/3x/7ltN
+	0w7J1DWoN3/XsHsnFWb/HzvdcnxU0hw1QqkWNaZ8yuj+WGjB/DeGvZG+Vdsa/7dqaZdew3
+	J3f+X2mqmUf6VKvqJCY71sG2i2LBGM8SQ=
+Received: by filterdrecv-64fcb979b9-8r2zw with SMTP id filterdrecv-64fcb979b9-8r2zw-1-62492A55-E0
+        2022-04-03 05:02:13.594081448 +0000 UTC m=+17384725.628837140
+Received: from MTg0ODQ4MQ (unknown)
+	by geopod-ismtpd-4-1 (SG) with HTTP
+	id mO1GmBCSSCO7FqHktQxdOA
+	Sun, 03 Apr 2022 05:02:13.494 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Date: Sun, 03 Apr 2022 05:02:13 +0000 (UTC)
+From: Namecheap <hello@namecheap.com>
+Mime-Version: 1.0
+Message-ID: <mO1GmBCSSCO7FqHktQxdOA@geopod-ismtpd-4-1>
+Subject: Welcome to Namecheap
+X-Feedback-ID: 1848481:SG
+X-SG-EID: 
+ =?us-ascii?Q?WO3yfy31vHV92n9YsqoWQxd+tZc=2FQkr3F82cljciy3YmEa4iBWka4iVO5UOPjm?=
+ =?us-ascii?Q?7tNt59lXsKX67W5EvobLwAEM24oVCQc85wiA9Sj?=
+ =?us-ascii?Q?nKs41goya8YT5t0OkeZaUVKaGdPYClDgO6YOAD9?=
+ =?us-ascii?Q?2NriV6b=2FQB5LU6SIPuUYu6vCahPHAj2fNVmP3Mt?=
+ =?us-ascii?Q?SC=2FmdpmzJamcYDrPb64Q=2FvXZuH9iMm54qFEAyfm?=
+ =?us-ascii?Q?v6d2LKTUftVnmxWPumCJO9Mp3=2F80ILzhP++Z8N?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb9zW8Z=2FJ84rOMZBfUMuM5gjm1eZKOQZLw3dqvzOG8h?=
+ =?us-ascii?Q?9yPGLJfsCOecocPGPHrkvVHw=3D=3D?=
+To: Ren Tianyin <tianyin.rien@gmail.com>
+X-Entity-ID: MA99y49sgYDzFpvd294zUA==
+
+<!DOCTYPE html>
+<html lang=3D"en" dir=3D"ltr" xmlns:v=3D"urn:schemas-microsoft-com:vml" xml=
+ns:o=3D"urn:schemas-microsoft-com:office:office">
+  <head>
+    <!-- Yahoo App Android will strip this -->
+  </head>
+  <head>
+    <title>Namecheap</title>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html charset=3DUTF-8"=
+ />
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=
+=3D1 user-scalable=3Dyes">
+    <meta name=3D"x-apple-disable-message-reformatting" />
+    <meta name=3D"format-detection" content=3D"telephone=3Dno, date=3Dno, a=
+ddress=3Dno, email=3Dno, url=3Dno">
+    <meta name=3D"color-scheme" content=3D"light dark">
+    <meta name=3D"supported-color-schemes" content=3D"light dark">
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" />
+    <!--[if (mso)|(mso 16)]>
+    <style type=3D"text/css">
+      body, table, tr, th, td, span, h1, h2, h3, h4, h5, p, a, img, ul, ol,=
+ li, br { font-family: Arial, Helvetica, sans-serif !important; }
+      a { text-decoration: none; }
+    </style>
+    <![endif]-->
+    <!--[if gte mso 16]>
+    <style>
+      .keep-white {
+      mso-style-textfill-type:gradient;
+      mso-style-textfill-fill-gradientfill-stoplist:"0 \#FFFFFF 0 100000\,1=
+00000 \#FFFFFF 0 100000";
+      color:#000000 !important;
+      }
+    </style>
+    <![endif]-->
+    <!--[if mso]>
+    <noscript>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+    </noscript>
+    <![endif]-->  =20
+    <!--[if !mso]><!-->
+    <style type=3D"text/css">
+      @import url('https://fonts.googleapis.com/css?family=3DOpen+Sans:400,=
+600,700');
+    </style>
+    <!--<![endif]-->
+    <!--[if !mso]><!-->
+    <style type=3D"text/css">
+      .color1 { background-color: #f14c2e; }
+      .color2 { background-color: #8CC1C1; }		=09
+    </style>
+    <!--<![endif]-->=09
+    <style type=3D"text/css">
+      body, table, td, a { -webkit-text-size-adjust: 100%;-ms-text-size-adj=
+ust: 100%; }=20
+      table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }=20
+      img { -ms-interpolation-mode: bicubic; }=20
+      img { border: 0; height: auto; line-height: 100%; outline: none; text=
+-decoration: none; }
+      table { border-collapse: collapse !important; }
+      body { height: 100% !important; margin:0 auto !important; padding: 0 =
+!important; width: 100% !important; }
+      a[x-apple-data-detectors] {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important; }
+      #MessageViewBody a {
+      color: inherit;
+      text-decoration: none;
+      font-size: inherit;
+      font-family: inherit;
+      font-weight: inherit;
+      line-height: inherit; }
+      #body #wrapper a[x-apple-data-detectors] { color: inherit !important;=
+ text-decoration: inherit !important; } =20
+      img + div { display:none; }
+      img { color:#F14722!important; }
+      u + .body .gmail-blend-screen { background:#000; mix-blend-mode:scree=
+n; }
+      u + .body .gmail-blend-difference { background:#000; mix-blend-mode:d=
+ifference; }=09
+      @media screen and (max-width: 480px) {
+      .wrapper { width: 100% !important; max-width: 100% !important; }
+      .fluid { width:100% !important; }
+      .img-max { max-width: 100% !important; height: auto !important; }
+      .mobile-hide { display: none !important; }
+      .no-padding { padding: 0px 0px 0px 0px !important; }
+      .logo { max-width: 200px !important; height: auto !important; }
+      .userLogin  { padding: 4px 24px 0px 0px !important; }
+      .a-cn { text-align: center !important; }
+      .a-lt { text-align: left !important; }
+      .a-rt { text-align: right !important; }
+      h1 { font-size: 32px !important; line-height: 38px !important; }=20
+      h2 { font-size: 24px !important; line-height: 36px !important; font-w=
+eight: bold!important; }
+      .h-20-30 { font-size: 20px !important; line-height: 30px !important; =
+}
+      .text-16-24 { font-size: 16px!important; line-height: 24px!important;=
+ }
+      .mobileLink { display: block !important; line-height: 32px !important=
+; }
+      .p-18-18 { padding: 18px 0px 18px 16px !important; }
+      .p-0-0 { padding: 0px 24px 0px 24px !important; }
+      .p-24-24-24 { padding: 0px 24px 24px 24px !important; }
+      .p-0-24 { padding: 0px 0px 24px 0px !important; }
+      .p-12-24 { padding: 12px 24px 24px 24px !important; }
+      .p-24-24 { padding: 24px 24px 24px 24px !important; }
+      .p-0-36 { padding: 0px 0px 36px 0px !important; }
+      .p-36-24 { padding: 36px 24px 24px 24px !important; }
+      .p-24-36 { padding: 36px 24px 24px 24px !important; }
+      .p-36-36 { padding: 36px 24px 36px 24px !important; }
+      .p-36-48 { padding: 36px 24px 48px 24px !important; }
+      .p-48-48 { padding: 48px 24px 48px 24px !important; }
+      .p-48-0 { padding: 48px 24px 0px 24px !important; }
+      .p-0-48 { padding: 0px 24px 48px 24px !important; }
+      .p-12-48 { padding: 12px 0px 48px 0px !important; }
+      .px-24 { padding-left: 24px !important; padding-right: 24px !importan=
+t; }
+      .px-16 { padding-left: 16px !important; padding-right: 16px !importan=
+t; }
+      .px-0 { padding-left: 0px !important; padding-right: 0px !important; =
+}
+      .py-0 { padding-top: 0px !important; padding-bottom: 0px !important; =
+}
+      .mx-0 { margin-left: 0px !important; margin-right: 0px !important; }
+      .my-0 { margin-top: 0px !important; margin-bottom: 0px !important; }
+      .py-16-0  { padding-top: 16px !important; padding-bottom: 0px !import=
+ant; }
+      .spacer-mob-48 { height: 48px !important; }
+      .spacer-mob-24 { height: 24px !important; }
+      .spacer-mob-16 { height: 16px !important; }
+      .spacer-mob-0 { height: 0px !important; }
+      .button-mobile { height: 40px !important; line-height: 40px !importan=
+t; }
+      .desktop { display: none !important; }
+      .mobile { display: block !important; }=09
+      .number-img { width: 35px !important; } 	 =20
+      .two-col .column { max-width: 100% !important; }=09
+      .two-col .img-center { margin: auto; }
+      .img-mobile { width: 144px!important; }
+      .feature-img{ width: 64px!important; height:auto!important;}
+      }
+      @media screen and (max-width: 300px) {
+      .px-24 { padding-left: 16px !important; padding-right: 16px !importan=
+t; }
+      }	=09
+    </style>
+    <style type=3D"text/css">
+      :root { color-scheme: light dark; supported-color-schemes: light dark=
+; }
+      @media (prefers-color-scheme: dark) {
+      .darkmode-bg1 { background-color: #000000 !important; } /* black */	 =
+=20
+      .darkmode-bg2 { background-color: #4A4A4A !important; } /* dark gray =
+*/
+      .darkmode-bg3 { background-color: #2D2D2D !important; background-imag=
+e: linear-gradient(#2D2D2D, #2D2D2D)!important;} /* extra dark gray */
+      .darkmode-bg4 { background-color: #669999 !important; background-imag=
+e: linear-gradient(#669999, #669999) !important; } /* secondary dark */
+      .darkmode-bg5 { background-color: #DE3723 !important; background-imag=
+e: linear-gradient(#DE3723, #DE3723) !important; } /* primary */
+      .darkmode-text1 { color: #FFFFFF !important; } /* base light */
+      .darkmode-text2 { color: #F2F2F2 !important; } /* base */
+      .darkmode-text3 { color: #D6D6D6 !important; } /* base dark */=20
+      .darkmode-text4 { color: #C4C4C4 !important; } /* gray lighter */=20
+      .darkmode-text5 { color: #F14C2E !important; } /* primary light */=20
+      .darkmode-text6 { color: #8cc1c1 !important; } /* secondary */=20
+      .darkmode-noborder { border: none !important; }=20
+      .darkmode-border1 { border-color: #6D6E70 !important; } /* gray */ 		=
+ =20
+      .darkmode-border2 { border-color: #FFFFFF !important; } /* white */ 	=
+	 =20
+      .darkmode-border4 { border-color: #4A4A4A !important; } /* dark gray =
+*/	=20
+      .darkmode-show { display: block !important; }
+      .darkmode-hide { display: none !important; height: 0px !important; ov=
+erflow: hidden !important;}=09
+      }
+      [data-ogsb] .darkmode-bg1 { background-color: #000000 !important; } /=
+* black */	 =20
+      [data-ogsb] .darkmode-bg2 { background-color: #4A4A4A !important; } /=
+* dark gray */
+      [data-ogsb] .darkmode-bg3 { background-color: #2D2D2D !important; bac=
+kground-image: linear-gradient(#2D2D2D, #2D2D2D)!important;} /* extra dark =
+gray */
+      [data-ogsb] .darkmode-bg4 { background-image: linear-gradient(#669999=
+, #669999) !important; } /* secondary dark */
+      [data-ogsb] .darkmode-bg5 { background-color: #DE3723 !important; bac=
+kground-image: linear-gradient(#DE3723, #DE3723) !important; } /* primary *=
+/
+      [data-ogsb] .darkmode-text1 { color: #FFFFFF !important; } /* base li=
+ght */
+      [data-ogsb] .darkmode-text2 { color: #F2F2F2 !important; } /* base */
+      [data-ogsb] .darkmode-text3 { color: #D6D6D6 !important; } /* base da=
+rk */=20
+      [data-ogsb] .darkmode-text4 { color: #C4C4C4 !important; } /* gray li=
+ghter */=20
+      [data-ogsb] .darkmode-text5 { color: #F14C2E !important; } /* primary=
+ light */=20
+      [data-ogsb] .darkmode-text6 { color: #8cc1c1 !important; } /* seconda=
+ry */=20
+      [data-ogsb] .darkmode-noborder { border: none !important; }=20
+      [data-ogsb] .darkmode-border1 { border-color: #6D6E70 !important; } /=
+* gray */
+      [data-ogsb] .darkmode-border2 { border-color: #FFFFFF !important; } /=
+* white */
+      [data-ogsb] .darkmode-border4 { border-color: #4A4A4A !important; } /=
+* dark gray */	=20
+      [data-ogsb] .darkmode-show { display: block !important; }
+      [data-ogsb] .darkmode-hide { display: none !important; height: 0px !i=
+mportant; overflow: hidden !important;}		=09
+    </style>
+  </head>
+  <body style=3D"margin: 0 !important; padding: 0 !important; background-co=
+lor: #E6E4E4;" bgcolor=3D"#E6E4E4" class=3D"darkmode-bg1 body">
+    <div style=3D"display:none">
+      We have everything you need to launch your online business.
+    </div>
+    <!--[if !mso]><!-->
+    <div style=3D"display: none; max-height: 0px; overflow: hidden;">
+      &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+    </div>
+    <!--<![endif]-->
+    <table bgcolor=3D"#E6E4E4" width=3D"100%" align=3D"center" border=3D"0"=
+ cellspacing=3D"0" cellpadding=3D"0" class=3D"wrapper darkmode-bg1" role=3D=
+"presentation" aria-roledescription=3D"email" aria-label=3D"email name">
+      <tr>
+        <td align=3D"center" bgcolor=3D"#E6E4E4" style=3D"padding: 36px 0px=
+ 0px 0px;background-color: #E6E4E4;" class=3D"no-padding darkmode-bg1">
+          <!-- HEADER WITH NAV : BEGIN --> =20
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"width: 640px;" width=3D"640" class=3D"fluid" role=3D"prese=
+ntation">
+            <tr>
+              <td bgcolor=3D"#FFFFFF" class=3D"darkmode-bg2">
+                <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" role=3D"presentation">
+                  <tr>
+                    <td width=3D"50%" align=3D"left" class=3D"px-24" style=
+=3D"padding: 24px 32px 24px 32px;">
+                      <a href=3D"http://mailtrackemailout1.namecheap.com/ls=
+/click?upn=3DIpkEbt5cFshRDRNx3fNQxhlJXhDk-2FVKDawywM2TUkYAYX2Gbmr0ShJ-2BFOb=
+wzQAgEA0CU6-2BIbRrpxOBdLFkpvpXOTRkbNpwr-2Fq2hGwYnT8ve-2BF9tWQezvlSRy8m-2F-2=
+BNGN-2BkkSBNP6-2F9MTl7UvRdpY-2FE1DyGTb9WoCZ2B21r6HXPdQCxpCQRESc0cnrE2ixtCTG=
+hWbugCUYJbD79L8DyVBdtg-3D-3DjN_D_Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2=
+FkD5rFaDS1KEq7mLWr3wVpn2iJ91HfFVTi0PhdDjcN3OR7bKqlCcXM8ykrldH9c2VYI4oG4RdCR=
+axIS9J9rc13mXmZN-2BHACQKILNv7B1XvAoi818XChaVGjOmsQv9a7EdK1tI7jeEtzsHP7ZQGBi=
+7qEF8vuQPXikEKkBVcpNOe7AL9vpUh6kZOgfkiPMsJOuppaTATBojqWpn1PE5KRrrj1H" targe=
+t=3D"_blank">
+                        <img src=3D"https://mktg.namecheap.com/master/marke=
+ting/standard/logo/Namecheap-Logo_wt_tsp_344x64px.png" alt=3D"Namecheap" wi=
+dth=3D"172" border=3D"0" style=3D"display: block; color:#de3723; font-famil=
+y: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 16px; width: 172px=
+; text-decoration: none;" class=3D"logo darkmode-hide"/>
+                        <!--[if !mso]><! --><img src=3D"https://mktg.namech=
+eap.com/master/marketing/hv/logo/HV-Namecheap-Logo_344x64px.png" alt=3D"Nam=
+echeap" width=3D"172" border=3D"0" style=3D"display: none; color:#de3723; f=
+ont-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 16px; wid=
+th: 172px; text-decoration: none;" class=3D"logo darkmode-show"/><!--<![end=
+if]-->
+                      </a>
+                    </td>
+                    <td width=3D"50%" align=3D"right" style=3D"padding: 28p=
+x 32px 20px 0px;" class=3D"userLogin">
+                      <table width=3D"300" border=3D"0" cellspacing=3D"0" c=
+ellpadding=3D"0" style=3D"width: 300px;" class=3D"fluid" role=3D"presentati=
+on">
+                        <tbody>
+                          <tr>
+                            <td align=3D"right" style=3D"color: #6D6E70; fo=
+nt-family: 'Open Sans', Arial, Helvetica, sans-serif; font-style: normal; f=
+ont-size: 18px; font-weight: 600; line-height: 24px; text-decoration: none;=
+ padding-right: 24px;" class=3D"mobile-hide"><a href=3D"http://mailtrackema=
+ilout1.namecheap.com/ls/click?upn=3DIpkEbt5cFshRDRNx3fNQxhlJXhDk-2FVKDawywM=
+2TUkYDPhyG1nMnW7wum2Fb-2BBmabZctX-2FCcNkIJuJGp5UFSttNzdkryULHH721ojZqcnw9QZ=
+XoKynNm0eIB-2BAGqCinOThm3w61nDFzVZiUvWnyHuOLbRug-2BaL5PqwUfcVGZzL6wUECO8lTs=
+4GblGYHPf735v37UGpdaHnntQDpXtnNJOPHuxUpvMcdC0QYd3Tcsz5PlSawsN8Ra3TWXfVxdNBs=
+IdHgRY_Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkD5rFaDS1KEq7mLWr3wVpn2OB=
+rQ5EQGua6RGCRvLN3Tug3f8ftyNRdJcwO-2FaTnBEAfbje6o95MFMuFbuNkxrQg0nN8h-2FMB-2=
+BdMh5XWMQG4EPYmE-2FUWleP-2FYforfoxEvqkQ5wyyoOJcZZ9F5wXjBMJO7rcVWc0d2AKI1Ilm=
+rNfe894ZdJu-2B6WNkBG88PuBsXDuLjQcKgEFTNEuzc7-2F5vi-2BFKJ" target=3D"_blank"=
+ style=3D"color: #6D6E70; text-decoration: none;" class=3D"darkmode-text1">=
+Domains</a></td>
+                            <td align=3D"right" style=3D"color: #6D6E70; fo=
+nt-family: 'Open Sans', Arial, Helvetica, sans-serif; font-style: normal; f=
+ont-size: 18px; font-weight: 600; line-height: 24px; text-decoration: none;=
+ padding-right: 24px;" class=3D"mobile-hide"><a href=3D"http://mailtrackema=
+ilout1.namecheap.com/ls/click?upn=3DIpkEbt5cFshRDRNx3fNQxhlJXhDk-2FVKDawywM=
+2TUkYCVq0Uq2gBP0uvZW8XzUSJAdewci-2BcBBHZZbZAmNuvuEZ9xDerWtQAcKJtA-2FBILRWU6=
+giSy8eQznuYZrHrNMXL-2BvlH-2B0ux41oBPzk3LQl8EXcUXFRc-2F1qd6Bbmq9mGauYeXjSVRu=
+Cd3QqiiAP8bifSVkEo0vO3v4mi9f9w4xN23yg-3D-3DJRJq_Dv7OFDap31vv5D8vJaYhv3mQtDT=
+ThJJVlpSiE7a0-2FkD5rFaDS1KEq7mLWr3wVpn2N2i0lLrtCP8-2BJdOfGnXMvEo6WKu1I4038c=
+5HT4N17uMtW4SZNWwvS9Rsotg-2FIEyokqYMpOsOTHISm36HTTlrIiVGZOHhmt34kpHKN2VoBOd=
+6XLEDQ1m18o0hYy-2FykAV3PKyWny08LWaW95vSb-2FJp4HcdZtdxRTMts8Ddlh9mEy53px2Y8A=
+iKR3TFRbA-2Fftsn" target=3D"_blank" style=3D"color: #6D6E70; text-decoratio=
+n: none;" class=3D"darkmode-text1">Hosting</a></td>
+                            <td align=3D"right" style=3D" color: #6D6E70; f=
+ont-family: 'Open Sans', Arial, Helvetica, sans-serif; font-style: normal;f=
+ont-size: 18px; font-weight: 600; line-height: 24px; text-decoration: none;=
+ padding-right: 24px;" class=3D"mobile-hide"><a href=3D"http://mailtrackema=
+ilout1.namecheap.com/ls/click?upn=3DIpkEbt5cFshRDRNx3fNQxhlJXhDk-2FVKDawywM=
+2TUkYA1I7CCApP5MRwW82dyEJxxzidfhtPk0vObHWAyauSDkWJYl27d50WAZDcbxDpe1sn88kDY=
+Kc3VtQqKC9Q9nGUzGjrG2QIh4BW8Y3PPq5NvilLxEKdwmC7Vf7aclhk7ouP1gr8giLSGab6Ah8g=
+aFvMpCawSSQ39HHjMznsSNeSr4w-3D-3DLO8C_Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE=
+7a0-2FkD5rFaDS1KEq7mLWr3wVpn28ywyseIoVmHxI3NM7el250Fg-2F6YdOL55L6exkNkUpPIF=
+jMgJV1ZojGpuwNe5-2F-2F76IT29vt97T1-2F6yI3v1iMMth6Lw61dREVDIeuTs4K7C1inaKwRO=
+YGqqq7ax6PxaQaKRXn4ySFSotShrLFXwmxF6CfepCp5SQN68eUQDLAmlRQH41dVQggsnKWLi7-2=
+BbMrsD" target=3D"_blank" style=3D"color: #6D6E70; text-decoration: none;" =
+class=3D"darkmode-text1">Apps</a></td>
+                            <td align=3D"right"><a href=3D"http://mailtrack=
+emailout1.namecheap.com/ls/click?upn=3DIpkEbt5cFshRDRNx3fNQxhlJXhDk-2FVKDaw=
+ywM2TUkYDuX18CtAnNuPIUa2JJFNVSWT1zc2NtKE1KdO4K4R75O8-2FdFCyraq4RNZO82EFfVXo=
+N4tKtP45bSEpBRJfApJBJWtnpIkcRv8rAfPJgeGahdWxCh2NzRyLd50kiW9ljColKKuIaeYBwzH=
+gI6JipGcrdyXrG-2BvROHOaOZv6oI1fKb5dgN0JMavvoCuonXoJMCQY-3DuxRn_Dv7OFDap31vv=
+5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkD5rFaDS1KEq7mLWr3wVpn29xvQStKHCWkIFOnLziqkZ=
+QWXJkZVTF8P7i4npjZKeps4M5USs-2BOA2ZQbpwsbUaINV7dSXqCHVZTQADUc630bahRylx1nNU=
+BPRoQv7Q9h0K-2BkPQA5z2Jst13zYEtXhSKFoCBvZaBtwTPNgYiCD4gZIms1kRXM6kn-2BC48Pz=
+NEaLOnWT18MlbVjurCnrEhBkdfd" target=3D"_blank"><img src=3D"https://mktg.nam=
+echeap.com/master/marketing/standard/icons/NC-Login_60x60.png" width=3D"30"=
+ style=3D"display: block;" alt=3D"Log in"/></a></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!-- HEADER WITH NAV : END --> =09
+          <!-- HERO GIF NO CTA: BEGIN -->  		=09
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"width: 640px;" class=3D"fluid" role=3D"presentation" width=
+=3D"640">
+            <tr>
+              <td>
+                <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" role=3D"presentation">
+                  <tr>
+                    <td>
+                      <table width=3D"100%" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0" role=3D"presentation" >
+                        <tr>
+                          <td bgcolor=3D"#0483ed" align=3D"center" style=3D=
+"font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-style: normal=
+; " class=3D"darkmode-bg3">
+                            <div style=3D"background:#0483ed; background-im=
+age:linear-gradient(#0483ed,#0483ed); color:#fff;" class=3D"darkmode-bg3 da=
+rkmode-text1">
+                              <div class=3D"gmail-blend-screen">
+                                <div class=3D"gmail-blend-difference">
+                                  <table width=3D"100%" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0" role=3D"presentation" >
+                                    <tr>
+                                      <td align=3D"center" style=3D"font-fa=
+mily: 'Open Sans', Arial, Helvetica, sans-serif; font-style: normal; paddin=
+g: 48px 24px 48px 24px;">
+                                        <h1 style=3D"color: #FFFFFF; margin=
+: 0px 16px 8px 16px; font-size: 38px; line-height: 46px; font-weight: 700; =
+ text-decoration: none;mso-line-height-rule: exactly;" class=3D"keep-white =
+mx-0 darkmode-text1">Welcome to Namecheap</h1>
+                                        <p style=3D"color: #FFFFFF; margin:=
+ 0px 16px 0px 16px; font-size: 18px; font-weight: 400; line-height: 28px; t=
+ext-decoration: none;mso-line-height-rule: exactly;" class=3D"keep-white mx=
+-0 darkmode-text2">Enjoy the best customer service and support</p>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <table border=3D"0" align=3D"center" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" style=3D"width:100%;" role=3D"presentati=
+on">
+                        <tr>
+                          <!-- gif light mode : begin -->
+                          <td align=3D"center" class=3D"darkmode-hide">
+                            <img src=3D"https://mktg.namecheap.com/transact=
+ional/welcome/day_0/imgs/CRM_2020_Welcome_Email_1280x400_Light_Mode.gif" al=
+t=3D"Namecheap" width=3D"640" border=3D"0" style=3D"display: block;width: 1=
+00%; max-width: 640px;" class=3D"desktop"/>=09
+                            <!--[if !mso]><! --><img src=3D"https://mktg.na=
+mecheap.com/transactional/welcome/day_0/imgs/CRM_2020_Welcome_Email_960x300=
+_Light_Mode.gif" alt=3D"Namecheap" width=3D"100%" border=3D"0" style=3D"dis=
+play: none; width: 100%; max-width: 480px;" class=3D"mobile"/><!--<![endif]=
+-->
+                          </td>
+                          <!-- gif light mode : end -->
+                          <!-- gif dark mode : begin -->
+                          <td align=3D"center" class=3D"darkmode-show" styl=
+e=3D"display: none;">
+                            <img src=3D"https://mktg.namecheap.com/transact=
+ional/welcome/day_0/imgs/CRM-2020-Welcome-Email-1280x400-Dark_Mode.gif" alt=
+=3D"Namecheap" width=3D"640" border=3D"0" style=3D"display: block;width: 10=
+0%; max-width: 640px;" class=3D"desktop"/>
+                            <!--[if !mso]><! --><img src=3D"https://mktg.na=
+mecheap.com/transactional/welcome/day_0/imgs/CRM_2020_Welcome_Email_960x300=
+_Dark_Mode.gif" alt=3D"Namecheap" width=3D"100%" border=3D"0" style=3D"disp=
+lay: none; width: 100%; max-width: 480px;" class=3D"mobile"/><!--<![endif]-=
+->
+                          </td>
+                          <!-- gif dark mode : end -->									=09
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!-- HERO GIF NO CTA: END -->			=09
+          <!-- SIGN IN: BEGIN -->  				=09
+          <!-- spacer 24px / 16px on mobile: begin -->
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"width: 640px;" class=3D"fluid" role=3D"presentation" width=
+=3D"640">
+            <tr>
+              <td bgcolor=3D"#ffffff" height=3D"24" class=3D"spacer-mob-16 =
+darkmode-bg2" style=3D"font-size: 0px; line-height: 24px;mso-line-height-ru=
+le:exactly;height: 24px;"><span style=3D"font-size: 0px; line-height: 0px;m=
+so-line-height-rule:exactly;">&nbsp;</span></td>
+            </tr>
+          </table>
+          <!-- spacer 24px / 16px on mobile: end -->
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"width: 640px;" class=3D"fluid" role=3D"presentation" width=
+=3D"640">
+            <tr>
+              <td bgcolor=3D"#ffffff" class=3D"darkmode-bg2">
+                <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" role=3D"presentation">
+                  <tr>
+                    <td align=3D"center" valign=3D"top" style=3D"padding: 2=
+4px 130px 24px 130px;" class=3D"px-24">
+                      <table width=3D"100%" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0" role=3D"presentation">
+                        <tr>
+                          <td bgcolor=3D"#f2f2f2" align=3D"center" valign=
+=3D"top" style=3D"font-family: 'Open Sans', Arial, Helvetica, sans-serif; b=
+order-radius: 8px; padding: 24px 20px 24px 20px;" class=3D"darkmode-bg3">
+                            <h3 style=3D"color: #4a4a4a; font-size: 20px; l=
+ine-height: 26px; font-weight: 700; margin: 0px 4px 16px 4px;mso-line-heigh=
+t-rule: exactly;" class=3D"mx-0 darkmode-text1">Username: rengeo</h3>
+                            <!-- button: begin --> =20
+                            <div style=3D"margin: 0px 4px 0px 4px;" class=
+=3D"mx-0">
+                              <!--[if mso]>
+                              <v:roundrect xmlns:v=3D"urn:schemas-microsoft=
+-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=3D"https:/=
+/www.namecheap.com/myaccount/login/?utm_medium=3Demail&utm_source=3DSendGri=
+d_Marketing&utm_campaign=3DMKTG_CRM_Welcome_Day_0_20211202&utm_content=3Dhe=
+ad_login" style=3D"height:48px;v-text-anchor:middle;width:331px;" arcsize=
+=3D"10.416666666666668%" stroke=3D"f" fillcolor=3D"#f14c2e">
+                                <w:anchorlock/>
+                                <center>
+                                  <![endif]--><a href=3D"http://mailtrackem=
+ailout1.namecheap.com/ls/click?upn=3DIpkEbt5cFshRDRNx3fNQxhlJXhDk-2FVKDawyw=
+M2TUkYDuX18CtAnNuPIUa2JJFNVSWT1zc2NtKE1KdO4K4R75O8-2FdFCyraq4RNZO82EFfVXoN4=
+tKtP45bSEpBRJfApJBJWtnpIkcRv8rAfPJgeGahdWxCh2NzRyLd50kiW9ljColKKuIaeYBwzHgI=
+6JipGcrdoUOcanHuhNBqux9VUis-2F-2FCn-2FDiGWuJZvWLEByBxdsiY-3Dd965_Dv7OFDap31=
+vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkD5rFaDS1KEq7mLWr3wVpn2-2BhaGpOnSbpHcwQzKU=
+1HfwCQKtKeKn6CM-2F-2B4bfuuCh2zlJ1QcZ6BZF81O1YNKKOX8hkQKtmFRX-2F2aqqkfGSj-2B=
+38ByIWdJueJ24EXdfp1E54Y3fooyMZWXY7BOOr7XkxM3KcVn5Aq6RGPWTSCx5CXbLJO-2BIp41u=
+47QDbXSvgP-2B-2FWH76k-2BS5bkUFEZwNCZ-2BKDeH" target=3D"_blank" style=3D"bac=
+kground-image: linear-gradient(#f14c2e, #f14c2e);border-radius:5px; color:#=
+ffffff; display:inline-block; font-size: 16px; line-height: 48px; font-weig=
+ht: bold; text-align:center;text-decoration:none;width:100%;-webkit-text-si=
+ze-adjust:none;" class=3D"color1 darkmode-bg5">Sign in to Your Account</a><=
+!--[if mso]>
+                                </center>
+                              </v:roundrect>
+                              <![endif]-->
+                            </div>
+                            <!-- button: end -->
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!-- spacer 24px / 16px on mobile: begin -->
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"width: 640px;" class=3D"fluid" role=3D"presentation" width=
+=3D"640">
+            <tr>
+              <td bgcolor=3D"#ffffff" height=3D"24" class=3D"spacer-mob-16 =
+darkmode-bg2" style=3D"font-size: 0px; line-height: 24px;mso-line-height-ru=
+le:exactly;height: 24px;"><span style=3D"font-size: 0px; line-height: 0px;m=
+so-line-height-rule:exactly;">&nbsp;</span></td>
+            </tr>
+          </table>
+          <!-- spacer 24px / 16px on mobile: end -->=09
+          <!-- SIGN IN: END -->=20
+          <!-- TEXT: BEGIN -->  	 	=09
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"width: 640px;" class=3D"fluid" role=3D"presentation" width=
+=3D"640">
+            <tr>
+              <td bgcolor=3D"#ffffff" class=3D"darkmode-bg2">
+                <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" role=3D"presentation">
+                  <tr>
+                    <td align=3D"center" valign=3D"top" style=3D"font-famil=
+y: 'Open Sans', Arial, Helvetica, sans-serif; padding: 24px 24px 24px 24px;=
+" class=3D"px-24">
+                      <h2 style=3D"color: #4a4a4a; font-size: 32px; line-he=
+ight: 38px; font-weight: 400; margin: 0px 40px 20px 40px;mso-line-height-ru=
+le: exactly;" class=3D"mx-0 darkmode-text1">Launch your business</h2>
+                      <p style=3D"color: #6d6e70; font-size: 18px; font-wei=
+ght: 400; margin: 0px 40px 0px 40px; line-height: 28px;mso-line-height-rule=
+: exactly;" class=3D"mx-0 darkmode-text2">We have everything you need to la=
+unch your online business, from finding the perfect domain to building, hos=
+ting, and securing your site.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!-- TEXT: END -->
+          <!-- TWO-COL 3: BEGIN -->=09
+          <!-- spacer 48px / 24px on mobile: begin -->
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"width: 640px;" class=3D"fluid" role=3D"presentation" width=
+=3D"640">
+            <tr>
+              <td bgcolor=3D"#ffffff" height=3D"48" class=3D"spacer-mob-24 =
+darkmode-bg2" style=3D"font-size: 0px; line-height: 48px;mso-line-height-ru=
+le:exactly;height: 48px;"><span style=3D"font-size: 0px; line-height: 0px;m=
+so-line-height-rule:exactly;">&nbsp;</span></td>
+            </tr>
+          </table>
+          <!-- spacer 48px / 24px on mobile: end -->					=09
+          <!-- two-col 3 - content right: begin -->
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"width: 640px;" class=3D"fluid" role=3D"presentation" width=
+=3D"640">
+            <tr>
+              <td bgcolor=3D"#FFFFFF" style=3D"padding: 8px 0px 8px 0px;" c=
+lass=3D"darkmode-bg2">
+                <div class=3D"two-col" style=3D"text-align:center;font-size=
+:0;">
+                  <!--[if mso]>
+                  <table role=3D"presentation" width=3D"100%">
+                    <tr>
+                      <td style=3D"width:42%;" valign=3D"top">
+                        <![endif]-->
+                        <div class=3D"column" style=3D"width:100%;max-width=
+:256px;display:inline-block;vertical-align:top;">
+                          <table width=3D"100%" border=3D"0" cellspacing=3D=
+"0" cellpadding=3D"0" role=3D"presentation">
+                            <tr>
+                              <td style=3D"padding: 16px 16px 16px 40px;" c=
+lass=3D"px-24">
+                                <p style=3D"margin:0;">
+                                  <img src=3D"https://mktg.namecheap.com/tr=
+ansactional/welcome/day_0/imgs/Domains_400x268px.png" width=3D"200" alt=3D"=
+Domains" style=3D"display:block;width:100%;height:auto;max-width:200px!impo=
+rtant;" class=3D"img-center"/>
+                                </p>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                        <!--[if mso]>
+                      </td>
+                      <td style=3D"width:58%;" valign=3D"top">
+                        <![endif]-->
+                        <div class=3D"column" style=3D"width:100%;max-width=
+:382px;display:inline-block;vertical-align:top;">
+                          <table width=3D"100%" border=3D"0" cellspacing=3D=
+"0" cellpadding=3D"0" role=3D"presentation">
+                            <tr>
+                              <td style=3D"padding: 16px 64px 16px 16px;tex=
+t-align:left;" class=3D"px-24">
+                                <table width=3D"100%" border=3D"0" cellspac=
+ing=3D"0" cellpadding=3D"0" role=3D"presentation">
+                                  <tr>
+                                    <td align=3D"left" style=3D"font-family=
+: 'Open Sans', Arial, Helvetica, sans-serif; font-style: normal;">
+                                      <h4 style=3D"color: #4a4a4a; font-siz=
+e: 20px; font-weight: 700; margin: 0px 0px 12px 0px; line-height: 26px;mso-=
+line-height-rule: exactly;" class=3D"darkmode-text1">Buy a domain</h4>
+                                      <p style=3D"color: #6d6e70; font-size=
+: 16px; font-weight: 400; margin: 0px 0px 24px 0px; line-height: 24px; mso-=
+line-height-rule: exactly;" class=3D"darkmode-text2">Discover our latest do=
+main deals and check our pricing on hundreds of in-demand TLDs today.</p>
+                                      <!-- button: begin -->
+                                      <div style=3D"float: left;">
+                                        <!--[if mso]>
+                                        <v:roundrect xmlns:v=3D"urn:schemas=
+-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=
+=3D"https://www.namecheap.com/domains/domain-name-search/?utm_medium=3Demai=
+l&utm_source=3DSendGrid_Marketing&utm_campaign=3DMKTG_CRM_Welcome_Day_0_202=
+11202&utm_content=3Dcontent_domains" style=3D"height:40px;v-text-anchor:mid=
+dle;width:165px;" arcsize=3D"10.416666666666668%" stroke=3D"f" fillcolor=3D=
+"#8CC1C1">
+                                          <w:anchorlock/>
+                                          <center>
+                                            <![endif]--><a href=3D"http://m=
+ailtrackemailout1.namecheap.com/ls/click?upn=3DIpkEbt5cFshRDRNx3fNQxhlJXhDk=
+-2FVKDawywM2TUkYDPhyG1nMnW7wum2Fb-2BBmabZctX-2FCcNkIJuJGp5UFSttNzdkryULHH72=
+1ojZqcnw9QZXoKynNm0eIB-2BAGqCinOThm3w61nDFzVZiUvWnyHuOLbRug-2BaL5PqwUfcVGZz=
+L6wUECO8lTs4GblGYHPf735v37UGpdaHnntQDpXtnNJOPDFbYX0b9NvEsDSRh3IGG3Z0eptAlub=
+zrFwTKgshkwxViCxV_Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkD5rFaDS1KEq7m=
+LWr3wVpn2P0uJrBXL-2FUOPONofvh9usS88CbevEjRtoHWqQVB7t2BqJ47mpk11FX-2BZFMs43T=
+U23EESkqNvxVB3DczqBJwp9MUtHdV5dXuPeSd1N-2F4xCgW4fJntvpV-2BkOT-2BQompYJoBYMq=
+YDk-2Fofyq-2Fo5tdXJnWeS2-2BvgItegfGBPbzW9q-2FR5KbHtsXsE-2BTdzZJrC6HVj3i" ta=
+rget=3D"_blank" style=3D"background-image: linear-gradient(#8CC1C1, #8CC1C1=
+);border-radius:5px;color:#ffffff;display:inline-block;font-size: 16px; fon=
+t-weight: bold; color: #ffffff;line-height:40px;text-align:center;text-deco=
+ration:none;width:165px;-webkit-text-size-adjust:none;" class=3D"color2 dar=
+kmode-bg4">Search Domains</a><!--[if mso]>
+                                          </center>
+                                        </v:roundrect>
+                                        <![endif]-->
+                                      </div>
+                                      <!-- button: end -->
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                        <!--[if mso]>
+                      </td>
+                    </tr>
+                  </table>
+                  <![endif]-->
+                </div>
+              </td>
+            </tr>
+            <!-- spacer 48px / 24px on mobile begin -->
+            <tr>
+              <td bgcolor=3D"#ffffff" height=3D"48" class=3D"spacer-mob-24 =
+darkmode-bg2" style=3D"font-size: 0px; line-height: 48px;mso-line-height-ru=
+le:exactly;height: 48px;"><span style=3D"font-size: 0px; line-height: 0px;m=
+so-line-height-rule:exactly;">&nbsp;</span></td>
+            </tr>
+            <!-- spacer 48px / 24px on mobile end -->				 =20
+          </table>
+          <!-- two-col 3 - content right: end -->
+          <!-- two-col 3 - content left: begin -->
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"width: 640px;" class=3D"fluid" role=3D"presentation" width=
+=3D"640">
+            <tr>
+              <td bgcolor=3D"#FFFFFF" style=3D"padding: 8px 0px 8px 0px;" c=
+lass=3D"darkmode-bg2">
+                <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" role=3D"presentation">
+                  <tr>
+                    <td align=3D"left">
+                      <div class=3D"two-col" style=3D"text-align:center;fon=
+t-size:0;direction:rtl;">
+                        <!--[if mso]>
+                        <table role=3D"presentation" width=3D"100%" dir=3D"=
+rtl">
+                          <tr>
+                            <td style=3D"width:42%;" valign=3D"top" dir=3D"=
+ltr">
+                              <![endif]-->
+                              <div class=3D"column" style=3D"width:100%;max=
+-width:256px;display:inline-block;vertical-align:top;direction:ltr;">
+                                <table width=3D"100%" border=3D"0" cellspac=
+ing=3D"0" cellpadding=3D"0" role=3D"presentation">
+                                  <tr>
+                                    <td style=3D"padding:16px 40px 16px 16p=
+x;" class=3D"px-24">
+                                      <p style=3D"margin:0;">
+                                        <img src=3D"https://mktg.namecheap.=
+com/transactional/welcome/day_0/imgs/Hosting_400x360px_V2.png" width=3D"200=
+" alt=3D"Hosting" style=3D"display:block;width:100%;height:auto;max-width:2=
+00px!important;" class=3D"img-center"/>
+                                      </p>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <!--[if mso]>
+                            </td>
+                            <td style=3D"width:58%;" valign=3D"top" dir=3D"=
+ltr">
+                              <![endif]-->
+                              <div class=3D"column" style=3D"width:100%;max=
+-width:382px;display:inline-block;vertical-align:top;direction:ltr;">
+                                <table width=3D"100%" border=3D"0" cellspac=
+ing=3D"0" cellpadding=3D"0" role=3D"presentation">
+                                  <tr>
+                                    <td style=3D"padding:16px 16px 16px 64p=
+x;text-align:left;" class=3D"px-24">
+                                      <table width=3D"100%" border=3D"0" ce=
+llspacing=3D"0" cellpadding=3D"0" role=3D"presentation">
+                                        <tr>
+                                          <td align=3D"left" style=3D"font-=
+family: 'Open Sans', Arial, Helvetica, sans-serif; font-style: normal;">
+                                            <h4 style=3D"color: #4a4a4a; fo=
+nt-size: 20px; font-weight: 700; margin: 0px 0px 12px 0px; line-height: 26p=
+x;mso-line-height-rule: exactly;" class=3D"darkmode-text1">Set up hosting</=
+h4>
+                                            <p style=3D"color: #6d6e70; fon=
+t-size: 16px; font-weight: 400; margin: 0px 0px 24px 0px; line-height: 24px=
+;mso-line-height-rule: exactly;" class=3D"darkmode-text2">Launch your site =
+in minutes with our reliable, secure and stress-free hosting options.</p>
+                                            <!-- button: begin -->
+                                            <div style=3D"float: left;">
+                                              <!--[if mso]>
+                                              <v:roundrect xmlns:v=3D"urn:s=
+chemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word"=
+ href=3D"https://www.namecheap.com/hosting/?utm_medium=3Demail&utm_source=
+=3DSendGrid_Marketing&utm_campaign=3DMKTG_CRM_Welcome_Day_0_20211202&utm_co=
+ntent=3Dcontent_hosting" style=3D"height:40px;v-text-anchor:middle;width:16=
+5px;" arcsize=3D"10.416666666666668%" stroke=3D"f" fillcolor=3D"#8CC1C1">
+                                                <w:anchorlock/>
+                                                <center>
+                                                  <![endif]--><a href=3D"ht=
+tp://mailtrackemailout1.namecheap.com/ls/click?upn=3DIpkEbt5cFshRDRNx3fNQxh=
+lJXhDk-2FVKDawywM2TUkYCVq0Uq2gBP0uvZW8XzUSJAdewci-2BcBBHZZbZAmNuvuEZ9xDerWt=
+QAcKJtA-2FBILRWU6giSy8eQznuYZrHrNMXL-2BvlH-2B0ux41oBPzk3LQl8EXcUXFRc-2F1qd6=
+Bbmq9mGauYeXjSVRuCd3QqiiAP8bifSViqyx-2Bau-2BIB6bQ7alpmMugDwQaDYNZL2-2FB02Fh=
+o-2F3tH4-3Dv9bs_Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkD5rFaDS1KEq7mLW=
+r3wVpn2X3mHaZFOts1uVRSeVGP2UB9axRVNAvmomQulGEsrZb-2BiUzZtcLggfGhDH25sl44oHu=
+LKxJ8f-2FiyBbnQnujiWhOpH-2BQXMGL6G04tETTW9lSQrurtS3R3Mm29bBGTVLQYjW6nUB3Uj0=
+9KXxf2JR2BWk8FsjWOFFTXpfHs8Foc6r60pLp9PfQAK1Mss-2FPHC5Wl4" target=3D"_blank=
+" style=3D"background-image: linear-gradient(#8CC1C1, #8CC1C1);border-radiu=
+s:5px;color:#ffffff;display:inline-block;font-size: 16px; font-weight: bold=
+; color: #ffffff;line-height:40px;text-align:center;text-decoration:none;wi=
+dth:165px;-webkit-text-size-adjust:none;" class=3D"color2 darkmode-bg4">Vie=
+w Plans</a><!--[if mso]>
+                                                </center>
+                                              </v:roundrect>
+                                              <![endif]-->
+                                            </div>
+                                            <!-- button: end -->
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <!--[if mso]>
+                            </td>
+                          </tr>
+                        </table>
+                        <![endif]-->
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- spacer 48px / 24px on mobile begin -->
+            <tr>
+              <td bgcolor=3D"#ffffff" height=3D"48" class=3D"spacer-mob-24 =
+darkmode-bg2" style=3D"font-size: 0px; line-height: 48px;mso-line-height-ru=
+le:exactly;height: 48px;"><span style=3D"font-size: 0px; line-height: 0px;m=
+so-line-height-rule:exactly;">&nbsp;</span></td>
+            </tr>
+            <!-- spacer 48px / 24px on mobile end -->					 =20
+          </table>
+          <!-- two-col 3 - content left: end -->
+          <!-- TWO-COL 3 - CONTENT RIGHT: BEGIN -->
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"width: 640px;" class=3D"fluid" role=3D"presentation" width=
+=3D"640">
+            <tr>
+              <td bgcolor=3D"#FFFFFF" style=3D"padding: 8px 0px 8px 0px;" c=
+lass=3D"darkmode-bg2">
+                <div class=3D"two-col" style=3D"text-align:center;font-size=
+:0;">
+                  <!--[if mso]>
+                  <table role=3D"presentation" width=3D"100%">
+                    <tr>
+                      <td style=3D"width:42%;" valign=3D"top">
+                        <![endif]-->
+                        <div class=3D"column" style=3D"width:100%;max-width=
+:256px;display:inline-block;vertical-align:top;">
+                          <table width=3D"100%" border=3D"0" cellspacing=3D=
+"0" cellpadding=3D"0" role=3D"presentation">
+                            <tr>
+                              <td style=3D"padding: 16px 16px 16px 40px;" c=
+lass=3D"px-24">
+                                <p style=3D"margin:0;">
+                                  <img src=3D"https://mktg.namecheap.com/tr=
+ansactional/welcome/day_0/imgs/Apps@2x_V2.png" width=3D"200" alt=3D"Apps" s=
+tyle=3D"display:block;width:100%;height:auto;max-width:200px!important;" cl=
+ass=3D"img-center"/>
+                                </p>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                        <!--[if mso]>
+                      </td>
+                      <td style=3D"width:58%;" valign=3D"top">
+                        <![endif]-->
+                        <div class=3D"column" style=3D"width:100%;max-width=
+:382px;display:inline-block;vertical-align:top;">
+                          <table width=3D"100%" border=3D"0" cellspacing=3D=
+"0" cellpadding=3D"0" role=3D"presentation">
+                            <tr>
+                              <td style=3D"padding: 16px 64px 16px 16px;tex=
+t-align:left;" class=3D"px-24">
+                                <table width=3D"100%" border=3D"0" cellspac=
+ing=3D"0" cellpadding=3D"0" role=3D"presentation">
+                                  <tr>
+                                    <td align=3D"left" style=3D"font-family=
+: 'Open Sans', Arial, Helvetica, sans-serif; font-style: normal;">
+                                      <h4 style=3D"color: #4a4a4a; font-siz=
+e: 20px; font-weight: 700; margin: 0px 0px 12px 0px; line-height: 26px;mso-=
+line-height-rule: exactly;" class=3D"darkmode-text1">Build a new website</h=
+4>
+                                      <p style=3D"color: #6d6e70; font-size=
+: 16px; font-weight: 400; margin: 0px 0px 24px 0px; line-height: 24px; mso-=
+line-height-rule: exactly;" class=3D"darkmode-text2">Get all the tools you =
+need to build a beautiful website and connect your Namecheap domain in minu=
+tes.</p>
+                                      <!-- button: begin -->
+                                      <div style=3D"float: left;">
+                                        <!--[if mso]>
+                                        <v:roundrect xmlns:v=3D"urn:schemas=
+-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=
+=3D"https://www.namecheap.com/visual/site-maker/?utm_medium=3Demail&utm_sou=
+rce=3DSendGrid_Marketing&utm_campaign=3DMKTG_CRM_Welcome_Day_0_20211202&utm=
+_content=3Dcontent_site_maker" style=3D"height:40px;v-text-anchor:middle;wi=
+dth:165px;" arcsize=3D"10.416666666666668%" stroke=3D"f" fillcolor=3D"#8CC1=
+C1">
+                                          <w:anchorlock/>
+                                          <center>
+                                            <![endif]--><a href=3D"http://m=
+ailtrackemailout1.namecheap.com/ls/click?upn=3DIpkEbt5cFshRDRNx3fNQxhlJXhDk=
+-2FVKDawywM2TUkYDzk2XNhgGGS8n65Bm2rKru61xP1SSfctgV552VTo5uSNGdiinn-2BUACI6E=
+a-2FEPMmxEGZyEo1GF6fZmPEJywSS5fIqeXna64jnI-2Ba2YBkjFWtyQu3FGw1PpSOCPkGnOoXI=
+IJon2IF6iGS0RpqhgLdyya2Xc69TTMfIiap3RGfw1dg9PsM4x-2BVsXDukK966qA-2FdI-3Dkm8=
+K_Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkD5rFaDS1KEq7mLWr3wVpn2-2FdJBb=
+KsK21CauXcfpnh5gYx7WF6mlJkxOqh2xJSCURTYWIpehUijls9JUdYfqkTiDV-2FsGndAdDJS0p=
+aoiSeHtywwkSW0U47CLborLhCvEPJfTqvJXusV08wcByFeejdfpMl77i8TYkO6mF2c6tIP6iDEU=
+xAhHiYwU-2BNti1ZxD8zFVall3dOiuK2cEgiolkSO" target=3D"_blank" style=3D"backg=
+round-image: linear-gradient(#8CC1C1, #8CC1C1);border-radius:5px;color:#fff=
+fff;display:inline-block;font-size: 16px; font-weight: bold; color: #ffffff=
+;line-height:40px;text-align:center;text-decoration:none;width:165px;-webki=
+t-text-size-adjust:none;" class=3D"color2 darkmode-bg4">Try for Free</a><!-=
+-[if mso]>
+                                          </center>
+                                        </v:roundrect>
+                                        <![endif]-->
+                                      </div>
+                                      <!-- button: end -->
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                        <!--[if mso]>
+                      </td>
+                    </tr>
+                  </table>
+                  <![endif]-->
+                </div>
+              </td>
+            </tr>
+            <!-- spacer 48px / 24px on mobile begin -->
+            <tr>
+              <td bgcolor=3D"#ffffff" height=3D"48" class=3D"spacer-mob-24 =
+darkmode-bg2" style=3D"font-size: 0px; line-height: 48px;mso-line-height-ru=
+le:exactly;height: 48px;mso-text-raise:48px;"><span style=3D"font-size: 0px=
+; line-height: 0px;mso-line-height-rule:exactly;">&nbsp;</span></td>
+            </tr>
+            <!-- spacer 48px / 24px on mobile end -->				 =20
+          </table>
+          <!-- TWO-COL 3 - CONTENT RIGHT: END -->
+          <!-- TWO-COL 3 - CONTENT LEFT: BEGIN -->=20
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"width: 640px;" class=3D"fluid" role=3D"presentation" width=
+=3D"640">
+            <tr>
+              <td bgcolor=3D"#FFFFFF" style=3D"padding: 8px 0px 8px 0px;" c=
+lass=3D"darkmode-bg2">
+                <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" role=3D"presentation">
+                  <tr>
+                    <td align=3D"left">
+                      <div class=3D"two-col" style=3D"text-align:center;fon=
+t-size:0;direction:rtl;">
+                        <!--[if mso]>
+                        <table role=3D"presentation" width=3D"100%" dir=3D"=
+rtl">
+                          <tr>
+                            <td style=3D"width:42%;" valign=3D"top" dir=3D"=
+ltr">
+                              <![endif]-->
+                              <div class=3D"column" style=3D"width:100%;max=
+-width:256px;display:inline-block;vertical-align:top;direction:ltr;">
+                                <table width=3D"100%" border=3D"0" cellspac=
+ing=3D"0" cellpadding=3D"0" role=3D"presentation">
+                                  <tr>
+                                    <td style=3D"padding:16px 40px 16px 16p=
+x;" class=3D"px-24">
+                                      <p style=3D"margin:0;">
+                                        <img src=3D"https://mktg.namecheap.=
+com/transactional/welcome/day_0/imgs/Security_400x284px.png" width=3D"200" =
+alt=3D"Security" style=3D"display:block;width:100%;height:auto;max-width:20=
+0px!important;" class=3D"img-center"/>
+                                      </p>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <!--[if mso]>
+                            </td>
+                            <td style=3D"width:58%;" valign=3D"top" dir=3D"=
+ltr">
+                              <![endif]-->
+                              <div class=3D"column" style=3D"width:100%;max=
+-width:382px;display:inline-block;vertical-align:top;direction:ltr;">
+                                <table width=3D"100%" border=3D"0" cellspac=
+ing=3D"0" cellpadding=3D"0" role=3D"presentation">
+                                  <tr>
+                                    <td style=3D"padding:16px 16px 16px 64p=
+x;text-align:left;" class=3D"px-24">
+                                      <table width=3D"100%" border=3D"0" ce=
+llspacing=3D"0" cellpadding=3D"0" role=3D"presentation">
+                                        <tr>
+                                          <td align=3D"left" style=3D"font-=
+family: 'Open Sans', Arial, Helvetica, sans-serif; font-style: normal;">
+                                            <h4 style=3D"color: #4a4a4a; fo=
+nt-size: 20px; font-weight: 700; margin: 0px 0px 12px 0px; line-height: 26p=
+x;mso-line-height-rule: exactly;" class=3D"darkmode-text1">Secure your webs=
+ite</h4>
+                                            <p style=3D"color: #6d6e70; fon=
+t-size: 16px; font-weight: 400; margin: 0px 0px 24px 0px; line-height: 24px=
+;mso-line-height-rule: exactly;" class=3D"darkmode-text2">Protect your webs=
+ite's data fast with high-quality SSL certificates for every business and b=
+udget.</p>
+                                            <!-- button: begin -->
+                                            <div style=3D"float: left;">
+                                              <!--[if mso]>
+                                              <v:roundrect xmlns:v=3D"urn:s=
+chemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word"=
+ href=3D"https://www.namecheap.com/security/?utm_medium=3Demail&utm_source=
+=3DSendGrid_Marketing&utm_campaign=3DMKTG_CRM_Welcome_Day_0_20211202&utm_co=
+ntent=3Dcontent_security" style=3D"height:40px;v-text-anchor:middle;width:1=
+65px;" arcsize=3D"10.416666666666668%" stroke=3D"f" fillcolor=3D"#8CC1C1">
+                                                <w:anchorlock/>
+                                                <center>
+                                                  <![endif]--><a href=3D"ht=
+tp://mailtrackemailout1.namecheap.com/ls/click?upn=3DIpkEbt5cFshRDRNx3fNQxh=
+lJXhDk-2FVKDawywM2TUkYB91JOm7-2BPAO4tOk6uch-2Be-2BBIz4sXxrZ2GbZrubiJt1X6DW5=
+ADT95dKAmUE-2B6CqI9cXfYHBc1gclSA4BjAECdvshPbpYtsSWtSNgBSWnSAFFF-2BADXnl1uBI=
+gWMh8oPVGUfRIW6RgmEfjvSiAtBrme-2F8xskqLaocc-2BAhwxunB5-2BuIHHoJ1PZh7PUbWx6f=
+pog-2FLA-3DAIQF_Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkD5rFaDS1KEq7mLW=
+r3wVpn2tQfq1FAsTe5Izu8TgJ-2B2ibf6cfsqQyYGvoRPSycVSCk90iM-2BA7DGixICGSgLRTTk=
+p3LhQxs1unYWfwmGMjiWDjW5qHNOVni1829AHFO7aBynUUkdMgYaPmouCo7xPFU3-2Bscqt4QDk=
+jvUazdPbOExV0UCSqHfEmeTmUO-2B4NwRw1cbj-2B5M6C-2F-2FGkW-2FBn7LP9BN" target=
+=3D"_blank" style=3D"background-image: linear-gradient(#8CC1C1, #8CC1C1);bo=
+rder-radius:5px;color:#ffffff;display:inline-block;font-size: 16px; font-we=
+ight: bold; color: #ffffff;line-height:40px;text-align:center;text-decorati=
+on:none;width:165px;-webkit-text-size-adjust:none;" class=3D"color2 darkmod=
+e-bg4">Get Protection</a><!--[if mso]>
+                                                </center>
+                                              </v:roundrect>
+                                              <![endif]-->
+                                            </div>
+                                            <!-- button: end -->
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <!--[if mso]>
+                            </td>
+                          </tr>
+                        </table>
+                        <![endif]-->
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- spacer 48px / 24px on mobile begin -->
+            <tr>
+              <td bgcolor=3D"#ffffff" height=3D"48" class=3D"spacer-mob-24 =
+darkmode-bg2" style=3D"font-size: 0px; line-height: 48px;mso-line-height-ru=
+le:exactly;height: 48px;"><span style=3D"font-size: 0px; line-height: 0px;m=
+so-line-height-rule:exactly;">&nbsp;</span></td>
+            </tr>
+            <!-- spacer 48px / 24px on mobile end -->					 =20
+          </table>
+          <!-- TWO-COL 3 - CONTENT LEFT: END -->
+          <!-- TWO-COL 3 - CONTENT RIGHT: BEGIN -->
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"width: 640px;" class=3D"fluid" role=3D"presentation" width=
+=3D"640">
+            <tr>
+              <td bgcolor=3D"#FFFFFF" style=3D"padding: 8px 0px 8px 0px;" c=
+lass=3D"darkmode-bg2">
+                <div class=3D"two-col" style=3D"text-align:center;font-size=
+:0;">
+                  <!--[if mso]>
+                  <table role=3D"presentation" width=3D"100%">
+                    <tr>
+                      <td style=3D"width:42%;" valign=3D"top" class=3D"px-2=
+4">
+                        <![endif]-->
+                        <div class=3D"column" style=3D"width:100%;max-width=
+:256px;display:inline-block;vertical-align:top;">
+                          <table width=3D"100%" border=3D"0" cellspacing=3D=
+"0" cellpadding=3D"0" role=3D"presentation">
+                            <tr>
+                              <td style=3D"padding: 16px 16px 16px 40px;" c=
+lass=3D"px-24">
+                                <p style=3D"margin:0;">
+                                  <img src=3D"https://mktg.namecheap.com/tr=
+ansactional/welcome/day_0/imgs/Email_400x264px.png" width=3D"200" alt=3D"Em=
+ail" style=3D"display:block;width:100%;height:auto;max-width:200px!importan=
+t;" class=3D"img-center"/>
+                                </p>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                        <!--[if mso]>
+                      </td>
+                      <td style=3D"width:58%;" valign=3D"top">
+                        <![endif]-->
+                        <div class=3D"column" style=3D"width:100%;max-width=
+:382px;display:inline-block;vertical-align:top;">
+                          <table width=3D"100%" border=3D"0" cellspacing=3D=
+"0" cellpadding=3D"0" role=3D"presentation">
+                            <tr>
+                              <td style=3D"padding: 16px 64px 16px 16px;tex=
+t-align:left;" class=3D"px-24">
+                                <table width=3D"100%" border=3D"0" cellspac=
+ing=3D"0" cellpadding=3D"0" role=3D"presentation">
+                                  <tr>
+                                    <td align=3D"left" style=3D"font-family=
+: 'Open Sans', Arial, Helvetica, sans-serif; font-style: normal;">
+                                      <h4 style=3D"color: #4a4a4a; font-siz=
+e: 20px; font-weight: 700; margin: 0px 0px 12px 0px; line-height: 26px;mso-=
+line-height-rule: exactly;" class=3D"darkmode-text1">Get professional email=
+</h4>
+                                      <p style=3D"color: #6d6e70; font-size=
+: 16px; font-weight: 400; margin: 0px 0px 24px 0px; line-height: 24px; mso-=
+line-height-rule: exactly;" class=3D"darkmode-text2">Impress your clients w=
+ith a branded, customized email address that's ideal for your personal and =
+business needs.</p>
+                                      <!-- button: begin -->
+                                      <div style=3D"float: left;">
+                                        <!--[if mso]>
+                                        <v:roundrect xmlns:v=3D"urn:schemas=
+-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=
+=3D"https://www.namecheap.com/hosting/email/?utm_medium=3Demail&utm_source=
+=3DSendGrid_Marketing&utm_campaign=3DMKTG_CRM_Welcome_Day_0_20211202&utm_co=
+ntent=3Dcontent_email" style=3D"height:40px;v-text-anchor:middle;width:165p=
+x;" arcsize=3D"10.416666666666668%" stroke=3D"f" fillcolor=3D"#8CC1C1">
+                                          <w:anchorlock/>
+                                          <center>
+                                            <![endif]--><a href=3D"http://m=
+ailtrackemailout1.namecheap.com/ls/click?upn=3DIpkEbt5cFshRDRNx3fNQxhlJXhDk=
+-2FVKDawywM2TUkYCljDZFBZF2u2mh3lj30GVxhZ4SNuN20fdr31JTrIIcAiPyZQxypCUb5f7A2=
+2vS6KREojL9w7EqUOnSPAfXqjFoOGqR3FLnTgcIg-2FLDEKsQmctlFKSB0iAEY0RHSn8UoPfoJP=
+A7LUk6kmOk32LqvY4bcgdBc1XMiQ5IC4m6hrTb-2B24wMkvzgE85HLcy-2BLN-2BVls-3Dr1ae_=
+Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkD5rFaDS1KEq7mLWr3wVpn2OBrQ5EQGu=
+a6RGCRvLN3Tupdicj2vqHAvNeRlEkKBEg-2FV7l9i7IWEbubY99P0gyiZPE8bodjysEv7vGqRmG=
+Z8JLoC5FwKVZxtKEQBvMKHLT2Vi-2B5j3lq1kk1RVNt-2BXTbABVl02M2N4Afly03R2Ja9wQn9I=
+bY3meLlIeFUOTKjvsIMud9-2FmRCgTMEtBTDbMIr9" target=3D"_blank" style=3D"backg=
+round-image: linear-gradient(#8CC1C1, #8CC1C1);border-radius:5px;color:#fff=
+fff;display:inline-block;font-size: 16px; font-weight: bold; color: #ffffff=
+;line-height:40px;text-align:center;text-decoration:none;width:165px;-webki=
+t-text-size-adjust:none;" class=3D"color2 darkmode-bg4">Get Email</a><!--[i=
+f mso]>
+                                          </center>
+                                        </v:roundrect>
+                                        <![endif]-->
+                                      </div>
+                                      <!-- button: end -->
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </div>
+                        <!--[if mso]>
+                      </td>
+                    </tr>
+                  </table>
+                  <![endif]-->
+                </div>
+              </td>
+            </tr>
+            <!-- spacer 48px / 24px on mobile begin -->
+            <tr>
+              <td bgcolor=3D"#ffffff" height=3D"48" class=3D"spacer-mob-24 =
+darkmode-bg2" style=3D"font-size: 0px; line-height: 48px;mso-line-height-ru=
+le:exactly;height: 48px;"><span style=3D"font-size: 0px; line-height: 0px;m=
+so-line-height-rule:exactly;">&nbsp;</span></td>
+            </tr>
+            <!-- spacer 48px / 24px on mobile end -->				 =20
+          </table>
+          <!-- TWO-COL 3 - CONTENT RIGHT: END -->
+          <!-- TWO-COL 3: END -->=20
+          <!-- TEXT WITH BUTTON: BEGIN -->  	 	=09
+          <!-- line spacer 32px / 24px on mobile: begin -->
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"width: 640px;" class=3D"fluid" role=3D"presentation" width=
+=3D"640">
+            <tr>
+              <td bgcolor=3D"#ffffff" style=3D"padding: 0px 81px 0px 81px;"=
+ class=3D"darkmode-bg2 px-24">
+                <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" role=3D"presentation">
+                  <tr>
+                    <td height=3D"32" style=3D"font-size: 0px; line-height:=
+ 32px;mso-line-height-rule:exactly;border-top: 1px solid #d1d1d1;height: 32=
+px;box-sizing: border-box;" class=3D"spacer-mob-24 darkmode-bg2 darkmode-bo=
+rder1"><span style=3D"font-size: 0px; line-height: 0px;mso-line-height-rule=
+:exactly;">&nbsp;</span></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!-- line spacer 32px / 24px on mobile: end -->
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"width: 640px;" class=3D"fluid" role=3D"presentation" width=
+=3D"640">
+            <tr>
+              <td bgcolor=3D"#ffffff" class=3D"darkmode-bg2">
+                <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" role=3D"presentation">
+                  <tr>
+                    <td align=3D"center" valign=3D"top" style=3D"font-famil=
+y: 'Open Sans', Arial, Helvetica, sans-serif; padding: 24px 24px 24px 24px;=
+" class=3D"px-24">
+                      <h2 style=3D"color: #4a4a4a; font-size: 32px; line-he=
+ight: 38px; font-weight: 400; margin: 0px 40px 20px 40px;mso-line-height-ru=
+le: exactly;" class=3D"mx-0 darkmode-text1">Control your notifications</h2>
+                      <p style=3D"color: #6d6e70; font-size: 18px; font-wei=
+ght: 400; margin: 0px 40px 32px 40px; line-height: 28px;mso-line-height-rul=
+e: exactly;" class=3D"mx-0 darkmode-text2 text-16-24">Over the next few wee=
+ks, we'll share some tips on how to start your next project. We want you to=
+ have the power to control what, where, and when we communicate with you.</=
+p>
+                      <!-- button: begin --> =20
+                      <div style=3D"margin: 0px 4px 0px 4px;" class=3D"mx-0=
+">
+                        <!--[if mso]>
+                        <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:v=
+ml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=3D"https://ap.ww=
+w.namecheap.com/settings/tools/notifications?utm_medium=3Demail&utm_source=
+=3DSendGrid_Marketing&utm_campaign=3DMKTG_CRM_Welcome_Day_0_20211202&utm_co=
+ntent=3Dcontent_notifications" style=3D"height:48px;v-text-anchor:middle;wi=
+dth:240px;" arcsize=3D"10.416666666666668%" stroke=3D"f" fillcolor=3D"#f14c=
+2e">
+                          <w:anchorlock/>
+                          <center>
+                            <![endif]--><a href=3D"http://mailtrackemailout=
+1.namecheap.com/ls/click?upn=3DIpkEbt5cFshRDRNx3fNQxh5gp-2FwlGx-2Fy5TSHlUpU=
+-2BVp-2FtYf68EheiulAJKFjQj1aIfh-2BNFuZbp1yNHoG3u-2Fz78rkgxppLNPaofSLxNLC2hx=
+iOODo4QqMYdaMoNn297PzU-2F0n29fcX01pmLflpb-2Blgzvf2hbZ4Tm1DJHcxTCHo79wssv6iK=
+YfQMTCIthVAdfCFWUkVft6FulmEYLquHM10GKKhamJ4CgvDsk5so9qLodqYgTNMUU39mTVwJESI=
+dUDqZRZ_Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkD5rFaDS1KEq7mLWr3wVpn2O=
+BrQ5EQGua6RGCRvLN3Tun9r-2Fo0WhlUesmcXDKDw7eePZcNgF6oe4aNJ-2FMHSmM66hCbZXERb=
+9IpLSXBG8UlaA9BV0ouYMMFYZFyQuni0is-2F3BkughjKLaVk5ikFKX5dN57PLtz2Rt-2F9nT0s=
+ESRVgSMWVzUQASLzk0NPB8qE1ES5Ylv8oLsiyHlXHP-2Byp2Eun" target=3D"_blank" styl=
+e=3D"background-image: linear-gradient(#f14c2e, #f14c2e);border-radius:5px;=
+ color:#ffffff; display:inline-block; font-size: 16px; line-height: 48px; f=
+ont-weight: bold; text-align:center;text-decoration:none;width:240px;-webki=
+t-text-size-adjust:none;" class=3D"color1 button-mobile darkmode-bg5">Updat=
+e Your Preferences</a><!--[if mso]>
+                          </center>
+                        </v:roundrect>
+                        <![endif]-->
+                      </div>
+                      <!-- button: end -->					=09
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!-- spacer 32px / 24px on mobile: begin -->
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"width: 640px;" class=3D"fluid" role=3D"presentation" width=
+=3D"640">
+            <tr>
+              <td bgcolor=3D"#ffffff" height=3D"32" class=3D"spacer-mob-24 =
+darkmode-bg2" style=3D"font-size: 0px; line-height: 32px;mso-line-height-ru=
+le:exactly;height: 32px;"><span style=3D"font-size: 0px; line-height: 0px;m=
+so-line-height-rule:exactly;">&nbsp;</span></td>
+            </tr>
+          </table>
+          <!-- spacer 32px / 24px on mobile: end -->
+          <!-- TEXT WITH BUTTON: END -->
+          <!-- SURVEY MODULE: BEGIN -->  	=09
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"width: 640px;" class=3D"fluid" role=3D"presentation" width=
+=3D"640">
+            <tr>
+              <td bgcolor=3D"#e3f7fc" class=3D"darkmode-bg3">
+                <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" role=3D"presentation">
+                  <tr>
+                    <td align=3D"center" valign=3D"top" style=3D"padding: 6=
+4px 32px 64px 32px;" class=3D"p-48-48">
+                      <table width=3D"100%" border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0" role=3D"presentation">
+                        <tr>
+                          <td bgcolor=3D"#ffffff" align=3D"center" valign=
+=3D"top" style=3D"border-radius: 5px; -webkit-border-radius: 5px; -moz-bord=
+er-radius: 5px; padding: 12px 0px 12px 0px; box-shadow: 0 1px 7px 0 rgba(0,=
+ 0, 0, 0.15);" class=3D"px-0 darkmode-bg2">
+                            <div style=3D"width:100%;margin:0px auto;">
+                              <div class=3D"two-col" style=3D"font-size:0;t=
+ext-align:left;">
+                                <!--[if mso]>
+                                <table role=3D"presentation" width=3D"100%"=
+ style=3D"text-align:left;">
+                                  <tr>
+                                    <td style=3D"width:32%;" valign=3D"top"=
+>
+                                      <![endif]-->
+                                      <div class=3D"column" style=3D"width:=
+100%;max-width:166px;display:inline-block;vertical-align:top;">
+                                        <table width=3D"100%" border=3D"0" =
+cellspacing=3D"0" cellpadding=3D"0" role=3D"presentation">
+                                          <tr>
+                                            <td style=3D"padding:12px 16px =
+12px 32px;" class=3D"px-24">
+                                              <p style=3D"margin:0;">
+                                                <img src=3D"https://mktg.na=
+mecheap.com/transactional/welcome/day_0/imgs/Survey_240x216.png" width=3D"1=
+20" alt=3D"Survey" style=3D"display:block;width:100%;height:auto;max-width:=
+120px!important;" />
+                                              </p>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </div>
+                                      <!--[if mso]>
+                                    </td>
+                                    <td style=3D"width:68%;" valign=3D"top"=
+>
+                                      <![endif]-->
+                                      <div class=3D"column" style=3D"width:=
+100%;max-width:408px;display:inline-block;vertical-align:top;">
+                                        <table width=3D"100%" border=3D"0" =
+cellspacing=3D"0" cellpadding=3D"0" role=3D"presentation">
+                                          <tr>
+                                            <td style=3D"padding:12px 32px =
+12px 16px;text-align:left;" class=3D"px-24">
+                                              <table width=3D"100%" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" role=3D"presentation">
+                                                <tr>
+                                                  <td align=3D"left" style=
+=3D"font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-style: nor=
+mal;">
+                                                    <h4 style=3D"color: #4a=
+4a4a; font-size: 18px; font-weight: 700; margin: 0px 0px 12px 0px; line-hei=
+ght: 26px;mso-line-height-rule: exactly;word-wrap:normal" class=3D"darkmode=
+-text1">Tell us what interests you</h4>
+                                                    <p style=3D"color: #6d6=
+e70; font-size: 16px; font-weight: 400; margin: 0px 0px 16px 0px; line-heig=
+ht: 24px;mso-line-height-rule: exactly;"  class=3D"darkmode-text2">Select t=
+he profile that best describes you so that we can send you relevant informa=
+tion.</p>
+                                                    <p style=3D"font-size: =
+16px; font-weight: normal; margin: 0px 0px 0px 0px; line-height: 24px;mso-l=
+ine-height-rule: exactly;"><a href=3D"http://mailtrackemailout1.namecheap.c=
+om/ls/click?upn=3DIpkEbt5cFshRDRNx3fNQxhOrTyXwlhYbQZLiWCfUFkzTwbVN0-2FDu2ym=
+wuw9jKJ0fn4N5NXtc37FP2EPg8QcO-2BPRQQrveGFQLO7U3BXVyIm4-3DvLNr_Dv7OFDap31vv5=
+D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkD5rFaDS1KEq7mLWr3wVpn2OBrQ5EQGua6RGCRvLN3Tul=
+6GwmQN0acUdeP41rzuMS0lkf8qM4k-2B1K8-2BndFAHFwXoE9EJGd-2Fk0VEorLlXCUdrMU2Zct=
+tLY6Jpcw6WsKgHd4-2B27QoIa-2BdQl8nd0DzT5UqlZADLSu4oERvhEouHgpmRUMFpE-2Fp7Ncr=
+-2FLCEP46t0yi0uVeLAYf2vu-2BWzBZAa-2FuM" target=3D"_blank" style=3D"color: #=
+de3723; text-decoration: none;" class=3D"darkmode-text5">Get better deals &=
+#x2192;</a></p>
+                                                  </td>
+                                                </tr>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </div>
+                                      <!--[if mso]>
+                                    </td>
+                                  </tr>
+                                </table>
+                                <![endif]-->
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!-- SURVEY MODULE: END -->
+          <!-- SUPPORT: BEGIN -->  	 	=09
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"width: 640px;" class=3D"fluid" role=3D"presentation" width=
+=3D"640">
+            <tr>
+              <td bgcolor=3D"#ffffff" style=3D"padding: 8px 0px 8px 0px;" c=
+lass=3D"darkmode-bg2 no-padding">
+                <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" role=3D"presentation">
+                  <tr>
+                    <td align=3D"center" valign=3D"top" style=3D"font-famil=
+y: 'Open Sans', Arial, Helvetica, sans-serif; padding: 40px 24px 40px 24px;=
+">
+                      <h3 style=3D"color: #4a4a4a; font-size: 24px; font-we=
+ight: bold; margin: 0px 40px 0px 40px; line-height: 36px;mso-line-height-ru=
+le: exactly;" class=3D"darkmode-text1 mx-0 h-20-30">Need help?</h3>
+                      <p style=3D"color: #6d6e70; font-size: 18px; font-wei=
+ght: 400; margin: 0px 40px 24px 40px; line-height: 28px;mso-line-height-rul=
+e: exactly;" class=3D"darkmode-text2 mx-0">We're always here for you.</p>
+                      <!-- button: begin -->
+                      <div>
+                        <!--[if mso]>
+                        <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:v=
+ml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=3D"https://www.n=
+amecheap.com/help-center/live-chat/?utm_medium=3Demail&utm_source=3DSendGri=
+d_Marketing&utm_campaign=3DMKTG_CRM_Welcome_Day_0_20211202&utm_content=3Dco=
+ntent_support" style=3D"height:48px;v-text-anchor:middle;width:236px;" arcs=
+ize=3D"10.416666666666668%" stroke=3D"f" fillcolor=3D"#8CC1C1">
+                          <w:anchorlock/>
+                          <center>
+                            <![endif]--><a href=3D"http://mailtrackemailout=
+1.namecheap.com/ls/click?upn=3DIpkEbt5cFshRDRNx3fNQxhlJXhDk-2FVKDawywM2TUkY=
+CKg7-2B57f-2F-2B5SJ9laBBIk3E-2B1SGM-2BPvxMgblcMALfHcT8d2ggHuWKAhJN8X30VM-2F=
+-2BMLjLfqzh7u0M8JZEObLxMxVoyJ6V-2BHhnsK3a9h0IRq7oowRZXAWMKg-2FcHwcHSIT18trp=
+f5JtInIJCIoJa8PX9gWUxZeGxwBnOAHH8Ebo-2FICivFlFzbciy2L2PdmWQ-2FZNJPRea1ybkga=
+JuxS9V5HcWV8v5X_Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkD5rFaDS1KEq7mLW=
+r3wVpn2OBrQ5EQGua6RGCRvLN3TuthEAEIZz-2BTU1Y1K8Rm-2BnNzcI26HHZwKeRmpLZHiHwyF=
+XarFL5jEaac-2BW1ebtEmYlTo5-2FMixXcnamoVrklwztxV5DAh9teVM2Fjsq0Wo2Z0TuhlrAoe=
+jLys287KFfSo7SwC92iQph0IaTOerKxx0zGfCRgFEedGookOSCFjTfDO2" target=3D"_blank=
+" style=3D"background-image: linear-gradient(#8CC1C1, #8CC1C1);border-radiu=
+s:5px;color:#ffffff;display:inline-block;font-size: 16px; font-weight: bold=
+; color: #ffffff;line-height:48px;text-align:center;text-decoration:none;wi=
+dth:236px;-webkit-text-size-adjust:none;" class=3D"color2 button-mobile dar=
+kmode-bg4">Chat with a Live Person</a><!--[if mso]>
+                          </center>
+                        </v:roundrect>
+                        <![endif]-->
+                      </div>
+                      <!-- button: end -->    =20
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!-- SUPPORT: END -->=09
+          <!-- FOOTER : BEGIN --> =20
+          <table width=3D"640" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" class=3D"fluid" role=3D"presentation">
+            <tr>
+              <td>
+                <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" role=3D"presentation">
+                  <tr>
+                    <td align=3D"center" style=3D"color:#6D6E70; font-famil=
+y: 'Open Sans', Arial, Helvetica, sans-serif; padding: 48px 24px 32px 24px;=
+" class=3D"darkmode-text2">
+                      <p style=3D"margin: 0px 0px 20px 0px; font-size: 20px=
+; font-weight: 600; line-height: 26px;">Follow Namecheap</p>
+                      <table width=3D"240" border=3D"0" align=3D"center" ce=
+llpadding=3D"0" cellspacing=3D"0" style=3D"width: 240px" role=3D"presentati=
+on">
+                        <tr>
+                          <td height=3D"50" align=3D"center">
+                            <a href=3D"http://mailtrackemailout1.namecheap.=
+com/ls/click?upn=3DIpkEbt5cFshRDRNx3fNQxlURWQLTAw-2FOV9bvPWhpF6DT6zK3iAAhCQ=
+zObLIVG9voZa9J_Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkD5rFaDS1KEq7mLWr=
+3wVpn2OBrQ5EQGua6RGCRvLN3TulDgEkjhp6iw5gxBa10SA-2Bba3ZTWmD3c1zyJZs-2FSEDrRX=
+lqd16BkLzLNnDcOXRXXskDZoQEWF9WRWOIz5LI-2Fc-2F9vIFsAglgsolcxqj0SlcFFXU3phN6m=
+y-2BELm-2FTjTmSw1OMrrOy-2Bwzahb0gyipfNEBWTzo9FWkCh5CDAUysgFhEK" target=3D"_=
+blank">
+                              <img src=3D"https://mktg.namecheap.com/master=
+/marketing/standard/footer/Facebook_64x64px.png" style=3D"color: #F14722; d=
+isplay: block; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font=
+-size: 16px; font-weight: 400;" border=3D"0" alt=3D"Facebook" height=3D"32"=
+ width=3D"32" class=3D"darkmode-hide"/><!--[if !mso]><! --><img src=3D"http=
+s://mktg.namecheap.com/master/marketing/hv/footer/Facebook_64x64px.png" sty=
+le=3D"color: #F14722; display: none; font-family: 'Open Sans', Arial, Helve=
+tica, sans-serif; font-size: 16px; font-weight: 400;" border=3D"0" alt=3D"F=
+acebook" height=3D"32" width=3D"32" class=3D"darkmode-show"/><!--<![endif]-=
+->
+                            </a>
+                          </td>
+                          <td align=3D"center">
+                            <a href=3D"http://mailtrackemailout1.namecheap.=
+com/ls/click?upn=3DIpkEbt5cFshRDRNx3fNQxlxRhoEHE-2B5VO2unAE85xJstvGo0opa-2B=
+hz8JMNJREphTVqH8_Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkD5rFaDS1KEq7mL=
+Wr3wVpn2OBrQ5EQGua6RGCRvLN3TujvyCsEZe-2FDFqj3iNrZfhJjsZ92jWsxjsoyYLllWZxWUy=
+fPcSOspqC0NQ56s2sT4u7hBi0Br1c0k-2BPDaIjxgHpmZQGsk9M9-2FaQvcg8zSD8U0s5ZjqpVW=
+ngJCklbgGRDZ1LaKNLz4BmgRTf195MuUp0GLXTPJYsAt-2FO0ZwLpk0asl" target=3D"_blan=
+k">
+                              <img src=3D"https://mktg.namecheap.com/master=
+/marketing/standard/footer/Twitter_64x64px.png" style=3D"color: #F14722; di=
+splay: block; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-=
+size: 16px; font-weight: 400;" border=3D"0" alt=3D"Twitter" height=3D"32" w=
+idth=3D"32" class=3D"darkmode-hide"/><!--[if !mso]><! --><img src=3D"https:=
+//mktg.namecheap.com/master/marketing/hv/footer/Twitter_64x64px.png" style=
+=3D"color: #F14722; display: none; font-family: 'Open Sans', Arial, Helveti=
+ca, sans-serif; font-size: 16px; font-weight: 400;" border=3D"0" alt=3D"Twi=
+tter" height=3D"32" width=3D"32" class=3D"darkmode-show"/><!--<![endif]-->
+                            </a>
+                          </td>
+                          <td align=3D"center">
+                            <a href=3D"http://mailtrackemailout1.namecheap.=
+com/ls/click?upn=3DIpkEbt5cFshRDRNx3fNQxuea9sUAJ5VIvNn-2B6CotVOqYmJUlrveurJ=
+tbC72F3qTsqk7P_Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkD5rFaDS1KEq7mLWr=
+3wVpn2OBrQ5EQGua6RGCRvLN3TuhN0PsCTVJL8oni4aGDFeklIhh86q85TNEdKausL8Xz3DiaEs=
+cZ6GqZW8wF5wPuNIPgaRiQrOcpbS4xZQNqFLioeri180j9xQpEhksod5U68OpIwOR65Cxb7aYaO=
+-2BxY-2F8sKzHGmd3oxwxQYyvp-2F8Y-2FneEehApwYKPn8L-2BvzlL2-2Bj" target=3D"_bl=
+ank">
+                              <img src=3D"https://mktg.namecheap.com/master=
+/marketing/standard/footer/Instagram_64x64px.png" style=3D"color: #F14722; =
+display: block; font-family: 'Open Sans', Arial, Helvetica, sans-serif; fon=
+t-size: 16px; font-weight: 400;" border=3D"0" alt=3D"Instagram" height=3D"3=
+2" width=3D"32" class=3D"darkmode-hide"/><!--[if !mso]><! --><img src=3D"ht=
+tps://mktg.namecheap.com/master/marketing/hv/footer/Instagram_64x64px.png" =
+style=3D"color: #F14722; display: none; font-family: 'Open Sans', Arial, He=
+lvetica, sans-serif; font-size: 16px; font-weight: 400;" border=3D"0" alt=
+=3D"Instagram" height=3D"32" width=3D"32" class=3D"darkmode-show"/><!--<![e=
+ndif]-->
+                            </a>
+                          </td>
+                          <td align=3D"center">
+                            <a href=3D"http://mailtrackemailout1.namecheap.=
+com/ls/click?upn=3DIpkEbt5cFshRDRNx3fNQxv2wSHpWrxGVFqHS4xlBGiJqoi-2BwGOWbm1=
+v8wWtXyEk39Tc5qNDpjWzJWiG85UxEg6-2FzcGAasownT8QN-2B-2BFM3cs-3DVB2S_Dv7OFDap=
+31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkD5rFaDS1KEq7mLWr3wVpn2OBrQ5EQGua6RGCRvL=
+N3Tug3a3Kd3RDVdpxFltd3IlVoJML-2BJfrQ8Ri0e4InziOpMwhyEmH1ZQxyAa-2FZobLh9FnML=
+pn9PdrPoKzGJcHsuaawWuLwaMmMPSDWht-2BdPkF9LC13RaD68LinYdcQn-2FhzaZzqylu4QSRA=
+mKKCpDweWbmuRjavcHQgMjZW01xwqLtpD" target=3D"_blank">
+                              <img src=3D"https://mktg.namecheap.com/master=
+/marketing/standard/footer/Youtube_64x64px.png" style=3D"color: #F14722; di=
+splay: block; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-=
+size: 16px; font-weight: 400;" border=3D"0" alt=3D"Youtube" height=3D"32" w=
+idth=3D"32" class=3D"darkmode-hide"/><!--[if !mso]><! --><img src=3D"https:=
+//mktg.namecheap.com/master/marketing/hv/footer/Youtube_64x64px.png" style=
+=3D"color: #F14722; display: none; font-family: 'Open Sans', Arial, Helveti=
+ca, sans-serif; font-size: 16px; font-weight: 400;" border=3D"0" alt=3D"You=
+tube" height=3D"32" width=3D"32" class=3D"darkmode-show"/><!--<![endif]-->
+                            </a>
+                          </td>
+                          <td align=3D"center">
+                            <a href=3D"http://mailtrackemailout1.namecheap.=
+com/ls/click?upn=3DIpkEbt5cFshRDRNx3fNQxhlJXhDk-2FVKDawywM2TUkYA4Om6Bs9vuFa=
+8JuW0yG3PnfSNZ_Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkD5rFaDS1KEq7mLWr=
+3wVpn2OBrQ5EQGua6RGCRvLN3Turj0YIGKzfrP-2F7qJxrjmOhjCPe8XcXu-2FuABuLQP-2FA5q=
+XJm-2BFfipj-2BF9ihiQV75lL8-2BszniGq45wW-2FnT8sL8-2Bk-2F6-2BIxfPfyM1MF-2Bknm=
+8q7fwFikAftYyu9Qvvp2VXGHndsJqiwCltxTPa1LITSJ8lPMm9K-2F8mWJagIYpeOrWk44Ti" t=
+arget=3D"_blank">
+                              <img src=3D"https://mktg.namecheap.com/master=
+/marketing/standard/footer/Namecheap_64x64px.png" style=3D"color: #F14722; =
+display: block; font-family: 'Open Sans', Arial, Helvetica, sans-serif; fon=
+t-size: 16px; font-weight: 400;" border=3D"0" alt=3D"Namecheap" height=3D"3=
+2" width=3D"32" class=3D"darkmode-hide"/><!--[if !mso]><! --><img src=3D"ht=
+tps://mktg.namecheap.com/master/marketing/hv/footer/Namecheap_64x64.png" st=
+yle=3D"color: #F14722; display: none; font-family: 'Open Sans', Arial, Helv=
+etica, sans-serif; font-size: 16px; font-weight: 400;" border=3D"0" alt=3D"=
+Namecheap" height=3D"32" width=3D"32" class=3D"darkmode-show"/><!--<![endif=
+]-->
+                            </a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td align=3D"center" class=3D"p-0-0">
+                <table width=3D"600" border=3D"0" align=3D"center" cellpadd=
+ing=3D"0" cellspacing=3D"0" class=3D"fluid" style=3D"width: 600px;" role=3D=
+"presentation">
+                  <tr>
+                    <td align=3D"center" style=3D"border-bottom: 2px solid =
+#DBDADA; border-top: 2px solid #DBDADA; color: #6D6F70; font-family: 'Open =
+Sans', Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 400; pad=
+ding: 18px 0px 18px 0px;" class=3D"darkmode-text2 darkmode-border4"><a href=
+=3D"http://mailtrackemailout1.namecheap.com/ls/click?upn=3DIpkEbt5cFshRDRNx=
+3fNQxhlJXhDk-2FVKDawywM2TUkYBl4g1VM2NcCEW-2BFYKaPO7pDfx4yAGBk90TUYvWh1dAVZp=
+t81uFuuGVksI4qAR5N9-2Br3ZeGABtWqfthFql1GSKcpBchDBP1NIw0kCcTzQ1sXbAJvjyUHnss=
+RKnKsirgU9XIUzrdvB11Q3KYJw2c1lPlahK-2FxH0YAUL4zkFTN4xdHw-3D-3Dgwql_Dv7OFDap=
+31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkD5rFaDS1KEq7mLWr3wVpn2OBrQ5EQGua6RGCRvL=
+N3Tukq3dFFsDuoTPI0k5-2BgbcoDJKJ5yWj3cbJZA1NvbIuy71FfjCauRiLMDVL1C0-2FbNyzS-=
+2BgWypSvJy-2FrdQjvYNJ1oHQoiniarqnBIDMZsd9xV3Cm1bVBQUbIxgIVt9kQWDEzSVW9Z9rTZ=
+n2sKZYxrRDW0JGCxSkIwgYgnDrDsY7QtK" target=3D"_blank" style=3D"text-decorati=
+on:none; color:#6D6F70;" class=3D"mobileLink darkmode-text2 ">About Us</a> =
+<span class=3D"mobile-hide"><span>&nbsp;</span><span>&nbsp;</span></span> <=
+a href=3D"http://mailtrackemailout1.namecheap.com/ls/click?upn=3DIpkEbt5cFs=
+hRDRNx3fNQxhlJXhDk-2FVKDawywM2TUkYAvwwAmExuOuChV5xcuoOki2-2F85T8WFPfZG9T927=
+4Dn1bBWfjSLS6g0gvPqAbFsWfMeLCWVQZjs9f3avX0-2FkwOptdYFe7SWG1aAjqsKS6duOVLNJB=
+5MVq-2Bk9ej-2Bkv5ODBwYk55UirqKtnIsjrh2Vha1MXIGOy7IvnGg2wPkNelT3cZlGEfS95lcT=
+CDnC7Miztc-3DeokY_Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkD5rFaDS1KEq7m=
+LWr3wVpn2N2i0lLrtCP8-2BJdOfGnXMvPMeDK11G3hYVOWdlIxYbvYqQPVW2qo5VRlDtmAUw-2F=
+GvqUOr1k4nzz8eY0Waiv1F9M4iaqTsUD9ZE5-2FIJgzJDaNJ2VG-2BRIgyG5woe5GyPXJB1AKgd=
+2uF7Z0-2Bnq3cyoVT1q-2BlHpXfLDImP1nRaBtIu3Es5pGy3VKVZYmTvXLy-2BfPG" target=
+=3D"_blank" style=3D"text-decoration:none; color:#6D6F70;" class=3D"mobileL=
+ink darkmode-text2">Help Center</a> <span class=3D"mobile-hide"><span>&nbsp=
+;</span><span>&nbsp;</span></span> <a href=3D"http://mailtrackemailout1.nam=
+echeap.com/ls/click?upn=3DIpkEbt5cFshRDRNx3fNQxhlJXhDk-2FVKDawywM2TUkYA8aM8=
+WRj4qi0rhQq4f1w7qlhKd-2FIzHejCji8W4Qo-2FtRlhq1vWjbjRf2FHu41ZXRq7wzpesWImGKq=
+qyN1V6S3cq8r4YAE4uhwoJTZFnlGwmS6MuXth3MuIx05waA7fElfb-2F5fw6WNOCV1hYW9F-2BW=
+LZt7bHmgodsCF9UJMDMyYyBvBevGjQ6pz2EbAJU5VnVko1Prjndt1VtWZMkakMoyCGpQV2V_Dv7=
+OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkD5rFaDS1KEq7mLWr3wVpn2N2i0lLrtCP8-=
+2BJdOfGnXMvI4f9Qb55ic8T7aFboHLkELwyW37qDfFnLUsnW-2BayAGxJvw10jyn0F2p-2FNojy=
+Tx-2BU51XdTggIf0-2FodBuSnu8nTVWbZrWnUQuJ8wEg362jqqhmMhwdWrWjM5pxY-2BlyKuNJL=
+Sd7NrfkY70f2JGK7a9yPcUqZ6OpR6NzYnG7oAnsxG8" target=3D"_blank" style=3D"text=
+-decoration:none; color:#6D6F70;" class=3D"mobileLink darkmode-text2">Priva=
+cy Policy</a> <span class=3D"mobile-hide"><span>&nbsp;</span><span>&nbsp;</=
+span></span> <a href=3D"http://mailtrackemailout1.namecheap.com/ls/click?up=
+n=3DIpkEbt5cFshRDRNx3fNQxhlJXhDk-2FVKDawywM2TUkYAfNc2-2FduXKjD0PHIlIlbakIRU=
+5xh-2BlV6ma6yWwfvDdKHjjFj5Q3-2FiWioZEC88b6dNyIzbA1pWPQMa76RJ9PrzbSVGMhdRHp-=
+2B3ntgmfRnoGcjb8icz8Lleo6Drf5ErGAmZuOmb0susicBUbBtDmetkrUo86J0-2FD6-2BDrbIw=
+E-2FbNzdw-3D-3D7xUN_Dv7OFDap31vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkD5rFaDS1KEq=
+7mLWr3wVpn2N2i0lLrtCP8-2BJdOfGnXMvMH20jFuWp1yWXS0NUAgBk8-2BhiMOb90SUSCj5VAD=
+kSIItaFF2AGVBorYU49pI2v09z-2BcJBExUNKReRUFIlQii0Gxqiyfk2xV3WZ7xfrCG8chp8Jtj=
+g-2FXEi4-2BFv8tIwLplqJTbOQTGM60PGU0TXiv6aTH0RfFUTIoovlMCnEiuJTa" target=3D"=
+_blank" style=3D"text-decoration:none; color:#6D6F70;" class=3D"mobileLink =
+darkmode-text2">Terms&nbsp;&amp;&nbsp;Conditions</a> <span class=3D"mobile-=
+hide"><span>&nbsp;</span><span>&nbsp;</span></span> <a href=3D"http://mailt=
+rackemailout1.namecheap.com/ls/click?upn=3DIpkEbt5cFshRDRNx3fNQxhlJXhDk-2FV=
+KDawywM2TUkYDFbVcA3Vr2AN-2FD1wJWlxaNkartHRu9TtR-2BeKZ-2F-2BGZfeyrq-2Fgm5uvh=
+DR0bDRYzfTSvKMZysMCZH6w9t95xRCqH5MvXZci4CwSD2gRhXmQ6Olg-3D-3Dq8HX_Dv7OFDap3=
+1vv5D8vJaYhv3mQtDTThJJVlpSiE7a0-2FkD5rFaDS1KEq7mLWr3wVpn2N2i0lLrtCP8-2BJdOf=
+GnXMvKCfm9-2BXk5SnKE0aOHGwwY6HDjovlUVO-2Bh6qKpv1zUvqn4mBycsEadkyIIeoUzAOUrB=
+osWLDVzLy0hZ-2FqHN8FAgQqyH-2B3s9Q9WaP6mcOoOlssWKpKFGDMJoe4YkSkQCxJNHKkCbtC3=
+N2WU75S5BPD6j95acUz0lv37FMB9kD-2FYdI" target=3D"_blank" style=3D"text-decor=
+ation:none; color:#6D6F70;" class=3D"mobileLink darkmode-text2">Unsubscribe=
+</a></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" role=3D"presentation">
+                  <tr>
+                    <td align=3D"center" style=3D"color: #6D6F70; font-fami=
+ly: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 14px; line-height=
+: 21px; font-weight: 400;  padding: 32px 24px 74px 24px;" class=3D"p-32-74 =
+darkmode-text3">
+                      <p style=3D"margin: 0px 0px 0px 0px;"><a href=3D"" st=
+yle=3D"color: #6D6F70; text-decoration: none;" class=3D"darkmode-text3">460=
+0 East Washington Street, Suite 305, Phoenix,&nbsp;AZ&nbsp;85034,&nbsp;USA<=
+/a></p>
+                      <p style=3D"margin: 0px 0px 32px 0px;">Namecheap is a=
+ trademark and/or registered trademark of Namecheap, Inc</p>
+                      <p style=3D"margin: 0px 0px 32px 0px;">Copyright &cop=
+y; 2022 Namecheap, Inc</p>
+                      <img src=3D"https://mktg.namecheap.com/master/marketi=
+ng/hv/footer/Icann-Light_80x80px.png" alt=3D"ICANN" border=3D"0" height=3D"=
+40" width=3D"40" style=3D"color: #6D6F70; display: block;=20
+                        font-family: 'Open Sans', Arial, Helvetica, sans-se=
+rif; font-size: 14px;" class=3D"darkmode-hide"/><!--[if !mso]><! --><img sr=
+c=3D"https://mktg.namecheap.com/master/marketing/hv/footer/Icann-Dark_80x80=
+px.png" style=3D"color: #F14722; display: none; font-family: 'Open Sans', A=
+rial, Helvetica, sans-serif; font-size: 16px; font-weight: 400;" border=3D"=
+0" alt=3D"ICANN" height=3D"32" width=3D"32" class=3D"darkmode-show"/><!--<!=
+[endif]-->
+                      <p style=3D"margin: 24px 0px 0px 0px; font-size: 12px=
+; line-height: 18px;">We are an ICANN accredited registrar.</p>
+                      <p style=3D"margin: 0px 0px 0px 0px; font-size: 12px;=
+ line-height: 18px;">Serving customers since 2001.</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!-- FOOTER : END -->
+        </td>
+      </tr>
+    </table>
+  <img src=3D"http://mailtrackemailout1.namecheap.com/wf/open?upn=3DF9AznDC=
+kA0pQ28qFJU-2FGLLcMnq-2B0Hr-2FNBxu8xo5xvcB-2Fr57T0ZGoGGVtf661Cc7KZu4r-2BjFf=
+XYcNOEf7CXHV80quCs6NR9Yc-2FIqa9YjRAQPpa8P5pKacARmMtzZtXXSkb-2BVZYc643tb2pg3=
+4Y7iZiyLIwQD4Xi2d7hF58RPvsmvZA-2BpSt7oPb2PnYZ1S1ZZfRvOo2bECDwCo6PmpWH0wgkXB=
+87fVS-2Fii5tEk7cg5TK8UDNSiRidmfFlTuzBZTA7ncKdFjGPyLtkiZgJ3SxQgSw-3D-3D" alt=
+=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !important;=
+width:1px !important;border-width:0 !important;margin-top:0 !important;marg=
+in-bottom:0 !important;margin-right:0 !important;margin-left:0 !important;p=
+adding-top:0 !important;padding-bottom:0 !important;padding-right:0 !import=
+ant;padding-left:0 !important;"/></body>
+</html>

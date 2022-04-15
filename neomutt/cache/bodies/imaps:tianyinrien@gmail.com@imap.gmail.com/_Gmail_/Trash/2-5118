@@ -1,0 +1,209 @@
+Delivered-To: tianyin.rien@gmail.com
+Received: by 2002:a05:6a10:3675:0:0:0:0 with SMTP id s21csp2629148pxm;
+        Thu, 3 Feb 2022 16:49:39 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJznM+ceh7FDsw4YImh2suMalNORKYdhdyDN71IX2yxa+j1kdVHZdof+RaGWSxSVW9eVQXSB
+X-Received: by 2002:a05:620a:1669:: with SMTP id d9mr350661qko.535.1643935779145;
+        Thu, 03 Feb 2022 16:49:39 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1643935779; cv=none;
+        d=google.com; s=arc-20160816;
+        b=pZs9RBpxYS3FEdQiSftbg1dFAtLQp71MAdioxKXgJ9LWjaFeHMInXqVnQQbwoweYLY
+         yMKze3SVRlviHk0iUN3k5mWVQ3IlDunrMDAcHBuDoESmkQe7e3qZR01YvF8itlVw3rLo
+         MvH6ieKVEjbHwMUiIzcs/2R6+3VePUW48AI6ZnA4alnhj9YWLJdY11PegXz546Y9z6+t
+         DxJJOxlXF6elYr4IgfQ+t5WYOfqGdQehYvr92BBfgB3RvBO2FVnUWrSETSOVxGAWLciC
+         LFxXxOql/GdNyCk/w4EjDg4vl3ALebGSLh7KDciWxumPpQoZi9Bklj0/ZRZzS8Rgtts0
+         De2w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:date:content-transfer-encoding:mime-version:message-id
+         :sender:reply-to:from:subject:to:dkim-signature:dkim-signature;
+        bh=O+FsNkBflWofRSUVenOZhgDKGxRq67aSexXD7QhP+4g=;
+        b=hPtaH8oyTCNKZBO3QmXVpNPpGyYvGndw11SvvULgYs5pWCQIW74CO9uTu8SH2BXTBZ
+         xFZjVxMsqCjpAweHKVU554wnuekkZzqaVYbmPmXmffUN1DN4PDWoEj+Bhl5IENrllRNT
+         SRC7PKSLa9gN/lpkYN0hp1hkldSavPWPanYgV10ySYnNvw91lJ0ncXz5JZYQ4Qhfd9e0
+         QRC2Wkyrq53aZ88DB0mMveDVPRh4O14DHBL2DOSvcaLrLi1sxgqGD9Oj2eGw8uLsInUd
+         ORfTrEOe1JomMYUmbny9L8ap0uIBIV4TUmehx9Z71DjRdT3WLWyn46u6Hie76w1RKa3w
+         MViQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@linuxquestions.org header.s=k5nvk4ziwcdu3e4nogtwpjbfdfwiznwq header.b=H5suR4DM;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=Lta4adm3;
+       spf=pass (google.com: domain of 0100017ec2354649-74789b65-13ec-41df-bd4d-66c10e11f463-000000@amazonses.com designates 54.240.9.41 as permitted sender) smtp.mailfrom=0100017ec2354649-74789b65-13ec-41df-bd4d-66c10e11f463-000000@amazonses.com
+Return-Path: <0100017ec2354649-74789b65-13ec-41df-bd4d-66c10e11f463-000000@amazonses.com>
+Received: from a9-41.smtp-out.amazonses.com (a9-41.smtp-out.amazonses.com. [54.240.9.41])
+        by mx.google.com with ESMTPS id q10si77785qtw.102.2022.02.03.16.49.38
+        for <tianyin.rien@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 03 Feb 2022 16:49:39 -0800 (PST)
+Received-SPF: pass (google.com: domain of 0100017ec2354649-74789b65-13ec-41df-bd4d-66c10e11f463-000000@amazonses.com designates 54.240.9.41 as permitted sender) client-ip=54.240.9.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@linuxquestions.org header.s=k5nvk4ziwcdu3e4nogtwpjbfdfwiznwq header.b=H5suR4DM;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=Lta4adm3;
+       spf=pass (google.com: domain of 0100017ec2354649-74789b65-13ec-41df-bd4d-66c10e11f463-000000@amazonses.com designates 54.240.9.41 as permitted sender) smtp.mailfrom=0100017ec2354649-74789b65-13ec-41df-bd4d-66c10e11f463-000000@amazonses.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=k5nvk4ziwcdu3e4nogtwpjbfdfwiznwq; d=linuxquestions.org;
+	t=1643935778;
+	h=To:Subject:From:Reply-To:Sender:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding:Date;
+	bh=wm41lW0hWrsxWy+5JQBjBD72yR61fD0PiQjs43+OSVU=;
+	b=H5suR4DMwO8kHwIf5IGLLWXAYxD2bOTxuc6Cjz2rjVKPonnsBld6jmkqCyxH4o3s
+	llySawgRmYn1A5BRgKJ3B1Y3ZOk1AQsKGBO34CB6cWxyzOlj8YINAhxnG/6qOl8SVNP
+	bhGJxkFPT3filmAK4VBaaXRSMgLyxwd0xvTBx0j4=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1643935778;
+	h=To:Subject:From:Reply-To:Sender:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding:Date:Feedback-ID;
+	bh=wm41lW0hWrsxWy+5JQBjBD72yR61fD0PiQjs43+OSVU=;
+	b=Lta4adm3rdr4/rart/C8gRqsTw9hRxqZVYptgEZMisx4UJbQ8MAOrXCE3EHUq1iP
+	Jze92e/+T1KofpjxAPZml/4y51ag0Qmfc4aHwgaLNgd1GpqrEMYzrV0fiOYmgVulpJt
+	aTxxBq+Ln2CzR307T2BZfxSD9TbvIBd5/B7V/3hc=
+To: tianyin.rien@gmail.com
+Subject: LinuxQuestions.org - Community Bulletin
+From:  <forum@linuxquestions.org>
+Reply-To: "forum@linuxquestions.org" <forum@linuxquestions.org>
+Sender: forum@linuxquestions.org
+Message-ID: <0100017ec2354649-74789b65-13ec-41df-bd4d-66c10e11f463-000000@email.amazonses.com>
+X-LQ-ComTo: 1201311
+MIME-Version: 1.0
+Content-Type: text/plain; charset="ISO-8859-1"
+Content-Transfer-Encoding: 8bit
+X-Priority: 3
+X-Mailer: LQ Mailer
+Date: Fri, 4 Feb 2022 00:49:38 +0000
+Feedback-ID: 1.us-east-1.cgm3JZ/iGoIU+gFOAZXiQjvI453gMeI7UJ//msEpERs=:AmazonSES
+X-SES-Outgoing: 2022.02.04-54.240.9.41
+
+math-ren,
+
+     A reminder that voting for the 2021 LinuxQuestions.org Members Choice Awards is still open. The Members Choice Awards allow the Linux community to select their favorite products and projects in a variety of categories. Visit https://www.linuxquestions.org/questions/2021-linuxquestions-org-members-choice-awards-133/welcome-to-the-2021-linuxquestions-org-members-choice-awards-4175705708/ for more information. Vote now and make sure your voice is heard - over 4,300 votes have already been placed. The polls will close on February 15th, so time is running out.
+
+     Follow us on twitter. https://twitter.com/linuxquestions 
+
+-jeremy
+http://jeremy.linuxquestions.org/
+
+ ***SPONSOR***
+A Newbie's Getting Started Guide to Linux
+
+Learn the basics of the Linux operating systems. Get to know what it is all about, and familiarize yourself with the practical side. Basically, if you're a complete Linux newbie and looking for a quick and easy guide to get you started this is it. 
+
+This guide will tell you all you need to know in 20 illustrated pages, helping you to take your first steps.
+
+Receive your complimentary guide (NOTE: this is a 3rd party offer that is not affiliated with LQ. They may require some personal information before allowing access to the no cost guide): https://linuxquestions.tradepub.com/free-offer/a-newbies-getting-started-guide-to-linux/w_make07
+
+ ***SPONSOR***
+
+
+---------------------------------------------------------------------------
+View all new content here: https://www.linuxquestions.org/questions/
+---------------------------------------------------------------------------
+LATEST THREADS
+---------------------------------------------------------------------------
+
+-- Threads posted most recently --
+
+Title: "Boot loader issue in new Debian11 installation" (Date Posted 02-03-2022 by rng)
+ o 0 Replies, 11 Views, Last Post: 02:00 PM, 02-03-2022 by rng
+ o https://www.linuxquestions.org/questions/debian-26/boot-loader-issue-in-new-debian11-installation-4175707410/
+
+Title: "How to safely remove a package that I have a more recent binary for? OpenMW" (Date Posted 02-03-2022 by breadbin)
+ o 4 Replies, 57 Views, Last Post: 02:40 PM, 02-03-2022 by shruggy
+ o https://www.linuxquestions.org/questions/linux-newbie-8/how-to-safely-remove-a-package-that-i-have-a-more-recent-binary-for-openmw-4175707408/
+
+Title: "How to recreate the default network in kvm/qemu?" (Date Posted 02-03-2022 by peter7089)
+ o 0 Replies, 50 Views, Last Post: 10:47 AM, 02-03-2022 by peter7089
+ o https://www.linuxquestions.org/questions/linux-virtualization-and-cloud-90/how-to-recreate-the-default-network-in-kvm-qemu-4175707404/
+
+Title: "Rapid Storage Technology" (Date Posted 02-03-2022 by Hary06)
+ o 2 Replies, 55 Views, Last Post: 02:27 PM, 02-03-2022 by computersavvy
+ o https://www.linuxquestions.org/questions/linux-newbie-8/rapid-storage-technology-4175707403/
+
+Title: "answer a question when running a script from github" (Date Posted 02-03-2022 by aristosv)
+ o 1 Replies, 60 Views, Last Post: 09:13 AM, 02-03-2022 by Turbocapitalist
+ o https://www.linuxquestions.org/questions/linux-newbie-8/answer-a-question-when-running-a-script-from-github-4175707399/
+
+
+-- Threads with no replies yet --
+
+Title: "CIFS: read block indefinitely for file on CIFS and Samba" (Date Posted 02-03-2022 by Vnegi)
+ o 0 Views
+ o https://www.linuxquestions.org/questions/linux-newbie-8/cifs-read-block-indefinitely-for-file-on-cifs-and-samba-4175707395/
+
+Title: "Changing keyboard layout" (Date Posted 02-03-2022 by bencze)
+ o 0 Views
+ o https://www.linuxquestions.org/questions/linux-desktop-74/changing-keyboard-layout-4175707392/
+
+Title: "lxpanel plugins" (Date Posted 02-03-2022 by Zen997)
+ o 0 Views
+ o https://www.linuxquestions.org/questions/linux-software-2/lxpanel-plugins-4175707386/
+
+Title: "Brother Printer Issue (VirtualBox?)" (Date Posted 02-02-2022 by BrianCC)
+ o 0 Views
+ o https://www.linuxquestions.org/questions/slackware-14/brother-printer-issue-virtualbox-4175707359/
+
+Title: "Error when connecting to WPA2/WPA3 mixed mode with psk" (Date Posted 02-02-2022 by meladon1337)
+ o 64 Views
+ o https://www.linuxquestions.org/questions/linux-wireless-networking-41/error-when-connecting-to-wpa2-wpa3-mixed-mode-with-psk-4175707331/
+
+
+---------------------------------------------------------------------------
+LATEST POLLS
+---------------------------------------------------------------------------
+
+Question: How many reverts will 5.15.4 contain?
+ o '0 ' (1 Votes)
+ o '1 ' (1 Votes)
+ o '2 ' (0 Votes)
+ o '3 ' (1 Votes)
+ o '4 ' (2 Votes)
+ o '5 ' (0 Votes)
+ o '6-10 ' (2 Votes)
+ o '11-15 ' (2 Votes)
+ o '16-20 ' (2 Votes)
+ o '21-25 ' (1 Votes)
+ o '26-30 ' (2 Votes)
+ o '31-35 ' (1 Votes)
+ o '36-40 ' (0 Votes)
+ o '41-50 ' (1 Votes)
+ o '51 or more' (4 Votes)
+   View Poll Results: https://www.linuxquestions.org/questions/showthread.php?t=4175703776
+
+Question: Which python3 should ship in Slackware 15.0?
+ o 'Python 3.9 ' (33 Votes)
+ o 'Python 3.10' (66 Votes)
+   View Poll Results: https://www.linuxquestions.org/questions/showthread.php?t=4175702008
+
+Question: Sticky thread
+ o 'Using Pipewire instead of Pulseaudio in Slackware 15 ' (10 Votes)
+ o 'LibreOffice in Slackware. ' (5 Votes)
+ o 'Xfce for Slackware Users ' (9 Votes)
+ o 'All Things KDE5/Plasma for Slackware Users. ' (11 Votes)
+ o 'The Latest Kernel Release. ' (10 Votes)
+ o 'VirtualBox for Slackware Users ' (7 Votes)
+ o 'Latest changelog for slackware-current' (16 Votes)
+   View Poll Results: https://www.linuxquestions.org/questions/showthread.php?t=4175700851
+
+Question: POLL - KDE or GNOME
+ o 'KDE ' (26 Votes)
+ o 'GNOME ' (14 Votes)
+ o 'Other' (23 Votes)
+   View Poll Results: https://www.linuxquestions.org/questions/showthread.php?t=4175698640
+
+Question: Manual or Slackpkg Kernel Upgrades?
+ o 'Manually ' (41 Votes)
+ o 'Slackpkg ' (42 Votes)
+ o 'Other (because everyone always request an "other" on polls)' (15 Votes)
+   View Poll Results: https://www.linuxquestions.org/questions/showthread.php?t=4175698115
+
+---------------------------------------------------------------------------
+USER INFO:
+These are your current user details
+---------------------------------------------------------------------------
+
+ o Your username is: "math-ren"
+ o You have 0 Posts
+ o You registered on 11-20-2020
+ o You were last active on LinuxQuestions.org at 02:24 AM, 01-09-2021
+ 
+
+---------------------------------------------------------------------------
+To unsubscribe from the community updates, click this link:
+https://www.linuxquestions.org/questions/profile.php?do=editoptions
+and uncheck "Receive Community Bulletin Newsletters". 
+Currently, community updates are sent bi-weekly. 
+---------------------------------------------------------------------------

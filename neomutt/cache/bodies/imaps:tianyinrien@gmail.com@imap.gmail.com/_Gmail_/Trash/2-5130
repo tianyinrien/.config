@@ -1,0 +1,225 @@
+Delivered-To: tianyin.rien@gmail.com
+Received: by 2002:a05:6a10:8581:0:0:0:0 with SMTP id j1csp3369149pxm;
+        Tue, 21 Dec 2021 13:32:53 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJxEiDhEL25ZL/eArNqp7Bmpp1DYSzv2I1ilzat7q15EcKgehA1vq0U/bPxj+RZAezKyBQAV
+X-Received: by 2002:a05:620a:3dd:: with SMTP id r29mr247187qkm.208.1640122372940;
+        Tue, 21 Dec 2021 13:32:52 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1640122372; cv=none;
+        d=google.com; s=arc-20160816;
+        b=X6ql/2LEmWjJZqQD9h4OIabFeYqQFdOwttnZ8/AKldNxemn6RSlp0qpFtvFRjXX3oz
+         D0QtuS9F9GYL49qhlAXZJP+MccGaLjTkxyo9o0MsA0CUexTMlgHueVY08DrU60+PTam9
+         n0qjxbAqoxnxwWcE6I//tjwFXpboGf1DTtENirX3hqz7D31Ke6O2YeCUGc5lxZD/vVWo
+         sKi3trTMDEsNvLa4bKNrmEg51Z/rpU2/4lt90MRl8YE3+g9VUP1ciXsTPR+Ui+2xNqjT
+         6qhNEEVnlF57kVf00UASDSrbX4FRoMr5RHI+URCSZDK5yDhh2H5Qeirm58YcBYYqqtUa
+         Gs0g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:date:content-transfer-encoding:mime-version:message-id
+         :sender:reply-to:from:subject:to:dkim-signature:dkim-signature;
+        bh=/WXmZ8bbhWbQEX+50sdRoLHz0NeDA3ZavDgKCcHqPxs=;
+        b=q8U2bNhSqW5EIOFasxc3rAoka411kQj99TOL7SeEa6fDNRQAq/GsxG5JhsnsTg4sOi
+         wAdQ5Sk3ocTycF3gFYw56V14cWnOZkVwFcEt5iYuC+7RbWVn+CqHI7hl0iE/6XTQAsCN
+         xK6gddj4hxLVUybQvjbQG6r0NJWG87J8YTqMi3sAe/wjNUYS5f4q8d8KlKfpdEwpn2xW
+         1x8dwvIfMkC/HEd75BW1aEv7sn8T6ZgDeo32lmmKTvJpXzHluBg+STtWDnhKL3Dxhnfv
+         7unX05f9aW34acxPJEQJJ/bA8TzV9aJ/OSiPMnl0JluMNSn6ID6K4TrgTIVZ01mrQ0qn
+         Qhaw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@linuxquestions.org header.s=k5nvk4ziwcdu3e4nogtwpjbfdfwiznwq header.b=VKec9cr0;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=HLldVS0q;
+       spf=pass (google.com: domain of 0100017ddee9500b-754ba733-8a43-4dfa-80c6-cbf1a543f310-000000@amazonses.com designates 54.240.9.244 as permitted sender) smtp.mailfrom=0100017ddee9500b-754ba733-8a43-4dfa-80c6-cbf1a543f310-000000@amazonses.com
+Return-Path: <0100017ddee9500b-754ba733-8a43-4dfa-80c6-cbf1a543f310-000000@amazonses.com>
+Received: from a9-244.smtp-out.amazonses.com (a9-244.smtp-out.amazonses.com. [54.240.9.244])
+        by mx.google.com with ESMTPS id g21si52989qtk.592.2021.12.21.13.32.52
+        for <tianyin.rien@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 21 Dec 2021 13:32:52 -0800 (PST)
+Received-SPF: pass (google.com: domain of 0100017ddee9500b-754ba733-8a43-4dfa-80c6-cbf1a543f310-000000@amazonses.com designates 54.240.9.244 as permitted sender) client-ip=54.240.9.244;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@linuxquestions.org header.s=k5nvk4ziwcdu3e4nogtwpjbfdfwiznwq header.b=VKec9cr0;
+       dkim=pass header.i=@amazonses.com header.s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug header.b=HLldVS0q;
+       spf=pass (google.com: domain of 0100017ddee9500b-754ba733-8a43-4dfa-80c6-cbf1a543f310-000000@amazonses.com designates 54.240.9.244 as permitted sender) smtp.mailfrom=0100017ddee9500b-754ba733-8a43-4dfa-80c6-cbf1a543f310-000000@amazonses.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=k5nvk4ziwcdu3e4nogtwpjbfdfwiznwq; d=linuxquestions.org;
+	t=1640122372;
+	h=To:Subject:From:Reply-To:Sender:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding:Date;
+	bh=n9fwPJJ6Jf2cMrVTqbaWbsykCJ4WIg/WHebgGSvSKhM=;
+	b=VKec9cr0F5EHLoolkLwf0wh8d2KpEq3ELbydYFAMlBTQcZR6CT0KkPtwsVJ0DVDC
+	78xadfDdc14Flj9qebKMTKfIelf4kbBKGesFWb2jM3ndZFl5awn/aVp9uFa1ja0ZHTc
+	jRj4vGCAKEaBRp9aSyhE4CtKzIh+fA+/Vg8g+Xvg=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=ug7nbtf4gccmlpwj322ax3p6ow6yfsug; d=amazonses.com; t=1640122372;
+	h=To:Subject:From:Reply-To:Sender:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding:Date:Feedback-ID;
+	bh=n9fwPJJ6Jf2cMrVTqbaWbsykCJ4WIg/WHebgGSvSKhM=;
+	b=HLldVS0qHGvJuh/yON8J1Sc7M4IsIdtAR+V5uT6b2JRCuTYL4aeU1gLbpD8E2Gps
+	nkfkj+yY/ZK5m/9R8LDpT6IWAUu4FsPZq6UXJTD2CAYvGBs4FfhsBc7raZUmehCqC4s
+	CMi1oqeK90id+TlG5czMX94ge9F6gy5aOMEByYCk=
+To: tianyin.rien@gmail.com
+Subject: LinuxQuestions.org - Community Bulletin
+From:  <forum@linuxquestions.org>
+Reply-To: "forum@linuxquestions.org" <forum@linuxquestions.org>
+Sender: forum@linuxquestions.org
+Message-ID: <0100017ddee9500b-754ba733-8a43-4dfa-80c6-cbf1a543f310-000000@email.amazonses.com>
+X-LQ-ComTo: 1201311
+MIME-Version: 1.0
+Content-Type: text/plain; charset="ISO-8859-1"
+Content-Transfer-Encoding: 8bit
+X-Priority: 3
+X-Mailer: LQ Mailer
+Date: Tue, 21 Dec 2021 21:32:52 +0000
+Feedback-ID: 1.us-east-1.cgm3JZ/iGoIU+gFOAZXiQjvI453gMeI7UJ//msEpERs=:AmazonSES
+X-SES-Outgoing: 2021.12.21-54.240.9.244
+
+math-ren,
+
+     Nominees for the 2021 LinuxQuestions.org Members Choice Awards have been posted. Visit https://www.linuxquestions.org/questions/lq-suggestions-and-feedback-7/2021-linuxquestions-org-members-choice-award-nominees-4175704945/ to let us know what projects we missed. Voting opens soon!
+
+     Whether it's Merry Christmas, Happy Hanukkah, Joyous Kwanzaa, Bodhi Day, Pancha Ganapati or one of the myriad other celebrations that take place this time of year, I'd like to wish you a Happy Holidays and New Year on behalf of LinuxQuestions.org.
+
+      Are you looking for LQ or Linux related merchandise? Visit https://www.zazzle.com/linuxquestions* for a wide variety of options. We also have shirts and a small selection available via Amazon: https://tqn.me/LQamz
+
+     Follow us on twitter: https://twitter.com/linuxquestions
+
+-jeremy
+http://jeremy.linuxquestions.org/
+
+ ***SPONSOR***
+A Newbie's Getting Started Guide to Linux
+
+Learn the basics of the Linux operating systems. Get to know what it is all about, and familiarize yourself with the practical side. Basically, if you're a complete Linux newbie and looking for a quick and easy guide to get you started this is it. 
+
+This guide will tell you all you need to know in 20 illustrated pages, helping you to take your first steps.
+
+Receive your complimentary guide (NOTE: this is a 3rd party offer that is not affiliated with LQ. They may require some personal information before allowing access to the no cost guide): https://linuxquestions.tradepub.com/free-offer/a-newbies-getting-started-guide-to-linux/w_make07
+
+ ***SPONSOR***
+
+
+---------------------------------------------------------------------------
+View all new content here: https://www.linuxquestions.org/questions/
+---------------------------------------------------------------------------
+LATEST THREADS
+---------------------------------------------------------------------------
+
+-- Threads posted most recently --
+
+Title: "Can't boot after LiveSlack install" (Date Posted 12-21-2021 by mknix)
+ o 0 Replies, 0 Views, Last Post: 12:35 PM, 12-21-2021 by mknix
+ o https://www.linuxquestions.org/questions/slackware-installation-40/cant-boot-after-liveslack-install-4175705217/
+
+Title: "Need help with python re.search" (Date Posted 12-21-2021 by lancebermudez)
+ o 0 Replies, 12 Views, Last Post: 12:13 PM, 12-21-2021 by lancebermudez
+ o https://www.linuxquestions.org/questions/programming-9/need-help-with-python-re-search-4175705216/
+
+Title: "The system stopped asking me for my password after suspending" (Date Posted 12-21-2021 by Yacer)
+ o 0 Replies, 2 Views, Last Post: 10:31 AM, 12-21-2021 by Yacer
+ o https://www.linuxquestions.org/questions/linux-newbie-8/the-system-stopped-asking-me-for-my-password-after-suspending-4175705215/
+
+Title: "SELinux: allow line for any application" (Date Posted 12-21-2021 by JuventusFC)
+ o 1 Replies, 85 Views, Last Post: 09:28 AM, 12-21-2021 by shruggy
+ o https://www.linuxquestions.org/questions/linux-embedded-and-single-board-computer-78/selinux-allow-line-for-any-application-4175705211/
+
+Title: " What is optional. <-- Full stop, not question mark. RANT !" (Date Posted 12-21-2021 by Michael Uplawski)
+ o 3 Replies, 184 Views, Last Post: 11:05 AM, 12-21-2021 by EdGr
+ o https://www.linuxquestions.org/questions/programming-9/%5Bexception-handling%5D-what-is-optional-full-stop-not-question-mark-rant-4175705208/
+
+Title: "System hanging during boot" (Date Posted 12-21-2021 by regervin)
+ o 0 Replies, 118 Views, Last Post: 12:30 AM, 12-21-2021 by regervin
+ o https://www.linuxquestions.org/questions/fedora-35/system-hanging-during-boot-4175705206/
+
+
+-- Threads with no replies yet --
+
+Title: "Compiz window animations" (Date Posted 12-21-2021 by Nemesissparadise)
+ o 105 Views
+ o https://www.linuxquestions.org/questions/fedora-35/compiz-window-animations-4175705205/
+
+Title: "Prevent (?) GNOME 40 from resetting all monitor orientation on every reboot" (Date Posted 12-20-2021 by obobskivich)
+ o 134 Views
+ o https://www.linuxquestions.org/questions/ubuntu-63/prevent-gnome-40-from-resetting-all-monitor-orientation-on-every-reboot-4175705196/
+
+Title: "Kernel port: can I generate the device tree (dts) from a Windows install?" (Date Posted 12-20-2021 by byron.hawkins)
+ o 157 Views
+ o https://www.linuxquestions.org/questions/linux-laptop-and-netbook-25/kernel-port-can-i-generate-the-device-tree-dts-from-a-windows-install-4175705197/
+
+Title: "a thread always shows bold even with zero replies" (Date Posted 12-19-2021 by Skaperen)
+ o 140 Views
+ o https://www.linuxquestions.org/questions/lq-suggestions-and-feedback-7/a-thread-always-shows-bold-even-with-zero-replies-4175705165/
+
+Title: "Video : Review of the Raspberry Pi 400 with RPiOS, Manjaro and Armbian" (Date Posted 12-19-2021 by NicoD SBC)
+ o 157 Views
+ o https://www.linuxquestions.org/questions/linux-embedded-and-single-board-computer-78/video-review-of-the-raspberry-pi-400-with-rpios-manjaro-and-armbian-4175705151/
+
+---------------------------------------------------------------------------
+LATEST POLLS
+---------------------------------------------------------------------------
+
+Question: How many reverts will 5.15.4 contain?
+ o '0 ' (1 Votes)
+ o '1 ' (1 Votes)
+ o '2 ' (0 Votes)
+ o '3 ' (1 Votes)
+ o '4 ' (2 Votes)
+ o '5 ' (0 Votes)
+ o '6-10 ' (2 Votes)
+ o '11-15 ' (2 Votes)
+ o '16-20 ' (2 Votes)
+ o '21-25 ' (1 Votes)
+ o '26-30 ' (2 Votes)
+ o '31-35 ' (1 Votes)
+ o '36-40 ' (0 Votes)
+ o '41-50 ' (1 Votes)
+ o '51 or more' (4 Votes)
+   View Poll Results: https://www.linuxquestions.org/questions/showthread.php?t=4175703776
+
+Question: Which python3 should ship in Slackware 15.0?
+ o 'Python 3.9 ' (33 Votes)
+ o 'Python 3.10' (66 Votes)
+   View Poll Results: https://www.linuxquestions.org/questions/showthread.php?t=4175702008
+
+Question: Sticky thread
+ o 'Using Pipewire instead of Pulseaudio in Slackware 15 ' (10 Votes)
+ o 'LibreOffice in Slackware. ' (5 Votes)
+ o 'Xfce for Slackware Users ' (9 Votes)
+ o 'All Things KDE5/Plasma for Slackware Users. ' (11 Votes)
+ o 'The Latest Kernel Release. ' (10 Votes)
+ o 'VirtualBox for Slackware Users ' (7 Votes)
+ o 'Latest changelog for slackware-current' (16 Votes)
+   View Poll Results: https://www.linuxquestions.org/questions/showthread.php?t=4175700851
+
+Question: POLL - KDE or GNOME
+ o 'KDE ' (24 Votes)
+ o 'GNOME ' (12 Votes)
+ o 'Other' (19 Votes)
+   View Poll Results: https://www.linuxquestions.org/questions/showthread.php?t=4175698640
+
+Question: Manual or Slackpkg Kernel Upgrades?
+ o 'Manually ' (40 Votes)
+ o 'Slackpkg ' (42 Votes)
+ o 'Other (because everyone always request an "other" on polls)' (15 Votes)
+   View Poll Results: https://www.linuxquestions.org/questions/showthread.php?t=4175698115
+
+---------------------------------------------------------------------------
+STATISTICS:
+We have had the following activity since 12-06-2021
+---------------------------------------------------------------------------
+
+ o 3,317 New Members
+ o 395 New Threads
+ o 3,913 New posts
+
+---------------------------------------------------------------------------
+USER INFO:
+These are your current user details
+---------------------------------------------------------------------------
+
+ o Your username is: "math-ren"
+ o You have 0 Posts
+ o You registered on 11-20-2020
+ o You were last active on LinuxQuestions.org at 03:24 AM, 01-09-2021
+ 
+
+---------------------------------------------------------------------------
+To unsubscribe from the community updates, click this link:
+https://www.linuxquestions.org/questions/profile.php?do=editoptions
+and uncheck "Receive Community Bulletin Newsletters". 
+Currently, community updates are sent bi-weekly. 
+---------------------------------------------------------------------------
