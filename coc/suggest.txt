@@ -1,3 +1,10 @@
+aco|account|around|
+m|mutt-colors-neonwolf-256.muttrc|file|
+mu|mutt-colors-neonwolf|file|
+ne|neomutt|file|
+con|config|around|
+|neomutt|file|
+neo|neomutt|around|
 neo|neomutt|file|
 neo|neomutt|file|
 neo|neomutt|file|
