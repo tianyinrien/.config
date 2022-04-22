@@ -1,0 +1,58 @@
+Delivered-To: tianyin.rien@gmail.com
+Received: by 2002:a05:6a10:18a5:b0:288:38d:6a17 with SMTP id im37csp2090779pxb;
+        Wed, 20 Apr 2022 03:38:27 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJxhgJTWYlVupLwDxWIp7GYHa1qkrLIE6eL0CPsHu4/d2iUlLZ3OcMkwTB3eVH+Vh/MnYq7D
+X-Received: by 2002:a17:903:248:b0:155:e8c6:8770 with SMTP id j8-20020a170903024800b00155e8c68770mr19306367plh.129.1650451107127;
+        Wed, 20 Apr 2022 03:38:27 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1650451107; cv=none;
+        d=google.com; s=arc-20160816;
+        b=oCdZV2x7N86EQqkplzi5UYuNfK4WID1DJHJppCnn7RAKLPY+8xrssg/lxmc48665LB
+         E9MISrDli+o3YJ4GfEzVc6PqBR+IperhLGg9VqrBFtnOu0AVyL2tqHtSgPkMS2s2O+6h
+         QrqjcUjNcpQMtyPlY0EQfxSIk3QwmCpJwcn7QSro026VoxwSf0ZgqwTRKc61fEpatuJQ
+         UyQocT/p/UcTa09m89m4X5hrMD6616zkne5ExzF6XSQZ8zeEjY2MPSR+P/WkjbesDPga
+         7+6dko/hnlKaQ9QEwp38dLKtYq99qVMFjapTryXlIKfk4Ar0J9dnNi6ofwEEmxqwiZBN
+         plyQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:subject:message-id:to:from
+         :dkim-signature:feedback-id:date;
+        bh=tbIEOJ5VTv/p6nduVb3yAV3t5/GPxbW4Sxc1fVDlFp8=;
+        b=cIlkjJau6SFmI+pFrrcB3Er8QMXhlYINPFKzfJ/i48tPzBkS5z95rdcwFu1s230Tlv
+         RCRS/2ySjDXyYrf38k/2a+YUwS2hCbLz3LOHkkIfcZnBNhc2lZeW8BCEf4Od9ekTMvA8
+         DAbtmuArhy6i8XA1cj6ZlGkMCXkichF06d5rv8VYSWrwYE0ez4YleQlXrvZLXdTwJMAb
+         2EMtrO3eEoGN9thkZrjkt7WyAxJ4bI2zZ55d4mUlqqDpN0dJR+a6PpoyTnqt3t1HYXx5
+         AXhkb/5vjQiQ+FuTz78qxI8XyMid8jpkBD0MrG1oztO/CHyOumCEYzm/MFrR+dj8Kf1i
+         bVRQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=temperror (no key for signature) header.i=@soulapp-inc.com header.s=default header.b=RK9gIOeG;
+       spf=pass (google.com: domain of noreply@soulapp-inc.com designates 115.124.21.81 as permitted sender) smtp.mailfrom=noreply@soulapp-inc.com
+Return-Path: <noreply@soulapp-inc.com>
+Received: from out21-81.dm.aliyun.com (out21-81.dm.aliyun.com. [115.124.21.81])
+        by mx.google.com with ESMTPS id h3-20020a056a00218300b0050ab666a8e4si1824722pfi.317.2022.04.20.03.38.26
+        for <tianyin.rien@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 20 Apr 2022 03:38:26 -0700 (PDT)
+Received-SPF: pass (google.com: domain of noreply@soulapp-inc.com designates 115.124.21.81 as permitted sender) client-ip=115.124.21.81;
+Authentication-Results: mx.google.com;
+       dkim=temperror (no key for signature) header.i=@soulapp-inc.com header.s=default header.b=RK9gIOeG;
+       spf=pass (google.com: domain of noreply@soulapp-inc.com designates 115.124.21.81 as permitted sender) smtp.mailfrom=noreply@soulapp-inc.com
+Date: Wed, 20 Apr 2022 03:38:26 -0700 (PDT)
+X-AliDM-RcptTo: dGlhbnlpbi5yaWVuQGdtYWlsLmNvbQ==
+Feedback-ID: default:noreply@soulapp-inc.com:trigger:141942
+DKIM-Signature:v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=soulapp-inc.com; s=default;
+	t=1650451105; h=From:To:Message-ID:Subject:MIME-Version:Content-Type;
+	bh=tbIEOJ5VTv/p6nduVb3yAV3t5/GPxbW4Sxc1fVDlFp8=;
+	b=RK9gIOeGel2dcFK9QVwKjfbMuq+zbzgKEAVCcGjtMpdpAkK1nsuMXOL4mzIwLsYY+uoBfiAcpX+dUwJqOnwOG7vZKUYfTsxvH31+PjDrR/czuR8kq4LMBa71/rrtwifI+hKpwFysaVHdRr6fxuATHVCuW3a6wlV7f9TUUiGECIc=
+X-EnvId: 233486775409
+Received: from email-provider-deployment-8d676d566-kpmxh(mailfrom:noreply@soulapp-inc.com fp:SMTPD_----1NQtLEm)
+          by smtpdm.aliyun.com(127.0.0.1);
+          Wed, 20 Apr 2022 18:38:25 +0800
+From: noreply@soulapp-inc.com
+To: tianyin.rien@gmail.com
+Message-ID: <93568304.311109.1650451102481.JavaMail.root@email-provider-deployment-8d676d566-kpmxh>
+Subject: Your Soul verification code
+MIME-Version: 1.0
+Content-Type: text/html;charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+<b>Confirm your email address</b><br>&nbsp;&nbsp;&nbsp;&nbsp;There 's one quick step you need to complete before connecting your Soul account with emails. <br>&nbsp;&nbsp;&nbsp;&nbsp;Let's make sure this is the right email address for you- please confirm this is the right address to use for your account!<br>&nbsp;&nbsp;&nbsp;&nbsp;Please enter this verification code on Soul:<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<strong><span style="color: rgb(255,204,0);"><font size="5">6826</font></span></strong><br><br>&nbsp;&nbsp;&nbsp;&nbsp;Verification codes expire after one hour.<br>&nbsp;&nbsp;&nbsp;&nbsp;If you did not request this code, you can safely ignore this email.<br>&nbsp;&nbsp;&nbsp;&nbsp;Soul loves you.<br>&nbsp;&nbsp;&nbsp;&nbsp;Thanks,<br>&nbsp;&nbsp;&nbsp;&nbsp;Soul Team

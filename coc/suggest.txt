@@ -1,3 +1,45 @@
+manif|manifold|around|
+Rieman|Riemannian|around|
+lem|lem|snippets|S
+mani|manifold|around|
+Rie|Riemannian|around|
+lem|lem|snippets|S
+spli|splitting|around|
+we|we can find out a good setting and|yank|S
+we|we can findo out a good $ M $ be can find out a good setting|yank|S
+inf|infty|texlab|f
+xri|xrightarrow|texlab|f
+l|example|snippets|S
+lem|lem|snippets|S
+le|lem|snippets|S
+sec|sec|snippets|S
+|powerline.neomuttrc|file|
+|gruvbox-powerline.neomuttrc|file|
+|colors|file|
+p|powerline|file|
+po|powerline|around|
+|mutt-colors-solarized|file|
+powerline-|powerline-rounded.neomuttrc|file|
+n|neomutt|file|
+con|config|around|
+|certificates|file|
+|neomutt|file|
+con|config|around|
+mutt-colors-solarized-light-2|mutt-colors-solarized-light-256.muttrc|file|
+mutt-colors-solarized-l|mutt-colors-solarized-light-16.muttrc|file|
+|mutt-colors-solarized-dark-256.muttrc|file|
+|mutt-colors-solarized|file|
+c|colors|file|
+|neomutt|file|
+conf|config|around|
+source|source ~/.config/neomutt/gruvbox/colors-gruvbox-shuber.muttrc|yank|S
+source|source ~/.config/neomutt/gruvbox/colors-gruvbox-shuber.muttrc|yank|S
+sou|source ~/.config/neomutt/gruvbox/colors-gruvbox-shuber.muttrc|yank|S
+color20|color208|around|
+color|color239|around|
+color|color237|around|
+co|color246|around|
+color2|color214|around|
 my|myserver|file|
 a|accounts|file|
 neo|neomutt|around|

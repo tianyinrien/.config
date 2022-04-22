@@ -1,0 +1,1008 @@
+Delivered-To: tianyin.rien@gmail.com
+Received: by 2002:a05:6a10:455:b0:288:4964:c299 with SMTP id i21csp388265pxi;
+        Thu, 21 Apr 2022 11:50:30 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJygJZcZ7T0uGbKyfwxGNAF0fipGM+VPImKtWuLMHed9Quzt3OKe7rqrUWtWigln3EHYrohu
+X-Received: by 2002:a17:902:a404:b0:14b:1100:aebc with SMTP id p4-20020a170902a40400b0014b1100aebcmr601910plq.133.1650567030765;
+        Thu, 21 Apr 2022 11:50:30 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1650567030; cv=none;
+        d=google.com; s=arc-20160816;
+        b=mU9HQahYmqIa9BXydCRFd87ipRHn3CN1nM1fyw2+o22+ap5CkKQ1Nn+eJjpHohMuHz
+         DwffuFi3OfUbBquJX5FXz7bBx8tWmjPtLyXe05oC/lE6RlS7fDXWXhtzrJfftINIsoyH
+         DEVNRX/UukJA7Cyzpgnii1LutW32YUDBVNANrBOdy+66catos6slBwax32F5PbCic46i
+         kyflRa5GxZRuI/MrMnSHMlhCd8v/sR9cDLIKHpbnPAV7Wdq39GrW3ZExR6eC44mXaDBJ
+         qMhNlDRybyxhRE5uGNMTK0vZNiZMt9h+BmO6aMRWdS2o+K4WAttTgwUrQ2RcjkxjTgKh
+         wEtA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-id:list-unsubscribe:feedback-id:from:subject:reply-to
+         :mime-version:date:message-id:to:dkim-signature;
+        bh=nIIe7RwfHam03eOpUlf4WMqm8R+2cHwCBpjO8yBkjpE=;
+        b=gfM3u2GHoJYLLlDb1kHX13F1WvknLl+gqBpOAakKVxoYw9Aj+anIBiDgDgQHttYRqX
+         tUv41lkx9BkIs2L8EUu9+5VLhoFT4koMmX/EI3UoT7wqI9rhw6w7h6G6TYE6mqK63PlJ
+         QLjRB2jAt2a826y7s0eLra57/1JKOJY0+R8LAni5oFRJ4UQBloNyQqWAwJIly/JT3lBV
+         c9QJHFZ5dwwF/CfuzqIXbRMJuYhAh9DFXhVGkzPfO/5uGU0pvb2U2U4HoXP/DIJRXerd
+         466IUG8kGyUyP1LY8cHOJb1MjXbKKNUmi+tn9RDJRTmTgL/oV91+Ydqs/Qt9/50b4aw1
+         4X1A==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.tubebuddy.com header.s=scph0621 header.b=VfWZumZk;
+       spf=pass (google.com: domain of msprvs1=19110q3xcsb6d=bounces-280172-345@sparkpostmail.com designates 156.70.24.198 as permitted sender) smtp.mailfrom="msprvs1=19110Q3xCSb6d=bounces-280172-345@sparkpostmail.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=tubebuddy.com
+Return-Path: <msprvs1=19110Q3xCSb6d=bounces-280172-345@sparkpostmail.com>
+Received: from mta-70-24-198.sparkpostmail.com (mta-70-24-198.sparkpostmail.com. [156.70.24.198])
+        by mx.google.com with ESMTPS id k13-20020a63ab4d000000b003a9ee7f8defsi6241009pgp.295.2022.04.21.11.50.30
+        for <tianyin.rien@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 21 Apr 2022 11:50:30 -0700 (PDT)
+Received-SPF: pass (google.com: domain of msprvs1=19110q3xcsb6d=bounces-280172-345@sparkpostmail.com designates 156.70.24.198 as permitted sender) client-ip=156.70.24.198;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.tubebuddy.com header.s=scph0621 header.b=VfWZumZk;
+       spf=pass (google.com: domain of msprvs1=19110q3xcsb6d=bounces-280172-345@sparkpostmail.com designates 156.70.24.198 as permitted sender) smtp.mailfrom="msprvs1=19110Q3xCSb6d=bounces-280172-345@sparkpostmail.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=tubebuddy.com
+X-MSFBL: LX862D7WuHuwUrcrnLAIIJZad8BVirprai9rmrX9Vsg=|eyJzdWJhY2NvdW50X2l
+	kIjoiMzQ1IiwiY3VzdG9tZXJfaWQiOiIyODAxNzIiLCJ0ZW5hbnRfaWQiOiJzcGM
+	iLCJtZXNzYWdlX2lkIjoiNjI1ZDJiYTY2MTYyZjQyM2QyNTgiLCJyIjoidGlhbnl
+	pbi5yaWVuQGdtYWlsLmNvbSJ9
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=email.tubebuddy.com;
+	s=scph0621; t=1650566699; i=@email.tubebuddy.com;
+	bh=nIIe7RwfHam03eOpUlf4WMqm8R+2cHwCBpjO8yBkjpE=;
+	h=To:Message-ID:Date:Content-Type:Subject:From:From:To:Cc:Subject;
+	b=VfWZumZkqJH1sxvwNuHyuKnRJtIackZIFAcVLUSqBgyWTPQrF2yKRr2xhsne+ViL2
+	 bhLukHOsATWom/KSVZOGFSJZGMBs/NGIRf8nVRcExIuBsab/+PpOcBsQ2m5hXpiJjl
+	 uyeSzTMvmov9Q/EyTeDKWVYgleXJN3fIZL0TTDec=
+To: tianyin.rien@gmail.com
+Message-ID: <2D.85.22781.B26A1626@dt.mta1vrest.cc.prd.sparkpost>
+Date: Thu, 21 Apr 2022 18:44:59 +0000
+Content-Type: multipart/alternative; boundary="_----CKtI8ZVWi+29KwRNoqShSA===_DC/85-22781-B26A1626"
+MIME-Version: 1.0
+Reply-To: hello@tubebuddy.com
+Subject: Creator Day is Back - This Saturday, April 23!
+X-Campaign-ID: 4113113
+From: "Team TubeBuddy" <hello@email.tubebuddy.com>
+X-Message-ID: 2edd049c6e514eeaa230a457614e3155
+X-Feedback-ID: 5599335:4113113:44978:iterable
+Feedback-ID: 5599335:4113113:44978:iterable
+List-Unsubscribe: <mailto:unsubscribe@unsub.spmta.com?subject=unsubscribe:fOjjsvW0Moub0awtC4pb6JoLT66Q24lsZara6vVoEKE~|eyAicmNwdF90byI6ICJ0aWFueWluLnJpZW5AZ21haWwuY29tIiwgInRlbmFudF9pZCI6ICJzcGMiLCAiY3VzdG9tZXJfaWQiOiAiMjgwMTcyIiwgIm1lc3NhZ2VfaWQiOiAiNjI1ZDJiYTY2MTYyZjQyM2QyNTgiLCAic3ViYWNjb3VudF9pZCI6ICIzNDUiIH0~>
+List-Id: <spc.280172.345.sparkpostmail.com>
+
+--_----CKtI8ZVWi+29KwRNoqShSA===_DC/85-22781-B26A1626
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="UTF-8"
+
+Join us for an 8-hour live stream with some of today's top creators. =0A=0A=
+=0A <https://www.youtube.com/channel/UCo33niDKpTpgwZ_dohqvylg=3Fsub_confirm=
+ation=3D1> =0A <https://www.instagram.com/tubebuddy/>  <https://twitter.com=
+/tubebuddy/>  =0A<https://www.facebook.com/TubeBuddy/>  =0A<https://www.lin=
+kedin.com/company/6402846> =0ACreator Day is April 23=0A=0A=C2=A0 =C2=A0  <=
+https://www.youtube.com/watch=3Fv=3D8KlxNNTnd88> =0ACREATOR DAY IS BACK!=0A=
+=0AYou don=E2=80=99t want to miss Creator Day 2022. Join us LIVE as we cele=
+brate YOU, the =0Acreators! To celebrate all the good creators bring to the=
+ world, we are =0Athrowing a massive online party, this Saturday, April 23 =
+from 8 AM - 4 PM PT =0Aand you=E2=80=99re invited! Join us live on theTubeB=
+uddy YouTube Channel as we play =0Agames, hold interviews, and give away ex=
+clusive prizes that you won=E2=80=99t want to =0Amiss.=0ASet a Reminder <ht=
+tps://www.youtube.com/tubebuddy/live> =0A=0A=0AWe are just days away from t=
+he biggest creator celebration of the year. We are =0Aso excited to bring y=
+ou exclusive interviews from some of the top minds in the =0Acreator space.=
+=0A=0A=C2=A0=0A=0AJoin us LIVE for 1:1 conversations with Rachel Levin,=C2=
+=A0Typical Gamer, Neekolul, =0AandStev Lawson, as well as exciting panels f=
+eaturing Kristen Ware, Javi Luna, =0AGriffin Arnlund, Derral Eves, Nick Nim=
+min, and Jon Youshaei.=0A=0A=C2=A0=0A=0AWe will also be turning up the fun =
+with games and activities, including our =0Ainfamous spicy foods challenge,=
+ withRachael Kay Albers, Daniel Batal, Jeremy =0AVest, Roberto Blake, and D=
+J Coffman. Rounding out our guest appearances are =0Apremieres of exclusive=
+ interviews withMrBeast and Devin Supertramp.=0A=0A=C2=A0=0A=0AAll that bra=
+inpower in one event, and TONS of giveaways to go along with it=3F! =0AYou =
+don't want to miss this!!=0ALearn More =0A<https://www.tubebuddy.com/creato=
+rday=3Futm_source=3DIterable&utm_medium=3Demail&utm_campaign=3DCreatorDayis=
+Back>=0A=0A=0AHave a question or need some help=3F=0A=0AVisit our Support C=
+enter at TubeBuddy.com/Support =0A<https://www.TubeBuddy.com/Support> to ge=
+t all of the answers and advice you =0Aare looking for!=0A=0A=0A <https://w=
+ww.youtube.com/channel/UCo33niDKpTpgwZ_dohqvylg=3Fsub_confirmation=3D1> =0A=
+ <https://www.instagram.com/tubebuddy/>  <https://twitter.com/tubebuddy/>  =
+=0A<https://www.facebook.com/TubeBuddy/>  =0A<https://www.linkedin.com/comp=
+any/6402846> =0A=C2=A0Click here to unsubscribe. =0A<http://links.tubebuddy=
+.com/e/encryptedUnsubscribe=3F_r=3D81cb1f2d55e644eeb0c3cc6e7f671040&_s=3D2=
+edd049c6e514eeaa230a457614e3155&_t=3D-wOkeZPuT-U3ESq1s51I7VWNPliDY1y9fK-32y=
+c48clqLXygR0mHlEjZiIRfikfbOBb94I5qXxwRQtUjmhKbTui74drKQXCWLaq2t6J5xx2sCjUPi=
+dhvGf1_YtF7cBhWP2L0yTqmsNQMQUXJmfYaK5t_ARmak-h-jUChr2w3Yh4%3D>
+--_----CKtI8ZVWi+29KwRNoqShSA===_DC/85-22781-B26A1626
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www=
+.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html xmlns=3D"http://www.=
+w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn=
+:schemas-microsoft-com:office:office" style=3D"line-height: inherit;"> <hea=
+d> <!--[if gte mso 9]><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:Pixels=
+PerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]--> <=
+meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"> <m=
+eta name=3D"viewport" content=3D"width=3Ddevice-width"> <!--[if !mso]><!-->=
+ <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"> <!--<![endif]-=
+-> <title></title> <!--[if !mso]><!--> <link href=3D"https://fonts.googleap=
+is.com/css=3Ffamily=3DMontserrat" rel=3D"stylesheet" type=3D"text/css"> <!-=
+-<![endif]--> <style type=3D"text/css">body{margin:0;padding:0}table,td,tr{=
+vertical-align:top;border-collapse:collapse}*{line-height:inherit}a[x-apple=
+-data-detectors=3Dtrue]{color:inherit!important;text-decoration:none!import=
+ant}</style> <style type=3D"text/css" id=3D"media-query">@media(max-width:7=
+35px){.block-grid,.col{min-width:320px!important;max-width:100%!important;d=
+isplay:block!important}.block-grid{width:100%!important}.col{width:100%!imp=
+ortant}.col_cont{margin:0 auto}img.fullwidth,img.fullwidthOnMobile{width:10=
+0%!important}.no-stack .col{min-width:0!important;display:table-cell!import=
+ant}.no-stack.two-up .col{width:50%!important}.no-stack .col.num2{width:16.=
+6%!important}.no-stack .col.num3{width:25%!important}.no-stack .col.num4{wi=
+dth:33%!important}.no-stack .col.num5{width:41.6%!important}.no-stack .col.=
+num6{width:50%!important}.no-stack .col.num7{width:58.3%!important}.no-stac=
+k .col.num8{width:66.6%!important}.no-stack .col.num9{width:75%!important}.=
+no-stack .col.num10{width:83.3%!important}.video-block{max-width:none!impor=
+tant}.mobile_hide{min-height:0;max-height:0;max-width:0;display:none;overfl=
+ow:hidden;font-size:0}.desktop_hide{display:block!important;max-height:none=
+!important}.img-container.big img{width:auto!important}}</style> </head> <b=
+ody class=3D"clean-body" style=3D"line-height: inherit; margin: 0; padding:=
+ 0; -webkit-text-size-adjust: 100%; background-color: #FFFFFF;">=0D=0A<div =
+style=3D"color:transparent;visibility:hidden;opacity:0;font-size:0px;border=
+:0;max-height:1px;width:1px;margin:0px;padding:0px;border-width:0px!importa=
+nt;display:none!important;line-height:0px!important;"><img border=3D"0" wid=
+th=3D"1" height=3D"1" src=3D"http://go.sparkpostmail.com/q/1DDBiLpffCnSvLd8=
+gaTGRQ~~/AARGbAA~/RgRkRCsrPVcDc3BjQgpiXSumYWL0I9JYUhZ0aWFueWluLnJpZW5AZ21ha=
+WwuY29tWAQAAAFZ" alt=3D""/></div>=0D=0A<span style=3D"color:transparent;vis=
+ibility:hidden;display:none;opacity:0;height:0;width:0;font-size:0;">Join u=
+s for an 8-hour live stream with some of today's top creators.</span><img s=
+rc=3D"http://links.tubebuddy.com/e/eo=3F_t=3D81cb1f2d55e644eeb0c3cc6e7f6710=
+40&amp;_m=3D2edd049c6e514eeaa230a457614e3155&amp;_e=3D-wOkeZPuT-U3ESq1s51I7=
+VWNPliDY1y9fK-32yc48clqLXygR0mHlEjZiIRfikfbOBb94I5qXxwRQtUjmhKbTui74drKQXCW=
+Laq2t6J5xx2sCjUPidhvGf1_YtF7cBhWP2L0yTqmsNQMQUXJmfYaK5t_ARmak-h-jUChr2w3Yh4=
+%3D" style=3D"border:0;width:1px;height:1px;border-width:0px!important;disp=
+lay:none!important;line-height:0!important;" width=3D"1" height=3D"1"/> <!-=
+-[if IE]><div class=3D"ie-browser"><![endif]--> <table class=3D"nl-containe=
+r" style=3D"line-height: inherit; table-layout: fixed; vertical-align: top;=
+ min-width: 320px; border-spacing: 0; border-collapse: collapse; mso-table-=
+lspace: 0pt; mso-table-rspace: 0pt; background-color: #FFFFFF; width: 100%;=
+" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"100%" =
+bgcolor=3D"#FFFFFF" valign=3D"top"> <tbody style=3D"line-height: inherit;">=
+ <tr style=3D"line-height: inherit; border-collapse: collapse; vertical-ali=
+gn: top;" valign=3D"top"> <td style=3D"line-height: inherit; border-collaps=
+e: collapse; word-break: break-word; vertical-align: top;" valign=3D"top"> =
+<!--[if (mso)|(IE)]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0" border=3D"0"><tr><td align=3D"center" style=3D"background-color:#FFFFFF"=
+><![endif]--> <div style=3D"line-height: inherit; background-color: transpa=
+rent;"> <div class=3D"block-grid three-up" style=3D"line-height: inherit; m=
+in-width: 320px; max-width: 715px; overflow-wrap: break-word; word-wrap: br=
+eak-word; word-break: break-word; Margin: 0 auto; background-color: transpa=
+rent;"> <div style=3D"line-height: inherit; border-collapse: collapse; disp=
+lay: table; width: 100%; background-color: transparent;"> <!--[if (mso)|(IE=
+)]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" s=
+tyle=3D"background-color:transparent;"><tr><td align=3D"center"><table cell=
+padding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:715px"><tr clas=
+s=3D"layout-full-width" style=3D"background-color:transparent"><![endif]-->=
+ <!--[if (mso)|(IE)]><td align=3D"center" width=3D"238" style=3D"background=
+-color:transparent;width:238px; border-top: 0px solid transparent; border-l=
+eft: 0px solid transparent; border-bottom: 0px solid transparent; border-ri=
+ght: 0px solid transparent;" valign=3D"top"><table width=3D"100%" cellpaddi=
+ng=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D"padding-right: 0px=
+; padding-left: 0px; padding-top:5px; padding-bottom:5px;"><![endif]--> <di=
+v class=3D"col num4" style=3D"line-height: inherit; display: table-cell; ve=
+rtical-align: top; max-width: 320px; min-width: 236px; width: 238px;"> <div=
+ class=3D"col_cont" style=3D"line-height: inherit; width: 100% !important;"=
+> <!--[if (!mso)&(!IE)]><!--> <div style=3D"line-height: inherit; border-to=
+p: 0px solid transparent; border-left: 0px solid transparent; border-bottom=
+: 0px solid transparent; border-right: 0px solid transparent; padding-top: =
+5px; padding-bottom: 5px; padding-right: 0px; padding-left: 0px;"> <!--<![e=
+ndif]--> <table class=3D"social_icons" cellpadding=3D"0" cellspacing=3D"0" =
+width=3D"100%" role=3D"presentation" style=3D"line-height: inherit; table-l=
+ayout: fixed; vertical-align: top; border-spacing: 0; border-collapse: coll=
+apse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" valign=3D"top"> <tbody=
+ style=3D"line-height: inherit;"> <tr style=3D"line-height: inherit; border=
+-collapse: collapse; vertical-align: top;" valign=3D"top"> <td style=3D"lin=
+e-height: inherit; border-collapse: collapse; word-break: break-word; verti=
+cal-align: top; padding-top: 10px; padding-right: 10px; padding-bottom: 10p=
+x; padding-left: 10px;" valign=3D"top"> <table class=3D"social_table" align=
+=3D"center" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=
+=3D"line-height: inherit; table-layout: fixed; vertical-align: top; border-=
+spacing: 0; border-collapse: collapse; mso-table-tspace: 0; mso-table-rspac=
+e: 0; mso-table-bspace: 0; mso-table-lspace: 0;" valign=3D"top"> <tbody sty=
+le=3D"line-height: inherit;"> <tr style=3D"line-height: inherit; border-col=
+lapse: collapse; vertical-align: top; display: inline-block; text-align: ce=
+nter;" align=3D"center" valign=3D"top"> <td style=3D"line-height: inherit; =
+border-collapse: collapse; word-break: break-word; vertical-align: top; pad=
+ding-bottom: 0; padding-right: 5px; padding-left: 0;" valign=3D"top"><a hre=
+f=3D"http://links.tubebuddy.com/u/click=3F_t=3D81cb1f2d55e644eeb0c3cc6e7f67=
+1040&_m=3D2edd049c6e514eeaa230a457614e3155&_e=3DLxkC_TNz5F4S5P3HrG6bRe9xHYi=
+r0IZLqyhaUrXV_RuOb-lvnT6N1XxYLR5bIS6z5CjCwzXP9zh5DoWuz0HvoHH1FbJWS8gEZmxadp=
+UU_DJoFZ8IRz8-WqGey5ChYy0RBItizJTa1IgRRKEGkp2_WMLXSXFGKTRNhoNYpD51M3I2vzd8I=
+hjGuTWqKrtm8pBm80IHUemNYPpKOsbTWZLlc1MEW4j9e1dcX-qlJHM-QE4a8ysG0rgP0Z2RW0Ap=
+KxC-n--0rdPd5FZBHLLUfHio2jDtI7EeRcr_owkCsr8rhzjx1m6PPKke-7tA1Hj_fQf0g8PdfAa=
+8s0un5NW0BJoxTw%3D%3D" target=3D"_blank" style=3D"line-height: inherit;"><i=
+mg width=3D"32" height=3D"32" src=3D"https://d2fi4ri5dhpqd1.cloudfront.net/=
+public/resources/social-networks-icon-sets/circle-dark-gray/youtube@2x.png"=
+ alt=3D"YouTube" title=3D"YouTube" style=3D"line-height: inherit; text-deco=
+ration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; dis=
+play: block;"></a></td> <td style=3D"line-height: inherit; border-collapse:=
+ collapse; word-break: break-word; vertical-align: top; padding-bottom: 0; =
+padding-right: 5px; padding-left: 0;" valign=3D"top"><a href=3D"http://link=
+s.tubebuddy.com/u/click=3F_t=3D81cb1f2d55e644eeb0c3cc6e7f671040&_m=3D2edd04=
+9c6e514eeaa230a457614e3155&_e=3DLxkC_TNz5F4S5P3HrG6bRZbiNkWRT6gNIdHzbiMGYFM=
+vh02ZeETGzaWv8oFQcTVSkmENoLHRmj966e1oEbKd27lE2MGcnu4tzBhT8YAayjpEv60xYdQfqE=
+VV64h2OZdyTG-VS36GPvWwpBQg4UBvuujzNkiGpujPUEEaW_J0dZ3VdSTr7RZypjNHqA4bx8Uqu=
+84r4ELQ4Aif_5CI4RuFoszWWgDJMDSakgVCTpGoJw9dj7eDn6QnEWGkMNGRVv9LR4sVADQz3bPK=
+nM6ExFcEzw%3D%3D" target=3D"_blank" style=3D"line-height: inherit;"><img wi=
+dth=3D"32" height=3D"32" src=3D"https://d2fi4ri5dhpqd1.cloudfront.net/publi=
+c/resources/social-networks-icon-sets/circle-dark-gray/instagram@2x.png" al=
+t=3D"Instagram" title=3D"Instagram" style=3D"line-height: inherit; text-dec=
+oration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0; di=
+splay: block;"></a></td> <td style=3D"line-height: inherit; border-collapse=
+: collapse; word-break: break-word; vertical-align: top; padding-bottom: 0;=
+ padding-right: 5px; padding-left: 0;" valign=3D"top"><a href=3D"http://lin=
+ks.tubebuddy.com/u/click=3F_t=3D81cb1f2d55e644eeb0c3cc6e7f671040&_m=3D2edd0=
+49c6e514eeaa230a457614e3155&_e=3DLxkC_TNz5F4S5P3HrG6bRatUPuMMvhFRH5cZiQAn39=
+BgXINVRPvvJ8Pk_TmBSYrUxfjz3f7vO0YZFA3htptEvZTSjCzY1TcDP0drAL3zOaPgqbjs1XSkm=
+XAG9Qw4JXU8_S7qE2a1jtfA7707hKFMzYwdg8igPR8Wcnu-fp2Fv3043jyX70kwpVwbhH46Ctxu=
+SRCDfXsMYPqeWmFEcyE2RPypUEdsSdd6PJhcRnrqIbft1EaBosFp9mYsV9SoobBB8pwv3jkbqz2=
+0-YzW9mv_DA%3D%3D" target=3D"_blank" style=3D"line-height: inherit;"><img w=
+idth=3D"32" height=3D"32" src=3D"https://d2fi4ri5dhpqd1.cloudfront.net/publ=
+ic/resources/social-networks-icon-sets/circle-dark-gray/twitter.png" alt=3D=
+"Twitter" title=3D"Twitter" style=3D"line-height: inherit; text-decoration:=
+ none; -ms-interpolation-mode: bicubic; height: auto; border: 0; display: b=
+lock;"></a></td> <td style=3D"line-height: inherit; border-collapse: collap=
+se; word-break: break-word; vertical-align: top; padding-bottom: 0; padding=
+-right: 5px; padding-left: 0;" valign=3D"top"><a href=3D"http://links.tubeb=
+uddy.com/u/click=3F_t=3D81cb1f2d55e644eeb0c3cc6e7f671040&_m=3D2edd049c6e514=
+eeaa230a457614e3155&_e=3DLxkC_TNz5F4S5P3HrG6bRdBC0BiZo1cXmXi0AXPlAiEjfJMyo_=
+1Sd2eGNqAMqhmxSxDRApvd56ZT_WeQ6ueWF7eIjeB2iqhwQsALq9PlZqNFGvoG75O18vtYnZ30f=
+7y21df28a9qHaD_BvyJNkGjXtRVS7mONqf1dPrpcVqdUHcoBeuSi52t9pvx-bUxIC9bc2XrxMt5=
+LrsTvXgaThjrddbmDi0YaNqrxYN9aGKsjtDhBWf8MBESg6iLM18a1e4ThFjUT18cgBwXr6hvE0L=
+4rQ%3D%3D" target=3D"_blank" style=3D"line-height: inherit;"><img width=3D"=
+32" height=3D"32" src=3D"https://d2fi4ri5dhpqd1.cloudfront.net/public/resou=
+rces/social-networks-icon-sets/circle-dark-gray/facebook.png" alt=3D"Facebo=
+ok" title=3D"Facebook" style=3D"line-height: inherit; text-decoration: none=
+; -ms-interpolation-mode: bicubic; height: auto; border: 0; display: block;=
+"></a></td> <td style=3D"line-height: inherit; border-collapse: collapse; w=
+ord-break: break-word; vertical-align: top; padding-bottom: 0; padding-righ=
+t: 5px; padding-left: 0;" valign=3D"top"><a href=3D"http://links.tubebuddy.=
+com/u/click=3F_t=3D81cb1f2d55e644eeb0c3cc6e7f671040&_m=3D2edd049c6e514eeaa2=
+30a457614e3155&_e=3DLxkC_TNz5F4S5P3HrG6bRRzko_hpuUEVepggb8LxRq9HzuOlrFFYgaI=
+ir4RGym3F8MbI1DNzYLuQ_6gsKOPfCQfroJh5CsGw2VkH_UzQxhpTDziUbj-h17mwVOxK2Tb93_=
+eCBJOzdibwEU7pUObUP-Aqavefkp-qLeW-MHF5Ou1wW5R6RFOsJhNRFmQE1Z-JTs1Cyc259eHSY=
+j8nuRmDywHkDLrWRIoh6ecQGUQpAP51XvYaj7Y21p3XCCShdIXCNhLMwUEpjKVhVrxdpGxge6jd=
+DpTZ_suInRqh8olJwgA%3D" target=3D"_blank" style=3D"line-height: inherit;"><=
+img width=3D"32" height=3D"32" src=3D"https://d2fi4ri5dhpqd1.cloudfront.net=
+/public/resources/social-networks-icon-sets/circle-dark-gray/linkedin@2x.pn=
+g" alt=3D"LinkedIn" title=3D"LinkedIn" style=3D"line-height: inherit; text-=
+decoration: none; -ms-interpolation-mode: bicubic; height: auto; border: 0;=
+ display: block;"></a></td> </tr> </tbody> </table> </td> </tr> </tbody> </=
+table> <!--[if (!mso)&(!IE)]><!--> </div> <!--<![endif]--> </div> </div> <!=
+--[if (mso)|(IE)]></td></tr></table><![endif]--> <!--[if (mso)|(IE)]></td><=
+td align=3D"center" width=3D"238" style=3D"background-color:transparent;wid=
+th:238px; border-top: 0px solid transparent; border-left: 0px solid transpa=
+rent; border-bottom: 0px solid transparent; border-right: 0px solid transpa=
+rent;" valign=3D"top"><table width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0"><tr><td style=3D"padding-right: 0px; padding-left: 0px;=
+ padding-top:0px; padding-bottom:0px;"><![endif]--> <div class=3D"col num4"=
+ style=3D"line-height: inherit; display: table-cell; vertical-align: top; m=
+ax-width: 320px; min-width: 236px; width: 238px;"> <div class=3D"col_cont" =
+style=3D"line-height: inherit; width: 100% !important;"> <!--[if (!mso)&(!I=
+E)]><!--> <div style=3D"line-height: inherit; border-top: 0px solid transpa=
+rent; border-left: 0px solid transparent; border-bottom: 0px solid transpar=
+ent; border-right: 0px solid transparent; padding-top: 0px; padding-bottom:=
+ 0px; padding-right: 0px; padding-left: 0px;"> <!--<![endif]--> <!--[if (!m=
+so)&(!IE)]><!--> </div> <!--<![endif]--> </div> </div> <!--[if (mso)|(IE)]>=
+</td></tr></table><![endif]--> <!--[if (mso)|(IE)]></td><td align=3D"center=
+" width=3D"238" style=3D"background-color:transparent;width:238px; border-t=
+op: 0px solid transparent; border-left: 0px solid transparent; border-botto=
+m: 0px solid transparent; border-right: 0px solid transparent;" valign=3D"t=
+op"><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">=
+<tr><td style=3D"padding-right: 0px; padding-left: 0px; padding-top:5px; pa=
+dding-bottom:5px;"><![endif]--> <div class=3D"col num4" style=3D"line-heigh=
+t: inherit; display: table-cell; vertical-align: top; max-width: 320px; min=
+-width: 236px; width: 238px;"> <div class=3D"col_cont" style=3D"line-height=
+: inherit; width: 100% !important;"> <!--[if (!mso)&(!IE)]><!--> <div style=
+=3D"line-height: inherit; border-top: 0px solid transparent; border-left: 0=
+px solid transparent; border-bottom: 0px solid transparent; border-right: 0=
+px solid transparent; padding-top: 5px; padding-bottom: 5px; padding-right:=
+ 0px; padding-left: 0px;"> <!--<![endif]--> <!--[if mso]><table width=3D"10=
+0%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D"paddi=
+ng-right: 10px; padding-left: 10px; padding-top: 15px; padding-bottom: 10px=
+; font-family: 'Trebuchet MS', Tahoma, sans-serif"><![endif]--> <div class=
+=3D"text_block" style=3D"color: #232323; font-family: 'Montserrat', 'Trebuc=
+het MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, san=
+s-serif; line-height: 1.2; padding-top: 15px; padding-right: 10px; padding-=
+bottom: 10px; padding-left: 10px;"> <div class=3D"txtTinyMce-wrapper" style=
+=3D"font-size: 12px; line-height: 1.2; color: #232323; font-family: 'Montse=
+rrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans=
+', Tahoma, sans-serif; mso-line-height-alt: 14px;"> <p style=3D"margin: 0; =
+font-size: 14px; text-align: center; line-height: 1.2; word-break: break-wo=
+rd; mso-line-height-alt: 17px; margin-top: 0; margin-bottom: 0;"><span styl=
+e=3D"line-height: inherit; font-size: 14px;">Creator Day is April 23</span>=
+</p> </div> </div> <!--[if mso]></td></tr></table><![endif]--> <!--[if (!ms=
+o)&(!IE)]><!--> </div> <!--<![endif]--> </div> </div> <!--[if (mso)|(IE)]><=
+/td></tr></table><![endif]--> <!--[if (mso)|(IE)]></td></tr></table></td></=
+tr></table><![endif]--> </div> </div> </div> <div style=3D"line-height: inh=
+erit; background-color: #232323;"> <div class=3D"block-grid " style=3D"line=
+-height: inherit; min-width: 320px; max-width: 715px; overflow-wrap: break-=
+word; word-wrap: break-word; word-break: break-word; Margin: 0 auto; backgr=
+ound-color: transparent;"> <div style=3D"line-height: inherit; border-colla=
+pse: collapse; display: table; width: 100%; background-color: transparent; =
+background-image: undefined; background-position: undefined; background-siz=
+e: undefined; background-repeat: undefined;"> <!--[if (mso)|(IE)]><table wi=
+dth=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"back=
+ground-color:#232323;"><tr><td align=3D"center"><table cellpadding=3D"0" ce=
+llspacing=3D"0" border=3D"0" style=3D"width:715px"><tr class=3D"layout-full=
+-width" style=3D"background-color:transparent"><![endif]--> <!--[if (mso)|(=
+IE)]><td align=3D"center" width=3D"715" style=3D"background-color:transpare=
+nt;width:715px; border-top: 0px solid transparent; border-left: 0px solid t=
+ransparent; border-bottom: 0px solid transparent; border-right: 0px solid t=
+ransparent;" valign=3D"top"><table width=3D"100%" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0"><tr><td style=3D"padding-right: 0px; padding-left: =
+0px; padding-top:20px; padding-bottom:20px;"><![endif]--> <div class=3D"col=
+ num12" style=3D"line-height: inherit; min-width: 320px; max-width: 715px; =
+display: table-cell; vertical-align: top; width: 715px;"> <div class=3D"col=
+_cont" style=3D"line-height: inherit; width: 100% !important;"> <!--[if (!m=
+so)&(!IE)]><!--> <div style=3D"line-height: inherit; border-top: 0px solid =
+transparent; border-left: 0px solid transparent; border-bottom: 0px solid t=
+ransparent; border-right: 0px solid transparent; padding-top: 20px; padding=
+-bottom: 20px; padding-right: 0px; padding-left: 0px;"> <!--<![endif]--> <d=
+iv class=3D"img-container center fixedwidth" align=3D"center" style=3D"line=
+-height: inherit; padding-right: 60px; padding-left: 60px;"> <!--[if mso]><=
+table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr s=
+tyle=3D"line-height:0px"><td style=3D"padding-right: 60px;padding-left: 60p=
+x;" align=3D"center"><![endif]--><img class=3D"center fixedwidth" align=3D"=
+center" border=3D"0" src=3D"https://d15k2d11r6t6rl.cloudfront.net/public/us=
+ers/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/81cb1f2d55e644eeb0c3cc=
+6e7f671040/TubeBuddyLogoDarkBackground.png" style=3D"line-height: inherit; =
+text-decoration: none; -ms-interpolation-mode: bicubic; height: auto; borde=
+r: 0; width: 322px; max-width: 100%; display: block;" width=3D"322"> <!--[i=
+f mso]></td></tr></table><![endif]--> </div> <!--[if (!mso)&(!IE)]><!--> </=
+div> <!--<![endif]--> </div> </div> <!--[if (mso)|(IE)]></td></tr></table><=
+![endif]--> <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endi=
+f]--> </div> </div> </div> <div style=3D"line-height: inherit; background-c=
+olor: transparent;"> <div class=3D"block-grid " style=3D"line-height: inher=
+it; min-width: 320px; max-width: 715px; overflow-wrap: break-word; word-wra=
+p: break-word; word-break: break-word; Margin: 0 auto; background-color: tr=
+ansparent;"> <div style=3D"line-height: inherit; border-collapse: collapse;=
+ display: table; width: 100%; background-color: transparent;"> <!--[if (mso=
+)|(IE)]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0" style=3D"background-color:transparent;"><tr><td align=3D"center"><table=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:715px"><tr=
+ class=3D"layout-full-width" style=3D"background-color:transparent"><![endi=
+f]--> <!--[if (mso)|(IE)]><td align=3D"center" width=3D"715" style=3D"backg=
+round-color:transparent;width:715px; border-top: 0px solid transparent; bor=
+der-left: 0px solid transparent; border-bottom: 0px solid transparent; bord=
+er-right: 0px solid transparent;" valign=3D"top"><table width=3D"100%" cell=
+padding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D"padding-right=
+: 0px; padding-left: 0px; padding-top:30px; padding-bottom:5px;"><![endif]-=
+-> <div class=3D"col num12" style=3D"line-height: inherit; min-width: 320px=
+; max-width: 715px; display: table-cell; vertical-align: top; width: 715px;=
+"> <div class=3D"col_cont" style=3D"line-height: inherit; width: 100% !impo=
+rtant;"> <!--[if (!mso)&(!IE)]><!--> <div style=3D"line-height: inherit; bo=
+rder-top: 0px solid transparent; border-left: 0px solid transparent; border=
+-bottom: 0px solid transparent; border-right: 0px solid transparent; paddin=
+g-top: 30px; padding-bottom: 5px; padding-right: 0px; padding-left: 0px;"> =
+<!--<![endif]--> <!--[if (mso)|(IE)]><table width=3D"715" align=3D"center" =
+cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation"><tr><td><![endif]=
+--> <div class=3D"video-block" align=3D"center" style=3D"line-height: inher=
+it; max-width: 715px; min-width: 320px; padding-top: 0px; padding-bottom: 0=
+px; padding-left: 0px; padding-right: 0px;"> <!--[if !vml]><!--><a class=3D=
+"video-preview" href=3D"http://links.tubebuddy.com/u/click=3F_t=3D81cb1f2d5=
+5e644eeb0c3cc6e7f671040&_m=3D2edd049c6e514eeaa230a457614e3155&_e=3DLxkC_TNz=
+5F4S5P3HrG6bRe9xHYir0IZLqyhaUrXV_RvZrj8QeXh5WkNjdvLmg96e-bf_lUM3PTqmGVkgNtU=
+NkHlpGgsXORUcPebT-RKeP4LCn9Ro1MmAJuBCYorg1H8cJhImBcC09byxOQMfxixBZlva_TFWsa=
+VnbGtgEG4CjYXks05RGQANxxFx_1AQ4cHkIldxhd6Mc9MIGTDAxl2B_2wo5_Q1ZjrtSEgVuTUTR=
+OiAHTePsGxwQ7Q00gunDHEKe7s7Dczlf3L5DdAQQEySExKQJlaS9R2x_PCliNI5EYc%3D" targ=
+et=3D"_blank" style=3D"line-height: inherit; background-color: #5b5f66; bac=
+kground-image: radial-gradient(circle at center, #5b5f66, #1d1f21); display=
+: block; text-decoration: none;"> <div style=3D"line-height: inherit;"> <ta=
+ble cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" backgro=
+und=3D"https://img.youtube.com/vi/8KlxNNTnd88/maxresdefault.jpg" role=3D"pr=
+esentation" style=3D"line-height: inherit; table-layout: fixed; vertical-al=
+ign: top; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0=
+pt; mso-table-rspace: 0pt; background-image: url(https://img.youtube.com/vi=
+/8KlxNNTnd88/maxresdefault.jpg); background-size: cover; min-height: 180px;=
+ min-width: 320px;" valign=3D"top"> <tr style=3D"line-height: inherit; bord=
+er-collapse: collapse; vertical-align: top;" valign=3D"top"> <td width=3D"2=
+5%" style=3D"line-height: inherit; border-collapse: collapse; word-break: b=
+reak-word; vertical-align: top;" valign=3D"top"><img src=3D"https://beefree=
+.io/img-host/video_ratio_16-9.gif" alt width=3D"100%" border=3D"0" style=
+=3D"line-height: inherit; text-decoration: none; -ms-interpolation-mode: bi=
+cubic; border: 0; height: auto; opacity: 0; visibility: hidden; display: bl=
+ock;"></td> <td width=3D"50%" align=3D"center" valign=3D"middle" style=3D"l=
+ine-height: inherit; border-collapse: collapse; word-break: break-word; ver=
+tical-align: middle;"> <div class=3D"play-button_outer" style=3D"line-heigh=
+t: inherit; display: inline-block; vertical-align: middle; background-color=
+: #ffffff; border: 3px solid #ffffff; height: 59px; width: 59px; border-rad=
+ius: 100%;"> <div style=3D"line-height: inherit; padding: 14.75px 22.692307=
+69230769px;"> <div class=3D"play-button_inner" style=3D"line-height: inheri=
+t; border-style: solid; border-width: 15px 0 15px 20px; display: block; fon=
+t-size: 0; height: 0; width: 0; border-color: transparent transparent trans=
+parent #000000;">&#160;</div> </div> </div> </td> <td width=3D"25%" style=
+=3D"line-height: inherit; border-collapse: collapse; word-break: break-word=
+; vertical-align: top;" valign=3D"top">&#160;</td> </tr> </table> </div> </=
+a> <!--<![endif]--> <!--[if vml]><v:group xmlns:v=3D"urn:schemas-microsoft-=
+com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" coordsize=3D"715=
+,402" coordorigin=3D"0,0" href=3D"http://links.tubebuddy.com/u/click=3F_t=
+=3D81cb1f2d55e644eeb0c3cc6e7f671040&_m=3D2edd049c6e514eeaa230a457614e3155&_=
+e=3DLxkC_TNz5F4S5P3HrG6bRe9xHYir0IZLqyhaUrXV_RvZrj8QeXh5WkNjdvLmg96e-bf_lUM=
+3PTqmGVkgNtUNkI6Zxj-GLz4chOFmuMYhoQSlij2MFM4AWJDhap3RyURrlAK7OraDEtyFd3R2iR=
+S__GxYu_GlgfRQwLlMRckJPBz5deO6hFN8s73cGpm0sTp48QVQJjWXiYxwYB81l7VcmJLT3x_TJ=
+trIoz5JtOv2il5O7qz-RH2RBwNFJvDRXnQfeC7cPqsdbxyTjH1tLJ2SU78hmzPm12mGU-Tm1q8g=
+MFM%3D" style=3D"width:715px;height:402px;"> <v:rect fill=3D"t" stroked=3D"=
+f" style=3D"position:absolute;width:715;height:402;"> <v:fill src=3D"https:=
+//img.youtube.com/vi/8KlxNNTnd88/maxresdefault.jpg" type=3D"frame"/> </v:re=
+ct> <v:oval fill=3D"t" strokecolor=3D"#ffffff" strokeweight=3D"3px" style=
+=3D"position:absolute;left:328;top:172;width:59;height:59"> <v:fill color=
+=3D"#ffffff" opacity=3D"100%"/> </v:oval> <v:shape coordsize=3D"24,32" path=
+=3D"m,l,32,24,16,xe" fillcolor=3D"#000000" stroked=3D"f" style=3D"position:=
+absolute;left:349;top:186;width:21;height:30;"/> </v:group><![endif]--> </d=
+iv> <!--[if (mso)|(IE)]></td></tr></table><![endif]--> <!--[if (!mso)&(!IE)=
+]><!--> </div> <!--<![endif]--> </div> </div> <!--[if (mso)|(IE)]></td></tr=
+></table><![endif]--> <!--[if (mso)|(IE)]></td></tr></table></td></tr></tab=
+le><![endif]--> </div> </div> </div> <div style=3D"line-height: inherit; ba=
+ckground-color: transparent;"> <div class=3D"block-grid " style=3D"line-hei=
+ght: inherit; min-width: 320px; max-width: 715px; overflow-wrap: break-word=
+; word-wrap: break-word; word-break: break-word; Margin: 0 auto; background=
+-color: transparent;"> <div style=3D"line-height: inherit; border-collapse:=
+ collapse; display: table; width: 100%; background-color: transparent; back=
+ground-image: undefined; background-position: undefined; background-size: u=
+ndefined; background-repeat: undefined;"> <!--[if (mso)|(IE)]><table width=
+=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"backgro=
+und-color:transparent;"><tr><td align=3D"center"><table cellpadding=3D"0" c=
+ellspacing=3D"0" border=3D"0" style=3D"width:715px"><tr class=3D"layout-ful=
+l-width" style=3D"background-color:transparent"><![endif]--> <!--[if (mso)|=
+(IE)]><td align=3D"center" width=3D"715" style=3D"background-color:transpar=
+ent;width:715px; border-top: 0px solid transparent; border-left: 0px solid =
+transparent; border-bottom: 0px solid transparent; border-right: 0px solid =
+transparent;" valign=3D"top"><table width=3D"100%" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0"><tr><td style=3D"padding-right: 0px; padding-left:=
+ 0px; padding-top:30px; padding-bottom:0px;"><![endif]--> <div class=3D"col=
+ num12" style=3D"line-height: inherit; min-width: 320px; max-width: 715px; =
+display: table-cell; vertical-align: top; width: 715px;"> <div class=3D"col=
+_cont" style=3D"line-height: inherit; width: 100% !important;"> <!--[if (!m=
+so)&(!IE)]><!--> <div style=3D"line-height: inherit; border-top: 0px solid =
+transparent; border-left: 0px solid transparent; border-bottom: 0px solid t=
+ransparent; border-right: 0px solid transparent; padding-top: 30px; padding=
+-bottom: 0px; padding-right: 0px; padding-left: 0px;"> <!--<![endif]--> <!-=
+-[if mso]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0"><tr><td style=3D"padding-right: 10px; padding-left: 10px; padding-to=
+p: 0px; padding-bottom: 0px; font-family: 'Trebuchet MS', Tahoma, sans-seri=
+f"><![endif]--> <div class=3D"text_block" style=3D"color: #555555; font-fam=
+ily: 'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', =
+'Lucida Sans', Tahoma, sans-serif; line-height: 1.2; padding-top: 0px; padd=
+ing-right: 10px; padding-bottom: 0px; padding-left: 10px;"> <div class=3D"t=
+xtTinyMce-wrapper" style=3D"line-height: 1.2; font-size: 12px; font-family:=
+ 'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Luc=
+ida Sans', Tahoma, sans-serif; color: #555555; mso-line-height-alt: 14px;">=
+ <p style=3D"margin: 0; line-height: 1.2; word-break: break-word; text-alig=
+n: center; mso-line-height-alt: 14px; margin-top: 0; margin-bottom: 0;"><st=
+rong style=3D"line-height: inherit;"><span style=3D"line-height: inherit; f=
+ont-size: 26px;">CREATOR DAY IS BACK!</span></strong></p> </div> </div> <!-=
+-[if mso]></td></tr></table><![endif]--> <!--[if mso]><table width=3D"100%"=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D"padding-=
+right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px; f=
+ont-family: Tahoma, sans-serif"><![endif]--> <div class=3D"text_block" styl=
+e=3D"color: #555555; font-family: Montserrat, Trebuchet MS, Lucida Grande, =
+Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; line-height: 1.5; pad=
+ding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10=
+px;"> <div class=3D"txtTinyMce-wrapper" style=3D"line-height: 1.5; font-siz=
+e: 12px; color: #555555; font-family: Montserrat, Trebuchet MS, Lucida Gran=
+de, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-a=
+lt: 18px;"> <p style=3D"margin: 0; font-size: 16px; line-height: 1.5; word-=
+break: break-word; mso-line-height-alt: 24px; margin-top: 0; margin-bottom:=
+ 0;">You don=E2=80=99t want to miss Creator Day 2022. <strong style=3D"line=
+-height: inherit;"><span style=3D"line-height: inherit; color: #e32c26;">Jo=
+in us LIVE as we celebrate YOU,</span></strong> the creators! To celebrate =
+all the good creators bring to the world, we are throwing a massive online =
+party, this<span style=3D"line-height: inherit; color: #e32c26;"><strong st=
+yle=3D"line-height: inherit;"> Saturday, April 23 from 8 AM - 4 PM PT </str=
+ong></span>and you=E2=80=99re invited! Join us live on the <strong style=3D=
+"line-height: inherit;"><span style=3D"line-height: inherit; color: #e32c26=
+;">TubeBuddy YouTube Channel</span></strong> as we play games, hold intervi=
+ews, and give away exclusive prizes that you won=E2=80=99t want to miss.</p=
+> </div> </div> <!--[if mso]></td></tr></table><![endif]--> <div class=3D"b=
+utton-container" align=3D"center" style=3D"line-height: inherit; padding-to=
+p: 15px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;"> <=
+!--[if mso]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" borde=
+r=3D"0" style=3D"border-spacing: 0; border-collapse: collapse; mso-table-ls=
+pace:0pt; mso-table-rspace:0pt;"><tr><td style=3D"padding-top: 15px; paddin=
+g-right: 10px; padding-bottom: 10px; padding-left: 10px" align=3D"center"><=
+v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schema=
+s-microsoft-com:office:word" href=3D"http://links.tubebuddy.com/u/click=3F_=
+t=3D81cb1f2d55e644eeb0c3cc6e7f671040&_m=3D2edd049c6e514eeaa230a457614e3155&=
+_e=3DLxkC_TNz5F4S5P3HrG6bRe9xHYir0IZLqyhaUrXV_RumiKwgIa71qW9HN1AsW6EUPaaQew=
+tX3dKAHqNEt_mn3ghWGrwSna4xGKWuT4fjYXuVUmf_LaEqPzdmSN7D-g5sOg1KYWQl4SuLLRZGZ=
+YeXbOCKuBVK2tprpcrOs9kjGTcjSEsJfqzg1d2zPAFCyH_tPKuQ9NnsfXZkCkEr1As5-4rAamH3=
+XQjscAduARvuZEg7qlpDEN3z9H29ZHI0thjAd6cC9w2Cl27Jtv8KzjijINxKLMkRA-85ZloDoJI=
+f2AE%3D" style=3D"height:31.5pt;width:126pt;v-text-anchor:middle;" arcsize=
+=3D"12%" stroke=3D"false" fillcolor=3D"#e32c26"><w:anchorlock/><v:textbox i=
+nset=3D"0,0,0,0"><center style=3D"color:#ffffff; font-family:Tahoma, sans-s=
+erif; font-size:16px"><![endif]--><a href=3D"http://links.tubebuddy.com/u/c=
+lick=3F_t=3D81cb1f2d55e644eeb0c3cc6e7f671040&_m=3D2edd049c6e514eeaa230a4576=
+14e3155&_e=3DLxkC_TNz5F4S5P3HrG6bRe9xHYir0IZLqyhaUrXV_RumiKwgIa71qW9HN1AsW6=
+EUPPb8PFaMBLAjJUj3l2yi7nstLUOZOp03JRKC4czAs7A095WokLgPPKBe7ZdcUTPNzKazyw_YC=
+uPwaR2cd_t1sThcsRpTKEElEDvQj4mr4h2kw7KQ1Q-EP0iimQ1qfN0WZtCawf7W-u362GKIhugt=
+p6ZQRUFw9JSnDkWg0viTxTXNylbyqFJMr-omdNm23_hCYBD2iLeyVWSAAWTsS7-ZqOrwN95idmh=
+QPDLuoqHCWSo%3D" target=3D"_blank" style=3D"line-height: inherit; -webkit-t=
+ext-size-adjust: none; text-decoration: none; display: inline-block; color:=
+ #ffffff; background-color: #e32c26; border-radius: 5px; -webkit-border-rad=
+ius: 5px; -moz-border-radius: 5px; width: auto; width: auto; border-top: 1p=
+x solid #e32c26; border-right: 1px solid #e32c26; border-bottom: 1px solid =
+#e32c26; border-left: 1px solid #e32c26; padding-top: 5px; padding-bottom: =
+5px; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unic=
+ode, Lucida Sans, Tahoma, sans-serif; text-align: center; mso-border-alt: n=
+one; word-break: keep-all;"><span style=3D"line-height: inherit; padding-le=
+ft: 20px; padding-right: 20px; font-size: 16px; display: inline-block; lett=
+er-spacing: undefined;"><span style=3D"font-size: 16px; line-height: 2; wor=
+d-break: break-word; mso-line-height-alt: 32px;"><strong style=3D"line-heig=
+ht: inherit;">Set a Reminder</strong></span></span></a> <!--[if mso]></cent=
+er></v:textbox></v:roundrect></td></tr></table><![endif]--> </div> <!--[if =
+(!mso)&(!IE)]><!--> </div> <!--<![endif]--> </div> </div> <!--[if (mso)|(IE=
+)]></td></tr></table><![endif]--> <!--[if (mso)|(IE)]></td></tr></table></t=
+d></tr></table><![endif]--> </div> </div> </div> <div style=3D"line-height:=
+ inherit; background-color: transparent;"> <div class=3D"block-grid " style=
+=3D"line-height: inherit; min-width: 320px; max-width: 715px; overflow-wrap=
+: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 auto=
+; background-color: transparent;"> <div style=3D"line-height: inherit; bord=
+er-collapse: collapse; display: table; width: 100%; background-color: trans=
+parent;"> <!--[if (mso)|(IE)]><table width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" style=3D"background-color:transparent;"><tr><td a=
+lign=3D"center"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" sty=
+le=3D"width:715px"><tr class=3D"layout-full-width" style=3D"background-colo=
+r:transparent"><![endif]--> <!--[if (mso)|(IE)]><td align=3D"center" width=
+=3D"715" style=3D"background-color:transparent;width:715px; border-top: 0px=
+ solid transparent; border-left: 0px solid transparent; border-bottom: 0px =
+solid transparent; border-right: 0px solid transparent;" valign=3D"top"><ta=
+ble width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td=
+ style=3D"padding-right: 0px; padding-left: 0px; padding-top:5px; padding-b=
+ottom:5px;"><![endif]--> <div class=3D"col num12" style=3D"line-height: inh=
+erit; min-width: 320px; max-width: 715px; display: table-cell; vertical-ali=
+gn: top; width: 715px;"> <div class=3D"col_cont" style=3D"line-height: inhe=
+rit; width: 100% !important;"> <!--[if (!mso)&(!IE)]><!--> <div style=3D"li=
+ne-height: inherit; border-top: 0px solid transparent; border-left: 0px sol=
+id transparent; border-bottom: 0px solid transparent; border-right: 0px sol=
+id transparent; padding-top: 5px; padding-bottom: 5px; padding-right: 0px; =
+padding-left: 0px;"> <!--<![endif]--> <table class=3D"divider" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"line-height: i=
+nherit; table-layout: fixed; vertical-align: top; border-spacing: 0; border=
+-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; min-widt=
+h: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" role=
+=3D"presentation" valign=3D"top"> <tbody style=3D"line-height: inherit;"> <=
+tr style=3D"line-height: inherit; border-collapse: collapse; vertical-align=
+: top;" valign=3D"top"> <td class=3D"divider_inner" style=3D"line-height: i=
+nherit; border-collapse: collapse; word-break: break-word; vertical-align: =
+top; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust:=
+ 100%; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; paddin=
+g-left: 10px;" valign=3D"top"> <table class=3D"divider_content" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"line-height: =
+inherit; table-layout: fixed; vertical-align: top; border-spacing: 0; borde=
+r-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-=
+top: 1px solid transparent; height: 10px; width: 100%;" align=3D"center" ro=
+le=3D"presentation" height=3D"10" valign=3D"top"> <tbody style=3D"line-heig=
+ht: inherit;"> <tr style=3D"line-height: inherit; border-collapse: collapse=
+; vertical-align: top;" valign=3D"top"> <td style=3D"line-height: inherit; =
+border-collapse: collapse; word-break: break-word; vertical-align: top; -ms=
+-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" height=3D"10" val=
+ign=3D"top"><span style=3D"line-height: inherit;"></span></td> </tr> </tbod=
+y> </table> </td> </tr> </tbody> </table> <div class=3D"img-container cente=
+r autowidth big" align=3D"center" style=3D"line-height: inherit; padding-ri=
+ght: 0px; padding-left: 0px;"> <!--[if mso]><table width=3D"100%" cellpaddi=
+ng=3D"0" cellspacing=3D"0" border=3D"0"><tr style=3D"line-height:0px"><td s=
+tyle=3D"padding-right: 0px;padding-left: 0px;" align=3D"center"><![endif]--=
+><img class=3D"center autowidth" align=3D"center" border=3D"0" src=3D"https=
+://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46b=
+b-bd7e-c542cff6dd6a/81cb1f2d55e644eeb0c3cc6e7f671040/editor_images/Untitled=
+%20design%20%285%29.png" style=3D"line-height: inherit; text-decoration: no=
+ne; -ms-interpolation-mode: bicubic; height: auto; border: 0; width: 715px;=
+ max-width: 100%; display: block;" width=3D"715"> <!--[if mso]></td></tr></=
+table><![endif]--> </div> <!--[if (!mso)&(!IE)]><!--> </div> <!--<![endif]-=
+-> </div> </div> <!--[if (mso)|(IE)]></td></tr></table><![endif]--> <!--[if=
+ (mso)|(IE)]></td></tr></table></td></tr></table><![endif]--> </div> </div>=
+ </div> <div style=3D"line-height: inherit; background-color: transparent;"=
+> <div class=3D"block-grid " style=3D"line-height: inherit; min-width: 320p=
+x; max-width: 715px; overflow-wrap: break-word; word-wrap: break-word; word=
+-break: break-word; Margin: 0 auto; background-color: transparent;"> <div s=
+tyle=3D"line-height: inherit; border-collapse: collapse; display: table; wi=
+dth: 100%; background-color: transparent; background-image: undefined; back=
+ground-position: undefined; background-size: undefined; background-repeat: =
+undefined;"> <!--[if (mso)|(IE)]><table width=3D"100%" cellpadding=3D"0" ce=
+llspacing=3D"0" border=3D"0" style=3D"background-color:transparent;"><tr><t=
+d align=3D"center"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" =
+style=3D"width:715px"><tr class=3D"layout-full-width" style=3D"background-c=
+olor:transparent"><![endif]--> <!--[if (mso)|(IE)]><td align=3D"center" wid=
+th=3D"715" style=3D"background-color:transparent;width:715px; border-top: 0=
+px solid transparent; border-left: 0px solid transparent; border-bottom: 0p=
+x solid transparent; border-right: 0px solid transparent;" valign=3D"top"><=
+table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><=
+td style=3D"padding-right: 0px; padding-left: 0px; padding-top:30px; paddin=
+g-bottom:0px;"><![endif]--> <div class=3D"col num12" style=3D"line-height: =
+inherit; min-width: 320px; max-width: 715px; display: table-cell; vertical-=
+align: top; width: 715px;"> <div class=3D"col_cont" style=3D"line-height: i=
+nherit; width: 100% !important;"> <!--[if (!mso)&(!IE)]><!--> <div style=3D=
+"line-height: inherit; border-top: 0px solid transparent; border-left: 0px =
+solid transparent; border-bottom: 0px solid transparent; border-right: 0px =
+solid transparent; padding-top: 30px; padding-bottom: 0px; padding-right: 0=
+px; padding-left: 0px;"> <!--<![endif]--> <!--[if mso]><table width=3D"100%=
+" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D"padding=
+-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px; =
+font-family: Tahoma, sans-serif"><![endif]--> <div class=3D"text_block" sty=
+le=3D"color: #555555; font-family: Montserrat, Trebuchet MS, Lucida Grande,=
+ Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; line-height: 1.5; pa=
+dding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 1=
+0px;"> <div class=3D"txtTinyMce-wrapper" style=3D"line-height: 1.5; font-si=
+ze: 12px; color: #555555; font-family: Montserrat, Trebuchet MS, Lucida Gra=
+nde, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-=
+alt: 18px;"> <p style=3D"margin: 0; font-size: 16px; line-height: 1.5; word=
+-break: break-word; mso-line-height-alt: 24px; margin-top: 0; margin-bottom=
+: 0;">We are just days away from the <span style=3D"line-height: inherit; c=
+olor: #e32c26;"><strong style=3D"line-height: inherit;">biggest creator cel=
+ebration of the year</strong></span>. We are so excited to bring you exclus=
+ive interviews from some of the top minds in the creator space.</p> <p styl=
+e=3D"margin: 0; font-size: 16px; line-height: 1.5; word-break: break-word; =
+mso-line-height-alt: 24px; margin-top: 0; margin-bottom: 0;">&nbsp;</p> <p =
+style=3D"margin: 0; font-size: 16px; line-height: 1.5; word-break: break-wo=
+rd; mso-line-height-alt: 24px; margin-top: 0; margin-bottom: 0;">Join us LI=
+VE for 1:1 conversations with <span style=3D"line-height: inherit; color: #=
+e32c26;"><strong style=3D"line-height: inherit;">Rachel Levin,</strong></sp=
+an>&nbsp;<strong style=3D"line-height: inherit;"><span style=3D"line-height=
+: inherit; color: #e32c26;">Typical Gamer</span></strong>, <strong style=3D=
+"line-height: inherit;"><span style=3D"line-height: inherit; color: #e32c26=
+;">Neekolul</span></strong>, and <strong style=3D"line-height: inherit;"><s=
+pan style=3D"line-height: inherit; color: #e32c26;">Stev Lawson</span></str=
+ong>, as well as exciting panels featuring <strong style=3D"line-height: in=
+herit;"><span style=3D"line-height: inherit; color: #e32c26;">Kristen Ware<=
+/span></strong>, <span style=3D"line-height: inherit; color: #000000;"><str=
+ong style=3D"line-height: inherit;"><span style=3D"line-height: inherit; co=
+lor: #e32c26;">Javi Luna</span></strong>,</span> <strong style=3D"line-heig=
+ht: inherit;"><span style=3D"line-height: inherit; color: #e32c26;">Griffin=
+ Arnlund</span></strong>, <strong style=3D"line-height: inherit;"><span sty=
+le=3D"line-height: inherit; color: #e32c26;">Derral Eves</span></strong>, <=
+strong style=3D"line-height: inherit;"><span style=3D"line-height: inherit;=
+ color: #e32c26;">Nick Nimmin</span></strong>, and <strong style=3D"line-he=
+ight: inherit;"><span style=3D"line-height: inherit; color: #e32c26;">Jon Y=
+oushaei</span></strong>.</p> <p style=3D"margin: 0; font-size: 16px; line-h=
+eight: 1.5; word-break: break-word; mso-line-height-alt: 24px; margin-top: =
+0; margin-bottom: 0;">&nbsp;</p> <p style=3D"margin: 0; font-size: 16px; li=
+ne-height: 1.5; word-break: break-word; mso-line-height-alt: 24px; margin-t=
+op: 0; margin-bottom: 0;">We will also be turning up the fun with games and=
+ activities, including our infamous spicy foods challenge, with <strong sty=
+le=3D"line-height: inherit;"><span style=3D"line-height: inherit; color: #e=
+32c26;">Rachael Kay Albers</span></strong>, <strong style=3D"line-height: i=
+nherit;"><span style=3D"line-height: inherit; color: #e32c26;">Daniel Batal=
+</span></strong>, <strong style=3D"line-height: inherit;"><span style=3D"li=
+ne-height: inherit; color: #e32c26;">Jeremy Vest</span></strong>, <strong s=
+tyle=3D"line-height: inherit;"><span style=3D"line-height: inherit; color: =
+#e32c26;">Roberto Blake,</span></strong> and <strong style=3D"line-height: =
+inherit;"><span style=3D"line-height: inherit; color: #e32c26;">DJ Coffman<=
+/span></strong>. Rounding out our guest appearances are premieres of exclus=
+ive interviews with <strong style=3D"line-height: inherit;"><span style=3D"=
+line-height: inherit; color: #e32c26;">MrBeast</span></strong> and <strong =
+style=3D"line-height: inherit;"><span style=3D"line-height: inherit; color:=
+ #e32c26;">Devin Supertramp</span></strong>.</p> <p style=3D"margin: 0; fon=
+t-size: 16px; line-height: 1.5; word-break: break-word; mso-line-height-alt=
+: 24px; margin-top: 0; margin-bottom: 0;">&nbsp;</p> <p style=3D"margin: 0;=
+ font-size: 16px; line-height: 1.5; word-break: break-word; mso-line-height=
+-alt: 24px; margin-top: 0; margin-bottom: 0;">All that brainpower in one ev=
+ent, and <strong style=3D"line-height: inherit;"><span style=3D"line-height=
+: inherit; color: #e32c26;">TONS of giveaways</span></strong> to go along w=
+ith it=3F! <strong style=3D"line-height: inherit;"><span style=3D"line-heig=
+ht: inherit; color: #e32c26;">You don't want to miss this!!</span></strong>=
+</p> </div> </div> <!--[if mso]></td></tr></table><![endif]--> <div class=
+=3D"button-container" align=3D"center" style=3D"line-height: inherit; paddi=
+ng-top: 15px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px=
+;"> <!--[if mso]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" =
+border=3D"0" style=3D"border-spacing: 0; border-collapse: collapse; mso-tab=
+le-lspace:0pt; mso-table-rspace:0pt;"><tr><td style=3D"padding-top: 15px; p=
+adding-right: 10px; padding-bottom: 10px; padding-left: 10px" align=3D"cent=
+er"><v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:s=
+chemas-microsoft-com:office:word" href=3D"http://links.tubebuddy.com/u/clic=
+k=3F_t=3D81cb1f2d55e644eeb0c3cc6e7f671040&_m=3D2edd049c6e514eeaa230a457614e=
+3155&_e=3DLxkC_TNz5F4S5P3HrG6bRZfALDpzfk4I0s8H5PXyQ8TUUSjNSJpDH3GAuBJp9_nlF=
+tv_lgAY8pHYUyWIN3XO5WE54zvB0VVkoNi64g5eupY_H6MMAkyHCAEi2fhbKdO3Dy3gwsNIJo4m=
+mCQ8dohHMKsCx74w9V2rvZ9cBds1u5_I7bkErsxdQsN-tDwe8y05wrSmUkb3JfKFdohuiiciGbN=
+28lmpzz4mTnIplmfbgUB5sodA6k_XwUeikaM1cdXnTc109TErkTXKa6RNd4qwylx2nkaxEFRp_Q=
+crJ-E19MLCe9ca_JqV67Fi2_uBEVySm6S1b46OMnM0SBho2K8y6YmcY4cj9oksoxQRsJr-CAouL=
+KXYBV7s2CqyWykitoFc" style=3D"height:31.5pt;width:100.5pt;v-text-anchor:mid=
+dle;" arcsize=3D"12%" stroke=3D"false" fillcolor=3D"#e32c26"><w:anchorlock/=
+><v:textbox inset=3D"0,0,0,0"><center style=3D"color:#ffffff; font-family:T=
+ahoma, sans-serif; font-size:16px"><![endif]--><a href=3D"http://links.tube=
+buddy.com/u/click=3F_t=3D81cb1f2d55e644eeb0c3cc6e7f671040&_m=3D2edd049c6e51=
+4eeaa230a457614e3155&_e=3DLxkC_TNz5F4S5P3HrG6bRZfALDpzfk4I0s8H5PXyQ8TUUSjNS=
+JpDH3GAuBJp9_nlFtv_lgAY8pHYUyWIN3XO5WE54zvB0VVkoNi64g5eupY_H6MMAkyHCAEi2fhb=
+KdO3Dy3gwsNIJo4mmCQ8dohHMG9_nWiZtu-3jXZeGbsk05hrw4ynbxlre_OcILj3C1GYPay6FaK=
+3Anq6iJ07Pi3OOwSIfbBwAqAa2oz_6YNxvOk7_kG7ECaCA0jY2ZQHE-BPBW6lWivR9P04zyXI9M=
+J3Z7TZuF_4Pf9zfkbnkRY1fljJ00F00Bth5AFr5mZWbhQnhilhVg6_2eImT5hGAtjF6si0c7c-u=
+MjqdL-8i4XWmXBRr1mcGkXKL8UqJRt1pZUO" target=3D"_blank" style=3D"line-height=
+: inherit; -webkit-text-size-adjust: none; text-decoration: none; display: =
+inline-block; color: #ffffff; background-color: #e32c26; border-radius: 5px=
+; -webkit-border-radius: 5px; -moz-border-radius: 5px; width: auto; width: =
+auto; border-top: 1px solid #e32c26; border-right: 1px solid #e32c26; borde=
+r-bottom: 1px solid #e32c26; border-left: 1px solid #e32c26; padding-top: 5=
+px; padding-bottom: 5px; font-family: Montserrat, Trebuchet MS, Lucida Gran=
+de, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; text-align: cente=
+r; mso-border-alt: none; word-break: keep-all;"><span style=3D"line-height:=
+ inherit; padding-left: 20px; padding-right: 20px; font-size: 16px; display=
+: inline-block; letter-spacing: undefined;"><span style=3D"font-size: 16px;=
+ line-height: 2; word-break: break-word; mso-line-height-alt: 32px;"><stron=
+g style=3D"line-height: inherit;">Learn More</strong></span></span></a> <!-=
+-[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->=
+ </div> <!--[if (!mso)&(!IE)]><!--> </div> <!--<![endif]--> </div> </div> <=
+!--[if (mso)|(IE)]></td></tr></table><![endif]--> <!--[if (mso)|(IE)]></td>=
+</tr></table></td></tr></table><![endif]--> </div> </div> </div> <div style=
+=3D"line-height: inherit; background-color: transparent;"> <div class=3D"bl=
+ock-grid " style=3D"line-height: inherit; min-width: 320px; max-width: 715p=
+x; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word=
+; Margin: 0 auto; background-color: transparent;"> <div style=3D"line-heigh=
+t: inherit; border-collapse: collapse; display: table; width: 100%; backgro=
+und-color: transparent;"> <!--[if (mso)|(IE)]><table width=3D"100%" cellpad=
+ding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"background-color:transpa=
+rent;"><tr><td align=3D"center"><table cellpadding=3D"0" cellspacing=3D"0" =
+border=3D"0" style=3D"width:715px"><tr class=3D"layout-full-width" style=3D=
+"background-color:transparent"><![endif]--> <!--[if (mso)|(IE)]><td align=
+=3D"center" width=3D"715" style=3D"background-color:transparent;width:715px=
+; border-top: 0px solid transparent; border-left: 0px solid transparent; bo=
+rder-bottom: 0px solid transparent; border-right: 0px solid transparent;" v=
+align=3D"top"><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" bor=
+der=3D"0"><tr><td style=3D"padding-right: 0px; padding-left: 0px; padding-t=
+op:5px; padding-bottom:5px;"><![endif]--> <div class=3D"col num12" style=3D=
+"line-height: inherit; min-width: 320px; max-width: 715px; display: table-c=
+ell; vertical-align: top; width: 715px;"> <div class=3D"col_cont" style=3D"=
+line-height: inherit; width: 100% !important;"> <!--[if (!mso)&(!IE)]><!-->=
+ <div style=3D"line-height: inherit; border-top: 0px solid transparent; bor=
+der-left: 0px solid transparent; border-bottom: 0px solid transparent; bord=
+er-right: 0px solid transparent; padding-top: 5px; padding-bottom: 5px; pad=
+ding-right: 0px; padding-left: 0px;"> <!--<![endif]--> <table class=3D"divi=
+der" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=
+=3D"line-height: inherit; table-layout: fixed; vertical-align: top; border-=
+spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rsp=
+ace: 0pt; min-width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: 100%;" role=3D"presentation" valign=3D"top"> <tbody style=3D"line-hei=
+ght: inherit;"> <tr style=3D"line-height: inherit; border-collapse: collaps=
+e; vertical-align: top;" valign=3D"top"> <td class=3D"divider_inner" style=
+=3D"line-height: inherit; border-collapse: collapse; word-break: break-word=
+; vertical-align: top; min-width: 100%; -ms-text-size-adjust: 100%; -webkit=
+-text-size-adjust: 100%; padding-top: 10px; padding-right: 10px; padding-bo=
+ttom: 10px; padding-left: 10px;" valign=3D"top"> <table class=3D"divider_co=
+ntent" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"line-height: inherit; table-layout: fixed; vertical-align: top; border=
+-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rs=
+pace: 0pt; border-top: 1px solid transparent; height: 30px; width: 100%;" a=
+lign=3D"center" role=3D"presentation" height=3D"30" valign=3D"top"> <tbody =
+style=3D"line-height: inherit;"> <tr style=3D"line-height: inherit; border-=
+collapse: collapse; vertical-align: top;" valign=3D"top"> <td style=3D"line=
+-height: inherit; border-collapse: collapse; word-break: break-word; vertic=
+al-align: top; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"=
+ height=3D"30" valign=3D"top"><span style=3D"line-height: inherit;"></span>=
+</td> </tr> </tbody> </table> </td> </tr> </tbody> </table> <!--[if (!mso)&=
+(!IE)]><!--> </div> <!--<![endif]--> </div> </div> <!--[if (mso)|(IE)]></td=
+></tr></table><![endif]--> <!--[if (mso)|(IE)]></td></tr></table></td></tr>=
+</table><![endif]--> </div> </div> </div> <div style=3D"line-height: inheri=
+t; background-color: #e32c26;"> <div class=3D"block-grid mixed-two-up" styl=
+e=3D"line-height: inherit; min-width: 320px; max-width: 715px; overflow-wra=
+p: break-word; word-wrap: break-word; word-break: break-word; Margin: 0 aut=
+o; background-color: transparent;"> <div style=3D"line-height: inherit; bor=
+der-collapse: collapse; display: table; width: 100%; background-color: tran=
+sparent;"> <!--[if (mso)|(IE)]><table width=3D"100%" cellpadding=3D"0" cell=
+spacing=3D"0" border=3D"0" style=3D"background-color:#e32c26;"><tr><td alig=
+n=3D"center"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=
+=3D"width:715px"><tr class=3D"layout-full-width" style=3D"background-color:=
+transparent"><![endif]--> <!--[if (mso)|(IE)]><td align=3D"center" width=3D=
+"178" style=3D"background-color:transparent;width:178px; border-top: 0px so=
+lid transparent; border-left: 0px solid transparent; border-bottom: 0px sol=
+id transparent; border-right: 0px solid transparent;" valign=3D"top"><table=
+ width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td st=
+yle=3D"padding-right: 0px; padding-left: 0px; padding-top:25px; padding-bot=
+tom:25px;"><![endif]--> <div class=3D"col num3" style=3D"line-height: inher=
+it; display: table-cell; vertical-align: top; max-width: 320px; min-width: =
+177px; width: 178px;"> <div class=3D"col_cont" style=3D"line-height: inheri=
+t; width: 100% !important;"> <!--[if (!mso)&(!IE)]><!--> <div style=3D"line=
+-height: inherit; border-top: 0px solid transparent; border-left: 0px solid=
+ transparent; border-bottom: 0px solid transparent; border-right: 0px solid=
+ transparent; padding-top: 25px; padding-bottom: 25px; padding-right: 0px; =
+padding-left: 0px;"> <!--<![endif]--> <div class=3D"img-container center fi=
+xedwidth" align=3D"center" style=3D"line-height: inherit; padding-right: 0p=
+x; padding-left: 0px;"> <!--[if mso]><table width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0"><tr style=3D"line-height:0px"><td style=3D=
+"padding-right: 0px;padding-left: 0px;" align=3D"center"><![endif]--><img c=
+lass=3D"center fixedwidth" align=3D"center" border=3D"0" src=3D"https://d15=
+k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e=
+-c542cff6dd6a/81cb1f2d55e644eeb0c3cc6e7f671040/tb-buddy-waving.png" style=
+=3D"line-height: inherit; text-decoration: none; -ms-interpolation-mode: bi=
+cubic; height: auto; border: 0; width: 107px; max-width: 100%; display: blo=
+ck;" width=3D"107"> <!--[if mso]></td></tr></table><![endif]--> </div> <!--=
+[if (!mso)&(!IE)]><!--> </div> <!--<![endif]--> </div> </div> <!--[if (mso)=
+|(IE)]></td></tr></table><![endif]--> <!--[if (mso)|(IE)]></td><td align=3D=
+"center" width=3D"536" style=3D"background-color:transparent;width:536px; b=
+order-top: 0px solid transparent; border-left: 0px solid transparent; borde=
+r-bottom: 0px solid transparent; border-right: 0px solid transparent;" vali=
+gn=3D"top"><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0"><tr><td style=3D"padding-right: 0px; padding-left: 0px; padding-top:=
+25px; padding-bottom:25px;"><![endif]--> <div class=3D"col num9" style=3D"l=
+ine-height: inherit; display: table-cell; vertical-align: top; max-width: 3=
+20px; min-width: 531px; width: 536px;"> <div class=3D"col_cont" style=3D"li=
+ne-height: inherit; width: 100% !important;"> <!--[if (!mso)&(!IE)]><!--> <=
+div style=3D"line-height: inherit; border-top: 0px solid transparent; borde=
+r-left: 0px solid transparent; border-bottom: 0px solid transparent; border=
+-right: 0px solid transparent; padding-top: 25px; padding-bottom: 25px; pad=
+ding-right: 0px; padding-left: 0px;"> <!--<![endif]--> <!--[if mso]><table =
+width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td sty=
+le=3D"padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-b=
+ottom: 10px; font-family: Tahoma, sans-serif"><![endif]--> <div class=3D"te=
+xt_block" style=3D"color: #ffffff; font-family: Montserrat, Trebuchet MS, L=
+ucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; line-he=
+ight: 1.2; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; pa=
+dding-left: 10px;"> <div class=3D"txtTinyMce-wrapper" style=3D"font-size: 1=
+4px; line-height: 1.2; color: #ffffff; font-family: Montserrat, Trebuchet M=
+S, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso=
+-line-height-alt: 17px;"> <p style=3D"margin: 0; font-size: 16px; line-heig=
+ht: 1.2; word-break: break-word; mso-line-height-alt: 19px; margin-top: 0; =
+margin-bottom: 0;"><span style=3D"line-height: inherit; font-size: 16px;">H=
+ave a question or need some help=3F</span></p> </div> </div> <!--[if mso]><=
+/td></tr></table><![endif]--> <!--[if mso]><table width=3D"100%" cellpaddin=
+g=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D"padding-right: 10px=
+; padding-left: 10px; padding-top: 10px; padding-bottom: 10px; font-family:=
+ Tahoma, sans-serif"><![endif]--> <div class=3D"text_block" style=3D"color:=
+ #ffffff; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans=
+ Unicode, Lucida Sans, Tahoma, sans-serif; line-height: 1.5; padding-top: 1=
+0px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;"> <div =
+class=3D"txtTinyMce-wrapper" style=3D"font-size: 14px; line-height: 1.5; co=
+lor: #ffffff; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida =
+Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 21px;">=
+ <p style=3D"margin: 0; font-size: 16px; line-height: 1.5; word-break: brea=
+k-word; mso-line-height-alt: 24px; margin-top: 0; margin-bottom: 0;"><span =
+style=3D"line-height: inherit; font-size: 16px;">Visit our Support Center a=
+t <a href=3D"http://links.tubebuddy.com/u/click=3F_t=3D81cb1f2d55e644eeb0c3=
+cc6e7f671040&_m=3D2edd049c6e514eeaa230a457614e3155&_e=3DLxkC_TNz5F4S5P3HrG6=
+bRYJn8KW9XNuO3_ofgMJSvNWy4RSsKlIOvhMP_cVXFCna1CTDnUJMdBz1YiLUODnOxtgJ82-A3i=
+1n-RwtpRy9RFFwNwnKAdVc2R-RxzoaO_VP6z0mg3gR9xzhqK0opWU4I7r12uKiE-ZUFoe6NLMyP=
+5C12vj2NL4Ypj1urH3pQokXCSQByh_kkLDlQslmBIVuQJJAskXDf6ekO5aeb7Ss4AOUmT4PlIRg=
+aMsfWi4XQsy3En-AeyNI7skZ-MfDL716ug%3D%3D" target=3D"_blank" style=3D"line-h=
+eight: inherit; text-decoration: underline; color: #e32c26;" rel=3D"noopene=
+r"><span style=3D"line-height: inherit; color: #ffffff; text-decoration: un=
+derline;"><u style=3D"line-height: inherit;"><strong style=3D"line-height: =
+inherit;">TubeBuddy.com/Suppor</strong></u>t</span></a> to get all of the a=
+nswers and advice you are looking for!</span></p> </div> </div> <!--[if mso=
+]></td></tr></table><![endif]--> <!--[if (!mso)&(!IE)]><!--> </div> <!--<![=
+endif]--> </div> </div> <!--[if (mso)|(IE)]></td></tr></table><![endif]--> =
+<!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]--> </div>=
+ </div> </div> <div style=3D"line-height: inherit; background-color: #23232=
+3;"> <div class=3D"block-grid " style=3D"line-height: inherit; min-width: 3=
+20px; max-width: 715px; overflow-wrap: break-word; word-wrap: break-word; w=
+ord-break: break-word; Margin: 0 auto; background-color: transparent;"> <di=
+v style=3D"line-height: inherit; border-collapse: collapse; display: table;=
+ width: 100%; background-color: transparent; background-image: undefined; b=
+ackground-position: undefined; background-size: undefined; background-repea=
+t: undefined;"> <!--[if (mso)|(IE)]><table width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" style=3D"background-color:#232323;"><tr><td=
+ align=3D"center"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" s=
+tyle=3D"width:715px"><tr class=3D"layout-full-width" style=3D"background-co=
+lor:transparent"><![endif]--> <!--[if (mso)|(IE)]><td align=3D"center" widt=
+h=3D"715" style=3D"background-color:transparent;width:715px; border-top: 0p=
+x solid transparent; border-left: 0px solid transparent; border-bottom: 0px=
+ solid transparent; border-right: 0px solid transparent;" valign=3D"top"><t=
+able width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><t=
+d style=3D"padding-right: 0px; padding-left: 0px; padding-top:25px; padding=
+-bottom:25px;"><![endif]--> <div class=3D"col num12" style=3D"line-height: =
+inherit; min-width: 320px; max-width: 715px; display: table-cell; vertical-=
+align: top; width: 715px;"> <div class=3D"col_cont" style=3D"line-height: i=
+nherit; width: 100% !important;"> <!--[if (!mso)&(!IE)]><!--> <div style=3D=
+"line-height: inherit; border-top: 0px solid transparent; border-left: 0px =
+solid transparent; border-bottom: 0px solid transparent; border-right: 0px =
+solid transparent; padding-top: 25px; padding-bottom: 25px; padding-right: =
+0px; padding-left: 0px;"> <!--<![endif]--> <div class=3D"img-container cent=
+er fixedwidth" align=3D"center" style=3D"line-height: inherit; padding-righ=
+t: 0px; padding-left: 0px;"> <!--[if mso]><table width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0"><tr style=3D"line-height:0px"><td sty=
+le=3D"padding-right: 0px;padding-left: 0px;" align=3D"center"><![endif]--><=
+img class=3D"center fixedwidth" align=3D"center" border=3D"0" src=3D"https:=
+//d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb=
+-bd7e-c542cff6dd6a/81cb1f2d55e644eeb0c3cc6e7f671040/TubeBuddyLogoDarkBackgr=
+ound.png" style=3D"line-height: inherit; text-decoration: none; -ms-interpo=
+lation-mode: bicubic; height: auto; border: 0; width: 143px; max-width: 100=
+%; display: block;" width=3D"143"> <!--[if mso]></td></tr></table><![endif]=
+--> </div> <table class=3D"social_icons" cellpadding=3D"0" cellspacing=3D"0=
+" width=3D"100%" role=3D"presentation" style=3D"line-height: inherit; table=
+-layout: fixed; vertical-align: top; border-spacing: 0; border-collapse: co=
+llapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" valign=3D"top"> <tbo=
+dy style=3D"line-height: inherit;"> <tr style=3D"line-height: inherit; bord=
+er-collapse: collapse; vertical-align: top;" valign=3D"top"> <td style=3D"l=
+ine-height: inherit; border-collapse: collapse; word-break: break-word; ver=
+tical-align: top; padding-top: 10px; padding-right: 10px; padding-bottom: 1=
+0px; padding-left: 10px;" valign=3D"top"> <table class=3D"social_table" ali=
+gn=3D"center" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" sty=
+le=3D"line-height: inherit; table-layout: fixed; vertical-align: top; borde=
+r-spacing: 0; border-collapse: collapse; mso-table-tspace: 0; mso-table-rsp=
+ace: 0; mso-table-bspace: 0; mso-table-lspace: 0;" valign=3D"top"> <tbody s=
+tyle=3D"line-height: inherit;"> <tr style=3D"line-height: inherit; border-c=
+ollapse: collapse; vertical-align: top; display: inline-block; text-align: =
+center;" align=3D"center" valign=3D"top"> <td style=3D"line-height: inherit=
+; border-collapse: collapse; word-break: break-word; vertical-align: top; p=
+adding-bottom: 0; padding-right: 5px; padding-left: 0;" valign=3D"top"><a h=
+ref=3D"http://links.tubebuddy.com/u/click=3F_t=3D81cb1f2d55e644eeb0c3cc6e7f=
+671040&_m=3D2edd049c6e514eeaa230a457614e3155&_e=3DLxkC_TNz5F4S5P3HrG6bRe9xH=
+Yir0IZLqyhaUrXV_RuOb-lvnT6N1XxYLR5bIS6z5CjCwzXP9zh5DoWuz0HvoHH1FbJWS8gEZmxa=
+dpUU_DJoFZ8IRz8-WqGey5ChYy0ROgtkaT8_aPnCS5AHNt64ghhdTuSw9BJVuwwc7HqrEPfA_Fn=
+otz5m6lg7qaOSqFs_GCszhTcSk2M-7Ca7AAK_rl4YMM8azD6XNSBYNmN7tIcE1PUKp2HWiYr0PZ=
+J06ut5JNGX-213bjR3fxip7oRnuyFJmZXlIPStzme2iJWQh1LayR29Zqva0p9T6hbAq-9hvr50J=
+GxFn6zLtbq6lCrj1g%3D%3D" target=3D"_blank" style=3D"line-height: inherit;">=
+<img width=3D"32" height=3D"32" src=3D"https://d2fi4ri5dhpqd1.cloudfront.ne=
+t/public/resources/social-networks-icon-sets/t-circle-default-gray/youtube@=
+2x.png" alt=3D"YouTube" title=3D"YouTube" style=3D"line-height: inherit; te=
+xt-decoration: none; -ms-interpolation-mode: bicubic; height: auto; border:=
+ 0; display: block;"></a></td> <td style=3D"line-height: inherit; border-co=
+llapse: collapse; word-break: break-word; vertical-align: top; padding-bott=
+om: 0; padding-right: 5px; padding-left: 0;" valign=3D"top"><a href=3D"http=
+://links.tubebuddy.com/u/click=3F_t=3D81cb1f2d55e644eeb0c3cc6e7f671040&_m=
+=3D2edd049c6e514eeaa230a457614e3155&_e=3DLxkC_TNz5F4S5P3HrG6bRZbiNkWRT6gNId=
+HzbiMGYFMvh02ZeETGzaWv8oFQcTVSU2peWBE3ISjZv7VTETrZztYMxfU2GYkBaVdMsKnv7flnP=
+an9mModi8lFNB-64jpWxhAgp3hz9V4HDoMquU73gi2CKctumsYd7Z6anZUGgyzYwcclt3tyIlbM=
+Ptt2f4YOUtpsD5wsFjeF5my6mx3K66ZZnXZmSqLV7XC0clkGdVt3p6AhKM2Zt5fLhXTN11j1XLf=
+n3Y_sgPT90DWsOT0-Q2K0OqYEOKkjDjyRypXX7TA%3D" target=3D"_blank" style=3D"lin=
+e-height: inherit;"><img width=3D"32" height=3D"32" src=3D"https://d2fi4ri5=
+dhpqd1.cloudfront.net/public/resources/social-networks-icon-sets/t-circle-d=
+efault-gray/instagram@2x.png" alt=3D"Instagram" title=3D"Instagram" style=
+=3D"line-height: inherit; text-decoration: none; -ms-interpolation-mode: bi=
+cubic; height: auto; border: 0; display: block;"></a></td> <td style=3D"lin=
+e-height: inherit; border-collapse: collapse; word-break: break-word; verti=
+cal-align: top; padding-bottom: 0; padding-right: 5px; padding-left: 0;" va=
+lign=3D"top"><a href=3D"http://links.tubebuddy.com/u/click=3F_t=3D81cb1f2d5=
+5e644eeb0c3cc6e7f671040&_m=3D2edd049c6e514eeaa230a457614e3155&_e=3DLxkC_TNz=
+5F4S5P3HrG6bRatUPuMMvhFRH5cZiQAn39BgXINVRPvvJ8Pk_TmBSYrUmOE7DdUu57cbPM2zl5X=
+YtYJ2cLh1goiYN5BXT6RAu2tc6GDQGKKPECoZnzWAcyxpe40dxqyWfn-pE02zwBYMoE8q8Naa1_=
+j0XOrPayePd5s1CAcG3t5h4TNWzgfWqyBK4URETYlAX-e-P-cbqbsYA7dkm3yACNN8U1XUL7I6-=
+WyNPJNSTI6AQLoAADyjR2xXCaXw-mfWTR9gCZdh8iTihA%3D%3D" target=3D"_blank" styl=
+e=3D"line-height: inherit;"><img width=3D"32" height=3D"32" src=3D"https://=
+d2fi4ri5dhpqd1.cloudfront.net/public/resources/social-networks-icon-sets/t-=
+circle-default-gray/twitter.png" alt=3D"Twitter" title=3D"Twitter" style=3D=
+"line-height: inherit; text-decoration: none; -ms-interpolation-mode: bicub=
+ic; height: auto; border: 0; display: block;"></a></td> <td style=3D"line-h=
+eight: inherit; border-collapse: collapse; word-break: break-word; vertical=
+-align: top; padding-bottom: 0; padding-right: 5px; padding-left: 0;" valig=
+n=3D"top"><a href=3D"http://links.tubebuddy.com/u/click=3F_t=3D81cb1f2d55e6=
+44eeb0c3cc6e7f671040&_m=3D2edd049c6e514eeaa230a457614e3155&_e=3DLxkC_TNz5F4=
+S5P3HrG6bRdBC0BiZo1cXmXi0AXPlAiEjfJMyo_1Sd2eGNqAMqhmxmR7jMmgl5bdw5UJ9Wh2jZM=
+koPOyQ1nxGHuBrBJKhhh2nFcs3huD7thkQUDxqpgDcq2fK5NXVUiY0JUPIBdjrp3VioX6nakBkQ=
+cV1TdQYvzO80sDYNmxlYQ06xnRmLsspTNVz_uRiUchyOdjnNZIPWPSq2PrDJDaJODD2XegsBVHw=
+CxaNSKtkABGwrupUqgi-Ca55tQ3N8WxPqKhp_TeaHw%3D%3D" target=3D"_blank" style=
+=3D"line-height: inherit;"><img width=3D"32" height=3D"32" src=3D"https://d=
+2fi4ri5dhpqd1.cloudfront.net/public/resources/social-networks-icon-sets/t-c=
+ircle-default-gray/facebook.png" alt=3D"Facebook" title=3D"Facebook" style=
+=3D"line-height: inherit; text-decoration: none; -ms-interpolation-mode: bi=
+cubic; height: auto; border: 0; display: block;"></a></td> <td style=3D"lin=
+e-height: inherit; border-collapse: collapse; word-break: break-word; verti=
+cal-align: top; padding-bottom: 0; padding-right: 5px; padding-left: 0;" va=
+lign=3D"top"><a href=3D"http://links.tubebuddy.com/u/click=3F_t=3D81cb1f2d5=
+5e644eeb0c3cc6e7f671040&_m=3D2edd049c6e514eeaa230a457614e3155&_e=3DLxkC_TNz=
+5F4S5P3HrG6bRRzko_hpuUEVepggb8LxRq9HzuOlrFFYgaIir4RGym3FkUPVQW3-bycEPBMcOCE=
+HVhPlvtAtjBzl90TeYUaPR_Q6fm1G90D33dUl7wNZzdZIvl8AfLPYsRrii3VGkUJb0-iOL1LQ0t=
+DlQHoSvWX74sBHDHrrECa5_tNOPZAjp-3R1NjeL1N3N9uU0lfI5h9UbDJKHBuhiro1V3OmZ0u3R=
+XBkZvLHmVv8nWxGVVZ1YfE_Zpph4zNwD7isciJvm65-UE0aR_OIqEb5BeiDtT4ubDE%3D" targ=
+et=3D"_blank" style=3D"line-height: inherit;"><img width=3D"32" height=3D"3=
+2" src=3D"https://d2fi4ri5dhpqd1.cloudfront.net/public/resources/social-net=
+works-icon-sets/t-circle-default-gray/linkedin@2x.png" alt=3D"LinkedIn" tit=
+le=3D"LinkedIn" style=3D"line-height: inherit; text-decoration: none; -ms-i=
+nterpolation-mode: bicubic; height: auto; border: 0; display: block;"></a><=
+/td> </tr> </tbody> </table> </td> </tr> </tbody> </table> <!--[if mso]><ta=
+ble width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td=
+ style=3D"padding-right: 10px; padding-left: 10px; padding-top: 10px; paddi=
+ng-bottom: 10px; font-family: Tahoma, sans-serif"><![endif]--> <div class=
+=3D"text_block" style=3D"color: #555555; font-family: Montserrat, Trebuchet=
+ MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; l=
+ine-height: 1.2; padding-top: 10px; padding-right: 10px; padding-bottom: 10=
+px; padding-left: 10px;"> <div class=3D"txtTinyMce-wrapper" style=3D"font-s=
+ize: 14px; line-height: 1.2; color: #555555; font-family: Montserrat, Trebu=
+chet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-seri=
+f; mso-line-height-alt: 17px;"> <p style=3D"margin: 0; font-size: 8px; line=
+-height: 1.2; word-break: break-word; text-align: center; mso-line-height-a=
+lt: 10px; margin-top: 0; margin-bottom: 0;"><span style=3D"line-height: inh=
+erit; font-size: 8px; color: #ffffff;">&nbsp;<a href=3D"http://links.tubebu=
+ddy.com/e/encryptedUnsubscribe=3F_r=3D81cb1f2d55e644eeb0c3cc6e7f671040&_s=
+=3D2edd049c6e514eeaa230a457614e3155&_t=3D-wOkeZPuT-U3ESq1s51I7VWNPliDY1y9fK=
+-32yc48clqLXygR0mHlEjZiIRfikfbOBb94I5qXxwRQtUjmhKbTui74drKQXCWLaq2t6J5xx2sC=
+jUPidhvGf1_YtF7cBhWP2L0yTqmsNQMQUXJmfYaK5t_ARmak-h-jUChr2w3Yh4%3D" target=
+=3D"_blank" rel=3D"noopener" style=3D"line-height: inherit; color: #ffffff;=
+">Click here to unsubscribe.</a>&nbsp;</span></p> </div> </div> <!--[if mso=
+]></td></tr></table><![endif]--> <!--[if (!mso)&(!IE)]><!--> </div> <!--<![=
+endif]--> </div> </div> <!--[if (mso)|(IE)]></td></tr></table><![endif]--> =
+<!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]--> </div>=
+ </div> </div> <!--[if (mso)|(IE)]></td></tr></table><![endif]--> </td> </t=
+r> </tbody> </table> <!--[if (IE)]></div><![endif]--> =0D=0A<img border=3D"=
+0" width=3D"1" height=3D"1" alt=3D"" src=3D"http://go.sparkpostmail.com/q/o=
+F29n5GYuPEFUG5upelbLA~~/AARGbAA~/RgRkRCsrPlcDc3BjQgpiXSumYWL0I9JYUhZ0aWFueW=
+luLnJpZW5AZ21haWwuY29tWAQAAAFZ">=0D=0A</body> </html>
+--_----CKtI8ZVWi+29KwRNoqShSA===_DC/85-22781-B26A1626--
+

@@ -120,3 +120,4 @@ color compose security_both     color142 color234
 color compose security_none     color208 color234
 
 color sidebar_unread            color108 color234
+color sidebar_ordinary          color208 color234

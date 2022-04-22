@@ -1,3 +1,3 @@
-IBUS_ADDRESS=unix:abstract=/tmp/dbus-beKPP8VE6v,guid=b04bfc282d438bbaff9718bd6259037e,fcitx_random_string=b38476966ddb4ae986e1369eca2ddcc6
-IBUS_DAEMON_PID=25163
+IBUS_ADDRESS=
+IBUS_DAEMON_PID=
 
